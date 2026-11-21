@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "description": "Manifesto de arte externa autorizada no MangaDojo",
+  "sources": [
+    {
+      "repository": "https://github.com/realvjy/illlustrations",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2015 vijay verma"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/mit-observacao-1.svg",
+      "source": "https://github.com/realvjy/illlustrations/blob/develop/content/illlustrations/day-1/day1-ipod.svg",
+      "author": "Vijay Verma",
+      "license": "MIT",
+      "git_blob_sha1": "b59af3cf304e95aa81483d8db2e2616e9225e704",
+      "attribution": "THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "assets/mit-observacao-2.svg",
+      "source": "https://github.com/realvjy/illlustrations/blob/develop/content/illlustrations/day-10/day10-canvas-stand.svg",
+      "author": "Vijay Verma",
+      "license": "MIT",
+      "git_blob_sha1": "21899ee1fa3431f52b29268f72a851e3eae192c8",
+      "attribution": "THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "assets/mit-observacao-3.svg",
+      "source": "https://github.com/realvjy/illlustrations/blob/develop/content/illlustrations/120/120-power-of-pen.svg",
+      "author": "Vijay Verma",
+      "license": "MIT",
+      "git_blob_sha1": "1b7d13b263d339ca9abfb9474552b50f53fede1e",
+      "attribution": "THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "assets/mit-observacao-4.svg",
+      "source": "https://github.com/realvjy/illlustrations/blob/develop/content/illlustrations/day-11/day11-blackboard.svg",
+      "author": "Vijay Verma",
+      "license": "MIT",
+      "git_blob_sha1": "cc572e107ee0a91e03a9d6e69f2a395786724a26",
+      "attribution": "THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "assets/mit-criaturas-1.svg",
+      "source": "https://github.com/realvjy/illlustrations/blob/develop/content/illlustrations/day-22/day22-owl.svg",
+      "author": "Vijay Verma",
+      "license": "MIT",
+      "git_blob_sha1": "5693b80ed87067f7abfbe0cfdd74e5c36ed78d29",
+      "attribution": "THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "assets/mit-criaturas-2.svg",
+      "source": "https://github.com/realvjy/illlustrations/blob/develop/content/illlustrations/day-67/day67-dog.svg",
+      "author": "Vijay Verma",
+      "license": "MIT",
+      "git_blob_sha1": "686cca06855d4da05c64248baf8dcfa8fb081e4d",
+      "attribution": "THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "assets/mit-criaturas-3.svg",
+      "source": "https://github.com/realvjy/illlustrations/blob/develop/content/illlustrations/day-68/day68-happy-cat.svg",
+      "author": "Vijay Verma",
+      "license": "MIT",
+      "git_blob_sha1": "a720af1016e352e5ed037d2ecaef4b19a9a63235",
+      "attribution": "THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "assets/mit-criaturas-4.svg",
+      "source": "https://github.com/realvjy/illlustrations/blob/develop/content/illlustrations/day-49/day49-angler-fish.svg",
+      "author": "Vijay Verma",
+      "license": "MIT",
+      "git_blob_sha1": "c132c294c652f418f33ab2093288e914668275c6",
+      "attribution": "THIRD_PARTY_NOTICES.md"
+    }
+  ]
+}
