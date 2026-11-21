@@ -36,6 +36,23 @@ assert 'webp|svg|png' in studio
 assert 'stabilizer' in studio and 'smoothPoint' in studio
 assert 'Referência: ' in studio
 assert 'Projeto incompatível' in studio
+assert 'function drawContained' in studio
+assert 'drawContained(c,im,size,size)' in studio
+assert 'Math.min(width/sw,height/sh)' in studio
+assert "img.naturalWidth*scale" in index
+assert 'compareArt' in index and 'compareDialog' in index
+assert 'reportArt' in index
+assert 'category.includes(\'mãos\')' in index
+assert 'OPEN_SOURCE_RESEARCH_2026.md' in [p.name for p in ROOT.iterdir()]
+review_scripts=re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>', review)
+if shutil.which('node'):
+    for number, code in enumerate(review_scripts):
+        if not code.strip(): continue
+        with tempfile.NamedTemporaryFile('w',suffix='.js',encoding='utf-8',delete=False) as script:
+            script.write(code)
+        path=Path(script.name)
+        try: subprocess.run(['node','--check',str(path)],check=True,capture_output=True,text=True)
+        finally: path.unlink(missing_ok=True)
 # Validate inline browser JavaScript with Node when present on the runner.
 if shutil.which('node'):
     for name, html in [('index', index), ('studio', studio)]:
