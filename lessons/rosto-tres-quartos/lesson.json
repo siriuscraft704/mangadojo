@@ -1,0 +1,75 @@
+{
+  "id": "rosto-tres-quartos",
+  "name": "Rosto Mangá em Três Quartos",
+  "category": "Rostos e expressões",
+  "style": "Mangá",
+  "level": "Intermediário",
+  "min": 32,
+  "emoji": "✍️",
+  "steps": [
+    [
+      "Eixos de construção",
+      "Comece pela massa do crânio. Use duas linhas leves para localizar o centro do rosto e a altura dos olhos.",
+      [
+        "Estabeleça o volume principal",
+        "Marque o eixo vertical",
+        "Indique a posição aproximada dos olhos"
+      ]
+    ],
+    [
+      "Mandíbula e perspectiva",
+      "Conecte as laterais do crânio à ponta do queixo. O lado distante do rosto deve parecer mais estreito.",
+      [
+        "Mantenha o queixo sob o eixo",
+        "Reduza a largura do lado distante",
+        "Verifique o contorno"
+      ]
+    ],
+    [
+      "Olhos em perspectiva",
+      "Desenhe os olhos em torno da linha-guia. Compare os tamanhos e a distância entre eles.",
+      [
+        "Ajuste a curva superior dos olhos",
+        "Posicione as íris",
+        "Reserve os pontos de brilho"
+      ]
+    ],
+    [
+      "Nariz e boca",
+      "Posicione o nariz no eixo curvo e a boca ligeiramente abaixo, sem centralizá-los na folha.",
+      [
+        "Ajuste o nariz ao giro da cabeça",
+        "Desenhe a boca com poucos traços",
+        "Revise a simetria aparente"
+      ]
+    ],
+    [
+      "Massa do cabelo",
+      "Antes dos fios, desenhe a silhueta, o volume acima do crânio e os grupos principais de mechas.",
+      [
+        "Reserve espaço acima da cabeça",
+        "Separe mechas grandes",
+        "Observe sobreposições"
+      ]
+    ],
+    [
+      "Line art e acabamento",
+      "Limpe as linhas de construção, varie a espessura dos contornos e adicione reflexos simples.",
+      [
+        "Varie a espessura do traço",
+        "Acrescente luz e sombra",
+        "Compare com a estrutura inicial"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/rosto-tres-quartos-original-1.svg",
+    "assets/rosto-tres-quartos-original-2.svg",
+    "assets/rosto-tres-quartos-original-3.svg",
+    "assets/rosto-tres-quartos-original-4.svg",
+    "assets/rosto-tres-quartos-original-5.svg",
+    "assets/rosto-tres-quartos-original-6.svg"
+  ],
+  "author": "MangaDojo · Ilustração vetorial original",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}
