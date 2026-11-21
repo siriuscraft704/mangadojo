@@ -1,0 +1,52 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Homologação artística — MangaDojo</title><link rel="icon" href="assets/mangadojo-mark.svg" type="image/svg+xml">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f8f6f2;color:#252a34;font:14px/1.55 system-ui,sans-serif}header{background:#171923;color:white;display:flex;align-items:center;gap:12px;padding:17px clamp(15px,4vw,45px)}header img{width:38px;height:38px}header strong{font:700 23px Georgia,serif}header a{margin-left:auto;color:#f3dad0;text-decoration:none}
+main{max-width:1120px;margin:auto;padding:25px clamp(12px,4vw,40px)}h1{font:700 clamp(29px,5vw,44px) Georgia,serif;letter-spacing:-1px;margin:6px 0}.lead{max-width:860px;color:#626a74}
+.controls,.actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:16px;background:white;border:1px solid #e4ddd6;border-radius:13px;margin:20px 0}
+.controls label{flex:1;min-width:180px;display:grid;gap:5px;font-weight:700}select,input,textarea,button{font:inherit}select,input,textarea{padding:10px;background:white;color:#282b33;border:1px solid #d8d2cc;border-radius:8px}button{padding:11px 15px;background:#bd5e55;border:0;color:white;border-radius:9px;font-weight:700;cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #de9178;outline-offset:3px}
+.warning{background:#fff2e5;border-left:4px solid #bd5e55;padding:12px 15px;color:#7b5846;border-radius:9px}
+.stage{background:white;border:1px solid #e3dbd3;border-radius:15px;padding:15px;margin:18px 0}
+.stage h2{font:700 21px Georgia,serif;margin:0 0 10px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.compare figure{margin:0;min-width:0}.compare img{width:100%;height:340px;object-fit:contain;border:1px solid #ebe5e0;border-radius:11px;background:#fff;display:block}.compare figcaption{font-size:12px;color:#656c74;padding:7px 0;font-weight:650}
+.review{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:12px}.review textarea{min-height:63px;resize:vertical}.technical{font-size:12px;color:#626a70;margin-top:10px}
+@media(max-width:600px){.compare img{height:210px}.review{grid-template-columns:1fr}.stage{padding:10px}}
+</style></head><body><header><img src="assets/mangadojo-mark.svg" alt=""><strong>Homologação artística</strong><a href="./">Biblioteca</a></header>
+<main><h1>Compare antes de publicar.</h1><p class="lead">Visualize até seis novas imagens ao lado das referências atuais, avalie anatomia e enquadramento e exporte as decisões. Tudo acontece neste dispositivo. Nenhum arquivo é enviado ao servidor.</p>
+<p class="warning">Verificar dimensões não garante anatomia correta. Inspecione cinco dedos, articulações, margens, pose e continuidade entre as etapas. Só aprove quando a nova arte for pelo menos tão boa quanto a anterior.</p>
+<div class="controls"><label>Aula<select id="lesson"></select></label><label>Selecionar imagens novas<input id="files" type="file" accept="image/png,image/webp" multiple></label></div>
+<div id="summary" role="status"></div><div id="stages"></div>
+<div class="actions"><button id="export" type="button">Exportar relatório JSON</button><button id="clear" type="button">Limpar comparação</button><a href="auditoria-imagens.html">Auditoria do catálogo</a></div>
+</main><script src="catalog.generated.js"></script><script>
+(()=>{
+'use strict';
+const lessons=window.MANGADOJO_LESSONS||[], $=id=>document.getElementById(id);
+const choose=$('lesson'),files=$('files'),root=$('stages'),selected=()=>lessons.find(l=>l.id===choose.value);
+const candidates=new Map(),decisions=new Map();let urls=[];
+for(const l of lessons){const o=document.createElement('option');o.value=l.id;o.textContent=l.name;choose.append(o)}
+const param=new URLSearchParams(location.search).get('lesson');choose.value=lessons.some(l=>l.id===param)?param:(lessons.find(l=>l.id==='mao')?.id||lessons[0]?.id||'');
+const key=(i)=>choose.value+':'+i;
+function clearImages(){urls.forEach(URL.revokeObjectURL);urls=[];candidates.clear();files.value=''}
+function inspect(file){return new Promise((resolve,reject)=>{const url=URL.createObjectURL(file),img=new Image();img.onload=()=>resolve({name:file.name,url,width:img.naturalWidth,height:img.naturalHeight,bytes:file.size});img.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('Imagem não pôde ser aberta: '+file.name))};img.src=url})}
+function render(){
+const lesson=selected();root.replaceChildren();if(!lesson){$('summary').textContent='Nenhuma aula encontrada';return}
+$('summary').textContent=lesson.steps.length+' etapas · '+candidates.size+' candidatas carregadas · '+[...decisions.values()].filter(d=>d.status==='approved').length+' aprovadas';
+lesson.images.forEach((src,i)=>{const card=document.createElement('section');card.className='stage';const title=document.createElement('h2');title.textContent='Etapa '+(i+1)+' · '+lesson.steps[i][0];const comparison=document.createElement('div');comparison.className='compare';
+const candidate=candidates.get(key(i));
+for(const [url,label] of [[src,'Atual · '+src.split('/').pop()],[candidate?.url||src,candidate?'Candidata · '+candidate.name:'Candidata não selecionada']]){
+const figure=document.createElement('figure'),img=document.createElement('img'),caption=document.createElement('figcaption');img.src=url;img.alt=label;caption.textContent=label;figure.append(img,caption);comparison.append(figure)}
+const review=document.createElement('div');review.className='review';const status=document.createElement('select'),note=document.createElement('textarea');
+for(const [value,label] of [['pending','Aguardando análise'],['approved','Aprovada'],['rejected','Rejeitada: qualidade'],['anatomy','Rejeitada: anatomia'],['crop','Rejeitada: corte']]){const option=document.createElement('option');option.value=value;option.textContent=label;status.append(option)}
+const previous=decisions.get(key(i));status.value=previous?.status||'pending';note.value=previous?.note||'';note.placeholder='Observações de qualidade e continuidade';status.setAttribute('aria-label','Decisão para etapa '+(i+1));note.setAttribute('aria-label','Observações da etapa '+(i+1));
+const change=()=>{decisions.set(key(i),{status:status.value,note:note.value.slice(0,1000)});$('summary').textContent=lesson.steps.length+' etapas · '+candidates.size+' candidatas carregadas · '+[...decisions.values()].filter(d=>d.status==='approved').length+' aprovadas'};
+status.onchange=change;note.onchange=change;review.append(status,note);
+const technical=document.createElement('p');technical.className='technical';technical.textContent=candidate?'Dimensão: '+candidate.width+' × '+candidate.height+' px; '+Math.round(candidate.bytes/1024)+' KB. '+(Math.min(candidate.width,candidate.height)<700?'Resolução abaixo de 700 px. ':''):'Carregue um arquivo para conferir a resolução.';
+card.append(title,comparison,review,technical);root.append(card)});
+}
+choose.onchange=()=>{clearImages();decisions.clear();render()};
+files.onchange=async()=>{const selectedFiles=[...files.files];clearImages();const lesson=selected();const warnings=[];for(let i=0;i<Math.min(selectedFiles.length,lesson.images.length);i++){const file=selectedFiles[i];if(!['image/webp','image/png'].includes(file.type)){warnings.push('Formato inválido: '+file.name);continue}try{const result=await inspect(file);urls.push(result.url);const match=/([1-9][0-9]*)\.(png|webp)$/i.exec(file.name);const pos=match?Number(match[1])-1:i;if(pos<0||pos>=lesson.images.length){warnings.push('Etapa inválida: '+file.name);continue}candidates.set(key(pos),result)}catch(e){warnings.push(e.message)}}if(warnings.length)alert(warnings.join('\n'));render()};
+$('clear').onclick=()=>{clearImages();decisions.clear();render()};
+$('export').onclick=()=>{const lesson=selected();const items=lesson.images.map((src,i)=>({step:i+1,original:src,candidate:candidates.get(key(i))?.name||null,dimensions:candidates.has(key(i))?[candidates.get(key(i)).width,candidates.get(key(i)).height]:null,...(decisions.get(key(i))||{status:'pending',note:''})}));const url=URL.createObjectURL(new Blob([JSON.stringify({schema:1,lesson:lesson.id,createdAt:new Date().toISOString(),items},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='homologacao-'+lesson.id+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)};
+render();
+})();
+</script></body></html>
