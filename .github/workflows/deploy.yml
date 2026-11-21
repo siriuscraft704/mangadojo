@@ -25,7 +25,9 @@ jobs:
         run: python tools/build_catalog.py
       - name: Testes de regressão estática
         run: python tools/smoke_test.py
-      - name: Inventariar 162 imagens e riscos de recorte
+      - name: Validar proporção do Smudge e exportação das aulas
+        run: node tools/test_visual_geometry.cjs
+      - name: Inventariar imagens e riscos de recorte
         run: python tools/media_audit.py
       - uses: actions/configure-pages@v5
         with:
