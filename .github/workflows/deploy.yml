@@ -25,6 +25,8 @@ jobs:
         run: python tools/build_catalog.py
       - name: Testes de regressão estática
         run: python tools/smoke_test.py
+      - name: Verificar integridade e licenças de oito ilustrações MIT
+        run: python tools/verify_mit_assets.py
       - name: Validar proporção do Smudge e exportação das aulas
         run: node tools/test_visual_geometry.cjs
       - name: Inventariar imagens e riscos de recorte
