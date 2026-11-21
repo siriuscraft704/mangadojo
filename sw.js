@@ -1,7 +1,7 @@
 /* MangaDojo PWA: shell cached, lessons fetched on demand */
-const CACHE='mangadojo-v7-shell';
-const IMAGES='mangadojo-v7-images';
-const CORE=['./','./index.html','./catalog.generated.js','./manifest.webmanifest'];
+const CACHE='mangadojo-v8-shell';
+const IMAGES='mangadojo-v8-images';
+const CORE=['./','./index.html','./catalog.generated.js','./manifest.webmanifest','./studio.html'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('mangadojo-')&&!([CACHE,IMAGES].includes(k))).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener('fetch',event=>{const request=event.request;if(request.method!=='GET'||new URL(request.url).origin!==self.location.origin)return;const u=new URL(request.url);

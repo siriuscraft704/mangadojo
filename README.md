@@ -1,11 +1,15 @@
-# MangaDojo 6.0 — Academia de Desenho
+# MangaDojo v8.0 — Academia de desenho mangá
 
-**9 aulas originais, 54 etapas ilustradas, site mobile-first.**
+Site estático gratuito com catálogo de 19 aulas/114 etapas. Interface responsiva e `studio.html`, o Paint Pro independente.
 
-Site: https://siriuscraft704.github.io/mangadojo/
+## URL
+https://siriuscraft704.github.io/mangadojo/
 
-Para acrescentar novas aulas, usar `tools/new_lesson.py`, editar arquivos `lessons/<slug>/lesson.json` e colocar as imagens de cada etapa em `assets/`. O GitHub Actions executa `tools/build_catalog.py` e publica automaticamente a cada push na branch `main`.
+## Como publicar
+Enviar arquivos ao repositório, `main`. O GitHub Actions em `.github/workflows/deploy.yml` valida as aulas e publica automaticamente. Adicione novas aulas em `lessons/<slug>/lesson.json` e imagens em `assets/`, depois execute `python tools/build_catalog.py`.
 
-Arte original assistida por IA aprovada para o projeto educacional. Repositórios MIT e documentação técnica em `OPEN_SOURCE.md`; não copiar arte protegida de outros autores.
+## Estúdio
+`studio.html` usa armazenamento local do navegador para o autosave. Exporte um projeto JSON regularmente para backup, especialmente antes de limpar dados do navegador ou trocar de dispositivo.
 
-**Atenção:** o funcionamento offline depende da primeira visita e da disponibilidade de armazenamento do navegador. O progresso usa localStorage e não sincroniza entre dispositivos.
+## Limitações
+Ver `AUDITORIA.md` para próximos trabalhos e testes pendentes. Artes são conteúdo original assistido por IA; as aulas ilustradas devem passar por revisão pedagógica humana antes de serem consideradas material de ensino profissional.
