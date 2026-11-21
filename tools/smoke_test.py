@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[1]
 index=(ROOT/'index.html').read_text('utf-8')
 studio=(ROOT/'studio.html').read_text('utf-8')
 catalog=json.loads((ROOT/'catalog.generated.json').read_text('utf-8'))
-assert catalog['lessons']==26 and catalog['stages']==154, catalog
+assert catalog['lessons']==27 and catalog['stages']==158, catalog
 for path in ['styles/atelier.css','styles/smudge.css','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
     assert (ROOT/path).is_file(),path
 assert 'styles/atelier.css' in index
@@ -31,6 +31,10 @@ assert not (ROOT/'lessons/olhos-expressivos/lesson.json').exists()
 assert not (ROOT/'lessons/rosto-tres-quartos/lesson.json').exists()
 workshop=json.loads((ROOT/'lessons/observacao-vetorial/lesson.json').read_text('utf-8'))
 assert workshop['lessonType']=='reference-studies' and len(workshop['images'])==4
+animals=json.loads((ROOT/'lessons/silhuetas-criaturas/lesson.json').read_text('utf-8'))
+assert animals['lessonType']=='reference-studies' and len(animals['images'])==4
+assert all((ROOT/img).exists() for img in animals['images'])
+for img in animals['images']: ET.parse(ROOT/img)
 assert all((ROOT/img).exists() for img in workshop['images'])
 assert 'THIRD_PARTY_NOTICES.md' in [p.name for p in ROOT.iterdir()]
 assert 'licenseNote' in index and 'exercícios de observação' in index
