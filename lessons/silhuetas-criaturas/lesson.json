@@ -1,0 +1,58 @@
+{
+  "id": "silhuetas-criaturas",
+  "name": "Silhuetas e Personagens Animais",
+  "category": "Fundamentos visuais",
+  "style": "Formas, ritmo e contraste · MIT",
+  "level": "Iniciante",
+  "min": 32,
+  "emoji": "🦉",
+  "lessonType": "reference-studies",
+  "steps": [
+    [
+      "Silhueta reconhecível: coruja",
+      "Observe o formato externo da coruja. Desenhe apenas o contorno sem detalhes e descubra quais características tornam a espécie imediatamente identificável.",
+      [
+        "Separe cabeça, tronco e asas em massas simples",
+        "Desenhe a silhueta em uma única cor",
+        "Confira se o animal ainda é reconhecível"
+      ]
+    ],
+    [
+      "Ritmo de volumes: cachorro",
+      "No cão, identifique proporções de cabeça, corpo, membros e cauda. Varie espessura e curvas sem multiplicar linhas desnecessárias.",
+      [
+        "Marque eixo principal e quatro apoios",
+        "Use elipses para tronco e cabeça",
+        "Adicione contorno e mantenha volumes coerentes"
+      ]
+    ],
+    [
+      "Expressão por formas: gato",
+      "Compare triângulos, círculos e curvas que tornam o gato expressivo. Crie três miniaturas próprias variando olhos, orelhas e postura.",
+      [
+        "Localize olhos e distância entre orelhas",
+        "Teste três expressões diferentes",
+        "Evite copiar irregularidades da fonte"
+      ]
+    ],
+    [
+      "Exagero e equilíbrio: peixe",
+      "O peixe-pescador trabalha uma silhueta marcante. Exagere um elemento sem perder equilíbrio visual; componha sua própria criatura fantástica.",
+      [
+        "Defina uma forma dominante",
+        "Acrescente duas formas secundárias",
+        "Finalize uma criatura autoral com linha e sombra"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/mit-criaturas-1.svg",
+    "assets/mit-criaturas-2.svg",
+    "assets/mit-criaturas-3.svg",
+    "assets/mit-criaturas-4.svg"
+  ],
+  "author": "Vijay Verma · illlustrations.co",
+  "contentLicense": "MIT — © 2015 Vijay Verma, licença e atribuição em THIRD_PARTY_NOTICES.md",
+  "sourceRepository": "https://github.com/realvjy/illlustrations",
+  "disclaimer": "Exercícios de observação de quatro ilustrações distintas; não representam progressão de um desenho."
+}
