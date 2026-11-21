@@ -1,0 +1,70 @@
+{
+  "id": "rosto-feminino",
+  "name": "Rosto Feminino — Construção Mangá",
+  "category": "Rostos e expressões",
+  "style": "Mangá · traço progressivo",
+  "level": "Iniciante",
+  "min": 30,
+  "emoji": "👩🏻‍🎨",
+  "artworkRevision": "artes-limpas-2",
+  "reviewStatus": "experimental",
+  "disclaimer": "Nova sequência visual publicada para prática; avalie proporções e acabamento antes de copiar. Não substitui estudos anatômicos completos.",
+  "steps": [
+    [
+      "Crânio e guias",
+      "Desenhe a forma inicial da cabeça e um eixo central suave para orientar a simetria.",
+      [
+        "Localize linha dos olhos e altura do queixo",
+        "Mantenha as laterais da cabeça equilibradas"
+      ]
+    ],
+    [
+      "Olhos e expressão",
+      "Posicione os olhos de maneira simétrica e refine a mandíbula sem perder as linhas estruturais.",
+      [
+        "Compare distâncias entre os olhos",
+        "Mantenha nariz e boca no eixo facial"
+      ]
+    ],
+    [
+      "Moldura do cabelo",
+      "Construa o cabelo em grandes massas, respeitando o volume do crânio e o enquadramento frontal.",
+      [
+        "Separe franja, laterais e volume externo",
+        "Não estreite o crânio ao adicionar fios"
+      ]
+    ],
+    [
+      "Linhas definitivas",
+      "Reduza os traços auxiliares e trabalhe contornos expressivos no rosto e nas mechas.",
+      [
+        "Confira proporção dos olhos",
+        "Mantenha toda a silhueta dentro da tela"
+      ]
+    ],
+    [
+      "Detalhamento",
+      "Refine os olhos e distribua mechas, reflexos e volumes com coerência.",
+      [
+        "Observe o crescimento das mechas",
+        "Compare com a etapa de construção"
+      ]
+    ],
+    [
+      "Sombra e finalização",
+      "Finalize com grafite leve, dando profundidade aos cabelos e preservando expressões delicadas.",
+      [
+        "Separe luz e sombra sem sujar a pele",
+        "Compare com o esboço da primeira etapa"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/review-pending/rosto-feminino-01.webp",
+    "assets/review-pending/rosto-feminino-02.webp",
+    "assets/review-pending/rosto-feminino-03.webp",
+    "assets/review-pending/rosto-feminino-04.webp",
+    "assets/review-pending/rosto-feminino-05.webp",
+    "assets/review-pending/rosto-feminino-06.webp"
+  ]
+}
