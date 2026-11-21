@@ -1,0 +1,604 @@
+[
+  {
+    "title": "Lobo correndo",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-01.webp",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "title": "Lobo de perfil — estudo 1",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-08.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Lobo de perfil — estudo 2",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-09.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Lobo em 8 etapas",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-10.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Lobo de perfil — estrutura e pelagem",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-11.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Gato sentado em 10 passos",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-12.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Gato de pé em 6 etapas",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-13.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Lobo de perfil — estudo 3",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-14.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Lobo de perfil — estudo 4",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-15.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Leão em 10 etapas",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-16.webp",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "title": "Lobo mangá realista",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-17.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Lobo de perfil — passo a passo",
+    "category": "Animais",
+    "image": "assets/pranchas/prancha-18.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Mão aberta — seis esboços",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-19.webp",
+    "width": 1086,
+    "height": 1448
+  },
+  {
+    "title": "Mão aberta e variações de gesto",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-21.webp",
+    "width": 1199,
+    "height": 1312
+  },
+  {
+    "title": "Mão em sinal de paz — seis esboços",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-23.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Mão aberta — guia anatômico",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-40.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Mão com lápis — estudo anatômico",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-41.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Mão fechada — estudo anatômico",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-49.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Sinal de paz — estudo anatômico 1",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-55.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Sinal de paz — estudo anatômico 2",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-57.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Mão apontando",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-69.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Mão segurando celular",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-73.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Mão fechada — guia rosa",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-75.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Pé frontal — estudo anatômico",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-78.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Mãos abertas — guia rosa",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-79.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Mão segurando lápis — guia rosa",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-80.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Pés de perfil",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-81.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Mãos em gestos — guia rosa",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-83.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Pés em três quartos",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-84.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Pés de mangá — guia rosa",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/prancha-86.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Retrato Shojo em seis etapas",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-27.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Rosto feminino de perfil — guia rosa",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-38.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Rosto masculino em três quartos — guia rosa",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-39.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Rosto feminino em três quartos — grafite",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-42.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Olho feminino em close",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-43.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Olhos femininos — guia rosa",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-44.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Rosto chibi de perfil",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-46.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Rosto masculino de perfil — guia rosa",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-47.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Rosto feminino frontal — guia rosa",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-48.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Olhos mangá — forma e expressão",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-50.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Rosto masculino de perfil — grafite 1",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-51.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Olho masculino em close",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-52.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Rosto feminino em três quartos — guia rosa",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-53.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Rosto masculino frontal — guia rosa",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-54.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Rosto masculino frontal — grafite 1",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-56.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Rosto feminino de perfil — grafite",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-58.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Rosto feminino frontal — grafite",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-61.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Rosto masculino em três quartos — grafite",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-62.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Rosto masculino frontal — grafite 2",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-64.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Rosto masculino de perfil — grafite 2",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/prancha-68.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Cabelos femininos lisos",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-59.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Cabelos femininos cacheados — guia rosa",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-60.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Cabelos femininos ondulados — guia rosa",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-65.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Cabelos curtos femininos",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-66.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Cabelos femininos ondulados — grafite",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-67.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Cabelos masculinos longos — guia rosa",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-70.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Cabelos masculinos longos — grafite",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-72.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Cabelos masculinos em seis etapas",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-74.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Cabelos femininos cacheados — grafite",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-77.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Cabelos trançados femininos",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-82.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Cabelos masculinos curtos e espetados",
+    "category": "Cabelos",
+    "image": "assets/pranchas/prancha-85.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Personagem de corpo inteiro e construção",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-24.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "title": "Proporções e construção em grafite",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-25.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "title": "Corpo, rosto e expressão em grafite",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-26.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "title": "Personagem em grafite com vistas e detalhes",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-28.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "title": "Personagem mangá em 10 etapas",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-29.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "title": "Estudos de gestos em grafite",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-31.webp",
+    "width": 1199,
+    "height": 1312
+  },
+  {
+    "title": "Guia completo de personagem mangá",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-33.webp",
+    "width": 1448,
+    "height": 1086
+  },
+  {
+    "title": "Garota anime em grafite",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-34.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "title": "Guia de personagem do aventureiro",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-35.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Chibi de corpo inteiro",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-45.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Personagem feminino de corpo inteiro",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-63.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "title": "Guia de criação de personagens",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/prancha-71.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Grade de estudos de mão, bruxa, dragão e sakura",
+    "category": "Guias e quadrinhos",
+    "image": "assets/pranchas/prancha-20.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Quatro pranchas de personagens e olhos",
+    "category": "Guias e quadrinhos",
+    "image": "assets/pranchas/prancha-22.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Folhas de desenho em progressão",
+    "category": "Guias e quadrinhos",
+    "image": "assets/pranchas/prancha-32.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Montagem do esboço à arte-final",
+    "category": "Guias e quadrinhos",
+    "image": "assets/pranchas/prancha-36.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Tutorial em quatro painéis",
+    "category": "Guias e quadrinhos",
+    "image": "assets/pranchas/prancha-37.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Guia de mangá completo",
+    "category": "Guias e quadrinhos",
+    "image": "assets/pranchas/prancha-76.webp",
+    "width": 1055,
+    "height": 1491
+  },
+  {
+    "title": "Ateliê de desenho Anime 2.0",
+    "category": "História visual do projeto",
+    "image": "assets/pranchas/prancha-02.webp",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "title": "Academia de desenho mangá",
+    "category": "História visual do projeto",
+    "image": "assets/pranchas/prancha-03.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Jornada de desenho Shoujo",
+    "category": "História visual do projeto",
+    "image": "assets/pranchas/prancha-04.webp",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "title": "Academia de mangá offline",
+    "category": "História visual do projeto",
+    "image": "assets/pranchas/prancha-05.webp",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "title": "Arte-final Shojo",
+    "category": "História visual do projeto",
+    "image": "assets/pranchas/prancha-06.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "title": "Cabelo e volume no ateliê",
+    "category": "História visual do projeto",
+    "image": "assets/pranchas/prancha-07.webp",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "title": "Academia de mangá em flores Sakura",
+    "category": "História visual do projeto",
+    "image": "assets/pranchas/prancha-30.webp",
+    "width": 1672,
+    "height": 941
+  }
+]

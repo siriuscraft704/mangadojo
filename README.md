@@ -1,15 +1,18 @@
-# MangaDojo Atelier 13.0.1 · Smudge Studio
+# MangaDojo Atelier 13.1.0 · Smudge Studio
 
 Academia gratuita de desenho mangá com biblioteca de aulas, prática e um editor de desenho independente.
 
 - Academia: https://siriuscraft704.github.io/mangadojo/
 - Smudge: https://siriuscraft704.github.io/mangadojo/studio.html
+- Galeria de pranchas: https://siriuscraft704.github.io/mangadojo/pranchas.html
 - Acervo: https://siriuscraft704.github.io/mangadojo/acervo-revisado.html
 - Oficina criativa: https://siriuscraft704.github.io/mangadojo/oficina.html
 
 ## Catálogo
 
 Sete aulas e 50 telas, sendo quatro sequências de animais (36 etapas), a Mão Aberta em revisão 2 (6 etapas) e duas oficinas com oito referências de Vijay Verma sob licença MIT. O Acervo oferece as 42 imagens novas por acesso direto e conserva a importação local do pacote de animais.
+
+A galeria reúne 79 pranchas de estudo e 7 painéis históricos em tamanho integral, com busca, categorias, ampliação e download. A contagem do catálogo computa apenas as aulas.
 
 A revisão visual retirada da publicação está em `drafts/retired-lessons/`. Os WebP legados permanecem no Git para recuperação e comparação. O artefato do Pages leva apenas os arquivos estáticos do site e as imagens apontadas pelas aulas vigentes.
 

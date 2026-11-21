@@ -27,6 +27,15 @@ with tempfile.TemporaryDirectory() as temp:
     assert not (public/'assets/shojo-1.webp').exists()
     assert len(list((public/'assets').glob('*.webp')))==42
     assert (public/'oficina.html').exists()
+    boards = json.loads((public/'pranchas.json').read_text('utf-8'))
+    paths = {board['image'] for board in boards}
+    assert len(boards) == len(paths) == 86
+    assert len({board['category'] for board in boards}) == 7
+    assert all(board['width'] > 0 and board['height'] > 0 for board in boards)
+    assert all((public/path).is_file() for path in paths)
+    assert (public/'pranchas.html').exists()
+    assert 'pranchas.html' in index
+    assert 'pranchas.html' in (public/'acervo-revisado.html').read_text('utf-8')
 for path in ['styles/atelier.css','styles/smudge.css','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
     assert (ROOT/path).is_file(),path
 assert 'styles/atelier.css' in index
@@ -108,7 +117,7 @@ if shutil.which('node'):
         finally: path.unlink(missing_ok=True)
 # Validate inline browser JavaScript with Node when present on the runner.
 if shutil.which('node'):
-    for name, html in [('index', index), ('studio', studio), ('trilhas', trails), ('acervo', local_art), ('oficina', (ROOT/'oficina.html').read_text('utf-8'))]:
+    for name, html in [('index', index), ('studio', studio), ('trilhas', trails), ('acervo', local_art), ('oficina', (ROOT/'oficina.html').read_text('utf-8')), ('pranchas', (ROOT/'pranchas.html').read_text('utf-8'))]:
         for number, code in enumerate(re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>', html)):
             if not code.strip():
                 continue

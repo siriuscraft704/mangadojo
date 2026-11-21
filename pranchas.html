@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#211c2b">
+<title>Pranchas ilustradas · MangaDojo</title>
+<link rel="icon" href="assets/mangadojo-mark.svg" type="image/svg+xml">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f7f3ef;color:#292633;font:16px/1.5 system-ui,sans-serif}
+header{background:#211c2b}nav,main{max-width:1360px;margin:auto;padding:clamp(16px,4vw,38px)}
+nav{display:flex;align-items:center;gap:12px 24px;flex-wrap:wrap;padding-block:14px}
+nav a{color:#fff;text-decoration:none;font-weight:650}nav img{width:34px;height:34px}nav a:first-child{display:flex;align-items:center;gap:9px}
+h1{font:700 clamp(36px,7vw,66px)/1.05 Georgia,serif;margin:12px 0 10px}
+.intro{color:#514854;max-width:68ch;margin-bottom:25px}
+.filters{display:flex;gap:12px;flex-wrap:wrap}
+.filters label{display:grid;gap:5px;font-weight:650;min-width:0}
+.filters label:first-child{flex:1 1 230px}
+input,select,button,.tool{font:inherit;min-height:44px;border-radius:9px;padding:9px 12px}
+input,select{width:100%;background:#fff;color:#292633;border:1px solid #b9aeb4}
+:focus-visible{outline:3px solid #a64f72;outline-offset:3px}
+#status{margin:18px 0 10px;color:#524555}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(218px,1fr));gap:14px}
+.card{border:1px solid #e1d9da;background:#fff;color:#292633;padding:0;overflow:hidden;text-align:left;cursor:pointer;display:flex;flex-direction:column}
+.card img{display:block;width:100%;height:220px;object-fit:contain;background:white}
+.card span{padding:9px 12px;width:100%;background:#fcf8fa}.card strong{display:block;line-height:1.25}
+.card small{color:#64545d}.card:hover{border-color:#975873}
+dialog{padding:0;border:1px solid #ded4db;border-radius:13px;width:min(1120px,96vw);max-height:95dvh;background:#fff;color:#292633}
+dialog::backdrop{background:#211c2bdd}
+.dialog-bar{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:13px;background:#fff}
+.dialog-bar h2{font:700 23px/1.2 Georgia,serif;margin:0}
+.tools{display:flex;gap:7px;flex-wrap:wrap}
+.tool{background:#753652;color:white;border:0;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center}
+dialog figure{margin:0;overflow:auto;max-height:74dvh;text-align:center;background:#fff}
+dialog img{display:block;margin:auto;max-width:100%;max-height:72dvh;object-fit:contain}
+dialog img.zoom{max-width:none;max-height:none}
+@media(max-width:560px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card img{height:145px}.card span{font-size:14px;padding:8px}.filters label{width:100%}.dialog-bar h2{font-size:19px}}
+</style>
+</head>
+<body>
+<header><nav aria-label="Navegação"><a href="./"><img src="assets/mangadojo-mark.svg" alt="">MangaDojo</a><a href="acervo-revisado.html">Acervo de etapas</a><a href="trilhas.html">Trilhas</a></nav></header>
+<main>
+<h1>Pranchas ilustradas</h1>
+<p class="intro">Explore as folhas completas de estudo do MangaDojo. Toque em uma prancha para ampliar os detalhes, ler suas instruções ou baixar a imagem.</p>
+<div class="filters">
+<label for="search">Buscar prancha <input id="search" type="search" placeholder="Ex.: lobo, gesto, cabelo"></label>
+<label for="category">Categoria <select id="category"><option value="">Todas as categorias</option></select></label>
+</div>
+<p id="status" role="status">Carregando pranchas…</p>
+<div class="gallery" id="gallery"></div>
+</main>
+<dialog id="viewer" aria-labelledby="boardTitle">
+<div class="dialog-bar"><h2 id="boardTitle"></h2><div class="tools">
+<button class="tool" id="previous" type="button" aria-label="Prancha anterior">←</button>
+<button class="tool" id="next" type="button" aria-label="Próxima prancha">→</button>
+<button class="tool" id="zoom" type="button" aria-pressed="false">Ampliar</button>
+<a class="tool" id="download" download>Baixar</a>
+<button class="tool" id="close" type="button" autofocus>Fechar</button>
+</div></div>
+<figure id="viewArea"><img id="boardImage" alt=""></figure>
+</dialog>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const category=$('category'), search=$('search'), viewer=$('viewer'), image=$('boardImage');
+let boards=[], visible=[], current=0, opener=null;
+function normalize(value){
+ return value.toLocaleLowerCase('pt-BR').normalize('NFD').replace(/\p{Diacritic}/gu,'');
+}
+function render(){
+ const query=normalize(search.value.trim());
+ visible=boards.filter(board=>(!category.value||board.category===category.value)&&normalize(board.title+' '+board.category).includes(query));
+ $('status').textContent=visible.length===1?'1 prancha disponível':visible.length+' pranchas disponíveis';
+ const cards=visible.map((board,index)=>{
+  const button=document.createElement('button');
+  button.type='button';
+  button.className='card';
+  const picture=document.createElement('img');
+  picture.src=board.image;
+  picture.alt='';
+  picture.width=board.width;
+  picture.height=board.height;
+  picture.loading='lazy';
+  picture.decoding='async';
+  const meta=document.createElement('span'),title=document.createElement('strong'),group=document.createElement('small');
+  title.textContent=board.title;
+  group.textContent=board.category;
+  meta.append(title,group);
+  button.append(picture,meta);
+  button.onclick=()=>{opener=button;show(index);viewer.showModal()};
+  return button;
+ });
+ $('gallery').replaceChildren(...cards);
+}
+function setZoom(zoom){
+ image.classList.toggle('zoom',zoom);
+ $('zoom').textContent=zoom?'Ajustar à tela':'Ampliar';
+ $('zoom').setAttribute('aria-pressed',String(zoom));
+}
+function show(index){
+ const board=visible[index];
+ if(!board)return;
+ current=index;
+ $('boardTitle').textContent=board.title;
+ image.src=board.image;
+ image.alt=board.title;
+ $('download').href=board.image;
+ $('previous').disabled=index===0;
+ $('next').disabled=index===visible.length-1;
+ setZoom(false);
+ $('viewArea').scrollTo(0,0);
+}
+$('zoom').onclick=()=>setZoom(!image.classList.contains('zoom'));
+$('previous').onclick=()=>show(current-1);
+$('next').onclick=()=>show(current+1);
+$('close').onclick=()=>viewer.close();
+viewer.addEventListener('close',()=>opener?.focus());
+viewer.addEventListener('keydown',event=>{
+ if(event.key==='ArrowLeft')show(current-1);
+ if(event.key==='ArrowRight')show(current+1);
+});
+search.addEventListener('input',render);
+category.addEventListener('change',render);
+(async()=>{
+ try{
+  const response=await fetch('pranchas.json');
+  if(!response.ok)throw Error('Falha ao carregar');
+  boards=await response.json();
+  for(const value of new Set(boards.map(board=>board.category))){
+   category.add(new Option(value,value));
+  }
+  render();
+ }catch{$('status').textContent='Não foi possível carregar as pranchas. Atualize a página.'}
+})();
+</script>
+</body>
+</html>
