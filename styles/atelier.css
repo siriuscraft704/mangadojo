@@ -110,3 +110,7 @@ body{background:var(--md-paper);color:var(--md-ink);font-family:ui-sans-serif,sy
 .compare-grid img{display:block;width:100%;height:min(57vh,500px);object-fit:contain;object-position:center;background:#fff}
 .compare-grid figcaption{font-size:12px;font-weight:650;color:#484b53;padding:9px 0}
 @media(max-width:600px){.compare-dialog{padding:12px}.compare-grid{gap:6px}.compare-grid figure{padding:4px}.compare-grid img{height:44vh}.art-review-hint a{display:block}.study-switch .mode-choice{font-size:12px;padding:10px 7px}}
+
+/* MIT workshop reference and source credit */
+.license-note{font-size:12px;line-height:1.6;color:#69564d;background:#fff8ed;border:1px solid #e8d9c4;border-radius:12px;padding:12px 14px;margin:12px 0 16px}
+.license-note[hidden]{display:none!important}
