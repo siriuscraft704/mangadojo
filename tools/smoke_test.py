@@ -40,6 +40,10 @@ assert 'THIRD_PARTY_NOTICES.md' in [p.name for p in ROOT.iterdir()]
 assert 'licenseNote' in index and 'exercícios de observação' in index
 assert 'checksCount' in index and 'checkIds' in index
 assert 'trilhas.html' in index and 'requestedLesson' in index
+assert 'creditos.html' in index
+credits=(ROOT/'creditos.html').read_text('utf-8')
+assert 'mit-asset-manifest.json' in credits and 'Vijay Verma' in credits
+assert (ROOT/'assets/mit-asset-manifest.json').exists()
 trails=(ROOT/'trilhas.html').read_text('utf-8')
 assert 'catalog.generated.js' in trails and 'Referências em revisão' in trails
 assert 'observacao-vetorial' in trails and 'silhuetas-criaturas' in trails
