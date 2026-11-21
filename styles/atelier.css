@@ -125,3 +125,8 @@ body{background:var(--md-paper);color:var(--md-ink);font-family:ui-sans-serif,sy
 .checks .check-row.done label{background:#f4f8f1;border-color:#d6e4d2}
 .checks .check-row.done span{color:#607568;text-decoration:line-through;text-decoration-color:#8ca68d}
 .checks-count{font-size:11px;font-family:system-ui,sans-serif;font-weight:600;letter-spacing:0;color:#94574f;margin-left:6px}
+
+/* 12.6: the viewer adds no artificial artwork frame or crop */
+.preview,.preview.reading{border:0!important;box-shadow:none!important;background:#fff!important}
+.preview>img#stageImage{object-fit:contain!important;object-position:center center!important;max-width:100%!important;max-height:100%!important}
+.catalog .course img{border:0!important;object-fit:contain!important;object-position:center!important}
