@@ -15,7 +15,12 @@ Arquivos incluídos:
 | `assets/mit-observacao-3.svg` | `content/illlustrations/120/120-power-of-pen.svg` |
 | `assets/mit-observacao-4.svg` | `content/illlustrations/day-11/day11-blackboard.svg` |
 
-Esses quatro trabalhos são **estudos visuais independentes**, não uma sequência de transformação do mesmo desenho. Nenhuma alteração foi aplicada no SVG original na importação. Textos da aula são autorais do MangaDojo.
+| `assets/mit-criaturas-1.svg` | `content/illlustrations/day-22/day22-owl.svg` |
+| `assets/mit-criaturas-2.svg` | `content/illlustrations/day-67/day67-dog.svg` |
+| `assets/mit-criaturas-3.svg` | `content/illlustrations/day-68/day68-happy-cat.svg` |
+| `assets/mit-criaturas-4.svg` | `content/illlustrations/day-49/day49-angler-fish.svg` |
+
+Estes oito trabalhos são **estudos visuais independentes**, não uma sequência de transformação do mesmo desenho. Nenhuma alteração foi aplicada no SVG original na importação. Textos da aula são autorais do MangaDojo.
 
 ### Aviso MIT original
 
