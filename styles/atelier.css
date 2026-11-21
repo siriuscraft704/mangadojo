@@ -45,3 +45,49 @@ body{background:var(--md-paper);color:var(--md-ink);font-family:ui-sans-serif,sy
 .mds-banner-heading{display:flex;align-items:center;gap:14px}
 .mds-banner a:hover{background:#4c4850}
 @media(max-width:700px){.hero{min-height:190px}.main{padding-inline:12px!important}.catalog{gap:12px}.course .meta strong{font-size:14px}.mds-banner{padding:15px}.mds-banner a{width:100%;justify-content:center}.mobile-header{font-size:12px}.mobile-header img{width:25px;height:25px}.preview{width:calc(100% - 32px)!important}}
+
+/* MangaDojo 12.2 — gallery framing correction; no image is cropped by the viewer. */
+:root{--lesson-stage-width:620px}
+.lesson-body,.content,.gallery-stage,.panel{min-width:0}
+.preview,.preview.reading{
+  position:relative!important;
+  display:grid!important;place-items:center!important;
+  width:min(100%,var(--lesson-stage-width))!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  aspect-ratio:9/10!important;
+  min-height:0!important;
+  padding:0!important;
+  margin:12px auto 16px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:1px solid #dedbd6!important;
+}
+.preview>img#stageImage{
+  display:block!important;width:100%!important;height:100%!important;
+  max-height:none!important;object-fit:contain!important;
+  object-position:50% 50%!important;aspect-ratio:auto!important;
+  background:white!important;
+}
+.preview>.draw-canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+.catalog .course{display:flex;flex-direction:column;overflow:hidden}
+.catalog .course img{
+  display:block!important;position:static!important;flex:none;
+  width:100%!important;height:220px!important;max-height:none!important;
+  aspect-ratio:auto!important;object-fit:contain!important;
+  object-position:center!important;background:#fff!important;
+  padding:8px!important;transform:none!important;
+}
+.catalog .course:hover img{transform:none!important}
+.catalog .course .meta{flex:1}
+.thumbs .thumb img{object-fit:contain!important;width:100%;height:auto;aspect-ratio:1;background:#fff}
+@media(max-width:1000px){.preview,.preview.reading{max-width:620px!important;aspect-ratio:9/10!important}}
+@media(max-width:700px){
+ .preview,.preview.reading{width:calc(100% - 8px)!important;max-width:620px!important;margin:10px auto 14px!important;aspect-ratio:9/10!important}
+ .catalog{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px}
+ .catalog .course img{height:155px!important;padding:5px!important}
+ .study-switch{margin:0 0 9px}
+ .toolbar{min-width:0}
+}
+@media(max-width:390px){.catalog .course img{height:134px!important}}
