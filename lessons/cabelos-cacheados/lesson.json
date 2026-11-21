@@ -1,0 +1,75 @@
+{
+  "id": "cabelos-cacheados",
+  "name": "Cabelos Femininos Cacheados",
+  "category": "Cabelos e penteados",
+  "style": "Mangá",
+  "level": "Intermediário",
+  "min": 26,
+  "emoji": "💇‍♀️",
+  "steps": [
+    [
+      "Formato da cabeça e linha do cabelo",
+      "Prepare a base do rosto em perfil e marque a implantação do cabelo.",
+      [
+        "Desenhe o perfil e a orelha",
+        "Marque a linha do cabelo",
+        "Mantenha as guias leves"
+      ]
+    ],
+    [
+      "Grandes massas do cabelo",
+      "Defina o volume geral do cabelo cacheado antes dos detalhes.",
+      [
+        "Desenhe a silhueta externa",
+        "Pense em blocos grandes de cachos",
+        "Mantenha o caimento orgânico"
+      ]
+    ],
+    [
+      "Ritmo dos cachos",
+      "Construa mechas em “S” e espirais com direção consistente.",
+      [
+        "Varie o tamanho dos cachos",
+        "Organize as curvas por camadas",
+        "Respeite o fluxo natural"
+      ]
+    ],
+    [
+      "Franja e mechas de moldura",
+      "Adicione franjas e mechas que emolduram o rosto.",
+      [
+        "Defina a franja",
+        "Conecte as mechas ao volume geral",
+        "Suavize a transição perto da testa"
+      ]
+    ],
+    [
+      "Line art",
+      "Refaça o desenho com traço limpo valorizando os cachos.",
+      [
+        "Limpe as linhas-guia",
+        "Reforce as mechas principais",
+        "Varie a espessura do traço"
+      ]
+    ],
+    [
+      "Arte final",
+      "Aplique luz e sombra para dar textura e profundidade aos cachos.",
+      [
+        "Sombreie por camadas",
+        "Crie brilhos suaves",
+        "Adicione detalhes finais"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/cabelos-cacheados-1.webp",
+    "assets/cabelos-cacheados-2.webp",
+    "assets/cabelos-cacheados-3.webp",
+    "assets/cabelos-cacheados-4.webp",
+    "assets/cabelos-cacheados-5.webp",
+    "assets/cabelos-cacheados-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

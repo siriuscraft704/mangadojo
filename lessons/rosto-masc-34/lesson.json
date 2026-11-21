@@ -1,0 +1,75 @@
+{
+  "id": "rosto-masc-34",
+  "name": "Rosto Masculino 3/4",
+  "category": "Rostos e personagens",
+  "style": "Mangá",
+  "level": "Intermediário",
+  "min": 28,
+  "emoji": "🧑",
+  "steps": [
+    [
+      "Construção e eixo em 3/4",
+      "Comece pelo crânio em ângulo de 3/4 e marque os eixos principais do rosto.",
+      [
+        "Desenhe o círculo do crânio",
+        "Trace o eixo vertical curvo",
+        "Adicione a linha dos olhos"
+      ]
+    ],
+    [
+      "Mandíbula e plano do rosto",
+      "Defina a mandíbula, o queixo e o plano lateral do rosto mantendo a perspectiva.",
+      [
+        "Modele a mandíbula com firmeza",
+        "Marque o plano da bochecha",
+        "Ajuste o pescoço e as proporções"
+      ]
+    ],
+    [
+      "Olhos, nariz, boca e orelha",
+      "Posicione os traços faciais principais respeitando o volume e o ângulo da cabeça.",
+      [
+        "Desenhe o olho mais próximo maior",
+        "Sugira nariz e boca com poucos traços",
+        "Posicione a orelha na lateral do crânio"
+      ]
+    ],
+    [
+      "Cabelo: forma e volume",
+      "Esboce o penteado construindo grandes mechas antes dos detalhes internos.",
+      [
+        "Defina a linha do cabelo",
+        "Construa as mechas principais",
+        "Distribua o volume no topo e nas laterais"
+      ]
+    ],
+    [
+      "Line art",
+      "Refaça o desenho com traço limpo e mais confiante, removendo visualmente as guias.",
+      [
+        "Reforce o contorno externo",
+        "Acerte olhos, nariz e boca",
+        "Refine as mechas do cabelo"
+      ]
+    ],
+    [
+      "Arte final",
+      "Aplique sombreamento suave e acabamentos para dar profundidade ao rosto.",
+      [
+        "Sombreie rosto e pescoço",
+        "Destaque olhos e cabelo",
+        "Finalize colarinho e contraste geral"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/rosto-masc-34-1.webp",
+    "assets/rosto-masc-34-2.webp",
+    "assets/rosto-masc-34-3.webp",
+    "assets/rosto-masc-34-4.webp",
+    "assets/rosto-masc-34-5.webp",
+    "assets/rosto-masc-34-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

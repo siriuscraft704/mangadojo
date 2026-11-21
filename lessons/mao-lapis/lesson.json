@@ -1,0 +1,75 @@
+{
+  "id": "mao-lapis",
+  "name": "Mão Segurando Lápis",
+  "category": "Mãos e anatomia",
+  "style": "Anatomia mangá",
+  "level": "Intermediário",
+  "min": 26,
+  "emoji": "✍️",
+  "steps": [
+    [
+      "Formas base e guias",
+      "Monte a mão e o lápis com formas simples para definir a pose.",
+      [
+        "Desenhe a palma como um trapézio",
+        "Construa dedos com blocos/cilindros",
+        "Trace o eixo do lápis"
+      ]
+    ],
+    [
+      "Posicionamento dos dedos",
+      "Modele os dedos segurando o lápis seguindo a estrutura base.",
+      [
+        "Ajuste indicador e médio por cima",
+        "Posicione o anelar e o mínimo",
+        "Mantenha o volume da palma"
+      ]
+    ],
+    [
+      "Polegar e estrutura da pega",
+      "Defina o polegar e os pontos de apoio da pegada.",
+      [
+        "Pressione o polegar na lateral",
+        "Ajuste o espaço entre polegar e indicador",
+        "Alinhe a ponta do lápis"
+      ]
+    ],
+    [
+      "Refinamento do contorno",
+      "Aprimore a forma da mão e corrija as transições.",
+      [
+        "Suavize as formas dos dedos",
+        "Desenhe juntas e base da palma",
+        "Defina o lápis com mais precisão"
+      ]
+    ],
+    [
+      "Line art",
+      "Finalize o traço limpo pronto para os acabamentos.",
+      [
+        "Recontorne com linhas firmes",
+        "Defina unhas e dobras",
+        "Mantenha o lápis proporcional"
+      ]
+    ],
+    [
+      "Arte final",
+      "Aplique luzes e sombras para dar realismo mangá à mão.",
+      [
+        "Sombreie entre os dedos",
+        "Realce áreas de luz",
+        "Finalize com contraste delicado"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/mao-lapis-1.webp",
+    "assets/mao-lapis-2.webp",
+    "assets/mao-lapis-3.webp",
+    "assets/mao-lapis-4.webp",
+    "assets/mao-lapis-5.webp",
+    "assets/mao-lapis-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

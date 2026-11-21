@@ -1,0 +1,75 @@
+{
+  "id": "rosto-fem-frontal",
+  "name": "Rosto Feminino Frontal",
+  "category": "Rostos e personagens",
+  "style": "Mangá",
+  "level": "Iniciante",
+  "min": 24,
+  "emoji": "👧",
+  "steps": [
+    [
+      "Círculo e linhas-guia",
+      "Comece com um círculo e trace as guias centrais para organizar o rosto.",
+      [
+        "Desenhe o círculo base",
+        "Trace eixo vertical e horizontal",
+        "Mantenha as guias leves"
+      ]
+    ],
+    [
+      "Contorno do rosto e pescoço",
+      "Defina o queixo delicado e o pescoço mantendo a simetria.",
+      [
+        "Molde o contorno do rosto",
+        "Posicione as orelhas",
+        "Desenhe o pescoço"
+      ]
+    ],
+    [
+      "Posicionamento dos olhos",
+      "Use a linha horizontal para alinhar os olhos e as sobrancelhas.",
+      [
+        "Mantenha um olho de distância",
+        "Desenhe as pálpebras",
+        "Esboce as sobrancelhas"
+      ]
+    ],
+    [
+      "Nariz e boca",
+      "Adicione nariz e boca de forma simples e harmoniosa.",
+      [
+        "Centralize o nariz",
+        "Desenhe a boca com leve curvatura",
+        "Ajuste a expressão"
+      ]
+    ],
+    [
+      "Cabelo e traço limpo",
+      "Construa o cabelo em grandes massas e refine o contorno geral.",
+      [
+        "Defina volume e franja",
+        "Varie a espessura do traço",
+        "Limpe as linhas-guia"
+      ]
+    ],
+    [
+      "Arte final",
+      "Finalize com sombreados suaves e brilhos para um rosto de estilo mangá.",
+      [
+        "Sombreie cabelo e pescoço",
+        "Realce o brilho nos olhos",
+        "Acrescente volume e detalhes finais"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/rosto-fem-frontal-1.webp",
+    "assets/rosto-fem-frontal-2.webp",
+    "assets/rosto-fem-frontal-3.webp",
+    "assets/rosto-fem-frontal-4.webp",
+    "assets/rosto-fem-frontal-5.webp",
+    "assets/rosto-fem-frontal-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "rosto-masc-frontal",
+  "name": "Rosto Masculino Frontal",
+  "category": "Rostos e personagens",
+  "style": "Mangá",
+  "level": "Iniciante",
+  "min": 24,
+  "emoji": "👦",
+  "steps": [
+    [
+      "Forma da cabeça e guias",
+      "Construa a cabeça com um círculo e linhas-guia para posicionar os traços.",
+      [
+        "Desenhe a cabeça base",
+        "Trace eixo central",
+        "Marque a linha dos olhos"
+      ]
+    ],
+    [
+      "Estrutura do rosto",
+      "Defina mandíbula, pescoço e base dos ombros com proporções masculinas.",
+      [
+        "Modele o contorno",
+        "Desenhe o pescoço",
+        "Ajuste a largura da mandíbula"
+      ]
+    ],
+    [
+      "Traços do rosto",
+      "Posicione olhos, nariz e boca seguindo as guias.",
+      [
+        "Desenhe olhos mais angulares",
+        "Sugira o nariz com poucos traços",
+        "Mantenha a boca reta e discreta"
+      ]
+    ],
+    [
+      "Cabelo e volume inicial",
+      "Construa o cabelo com massas simples antes de detalhar as mechas.",
+      [
+        "Marque a implantação do cabelo",
+        "Esboce o volume principal",
+        "Indique a direção dos fios"
+      ]
+    ],
+    [
+      "Line art",
+      "Limpe o esboço e reforce o traço principal do rosto e do cabelo.",
+      [
+        "Reforce contornos",
+        "Refine mechas principais",
+        "Mantenha traço equilibrado"
+      ]
+    ],
+    [
+      "Arte final",
+      "Adicione luz, sombra e acabamento profissional ao retrato.",
+      [
+        "Sombreie cabelo e rosto",
+        "Destaque os olhos",
+        "Faça ajustes finais no volume"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/rosto-masc-frontal-1.webp",
+    "assets/rosto-masc-frontal-2.webp",
+    "assets/rosto-masc-frontal-3.webp",
+    "assets/rosto-masc-frontal-4.webp",
+    "assets/rosto-masc-frontal-5.webp",
+    "assets/rosto-masc-frontal-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

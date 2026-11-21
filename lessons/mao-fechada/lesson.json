@@ -1,0 +1,75 @@
+{
+  "id": "mao-fechada",
+  "name": "Mão Fechada",
+  "category": "Mãos e anatomia",
+  "style": "Anatomia mangá",
+  "level": "Intermediário",
+  "min": 24,
+  "emoji": "✊",
+  "steps": [
+    [
+      "Formas básicas",
+      "Construa a mão fechada usando blocos simples para a palma e os dedos.",
+      [
+        "Desenhe a palma como um bloco",
+        "Adicione o bloco dos dedos dobrados",
+        "Marque o pulso"
+      ]
+    ],
+    [
+      "Posição dos dedos",
+      "Defina o volume de cada dedo mantendo a forma fechada.",
+      [
+        "Separe os quatro dedos",
+        "Indique os nós com curvas suaves",
+        "Mantenha a perspectiva correta"
+      ]
+    ],
+    [
+      "Construção do polegar",
+      "Adicione o polegar travando a forma do punho.",
+      [
+        "Desenhe o volume do polegar",
+        "Defina a base na palma",
+        "Ajuste o encaixe com os dedos"
+      ]
+    ],
+    [
+      "Refinamento do contorno",
+      "Corrija proporções e desenhe as principais dobras.",
+      [
+        "Ajuste o contorno externo",
+        "Desenhe dobras das juntas",
+        "Reforce a base do punho"
+      ]
+    ],
+    [
+      "Line art",
+      "Faça o traço limpo removendo o excesso do esboço.",
+      [
+        "Use linhas claras e firmes",
+        "Varie espessura entre contorno e detalhe",
+        "Mantenha as dobras essenciais"
+      ]
+    ],
+    [
+      "Arte final",
+      "Aplique sombra suave para dar volume à mão.",
+      [
+        "Sombreie o volume dos dedos",
+        "Destaque áreas de contato",
+        "Finalize com detalhes na palma e punho"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/mao-fechada-1.webp",
+    "assets/mao-fechada-2.webp",
+    "assets/mao-fechada-3.webp",
+    "assets/mao-fechada-4.webp",
+    "assets/mao-fechada-5.webp",
+    "assets/mao-fechada-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

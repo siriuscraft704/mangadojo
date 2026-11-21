@@ -1,0 +1,75 @@
+{
+  "id": "cabelo-masc-longo",
+  "name": "Cabelos Masculinos Longos",
+  "category": "Cabelos e penteados",
+  "style": "Mangá",
+  "level": "Intermediário",
+  "min": 26,
+  "emoji": "🧔",
+  "steps": [
+    [
+      "Formato da cabeça e linha do cabelo",
+      "Comece com a base da cabeça em perfil e marque a implantação do cabelo.",
+      [
+        "Desenhe o crânio e o pescoço",
+        "Marque a linha do cabelo",
+        "Defina o perfil masculino"
+      ]
+    ],
+    [
+      "Silhueta principal do cabelo",
+      "Esboce o volume geral e o comprimento do cabelo longo.",
+      [
+        "Trace o contorno externo",
+        "Planeje o caimento até os ombros",
+        "Mantenha o volume do topo"
+      ]
+    ],
+    [
+      "Mechas grandes e estrutura",
+      "Separe o cabelo em grandes massas para organizar o fluxo.",
+      [
+        "Divida topo, laterais e traseira",
+        "Indique a direção dos fios",
+        "Evite detalhes cedo demais"
+      ]
+    ],
+    [
+      "Franja e mechas laterais",
+      "Adicione a franja e os fios que emolduram o rosto.",
+      [
+        "Crie mechas soltas na testa",
+        "Leve alguns fios para a frente da orelha",
+        "Enriqueça o caimento sobre os ombros"
+      ]
+    ],
+    [
+      "Line art",
+      "Refaça o desenho com linhas limpas e elegantes.",
+      [
+        "Limpe o esboço",
+        "Reforce sobreposições",
+        "Defina mechas principais e secundárias"
+      ]
+    ],
+    [
+      "Arte final",
+      "Finalize com sombreamento nas grandes massas e brilhos.",
+      [
+        "Sombreie áreas internas",
+        "Destaque o volume do topo",
+        "Realce brilho e textura"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/cabelo-masc-longo-1.webp",
+    "assets/cabelo-masc-longo-2.webp",
+    "assets/cabelo-masc-longo-3.webp",
+    "assets/cabelo-masc-longo-4.webp",
+    "assets/cabelo-masc-longo-5.webp",
+    "assets/cabelo-masc-longo-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "bob-curto",
+  "name": "Cabelos Curtos Femininos",
+  "category": "Cabelos e penteados",
+  "style": "Mangá",
+  "level": "Iniciante",
+  "min": 22,
+  "emoji": "✂️",
+  "steps": [
+    [
+      "Forma da cabeça e linha do cabelo",
+      "Defina a base do rosto em perfil e a linha do cabelo.",
+      [
+        "Desenhe o perfil",
+        "Marque a implantação dos fios",
+        "Guarde espaço para o volume"
+      ]
+    ],
+    [
+      "Mechas principais",
+      "Construa a massa do cabelo curto indicando topo, laterais e nuca.",
+      [
+        "Esboce o contorno do bob",
+        "Indique as massas principais",
+        "Respeite o formato da cabeça"
+      ]
+    ],
+    [
+      "Franja e direção dos fios",
+      "Defina a franja e o sentido do fluxo dos cabelos.",
+      [
+        "Escolha o estilo da franja",
+        "Use setas mentais para o fluxo",
+        "Integre franja e laterais"
+      ]
+    ],
+    [
+      "Corte em camadas",
+      "Modele o corte em camadas com leveza e naturalidade.",
+      [
+        "Ajuste o comprimento",
+        "Crie pontas suaves",
+        "Adicione mechas de contorno"
+      ]
+    ],
+    [
+      "Line art",
+      "Faça o traço limpo e reforce a divisão das mechas.",
+      [
+        "Remova as linhas de construção",
+        "Ajuste o contorno externo",
+        "Deixe os fios internos mais leves"
+      ]
+    ],
+    [
+      "Arte final",
+      "Finalize com sombreamento e brilho para dar volume e textura.",
+      [
+        "Sombreie raiz e laterais",
+        "Adicione reflexos suaves",
+        "Equilibre contraste e leveza"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/bob-curto-1.webp",
+    "assets/bob-curto-2.webp",
+    "assets/bob-curto-3.webp",
+    "assets/bob-curto-4.webp",
+    "assets/bob-curto-5.webp",
+    "assets/bob-curto-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

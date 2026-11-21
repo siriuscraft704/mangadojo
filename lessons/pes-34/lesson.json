@@ -1,0 +1,75 @@
+{
+  "id": "pes-34",
+  "name": "Pés em 3/4",
+  "category": "Pés e anatomia",
+  "style": "Anatomia mangá",
+  "level": "Intermediário",
+  "min": 24,
+  "emoji": "🦶",
+  "steps": [
+    [
+      "Blocos e direção",
+      "Comece com formas simples para definir a direção do pé em 3/4.",
+      [
+        "Trace o eixo do pé",
+        "Construa calcanhar e parte dianteira em blocos",
+        "Marque a inclinação geral"
+      ]
+    ],
+    [
+      "Tornozelo e arco",
+      "Conecte os blocos e dê a forma geral do pé.",
+      [
+        "Desenhe o tornozelo",
+        "Defina a curva do arco plantar",
+        "Ajuste a transição para o calcanhar"
+      ]
+    ],
+    [
+      "Dedos e contorno",
+      "Adicione os dedos e refine o contorno principal.",
+      [
+        "Divida a parte frontal em cinco",
+        "Desenhe os dedos do maior ao menor",
+        "Ajuste a perspectiva dos dedos"
+      ]
+    ],
+    [
+      "Refinamento",
+      "Aprimore estrutura, volumes e detalhes anatômicos.",
+      [
+        "Corrija proporções",
+        "Sugira ossos e tendões leves",
+        "Melhore o contorno do dorso"
+      ]
+    ],
+    [
+      "Line art",
+      "Finalize o pé com um traço limpo e elegante.",
+      [
+        "Remova as linhas de construção",
+        "Use curvas suaves e firmes",
+        "Mantenha unhas e volumes essenciais"
+      ]
+    ],
+    [
+      "Arte final",
+      "Aplique sombreamento para um resultado profissional.",
+      [
+        "Sombreie tornozelo, dorso e arco",
+        "Realce luz e planos",
+        "Finalize com brilho suave"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/pes-34-1.webp",
+    "assets/pes-34-2.webp",
+    "assets/pes-34-3.webp",
+    "assets/pes-34-4.webp",
+    "assets/pes-34-5.webp",
+    "assets/pes-34-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

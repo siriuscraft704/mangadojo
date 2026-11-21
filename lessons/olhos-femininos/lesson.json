@@ -1,0 +1,75 @@
+{
+  "id": "olhos-femininos",
+  "name": "Olhos Femininos",
+  "category": "Olhos e expressões",
+  "style": "Mangá",
+  "level": "Iniciante",
+  "min": 18,
+  "emoji": "👁️",
+  "steps": [
+    [
+      "Estrutura básica e linha-guia",
+      "Defina o formato do olho e sua direção usando guias simples.",
+      [
+        "Trace a linha horizontal",
+        "Desenhe a forma amendoada",
+        "Acerte a inclinação do olhar"
+      ]
+    ],
+    [
+      "Pálpebras",
+      "Reforce as pálpebras superior e inferior para dar personalidade ao olho.",
+      [
+        "Faça a linha superior mais marcada",
+        "Desenhe a linha inferior mais leve",
+        "Mantenha a curvatura suave"
+      ]
+    ],
+    [
+      "Íris e pupila",
+      "Construa a íris e a pupila definindo o foco do olhar.",
+      [
+        "Desenhe a íris tocando a pálpebra",
+        "Posicione a pupila no centro",
+        "Equilibre as proporções"
+      ]
+    ],
+    [
+      "Cílios",
+      "Adicione cílios superiores e inferiores para expressividade.",
+      [
+        "Alongue os cílios no canto externo",
+        "Varie comprimento e espaçamento",
+        "Acrescente cílios inferiores sutis"
+      ]
+    ],
+    [
+      "Line art",
+      "Limpe o desenho e equilibre a espessura das linhas.",
+      [
+        "Refine o contorno do olho",
+        "Defina bem a íris e os cílios",
+        "Deixe o traço claro e elegante"
+      ]
+    ],
+    [
+      "Arte final",
+      "Finalize com reflexos e sombreamento para profundidade.",
+      [
+        "Inclua reflexos na íris",
+        "Aplique sombras suaves",
+        "Realce contraste e brilho"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/olhos-femininos-1.webp",
+    "assets/olhos-femininos-2.webp",
+    "assets/olhos-femininos-3.webp",
+    "assets/olhos-femininos-4.webp",
+    "assets/olhos-femininos-5.webp",
+    "assets/olhos-femininos-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}
