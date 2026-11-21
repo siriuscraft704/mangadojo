@@ -71,7 +71,7 @@ assert 'homologacao-artes.html' in index
 assert 'acervo-revisado.html' in index
 local_art=(ROOT/'acervo-revisado.html').read_text('utf-8')
 assert 'mangadojo-artwork' in local_art and 'indexedDB' in local_art
-assert 'localArt=' in local_art and 'referências públicas' in local_art
+assert 'localArt=' in local_art and 'imagens públicas' in local_art
 assert "new DecompressionStream('deflate-raw')" in local_art
 assert "extractZip(zip)" in local_art and "importZip" in local_art
 assert 'function importLocalArt' in studio and "params.has('localArt')" in studio
@@ -79,6 +79,7 @@ assert 'cabelos-ondulados|rosto-feminino' in local_art or ('cabelos-ondulados' i
 assert 'cabelos-ondulados' in studio and 'rosto-feminino' in studio
 candidate_page=(ROOT/'revisao-candidatos.html').read_text('utf-8')
 assert 'mangadojo-art-review-v2' in candidate_page and 'Exportar avaliação' in candidate_page
+assert "assets/review-pending/" in candidate_page
 manifest=json.loads((ROOT/'art-review-manifest.json').read_text('utf-8'))
 assert len(manifest['candidates'])==12
 assert all(len(a['sha256'])==64 and a['dimensions']==[840,960] for a in manifest['candidates'])
