@@ -39,6 +39,10 @@ assert all((ROOT/img).exists() for img in workshop['images'])
 assert 'THIRD_PARTY_NOTICES.md' in [p.name for p in ROOT.iterdir()]
 assert 'licenseNote' in index and 'exercícios de observação' in index
 assert 'checksCount' in index and 'checkIds' in index
+assert 'trilhas.html' in index and 'requestedLesson' in index
+trails=(ROOT/'trilhas.html').read_text('utf-8')
+assert 'catalog.generated.js' in trails and 'Referências em revisão' in trails
+assert 'observacao-vetorial' in trails and 'silhuetas-criaturas' in trails
 assert 'state.checks[checkIds[i]]' in index
 assert '.check-row.done' in (ROOT/'styles/atelier.css').read_text('utf-8')
 for img in workshop['images']: ET.parse(ROOT/img)
