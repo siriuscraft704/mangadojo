@@ -27,6 +27,7 @@ with tempfile.TemporaryDirectory() as temp:
     assert not (public/'assets/shojo-1.webp').exists()
     assert len(list((public/'assets').glob('*.webp')))==42
     assert (public/'oficina.html').exists()
+    assert (public/'revisao-candidatos.html').exists()
     boards = json.loads((public/'pranchas.json').read_text('utf-8'))
     paths = {board['image'] for board in boards}
     assert len(boards) == len(paths) == 86
@@ -67,10 +68,19 @@ assert 'homologacao-artes.html' in index
 assert 'acervo-revisado.html' in index
 local_art=(ROOT/'acervo-revisado.html').read_text('utf-8')
 assert 'mangadojo-artwork' in local_art and 'indexedDB' in local_art
-assert 'localArt=' in local_art and ' imagens publicadas' in local_art
+assert 'localArt=' in local_art and 'referências públicas' in local_art
 assert "new DecompressionStream('deflate-raw')" in local_art
 assert "extractZip(zip)" in local_art and "importZip" in local_art
 assert 'function importLocalArt' in studio and "params.has('localArt')" in studio
+assert 'cabelos-ondulados|rosto-feminino' in local_art or ('cabelos-ondulados' in local_art and 'rosto-feminino' in local_art)
+assert 'cabelos-ondulados' in studio and 'rosto-feminino' in studio
+candidate_page=(ROOT/'revisao-candidatos.html').read_text('utf-8')
+assert 'mangadojo-art-review-v2' in candidate_page and 'Exportar avaliação' in candidate_page
+manifest=json.loads((ROOT/'art-review-manifest.json').read_text('utf-8'))
+assert len(manifest['candidates'])==12
+assert all(len(a['sha256'])==64 and a['dimensions']==[840,960] for a in manifest['candidates'])
+assert 'import_art_pack.py' in [p.name for p in (ROOT/'tools').iterdir()]
+assert 'issue_comment' in (ROOT/'.github/workflows/importar-artes.yml').read_text('utf-8')
 assert "object-fit:contain!important" in (ROOT/'styles/atelier.css').read_text('utf-8')
 
 homolog=(ROOT/'homologacao-artes.html').read_text('utf-8')
@@ -117,7 +127,7 @@ if shutil.which('node'):
         finally: path.unlink(missing_ok=True)
 # Validate inline browser JavaScript with Node when present on the runner.
 if shutil.which('node'):
-    for name, html in [('index', index), ('studio', studio), ('trilhas', trails), ('acervo', local_art), ('oficina', (ROOT/'oficina.html').read_text('utf-8')), ('pranchas', (ROOT/'pranchas.html').read_text('utf-8'))]:
+    for name, html in [('index', index), ('studio', studio), ('trilhas', trails), ('acervo', local_art), ('oficina', (ROOT/'oficina.html').read_text('utf-8')), ('pranchas', (ROOT/'pranchas.html').read_text('utf-8')), ('revisao', candidate_page)]:
         for number, code in enumerate(re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>', html)):
             if not code.strip():
                 continue
