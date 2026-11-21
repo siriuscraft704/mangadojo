@@ -12,20 +12,23 @@ ROOT=Path(__file__).resolve().parents[1]
 index=(ROOT/'index.html').read_text('utf-8')
 studio=(ROOT/'studio.html').read_text('utf-8')
 catalog=json.loads((ROOT/'catalog.generated.json').read_text('utf-8'))
-assert catalog['lessons']==7 and catalog['stages']==50, catalog
+assert catalog['lessons']==9 and catalog['stages']==62, catalog
 published = {p.parent.name: json.loads(p.read_text('utf-8')) for p in ROOT.glob('lessons/*/lesson.json')}
 expected = {'gato-sentado':10, 'gato-em-pe':6, 'leao':10, 'lobo-correndo':10, 'mao':6,
-            'observacao-vetorial':4, 'silhuetas-criaturas':4}
+            'observacao-vetorial':4, 'silhuetas-criaturas':4, 'rosto-feminino':6, 'cabelos-ondulados':6}
 assert {key:len(value['images']) for key,value in published.items()} == expected
 archive=ROOT/'drafts/retired-lessons'
 assert len(list(archive.glob('*.json')))==25
 assert all(path.startswith('assets/mao-aberta-r2-') for path in published['mao']['images'])
+assert all(x.startswith('assets/review-pending/') for name in ('rosto-feminino','cabelos-ondulados') for x in published[name]['images'])
+assert all(published[name]['reviewStatus']=='experimental' for name in ('rosto-feminino','cabelos-ondulados'))
+assert 'Em avaliação' in index
 with tempfile.TemporaryDirectory() as temp:
     public=Path(temp)/'public'
     subprocess.run([sys.executable, str(ROOT/'tools/package_pages.py'), str(public)], check=True)
     assert not (public/'drafts').exists()
     assert not (public/'assets/shojo-1.webp').exists()
-    assert len(list((public/'assets').glob('*.webp')))==42
+    assert len(list((public/'assets').rglob('*.webp')))==54
     assert (public/'oficina.html').exists()
     assert (public/'revisao-candidatos.html').exists()
     boards = json.loads((public/'pranchas.json').read_text('utf-8'))
