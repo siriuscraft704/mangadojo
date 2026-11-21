@@ -1,4 +1,4 @@
-# MangaDojo Atelier 13.0 · Smudge Studio
+# MangaDojo Atelier 13.0.1 · Smudge Studio
 
 Academia gratuita de desenho mangá com biblioteca de aulas, prática e um editor de desenho independente.
 
@@ -16,7 +16,7 @@ A revisão visual retirada da publicação está em `drafts/retired-lessons/`. O
 ## Prática e editor
 
 - Trilhas, comparação de etapas, ampliação, checklists e auditoria por imagem.
-- Oficina criativa com exercícios em três faixas de estudo, ficha de personagem e roteiro de quadrinhos.
+- Oficina criativa com exercícios em três faixas de estudo, ficha de personagem, roteiro e montagem de páginas de quadrinhos em PNG.
 - Smudge raster com estabilização, pressão de caneta, seleção por laço, deslocamento, rotação e escala da seleção e máscaras reversíveis por camada.
 - Projetos de desenho usam IndexedDB com fallback, importam projetos anteriores e exportam PNG e JSON. Os dados são locais ao navegador.
 
@@ -34,4 +34,4 @@ O workflow publica a branch `main` no GitHub Pages. A nova pasta do artefato é 
 
 ## Trabalho em aberto
 
-Recriar as referências retiradas, ampliar as oficinas de criação, revisar o conteúdo pedagógico com um professor de desenho e testar todo o fluxo em aparelhos Android/iOS e canetas físicas. A oficina de quadrinhos salva um roteiro textual e o Smudge continua sendo um editor raster. Atribuição de recursos externos em `THIRD_PARTY_NOTICES.md`.
+Recriar as referências retiradas, ampliar as oficinas de criação, revisar o conteúdo pedagógico com um professor de desenho e testar todo o fluxo em aparelhos Android/iOS e canetas físicas. O Smudge continua sendo um editor raster. Atribuição de recursos externos em `THIRD_PARTY_NOTICES.md`.

@@ -14,7 +14,11 @@ section{padding:clamp(16px,4vw,30px);background:#fff;margin:22px 0;border-radius
 .grid,.panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}fieldset{min-width:0;border:1px solid #e9dfdf;border-radius:8px}
 label{display:grid;gap:5px;font-weight:650}input,textarea,select,button{font:inherit}
 input:not([type=checkbox]),textarea,select{width:100%;min-width:0;border:1px solid #b7a9b3;padding:9px;border-radius:8px;color:#282633;background:#fff}
-textarea{min-height:90px;resize:vertical}.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:16px 0 0}
+textarea{min-height:90px;resize:vertical}.panels{margin-top:14px}.panels label{margin:8px 0}
+.panel-image{display:block;width:100%;max-height:180px;object-fit:contain}
+.comic-preview{margin:20px 0 0;padding:14px;background:#f3edf0;border-radius:10px}
+.comic-preview canvas{display:block;width:100%;height:auto;max-width:680px;margin:0 auto}
+button:disabled{opacity:.55;cursor:default}.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:16px 0 0}
 button{border:0;border-radius:9px;background:#753652;color:white;padding:9px 14px;font-weight:650;cursor:pointer}
 a{color:#753652}.exercise{padding:14px 16px;background:#faf2f5;border-radius:10px;margin-top:14px}.exercise strong{display:block}
 :focus-visible{outline:3px solid #c14d79;outline-offset:3px}[role=status]{color:#514556;margin-top:12px}
@@ -62,14 +66,17 @@ a{color:#753652}.exercise{padding:14px 16px;background:#faf2f5;border-radius:10p
 <label>Sentido de leitura
 <select name="direction"><option>Da esquerda para a direita</option><option>Da direita para a esquerda</option></select></label>
 </div>
+<label>Quadros por linha
+<select name="columns"><option value="2">Dois quadros</option><option value="1">Um quadro</option></select></label>
 <div class="panels" id="panels"></div>
-<div class="actions"><button id="add" type="button">Adicionar quadro</button><button id="remove" type="button">Remover último quadro</button></div>
+<div class="actions"><button id="add" type="button">Adicionar quadro</button><button id="remove" type="button">Remover último quadro</button><button id="preview" type="button">Montar prévia</button><button id="export-comic" type="button">Exportar página PNG</button></div>
+<figure class="comic-preview" id="comic-preview" hidden><canvas id="comic-page" aria-label="Prévia da página de mangá"></canvas></figure>
 </section>
-<div class="actions"><button type="button" id="download">Baixar projeto JSON</button><button type="button" id="print">Imprimir ficha e roteiro</button></div>
+<div class="actions"><button type="button" id="download">Baixar projeto JSON</button><button type="button" id="open">Abrir projeto JSON</button><input id="project-file" type="file" accept=".json,application/json" hidden><button type="button" id="print">Imprimir ficha e roteiro</button></div>
 <p id="save" role="status"></p>
 </form>
 </main>
-<script>
+<script src="scripts/oficina-art.js"></script><script>
 'use strict';
 const $=id=>document.getElementById(id);
 const key='mangadojo-workshop-v1';
@@ -97,8 +104,9 @@ const exercises={
 };
 const audiences=['guided','regular','advanced'];
 let data={fields:{},panels:[{}, {}, {}],checks:{},audience:'guided',theme:'gesture'};
-try{const stored=JSON.parse(localStorage.getItem(key)||'null');if(stored?.fields&&Array.isArray(stored.panels))data={...data,...stored}}catch{}
+try{const stored=JSON.parse(localStorage.getItem(key)||'null');if(validDraft(stored))data={...data,...stored}}catch{}
 function save(){
+ $('comic-preview').hidden=true;
  try{localStorage.setItem(key,JSON.stringify(data));$('save').textContent='Rascunho salvo neste navegador.'}
  catch{$('save').textContent='Armazenamento indisponível. Baixe o projeto JSON para guardar o rascunho.'}
 }
@@ -136,6 +144,36 @@ function renderPanels(){
    label.append(input);
    group.append(label);
   }
+  const artLabel=document.createElement('label');
+  artLabel.textContent='Imagem do quadro';
+  const file=document.createElement('input');
+  file.type='file';
+  file.accept='image/png,image/jpeg,image/webp';
+  file.onchange=async()=>{
+   if(!file.files.length)return;
+   file.disabled=true;
+   try{
+    const image=await window.MangaDojoComic.readImage(file.files[0]);
+    if(!data.panels.includes(panel))return;
+    panel.image=image;
+    renderPanels();
+    save();
+   }catch(error){$('save').textContent=error.message}
+   finally{file.disabled=false}
+  };
+  artLabel.append(file);
+  group.append(artLabel);
+  if(panel.image){
+   const image=document.createElement('img');
+   image.className='panel-image';
+   image.src=panel.image;
+   image.alt='Ilustração do quadro '+(index+1);
+   const remove=document.createElement('button');
+   remove.type='button';
+   remove.textContent='Retirar imagem';
+   remove.onclick=()=>{delete panel.image;renderPanels();save()};
+   group.append(image,remove);
+  }
   $('panels').append(group);
  });
  $('add').disabled=data.panels.length>=8;
@@ -155,6 +193,55 @@ $('download').onclick=()=>{
  link.click();
  setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
+function validDraft(value){
+ if(!value?.fields||!Array.isArray(value.panels)||value.panels.length<1||value.panels.length>8) return false;
+ if(!Object.hasOwn(exercises,value.theme)||!audiences.includes(value.audience)||!value.checks) return false;
+ if(Object.values(value.fields).some(field=>typeof field!=='string'||field.length>500)) return false;
+ return value.panels.every(panel=>panel&&['shot','dialogue'].every(key=>panel[key]===undefined||typeof panel[key]==='string'&&panel[key].length<=500)
+  &&(panel.image===undefined||typeof panel.image==='string'&&panel.image.length<=4000000&&/^data:image\/(webp|png);base64,[a-z0-9+/=]+$/i.test(panel.image)));
+}
+$('open').onclick=()=>$('project-file').click();
+$('project-file').onchange=async event=>{
+ const file=event.target.files[0];
+ if(!file)return;
+ try{
+  if(file.size>16*1024*1024)throw new Error('O projeto ultrapassou 16 MB.');
+  const next=JSON.parse(await file.text());
+  if(!validDraft(next))throw new Error('Projeto da oficina incompatível.');
+  if(!confirm('Abrir este projeto e substituir o rascunho atual?'))return;
+  data=next;
+  for(const field of form.querySelectorAll('[name]')){
+   field.value=data.fields[field.name]||(field.tagName==='SELECT'?field.options[0].value:'');
+  }
+  $('audience').value=data.audience;
+  $('theme').value=data.theme;
+  renderExercise();
+  renderPanels();
+  save();
+ }catch(error){$('save').textContent=error.message}
+ finally{event.target.value=''}
+};
+async function renderComic(download){
+ const canvas=$('comic-page'),fields=Object.fromEntries(new FormData(form));
+ const panels=data.panels.map(panel=>({...panel}));
+ if(panels.some(panel=>(panel.dialogue||'').length>165)){
+  $('save').textContent='Há diálogos longos. A prévia abrevia o texto que não cabe no quadro.';
+ }
+ $('preview').disabled=$('export-comic').disabled=true;
+ try{
+  await window.MangaDojoComic.render(canvas,panels,fields);
+  $('comic-preview').hidden=false;
+  if(download){
+   const link=document.createElement('a');
+   link.href=canvas.toDataURL('image/png');
+   link.download='MangaDojo-pagina.png';
+   link.click();
+  }
+ }catch{$('save').textContent='Não foi possível montar a página.'}
+ finally{$('preview').disabled=$('export-comic').disabled=false}
+}
+$('preview').onclick=()=>renderComic(false);
+$('export-comic').onclick=()=>renderComic(true);
 $('print').onclick=()=>window.print();
 form.onsubmit=event=>event.preventDefault();
 renderExercise();

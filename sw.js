@@ -1,7 +1,7 @@
 /* MangaDojo PWA: shell cached, lessons fetched on demand */
-const CACHE='mangadojo-v21-shell';
-const IMAGES='mangadojo-v21-images';
-const CORE=['./','./index.html','./catalog.generated.js','./manifest.webmanifest','./studio.html','./oficina.html','./scripts/smudge-editing.js','./auditoria-imagens.html','./trilhas.html','./creditos.html','./homologacao-artes.html','./acervo-revisado.html','./assets/mit-asset-manifest.json','./styles/atelier.css','./styles/smudge.css','./assets/mangadojo-mark.svg','./assets/smudge-mark.svg','./assets/mit-observacao-1.svg','./assets/mit-observacao-2.svg','./assets/mit-observacao-3.svg','./assets/mit-observacao-4.svg','./assets/mit-criaturas-1.svg','./assets/mit-criaturas-2.svg','./assets/mit-criaturas-3.svg','./assets/mit-criaturas-4.svg'];
+const CACHE='mangadojo-v22-shell';
+const IMAGES='mangadojo-v22-images';
+const CORE=['./','./index.html','./catalog.generated.js','./manifest.webmanifest','./studio.html','./oficina.html','./scripts/smudge-editing.js','./scripts/oficina-art.js','./auditoria-imagens.html','./trilhas.html','./creditos.html','./homologacao-artes.html','./acervo-revisado.html','./assets/mit-asset-manifest.json','./styles/atelier.css','./styles/smudge.css','./assets/mangadojo-mark.svg','./assets/smudge-mark.svg','./assets/mit-observacao-1.svg','./assets/mit-observacao-2.svg','./assets/mit-observacao-3.svg','./assets/mit-observacao-4.svg','./assets/mit-criaturas-1.svg','./assets/mit-criaturas-2.svg','./assets/mit-criaturas-3.svg','./assets/mit-criaturas-4.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('mangadojo-')&&!([CACHE,IMAGES].includes(k))).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener('fetch',event=>{const request=event.request;if(request.method!=='GET'||new URL(request.url).origin!==self.location.origin)return;const u=new URL(request.url);
