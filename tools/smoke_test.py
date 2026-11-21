@@ -47,6 +47,8 @@ assert 'catalog.generated.js' in homolog
 assert 'image/webp' in homolog and 'image/png' in homolog
 assert 'object-fit:contain' in homolog
 assert 'Exportar relatório JSON' in homolog
+assert 'zoomImage' in homolog and 'closeZoom' in homolog
+assert 'ART_REVIEW_HAND_OPEN.md' in [p.name for p in ROOT.iterdir()]
 assert 'candidate' in homolog and 'decisions' in homolog
 
 credits=(ROOT/'creditos.html').read_text('utf-8')
