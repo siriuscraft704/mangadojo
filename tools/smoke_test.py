@@ -20,6 +20,10 @@ assert 'auditoria-imagens.html' in index
 assert (ROOT/'auditoria-imagens.html').exists()
 review=(ROOT/'auditoria-imagens.html').read_text('utf-8')
 assert 'catalog.generated.js' in review and 'object-fit:contain' in review
+assert 'mangadojo-review-v1' in review
+assert 'mangadojo-auditoria-imagens.json' in review
+assert 'Anatomia incorreta' in review and 'Imagem cortada' in review
+assert 'closeLightbox' in review
 gesture=json.loads((ROOT/'lessons/maos-gestos/lesson.json').read_text('utf-8'))
 assert len(gesture['images'])==6 and all(p==f'assets/maos-gestos-{i}.webp' for i,p in enumerate(gesture['images'],start=1))
 assert 'aspect-ratio:9/10!important' in (ROOT/'styles/atelier.css').read_text('utf-8')
