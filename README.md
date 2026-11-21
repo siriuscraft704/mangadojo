@@ -1,4 +1,4 @@
-# MangaDojo Atelier 13.1.0 · Smudge Studio
+# MangaDojo Atelier 13.2.0 · Smudge Studio
 
 Academia gratuita de desenho mangá com biblioteca de aulas, prática e um editor de desenho independente.
 
@@ -38,3 +38,18 @@ O workflow publica a branch `main` no GitHub Pages. A nova pasta do artefato é 
 ## Trabalho em aberto
 
 Recriar as referências retiradas, ampliar as oficinas de criação, revisar o conteúdo pedagógico com um professor de desenho e testar todo o fluxo em aparelhos Android/iOS e canetas físicas. O Smudge continua sendo um editor raster. Atribuição de recursos externos em `THIRD_PARTY_NOTICES.md`.
+
+## Revisão 13.2 — Imagens de rosto e cabelo
+
+- O catálogo oficial permanece com **7 aulas / 50 etapas**; 42 imagens WebP novas já estão na pasta `assets/`.
+- O pacote original de 48 etapas contém **12 imagens adicionais de rosto feminino e cabelos ondulados**, catalogadas como **candidatas**, nunca como aulas aprovadas automaticamente.
+- `acervo-revisado.html` importa 48 imagens em ZIP ou WebP para armazenamento local (IndexedDB). Mostra as 12 candidatas em uma seção distinta, com abertura no Smudge.
+- `revisao-candidatos.html` apresenta comparador entre etapas, checklist anatômico de quatro critérios e exportação JSON da avaliação.
+- `art-review-manifest.json` fixa os hashes SHA-256 das candidatas; a automação `.github/workflows/importar-artes.yml` recebe o ZIP anexado à **issue #2** e coloca as imagens apenas em `assets/review-pending/`.
+- O workflow do Pages não incorpora `assets/review-pending/`; estas imagens só serão publicadas quando aprovadas por revisão humana e vinculadas a aulas.
+- Nenhum arquivo legado foi apagado nesta versão. O acervo histórico permanece em `drafts/retired-lessons/` para eventual reconstrução artística.
+- Conteúdo criado nesta conversa não foi apresentado como MIT: a licença MIT das oito imagens de Vijay Verma é separada e continua preservada em `THIRD_PARTY_NOTICES.md`.
+
+### Como inserir os 12 WebP no repositório
+
+Baixe o pacote `MangaDojo_12_Artes_Revisao_GitHub.zip` desta conversa e anexe-o em um comentário na [issue #2](https://github.com/siriuscraft704/mangadojo/issues/2) usando a conta proprietária. O upload é executado no ambiente do GitHub, sem digitar token no site do MangaDojo. Os arquivos serão armazenados como candidatos, sem publicação automática nas aulas.
