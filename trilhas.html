@@ -34,7 +34,8 @@ const paths=[
 {title:'01 · Fundamentos e observação',description:'Treine proporção, leitura de silhuetas, contraste e construção antes de detalhar.',ids:['observacao-vetorial','silhuetas-criaturas']},
 {title:'02 · Gatos e silhuetas',description:'Construa o mesmo animal em duas poses e compare como o peso muda.',ids:['gato-sentado','gato-em-pe']},
 {title:'03 · Animais e movimento',description:'Estude musculatura, pelo e gestos com um leão e um lobo.',ids:['leao','lobo-correndo']},
-{title:'04 · Anatomia e poses',description:'Observe o encaixe dos dedos, as articulações e os volumes da palma.',ids:['mao']}
+{title:'04 · Anatomia e poses',description:'Observe o encaixe dos dedos, as articulações e os volumes da palma.',ids:['mao']},
+{title:'05 · Mangá: rostos e cabelos',description:'Acompanhe seis etapas de rosto feminino e seis referências de cabelos ondulados, com revisão artística aberta.',ids:['rosto-feminino','cabelos-ondulados']}
 ];
 
 const root=document.getElementById('paths');
@@ -48,6 +49,6 @@ const img=document.createElement('img');img.src=lesson.images[lesson.images.leng
 const title=document.createElement('strong');title.textContent=lesson.name;const meta=document.createElement('span');meta.className='meta';meta.textContent=lesson.level+' · '+lesson.steps.length+' '+(lesson.lessonType==='reference-studies'?'exercícios':'etapas');
 card.append(img,title,meta);if(done.includes(lesson.id)){const badge=document.createElement('span');badge.className='flag done';badge.textContent='✓ Concluída';card.append(badge)}cards.append(card)}
 section.append(heading,cards);root.append(section)}
-const all=document.createElement('div');all.innerHTML='<b>'+lessons.length+'</b><small>Aulas no catálogo</small>';const count=document.createElement('div');count.innerHTML='<b>'+lessons.filter(lesson=>done.includes(lesson.id)).length+'</b><small>Marcadas como concluídas</small>';const study=document.createElement('div');study.innerHTML='<b>4</b><small>Trilhas recomendadas</small>';document.getElementById('summary').append(all,count,study);
+const all=document.createElement('div');all.innerHTML='<b>'+lessons.length+'</b><small>Aulas no catálogo</small>';const count=document.createElement('div');count.innerHTML='<b>'+lessons.filter(lesson=>done.includes(lesson.id)).length+'</b><small>Marcadas como concluídas</small>';const study=document.createElement('div');study.innerHTML='<b>5</b><small>Trilhas recomendadas</small>';document.getElementById('summary').append(all,count,study);
 })();
 </script></body></html>
