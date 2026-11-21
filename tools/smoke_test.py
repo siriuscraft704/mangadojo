@@ -46,6 +46,8 @@ assert 'acervo-revisado.html' in index
 local_art=(ROOT/'acervo-revisado.html').read_text('utf-8')
 assert 'mangadojo-artwork' in local_art and 'indexedDB' in local_art
 assert 'localArt=' in local_art and '36 imagens' in local_art
+assert "new DecompressionStream('deflate-raw')" in local_art
+assert "extractZip(zip)" in local_art and "importZip" in local_art
 assert 'function importLocalArt' in studio and "params.has('localArt')" in studio
 assert "object-fit:contain!important" in (ROOT/'styles/atelier.css').read_text('utf-8')
 
