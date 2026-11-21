@@ -41,6 +41,14 @@ assert 'licenseNote' in index and 'exercícios de observação' in index
 assert 'checksCount' in index and 'checkIds' in index
 assert 'trilhas.html' in index and 'requestedLesson' in index
 assert 'creditos.html' in index
+assert 'homologacao-artes.html' in index
+homolog=(ROOT/'homologacao-artes.html').read_text('utf-8')
+assert 'catalog.generated.js' in homolog
+assert 'image/webp' in homolog and 'image/png' in homolog
+assert 'object-fit:contain' in homolog
+assert 'Exportar relatório JSON' in homolog
+assert 'candidate' in homolog and 'decisions' in homolog
+
 credits=(ROOT/'creditos.html').read_text('utf-8')
 assert 'mit-asset-manifest.json' in credits and 'Vijay Verma' in credits
 assert (ROOT/'assets/mit-asset-manifest.json').exists()
