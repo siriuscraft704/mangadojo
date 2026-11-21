@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[1]
 index=(ROOT/'index.html').read_text('utf-8')
 studio=(ROOT/'studio.html').read_text('utf-8')
 catalog=json.loads((ROOT/'catalog.generated.json').read_text('utf-8'))
-assert catalog['lessons']>=27 and catalog['stages']>=162, catalog
+assert catalog['lessons']==25 and catalog['stages']==150, catalog
 for path in ['styles/atelier.css','styles/smudge.css','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
     assert (ROOT/path).is_file(),path
 assert 'styles/atelier.css' in index
@@ -21,8 +21,10 @@ assert (ROOT/'auditoria-imagens.html').exists()
 review=(ROOT/'auditoria-imagens.html').read_text('utf-8')
 assert 'catalog.generated.js' in review and 'object-fit:contain' in review
 gesture=json.loads((ROOT/'lessons/maos-gestos/lesson.json').read_text('utf-8'))
-assert len(gesture['images'])==6 and all('-original-' in p and p.endswith('.svg') for p in gesture['images'])
+assert len(gesture['images'])==6 and all(p==f'assets/maos-gestos-{i}.webp' for i,p in enumerate(gesture['images'],start=1))
 assert 'aspect-ratio:9/10!important' in (ROOT/'styles/atelier.css').read_text('utf-8')
+assert not (ROOT/'lessons/olhos-expressivos/lesson.json').exists()
+assert not (ROOT/'lessons/rosto-tres-quartos/lesson.json').exists()
 assert 'Smudge' in index and 'Smudge' in studio
 assert 'smudge-projects' in studio and 'dbRead' in studio
 assert 'courseImg(current,step+1).split' in index
@@ -50,4 +52,4 @@ for path in ROOT.glob('lessons/*/lesson.json'):
     assert len(lesson['images'])==len(lesson['steps']),path
     for asset in lesson['images']:
         assert (ROOT/asset).exists(),asset
-print(f"PASS: {catalog['lessons']} aulas, {catalog['stages']} etapas; Smudge, assets e referências SVG conferidos")
+print(f"PASS: {catalog['lessons']} aulas, {catalog['stages']} etapas; Smudge e imagens originais preservadas")
