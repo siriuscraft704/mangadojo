@@ -1,0 +1,47 @@
+/* MangaDojo Atelier — design system v12. Original CSS, no external framework. */
+:root{--md-ink:#20222c;--md-muted:#69717e;--md-accent:#c75d59;--md-paper:#fbf9f5;--md-line:#e6e1db;--md-radius:18px}
+html{scroll-behavior:smooth}
+body{background:var(--md-paper);color:var(--md-ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.side{background:#171923;border-right:1px solid #333540}
+.side:before{content:none}
+.brand{font-family:Georgia,serif;font-style:normal;letter-spacing:-.8px}
+.brand span{color:#efa193}
+.brand-logo{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+.brand-logo img{width:41px;height:41px;border-radius:10px;flex:none}
+.brand-logo strong{font-family:Georgia,serif;font-size:25px;letter-spacing:-.9px}
+.brand-logo strong span{color:#e98977}
+.nav button.active,.nav button:hover{background:#353945}
+.nav button{min-height:46px;border-radius:12px}
+.sidebox{background:#272a34;border:1px solid #3a3c45}
+.hero{background:linear-gradient(110deg,#20242d 0%,#353740 72%,#68544f 100%);border:1px solid #41424b;border-radius:22px;min-height:254px}
+.hero:before{opacity:.46;filter:saturate(.4)}
+.hero h1,.gallery-head .heading,.lesson-title{font-family:Georgia,"Times New Roman",serif;font-style:normal;letter-spacing:-1px}
+.hero p{color:#f2e9df}
+.eyebrow,.lesson-kicker,.counter,.statusbar{color:#bd665e}
+.panel,.course,.top-filters{border-color:var(--md-line);box-shadow:0 8px 28px #292a3010}
+.panel{border-radius:18px}
+.course{border-radius:15px}
+.course .meta{background:#fff}
+.course .meta strong{color:#242833}
+.course.active{border-color:#c36358}
+.course img{object-fit:contain!important;background:#f7f2e9}
+.primary,.studio-invite a{background:#c65f56;color:white;box-shadow:none}
+.primary:hover{background:#a94c44}
+.ghost,.toolbar button,.toolbar label{border-color:#e6ded8;color:#4d4c51;background:#fff}
+.ghost:hover,.toolbar button:hover{background:#f7f0e9}
+.preview{background:#fff;border-color:#dfd9d2}
+.thumb.selected{border-color:#bc625a;box-shadow:0 0 0 2px #e8c9c2}
+.mini-progress>div,.progress>div{background:#c75d59}
+.tip{background:#fbf4ec;border-left-color:#c75d59}
+.artist-tip{background:#fbf5ed;border-color:#e5d7c5}
+.studio-invite{background:linear-gradient(110deg,#232632,#3b3e4b)}
+.mobile-header{background:#171923}
+.mobile-studio-link{background:#cf6d5f}
+:where(button,a,input,select):focus-visible{outline:3px solid #ee987a;outline-offset:3px}
+.mds-banner{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:18px 0;padding:19px 22px;background:#fff;border:1px solid #e4ddd3;border-radius:18px}
+.mds-banner strong{font:700 22px Georgia,serif}.mds-banner p{margin:6px 0 0;color:#636775;font-size:13px;line-height:1.5}
+.mds-banner a{display:inline-flex;align-items:center;gap:8px;background:#242733;color:white;padding:12px 16px;border-radius:12px;font-weight:700;text-decoration:none}
+.mds-banner img{width:47px;height:47px;border-radius:12px}
+.mds-banner-heading{display:flex;align-items:center;gap:14px}
+.mds-banner a:hover{background:#4c4850}
+@media(max-width:700px){.hero{min-height:190px}.main{padding-inline:12px!important}.catalog{gap:12px}.course .meta strong{font-size:14px}.mds-banner{padding:15px}.mds-banner a{width:100%;justify-content:center}.mobile-header{font-size:12px}.mobile-header img{width:25px;height:25px}.preview{width:calc(100% - 32px)!important}}
