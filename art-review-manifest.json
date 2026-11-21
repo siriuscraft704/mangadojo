@@ -2,7 +2,7 @@
   "schema": 1,
   "packName": "MangaDojo_Artes_Limpas_48_Etapas.zip",
   "totalPackImages": 48,
-  "alreadyPublished": 36,
+  "alreadyPublished": 48,
   "handLessonSeparate": 6,
   "candidates": [
     {
@@ -13,8 +13,8 @@
         960
       ],
       "sha256": "4fdaa0930b82f92ebb794a01c131581f974f47dd99e198501c77a7ec370f4367",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "cabelos-ondulados-02.webp",
@@ -24,8 +24,8 @@
         960
       ],
       "sha256": "ed82ce7d1bf69193cbb278a568f09bc81eab95e0651d69eca16f9db08e18549a",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "cabelos-ondulados-03.webp",
@@ -35,8 +35,8 @@
         960
       ],
       "sha256": "e06c21a4a1203d71d7bb7b24ae1cb38813611b4c5ca6bdf6db9cc8d4e3c1100f",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "cabelos-ondulados-04.webp",
@@ -46,8 +46,8 @@
         960
       ],
       "sha256": "909dfbb7af423cedc85aee17b5566268b14a1d62ec693d8934b03cd097ec3610",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "cabelos-ondulados-05.webp",
@@ -57,8 +57,8 @@
         960
       ],
       "sha256": "b87d91abbe92cbfb9278dc1336b897d166c707fcb09f3d18c0480da90dc96412",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "cabelos-ondulados-06.webp",
@@ -68,8 +68,8 @@
         960
       ],
       "sha256": "eb551dab86470c10cecd19daee122d9686b36b2185c60b452cdecc4b1daeed8d",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "rosto-feminino-01.webp",
@@ -79,8 +79,8 @@
         960
       ],
       "sha256": "05e1500bc52a1543db4115434415f08d1d97109feeeb26773ff37d6784f18ef5",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "rosto-feminino-02.webp",
@@ -90,8 +90,8 @@
         960
       ],
       "sha256": "ecbbaf5afe8508f4304a85505c796d46f649fb8a1178d3ed5b9f907597213c0e",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "rosto-feminino-03.webp",
@@ -101,8 +101,8 @@
         960
       ],
       "sha256": "22c4a4ae35862fb5cdf105f0ce8749d475b54304e390511211d9d40119c54bf8",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "rosto-feminino-04.webp",
@@ -112,8 +112,8 @@
         960
       ],
       "sha256": "3cd34062855cb6c38c2da26f2e6146307caff395e2043fb5898addba07726f33",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "rosto-feminino-05.webp",
@@ -123,8 +123,8 @@
         960
       ],
       "sha256": "1185d8714d28a387bf6457568539d84f7870a5ea8091f7554fa1f2977cec822c",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     },
     {
       "name": "rosto-feminino-06.webp",
@@ -134,9 +134,10 @@
         960
       ],
       "sha256": "c06d82840b3b827ddaf1b3c6d18958b770ebbc9a95641cc9f8604177295454e6",
-      "reviewStatus": "awaiting-human-approval",
-      "publication": "not-in-live-catalog"
+      "reviewStatus": "editorial-open",
+      "publication": "published-experimental-lesson"
     }
   ],
-  "policy": "Candidatos só entram nas aulas públicas após avaliação visual por etapa."
+  "policy": "Candidatos só entram nas aulas públicas após avaliação visual por etapa.",
+  "notes": "Todas as 12 imagens foram enviadas ao GitHub e disponibilizadas como lições experimentais de rosto e cabelos; a revisão humana ainda está aberta."
 }
