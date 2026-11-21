@@ -1,0 +1,75 @@
+{
+  "id": "shonen",
+  "name": "Herói Shonen — Cabelo Espetado",
+  "category": "Personagens",
+  "style": "Shonen",
+  "level": "Intermediário",
+  "min": 30,
+  "emoji": "⚡",
+  "steps": [
+    [
+      "Cabeça e perspectiva",
+      "Comece com oval, mandíbula angular, eixo do rosto e largura do pescoço.",
+      [
+        "Desenhe oval de construção",
+        "Marque a linha inclinada dos olhos",
+        "Construa queixo anguloso e pescoço"
+      ]
+    ],
+    [
+      "Rosto e personalidade",
+      "Use olhos expressivos e sobrancelhas dinâmicas; indique o sentido das mechas.",
+      [
+        "Defina olhos proporcionais",
+        "Esboce o sorriso discreto",
+        "Marque raízes do cabelo"
+      ]
+    ],
+    [
+      "Cabelo em blocos",
+      "Distribua grupos pontudos; mantenha uma silhueta clara e um ponto de origem.",
+      [
+        "Trace três grandes massas",
+        "Divida as pontas em direções coerentes",
+        "Esboce a gola"
+      ]
+    ],
+    [
+      "Esboço refinado",
+      "Ajuste olho, orelha, cabelo e dobras da roupa com traços confiantes.",
+      [
+        "Refine os olhos",
+        "Elimine pontas repetidas",
+        "Acrescente dobras na gola"
+      ]
+    ],
+    [
+      "Contorno em nanquim",
+      "Alterne espessuras para distinguir rosto, sombra e sobreposição de cabelo.",
+      [
+        "Engrosse contorno da silhueta",
+        "Defina cílios e dobras",
+        "Limpe linhas de construção"
+      ]
+    ],
+    [
+      "Arte-final e volume",
+      "Termine com manchas de sombra e leves retículas sobre as mechas.",
+      [
+        "Identifique planos de luz",
+        "Sombreie a base do cabelo",
+        "Conclua o personagem"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/shonen-1.webp",
+    "assets/shonen-2.webp",
+    "assets/shonen-3.webp",
+    "assets/shonen-4.webp",
+    "assets/shonen-5.webp",
+    "assets/shonen-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

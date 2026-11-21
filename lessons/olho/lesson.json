@@ -1,0 +1,75 @@
+{
+  "id": "olho",
+  "name": "Olho de Mangá — Íris Detalhada",
+  "category": "Olhos e expressões",
+  "style": "Shojo",
+  "level": "Iniciante",
+  "min": 20,
+  "emoji": "👁️",
+  "steps": [
+    [
+      "Arco da pálpebra",
+      "Faça uma curva superior e um círculo para a íris sem pressionar o lápis.",
+      [
+        "Desenhe um arco em cima",
+        "Esboce a íris circular",
+        "Marque o eixo central"
+      ]
+    ],
+    [
+      "Forma da íris",
+      "Defina as linhas da pálpebra e o círculo que guiará a pupila.",
+      [
+        "Desenhe linhas superior e inferior",
+        "Ajuste o tamanho da íris",
+        "Reserve áreas de brilho"
+      ]
+    ],
+    [
+      "Sobrancelha e cílios",
+      "Construa cílios externos e uma sobrancelha coerente com a expressão.",
+      [
+        "Reforce pálpebra superior",
+        "Adicione cílios com direção",
+        "Desenhe a sobrancelha"
+      ]
+    ],
+    [
+      "Detalhe da textura",
+      "Adicione fibras radiais da íris, reflexos e sombras sutis.",
+      [
+        "Desenhe a pupila",
+        "Trace riscos radiais",
+        "Preserve os reflexos brancos"
+      ]
+    ],
+    [
+      "Nanquim e contraste",
+      "Escureça cílios, pupila e contornos; equilibre preto e branco.",
+      [
+        "Reforce as bordas",
+        "Escureça pupila e cílios",
+        "Deixe reflexos sem tinta"
+      ]
+    ],
+    [
+      "Brilho e acabamento",
+      "Finalize com sombras de pálpebra e retícula, preservando profundidade.",
+      [
+        "Acrescente tons suaves",
+        "Sombreie sob a pálpebra",
+        "Confira brilho e contraste"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/olho-1.webp",
+    "assets/olho-2.webp",
+    "assets/olho-3.webp",
+    "assets/olho-4.webp",
+    "assets/olho-5.webp",
+    "assets/olho-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

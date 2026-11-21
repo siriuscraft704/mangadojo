@@ -1,0 +1,75 @@
+{
+  "id": "chibi",
+  "name": "Chibi Alegre de Corpo Inteiro",
+  "category": "Chibi e corpo",
+  "style": "Chibi",
+  "level": "Iniciante",
+  "min": 28,
+  "emoji": "🎀",
+  "steps": [
+    [
+      "Proporção chibi",
+      "Desenhe uma cabeça bem grande e um corpo pequeno com formas geométricas.",
+      [
+        "Faça uma cabeça maior que o tronco",
+        "Marque a linha do rosto",
+        "Esboce braços e pernas curtos"
+      ]
+    ],
+    [
+      "Rosto e gesto",
+      "Defina olhos grandes, sorriso e a mão levantada para comunicar alegria.",
+      [
+        "Desenhe olhos grandes e espaçados",
+        "Posicione o braço da saudação",
+        "Indique saia e cabelo"
+      ]
+    ],
+    [
+      "Cabelo, vestido e laço",
+      "Construa mechas volumosas e roupas em formas simples e reconhecíveis.",
+      [
+        "Desenhe franjas e laço",
+        "Marque vestido e babados",
+        "Indique pernas e calçados"
+      ]
+    ],
+    [
+      "Refinamento",
+      "Corrija as proporções fofas e detalhe mãos, sapatos e expressão.",
+      [
+        "Ajuste linha dos olhos",
+        "Desenhe a palma e os dedinhos",
+        "Adicione pregas do vestido"
+      ]
+    ],
+    [
+      "Line art chibi",
+      "Contorne toda a personagem com linhas delicadas, usando ênfase nos olhos.",
+      [
+        "Engrosse a borda exterior",
+        "Finalize laço e sapatos",
+        "Limpe o esboço"
+      ]
+    ],
+    [
+      "Cor e acabamento",
+      "Use um toque de cor rosa no vestido e no cabelo, com sombras suaves.",
+      [
+        "Escolha cor principal",
+        "Pinte as áreas maiores",
+        "Acrescente reflexos e detalhes"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/chibi-1.webp",
+    "assets/chibi-2.webp",
+    "assets/chibi-3.webp",
+    "assets/chibi-4.webp",
+    "assets/chibi-5.webp",
+    "assets/chibi-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

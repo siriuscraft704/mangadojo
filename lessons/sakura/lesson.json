@@ -1,0 +1,75 @@
+{
+  "id": "sakura",
+  "name": "Flor de Cerejeira — Natureza",
+  "category": "Cenários e natureza",
+  "style": "Botânico",
+  "level": "Iniciante",
+  "min": 18,
+  "emoji": "🌸",
+  "steps": [
+    [
+      "Ramo e formas",
+      "Faça uma linha curva para o ramo e pequenos círculos para flores e botões.",
+      [
+        "Trace o eixo diagonal do ramo",
+        "Distribua três grupos de flores",
+        "Marque botões em diferentes tamanhos"
+      ]
+    ],
+    [
+      "Pétalas principais",
+      "Substitua os círculos por pétalas orgânicas e pequenos botões fechados.",
+      [
+        "Desenhe cinco pétalas por flor",
+        "Não repita pétalas exatamente iguais",
+        "Indique botões na haste"
+      ]
+    ],
+    [
+      "Flor refinada",
+      "Defina o centro da flor e a conexão entre pétalas, folhas e ramo.",
+      [
+        "Acrescente estames centrais",
+        "Melhore a curva da haste",
+        "Desenhe botões laterais"
+      ]
+    ],
+    [
+      "Detalhamento",
+      "Mostre a textura da casca e dobras discretas nas pétalas.",
+      [
+        "Refine as veias das folhas",
+        "Acrescente textura do ramo",
+        "Evite excessos nas pétalas"
+      ]
+    ],
+    [
+      "Nanquim botânico",
+      "Use linhas delicadas nas flores e mais grossas no ramo de suporte.",
+      [
+        "Finalize cada contorno",
+        "Ajuste espessura da haste",
+        "Realce os centros das flores"
+      ]
+    ],
+    [
+      "Sombras e cor",
+      "Aplique rosa claro nas pétalas, mantendo as bordas bem definidas.",
+      [
+        "Pinte regiões pequenas",
+        "Deixe reflexos no centro",
+        "Finalize o ramo sombreado"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/sakura-1.webp",
+    "assets/sakura-2.webp",
+    "assets/sakura-3.webp",
+    "assets/sakura-4.webp",
+    "assets/sakura-5.webp",
+    "assets/sakura-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

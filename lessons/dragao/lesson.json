@@ -1,0 +1,75 @@
+{
+  "id": "dragao",
+  "name": "Dragão Bebê — Criatura Fantástica",
+  "category": "Animais e criaturas",
+  "style": "Fantasia",
+  "level": "Iniciante",
+  "min": 30,
+  "emoji": "🐉",
+  "steps": [
+    [
+      "Volumes básicos",
+      "Desenhe uma cabeça redonda, tronco pequeno e arcos para asas e cauda.",
+      [
+        "Faça círculo para cabeça",
+        "Marque linha do corpo",
+        "Esboce uma asa e a cauda"
+      ]
+    ],
+    [
+      "Olhos e membros",
+      "Dê expressão ao dragão, indique patas curtas e uma asa triangular.",
+      [
+        "Marque olhos grandes",
+        "Esboce focinho",
+        "Separe patas e membrana da asa"
+      ]
+    ],
+    [
+      "Criatura completa",
+      "Defina chifres, escamas grandes e forma geral da cauda.",
+      [
+        "Construa os pequenos chifres",
+        "Ajuste o formato da asa",
+        "Desenhe a cauda até a ponta"
+      ]
+    ],
+    [
+      "Refino das formas",
+      "Adicione juntas, garras delicadas e o volume do peito.",
+      [
+        "Corrija as patas",
+        "Detailhe as curvas da asa",
+        "Ajuste a expressão dos olhos"
+      ]
+    ],
+    [
+      "Line art",
+      "Finalize a silhueta com traços mais fortes e detalhes internos delicados.",
+      [
+        "Contorne olhos e chifres",
+        "Diferencie asa e corpo",
+        "Limpe linhas-guia"
+      ]
+    ],
+    [
+      "Luz e acabamento",
+      "Aplique toques rosas para identificar sombra, membrana e escamas.",
+      [
+        "Escolha três zonas de sombra",
+        "Realce a membrana da asa",
+        "Finalize detalhes do dragão"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/dragao-1.webp",
+    "assets/dragao-2.webp",
+    "assets/dragao-3.webp",
+    "assets/dragao-4.webp",
+    "assets/dragao-5.webp",
+    "assets/dragao-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "bruxa",
+  "name": "Aprendiz de Magia — Retrato",
+  "category": "Personagens",
+  "style": "Fantasia",
+  "level": "Intermediário",
+  "min": 35,
+  "emoji": "🧙",
+  "steps": [
+    [
+      "Cabeça e chapéu",
+      "Construa a cabeça e marque a silhueta larga de um chapéu de feiticeira.",
+      [
+        "Faça o oval do crânio",
+        "Marque eixos do rosto",
+        "Desenhe o cone e a aba do chapéu"
+      ]
+    ],
+    [
+      "Olhos e vestimenta",
+      "Posicione olhos grandes, cabelo e uma capa com fecho central.",
+      [
+        "Defina a expressão amigável",
+        "Esboce as mechas",
+        "Marque o caimento da capa"
+      ]
+    ],
+    [
+      "Silhueta final",
+      "Refine as curvas do chapéu e as camadas do cabelo.",
+      [
+        "Ajuste a aba em perspectiva",
+        "Desenhe cabelo seguindo o volume",
+        "Acerte a linha dos ombros"
+      ]
+    ],
+    [
+      "Esboço detalhado",
+      "Adicione acessórios, tecido e expressão facial com linhas mais decididas.",
+      [
+        "Desenhe o fecho da capa",
+        "Complete os olhos e boca",
+        "Ajuste as dobras do tecido"
+      ]
+    ],
+    [
+      "Arte-final",
+      "Limpe os guias de construção e destaque sobreposições com tinta preta.",
+      [
+        "Reforce a borda do chapéu",
+        "Varie espessura nas mechas",
+        "Finalize acessórios"
+      ]
+    ],
+    [
+      "Toques de cor",
+      "Coloque sombras suaves de rosa sem esconder o desenho original.",
+      [
+        "Escolha uma luz predominante",
+        "Sombreie as partes sob o chapéu",
+        "Realce cabelo e capa"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/bruxa-1.webp",
+    "assets/bruxa-2.webp",
+    "assets/bruxa-3.webp",
+    "assets/bruxa-4.webp",
+    "assets/bruxa-5.webp",
+    "assets/bruxa-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

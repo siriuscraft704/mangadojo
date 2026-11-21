@@ -1,0 +1,75 @@
+{
+  "id": "kitsune",
+  "name": "Raposinha Fantástica — Mascote",
+  "category": "Animais e criaturas",
+  "style": "Fantasia",
+  "level": "Iniciante",
+  "min": 25,
+  "emoji": "🦊",
+  "steps": [
+    [
+      "Formas da criatura",
+      "Construa cabeça arredondada, duas orelhas triangulares e um rabo curvo.",
+      [
+        "Faça o círculo da cabeça",
+        "Marque os triângulos das orelhas",
+        "Desenhe peito, patas e cauda"
+      ]
+    ],
+    [
+      "Rosto e pelagem",
+      "Organize olhos, focinho e tufos de pelo sem perder as formas.",
+      [
+        "Desenhe olhos na linha central",
+        "Marque focinho pequeno",
+        "Trace grandes tufos de pelo"
+      ]
+    ],
+    [
+      "Criatura definida",
+      "Crie orelhas com detalhes internos e um corpo reconhecível.",
+      [
+        "Ajuste as quatro patas",
+        "Marque a cauda fofa",
+        "Adicione ornamento na testa"
+      ]
+    ],
+    [
+      "Detalhamento do mascote",
+      "Refine o volume da pelagem, o colar e o olhar expressivo.",
+      [
+        "Desenhe mechas de pelo",
+        "Detalhe os olhos",
+        "Crie acessório e cauda"
+      ]
+    ],
+    [
+      "Finalização em tinta",
+      "Reforce silhueta e mantenha linhas finas no interior dos pelos.",
+      [
+        "Contorne orelhas e cauda",
+        "Varie espessuras de linha",
+        "Finalize focinho e patinhas"
+      ]
+    ],
+    [
+      "Sombras do pelo",
+      "Faça áreas de sombra seguindo o sentido da pelagem; acrescente cor leve.",
+      [
+        "Marque fonte de luz",
+        "Sombreie os pelos por blocos",
+        "Acrescente tons suaves"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/kitsune-1.webp",
+    "assets/kitsune-2.webp",
+    "assets/kitsune-3.webp",
+    "assets/kitsune-4.webp",
+    "assets/kitsune-5.webp",
+    "assets/kitsune-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

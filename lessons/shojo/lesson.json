@@ -1,0 +1,75 @@
+{
+  "id": "shojo",
+  "name": "Retrato Shojo Expressivo",
+  "category": "Rostos e personagens",
+  "style": "Shojo",
+  "level": "Iniciante",
+  "min": 25,
+  "emoji": "🌸",
+  "steps": [
+    [
+      "Construção da cabeça",
+      "Desenhe o oval do crânio e um eixo central suave, inclinando a linha dos olhos.",
+      [
+        "Faça o oval sem apertar o lápis",
+        "Trace eixo vertical e linha dos olhos",
+        "Defina um queixo delicado e o pescoço"
+      ]
+    ],
+    [
+      "Olhos e expressão",
+      "Alinhe os olhos à perspectiva; adicione cílios superiores, sobrancelhas e um sorriso.",
+      [
+        "Marque as pálpebras superiores",
+        "Posicione íris e nariz",
+        "Desenhe a boca e ajuste simetria"
+      ]
+    ],
+    [
+      "Cabelo e silhueta",
+      "Construa mechas a partir do alto da cabeça e esboce laço, flor e gola.",
+      [
+        "Desenhe grandes massas de cabelo",
+        "Divida a franja em mechas",
+        "Inclua acessório e ombros"
+      ]
+    ],
+    [
+      "Refinar o esboço",
+      "Complete os olhos, suavize as proporções e defina as mechas que se sobrepõem.",
+      [
+        "Detalhe pupilas e reflexos",
+        "Defina o movimento do cabelo",
+        "Refine uniforme e expressão"
+      ]
+    ],
+    [
+      "Arte-final",
+      "Faça linhas limpas; use contorno mais grosso em sombra e sobreposições.",
+      [
+        "Reforce cílios e contorno externo",
+        "Deixe detalhes internos delicados",
+        "Apague as guias mentalmente"
+      ]
+    ],
+    [
+      "Sombras e retículas",
+      "Aplique sombras nos cabelos, roupa e pescoço para produzir volume de mangá.",
+      [
+        "Escolha uma direção para a luz",
+        "Sombreie atrás das mechas",
+        "Adicione textura e contraste"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/shojo-1.webp",
+    "assets/shojo-2.webp",
+    "assets/shojo-3.webp",
+    "assets/shojo-4.webp",
+    "assets/shojo-5.webp",
+    "assets/shojo-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}
