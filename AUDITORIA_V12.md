@@ -35,3 +35,12 @@ Projetos pesquisados: Konva.js e Drawora, ambos MIT na origem. Nenhum código ou
 
 ## Próxima fase recomendada
 Priorizar recriação de imagens legadas, auditoria visual com screenshots e arquitetura modular, depois instrumentos avançados do Smudge e trilhas de aprendizado.
+
+## Complemento — Smudge 12.1 (2026-11-21)
+- Adicionado controle de estabilização de traço (0% a 85%) com suavização progressiva e finalização na posição real do ponteiro.
+- Referências de aulas deixam de ser duplicadas ao reabrir o mesmo projeto com a mesma URL.
+- Importação de arquivos JSON passa a validar quantidade máxima de camadas, presença de PNG base64 e tamanho máximo individual.
+- O catálogo compilado no próprio repositório foi atualizado de 25/150 para 27 aulas e 162 etapas.
+- Smoke test ganhou verificações específicas do estabilizador e análise sintática dos scripts com Node, disponível no runner GitHub.
+- Scripts inline do `index.html` e `studio.html` passaram em verificação de sintaxe JavaScript pela ferramenta da sessão.
+- Não houve validação de execução do deploy GitHub Pages nem teste de interface em dispositivos reais; ambos seguem pendentes.
