@@ -1,4 +1,4 @@
-# MangaDojo Atelier 13.2.0 · Smudge Studio
+# MangaDojo Atelier 13.3.0 · Smudge Studio
 
 Academia gratuita de desenho mangá com biblioteca de aulas, prática e um editor de desenho independente.
 
@@ -10,7 +10,7 @@ Academia gratuita de desenho mangá com biblioteca de aulas, prática e um edito
 
 ## Catálogo
 
-Sete aulas e 50 telas, sendo quatro sequências de animais (36 etapas), a Mão Aberta em revisão 2 (6 etapas) e duas oficinas com oito referências de Vijay Verma sob licença MIT. O Acervo oferece as 42 imagens novas por acesso direto e conserva a importação local do pacote de animais.
+Nove aulas e 62 telas de estudo: quatro sequências de animais (36), Mão Aberta (6), duas oficinas de observação com oito imagens de Vijay Verma sob MIT e duas novas aulas experimentais (12 imagens originais de rosto feminino e cabelos ondulados). O Acervo mostra 54 WebP diretamente e permite importação local opcional.
 
 A galeria reúne 79 pranchas de estudo e 7 painéis históricos em tamanho integral, com busca, categorias, ampliação e download. A contagem do catálogo computa apenas as aulas.
 
@@ -39,17 +39,17 @@ O workflow publica a branch `main` no GitHub Pages. A nova pasta do artefato é 
 
 Recriar as referências retiradas, ampliar as oficinas de criação, revisar o conteúdo pedagógico com um professor de desenho e testar todo o fluxo em aparelhos Android/iOS e canetas físicas. O Smudge continua sendo um editor raster. Atribuição de recursos externos em `THIRD_PARTY_NOTICES.md`.
 
-## Revisão 13.2 — Imagens de rosto e cabelo
+## Revisão 13.3 — Upload e publicação das 12 novas imagens
 
-- O catálogo oficial permanece com **7 aulas / 50 etapas**; 42 imagens WebP novas já estão na pasta `assets/`.
-- O pacote original de 48 etapas contém **12 imagens adicionais de rosto feminino e cabelos ondulados**, catalogadas como **candidatas**, nunca como aulas aprovadas automaticamente.
-- `acervo-revisado.html` importa 48 imagens em ZIP ou WebP para armazenamento local (IndexedDB). Mostra as 12 candidatas em uma seção distinta, com abertura no Smudge.
-- `revisao-candidatos.html` apresenta comparador entre etapas, checklist anatômico de quatro critérios e exportação JSON da avaliação.
-- `art-review-manifest.json` fixa os hashes SHA-256 das candidatas; a automação `.github/workflows/importar-artes.yml` recebe o ZIP anexado à **issue #2** e coloca as imagens apenas em `assets/review-pending/`.
-- O workflow do Pages não incorpora `assets/review-pending/`; estas imagens só serão publicadas quando aprovadas por revisão humana e vinculadas a aulas.
-- Nenhum arquivo legado foi apagado nesta versão. O acervo histórico permanece em `drafts/retired-lessons/` para eventual reconstrução artística.
-- Conteúdo criado nesta conversa não foi apresentado como MIT: a licença MIT das oito imagens de Vijay Verma é separada e continua preservada em `THIRD_PARTY_NOTICES.md`.
+- As 12 imagens WebP de rosto feminino e cabelos ondulados foram **enviadas ao GitHub como blobs binários verificados**, em `assets/review-pending/`, com hashes documentados em `art-review-manifest.json`.
+- Duas aulas novas (`lessons/rosto-feminino/` e `lessons/cabelos-ondulados/`) usam os arquivos públicos. As aulas são sinalizadas como **estudos experimentais**, para não esconder limitações anatômicas ou mudanças de perspectiva entre as etapas.
+- O catálogo tem **9 aulas e 62 telas**, com **54 WebP** das aulas produzidas, além das 8 referências vetoriais MIT.
+- `acervo-revisado.html` apresenta os arquivos públicos sem exigir ZIP; a importação local permanece como alternativa.
+- `revisao-candidatos.html` carrega as 12 imagens diretamente do site e permite checklist humano por etapa, notas e exportação JSON.
+- As pranchas históricas e lições arquivadas não foram sobrescritas; o fluxo de rollback permanece possível.
+- As 12 imagens não foram erroneamente rotuladas como MIT: são criações do projeto; o acervo MIT de Vijay Verma permanece atribuído separadamente.
+- O workflow do GitHub Pages executa compilação, verificações estáticas, geometria do Smudge, integridade MIT e auditoria de mídia antes de publicar.
 
-### Como inserir os 12 WebP no repositório
+### Revisão ainda necessária
 
-Baixe o pacote `MangaDojo_12_Artes_Revisao_GitHub.zip` desta conversa e anexe-o em um comentário na [issue #2](https://github.com/siriuscraft704/mangadojo/issues/2) usando a conta proprietária. O upload é executado no ambiente do GitHub, sem digitar token no site do MangaDojo. Os arquivos serão armazenados como candidatos, sem publicação automática nas aulas.
+A continuidade de ângulos dos cabelos ondulados e a anatomia final dos rostos devem ser avaliadas por um desenhista. As novas aulas estão acessíveis como estudos, não como referência anatômica certificada. A versão atual não afirma eliminar todos os problemas do acervo histórico.
