@@ -1,0 +1,58 @@
+{
+  "id": "observacao-vetorial",
+  "name": "Oficina de Observação e Composição",
+  "category": "Fundamentos visuais",
+  "style": "Estudos vetoriais · Referências MIT",
+  "level": "Iniciante",
+  "min": 35,
+  "emoji": "✏️",
+  "lessonType": "reference-studies",
+  "steps": [
+    [
+      "Silhueta e formas simples",
+      "Observe o tocador de música como composição de formas. Antes de tentar os detalhes, identifique o retângulo dominante, o círculo e a relação entre espaços vazios.",
+      [
+        "Reduza o objeto a duas figuras básicas",
+        "Compare larguras e alturas sem copiar pixels",
+        "Desenhe três miniaturas de composição"
+      ]
+    ],
+    [
+      "Proporção e construção",
+      "No cavalete, identifique o eixo central, os apoios inclinados e os grandes planos. Construa primeiro volumes simples e só depois detalhe.",
+      [
+        "Marque o eixo e a estrutura do cavalete",
+        "Compare ângulos e a base de apoio",
+        "Revise a perspectiva sem distorcer"
+      ]
+    ],
+    [
+      "Hierarquia de cor e foco",
+      "Observe como a ilustração da caneta organiza o foco, as massas cromáticas e os contrastes. Faça um estudo com três valores de cor antes de reproduzir o acabamento.",
+      [
+        "Defina uma área focal e duas secundárias",
+        "Experimente três valores (claro, médio e escuro)",
+        "Observe o equilíbrio entre forma e fundo"
+      ]
+    ],
+    [
+      "Espaço negativo e finalização",
+      "Na ilustração do quadro, use os vazios e as bordas para posicionar os elementos. Finalize uma composição própria inspirada nas formas, sem tentar reproduzir tudo mecanicamente.",
+      [
+        "Meça os espaços negativos",
+        "Refine contornos e distribuição visual",
+        "Finalize uma peça pessoal usando o Smudge"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/mit-observacao-1.svg",
+    "assets/mit-observacao-2.svg",
+    "assets/mit-observacao-3.svg",
+    "assets/mit-observacao-4.svg"
+  ],
+  "author": "Vijay Verma · illlustrations.co",
+  "contentLicense": "MIT — © 2015 Vijay Verma, licença e atribuição em THIRD_PARTY_NOTICES.md",
+  "sourceRepository": "https://github.com/realvjy/illlustrations",
+  "disclaimer": "Quatro estudos independentes de observação; não representam uma única ilustração progredindo por etapas."
+}
