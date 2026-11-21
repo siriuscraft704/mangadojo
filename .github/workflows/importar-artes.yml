@@ -1,5 +1,7 @@
 name: Importar pacote de artes para revisão
 on:
+  issue_comment:
+    types: [created]
   workflow_dispatch:
     inputs:
       zip_url:
@@ -13,6 +15,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   importar:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issue_comment' && github.event.issue.number == 2 && github.event.comment.user.login == 'siriuscraft704')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,9 +26,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Resolver URL do anexo do GitHub
+        id: zip
+        env:
+          FROM_DISPATCH: ${{ inputs.zip_url }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          python - <<'PY'
+          import os,re
+          value=os.environ.get('FROM_DISPATCH','').strip()
+          if not value:
+              matches=re.findall(r'https://github\.com/user-attachments/(?:files|assets)/[^\s)<>]+',os.environ.get('COMMENT_BODY',''))
+              if not matches:
+                  raise SystemExit('Não foi encontrado um anexo ZIP do GitHub no comentário.')
+              value=matches[0].rstrip('.,;')
+          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf8') as output:
+              output.write('zip_url='+value+'\n')
+          PY
       - name: Conferir hashes e preparar 12 candidatas em pasta de revisão
         env:
-          ZIP_URL: ${{ inputs.zip_url }}
+          ZIP_URL: ${{ steps.zip.outputs.zip_url }}
         run: python tools/import_art_pack.py "$ZIP_URL"
       - name: Registrar imagens sem publicar em aulas
         run: |
