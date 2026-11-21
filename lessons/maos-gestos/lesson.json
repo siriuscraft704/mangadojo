@@ -8,68 +8,68 @@
   "emoji": "✌️",
   "steps": [
     [
-      "Estrutura da palma",
-      "Localize os volumes da palma, os eixos de dois dedos estendidos e o pulso antes de detalhar.",
+      "Blocos da palma",
+      "Desenhe a palma como bloco inclinado e defina a direção do gesto.",
       [
-        "Desenhe uma massa única para a palma",
-        "Marque somente dois dedos estendidos",
-        "Reserve espaço para os dedos dobrados"
+        "Trace palma",
+        "Marque pulso",
+        "Escolha direção"
       ]
     ],
     [
-      "Dedos estendidos",
-      "Construa indicador e médio separados em forma de V; observe as duas falanges principais e as extremidades.",
+      "Eixos dos dedos",
+      "Posicione linhas-guia para dedos esticados e dobrados.",
       [
-        "Confira os dois dedos levantados",
-        "Mantenha suas bases conectadas à palma",
-        "Não introduza dedos extras"
+        "Ajuste comprimentos",
+        "Marque articulações",
+        "Observe perspectiva"
       ]
     ],
     [
-      "Anelar e mínimo dobrados",
-      "Distribua dois dedos dobrados sobre a palma, reconhecendo suas sobreposições.",
+      "Polegar e volume",
+      "Adicione o polegar e volumes simples ao redor dos eixos.",
       [
-        "Desenhe o volume do anelar",
-        "Posicione o mínimo ao lado",
-        "Confira a anatomia da base"
+        "Encaixe polegar",
+        "Modele dedos",
+        "Revise proporções"
       ]
     ],
     [
-      "Polegar sobreposto",
-      "Adicione um único polegar atravessando a frente dos dedos dobrados e revise as articulações.",
+      "Contorno expressivo",
+      "Transforme cilindros e blocos em curvas naturais.",
       [
-        "Desenhe apenas um polegar",
-        "Observe as sobreposições",
-        "Cheque o número total de cinco dedos"
+        "Suavize juntas",
+        "Defina unhas",
+        "Reforce gesto"
       ]
     ],
     [
-      "Refinamento anatômico",
-      "Limpe as guias, ajuste o encontro entre falanges e a transição da palma para o pulso.",
+      "Traço final",
+      "Limpe a construção e destaque o desenho da mão.",
       [
-        "Varie espessura dos contornos",
-        "Adicione juntas discretas",
-        "Revise a posição das unhas"
+        "Refine contorno",
+        "Use poucas dobras",
+        "Varie espessura"
       ]
     ],
     [
-      "Sombra e acabamento",
-      "Aplique sombras suaves aos pontos de contato entre os dedos e preserve a silhueta do gesto.",
+      "Luz e detalhes",
+      "Sombreie pontos de contato e adicione detalhes discretos.",
       [
-        "Sombreie interseções",
-        "Preserve a leitura do V",
-        "Compare com a construção inicial"
+        "Sombreie dedos",
+        "Ajuste unhas",
+        "Realce planos"
       ]
     ]
   ],
   "images": [
-    "assets/maos-gestos-original-1.svg",
-    "assets/maos-gestos-original-2.svg",
-    "assets/maos-gestos-original-3.svg",
-    "assets/maos-gestos-original-4.svg",
-    "assets/maos-gestos-original-5.svg",
-    "assets/maos-gestos-original-6.svg"
+    "assets/maos-gestos-1.webp",
+    "assets/maos-gestos-2.webp",
+    "assets/maos-gestos-3.webp",
+    "assets/maos-gestos-4.webp",
+    "assets/maos-gestos-5.webp",
+    "assets/maos-gestos-6.webp"
   ],
-  "author": "MangaDojo · Redesenho vetorial original",
+  "author": "MangaDojo · Ilustração original assistida por IA",
   "contentLicense": "MangaDojo — uso educacional no projeto"
 }
