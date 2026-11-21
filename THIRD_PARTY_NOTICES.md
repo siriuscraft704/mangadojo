@@ -10,7 +10,7 @@ Arquivos incluídos:
 
 | Arquivo local | Arquivo original |
 |---|---|
-| `assets/mit-observacao-1.svg` | `content/illlustrations/day-1/day1-ipod.svg` |
+| `assets/mit-observacao-1.svg` | `content/illlustrations/day-69/day69-dotted-notebook.svg` |
 | `assets/mit-observacao-2.svg` | `content/illlustrations/day-10/day10-canvas-stand.svg` |
 | `assets/mit-observacao-3.svg` | `content/illlustrations/120/120-power-of-pen.svg` |
 | `assets/mit-observacao-4.svg` | `content/illlustrations/day-11/day11-blackboard.svg` |
