@@ -1,0 +1,71 @@
+{
+  "id": "cabelos-ondulados",
+  "name": "Cabelos Ondulados — Volumes e Acabamento",
+  "category": "Cabelos e penteados",
+  "style": "Mangá · estudo de referências",
+  "level": "Intermediário",
+  "min": 30,
+  "emoji": "🌊",
+  "artworkRevision": "artes-limpas-2",
+  "reviewStatus": "experimental",
+  "lessonType": "reference-studies",
+  "disclaimer": "São seis referências de construção e acabamento com pequenas mudanças de ângulo entre imagens. Compare as formas e não trate todas como a mesma pose anatômica.",
+  "steps": [
+    [
+      "Silhueta e direção",
+      "Observe a forma externa e a direção inicial das mechas onduladas.",
+      [
+        "Trace a linha do crânio antes do cabelo",
+        "Reserve margens para o volume lateral"
+      ]
+    ],
+    [
+      "Agrupamento das mechas",
+      "Divida as ondas em grupos amplos, com curvas que seguem a direção geral do penteado.",
+      [
+        "Evite desenhar fios individualmente no começo",
+        "Compare o ritmo das curvas"
+      ]
+    ],
+    [
+      "Profundidade inicial",
+      "Adicione sobreposições sem perder a leitura das massas principais.",
+      [
+        "Defina o que está à frente e atrás",
+        "Evite ondulações idênticas e repetitivas"
+      ]
+    ],
+    [
+      "Contornos e volume",
+      "Transforme as guias em contornos mais firmes, preservando o espaço entre os grupos de cabelo.",
+      [
+        "Conserve o volume na raiz",
+        "Não corte as pontas do enquadramento"
+      ]
+    ],
+    [
+      "Variação de ângulo e brilho",
+      "Compare a nova referência com as anteriores: perceba a pequena mudança de perspectiva e trate-a como estudo independente.",
+      [
+        "Identifique a direção do rosto",
+        "Marque áreas de reflexo sem adicionar contornos excessivos"
+      ]
+    ],
+    [
+      "Sombreamento do ondulado",
+      "Use sombra gradual e contraste para separar mechas iluminadas e planos internos.",
+      [
+        "Mantenha brilho nas curvas externas",
+        "Evite sombreamento uniforme em todas as mechas"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/review-pending/cabelos-ondulados-01.webp",
+    "assets/review-pending/cabelos-ondulados-02.webp",
+    "assets/review-pending/cabelos-ondulados-03.webp",
+    "assets/review-pending/cabelos-ondulados-04.webp",
+    "assets/review-pending/cabelos-ondulados-05.webp",
+    "assets/review-pending/cabelos-ondulados-06.webp"
+  ]
+}
