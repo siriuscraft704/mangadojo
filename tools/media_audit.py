@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Non-destructive inventory of all lesson images. Flags are review hints, never automatic anatomical verdicts."""
 from pathlib import Path
-import json, re, hashlib, struct
+import json, re, hashlib, struct, statistics
 import xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 courses=[]
@@ -49,9 +49,27 @@ for lesson in courses:
             'rosto-masc-frontal','rosto-masc-perfil','sakura','shonen'
         }:r['risk_flags'].append('legacy-composite-review')
         records.append(r)
+# Cross-step consistency is only a review heuristic. Aspect variations can be intentional.
+by_lesson={}
+for row in records:
+    if row['width'] and row['height']:
+        by_lesson.setdefault(row['lesson'],[]).append(row)
+for lesson,images in by_lesson.items():
+    aspects=[r['width']/r['height'] for r in images]
+    if len(aspects)<2: continue
+    typical=statistics.median(aspects)
+    for row in images:
+        aspect=row['width']/row['height']
+        if abs(aspect/typical-1)>0.10:
+            row['risk_flags'].append('stage-aspect-inconsistency')
+# Source-to-lesson mismatch confirmed in manual browser inspection.
+for row in records:
+    if row['path']=='assets/cabelo-fem-ondas-1.webp':
+        row['risk_flags'].append('source-content-mismatch-review')
 summary={'lessons':len(courses),'images':len(records),
          'new_vector':sum(r['generation']=='new-vector' for r in records),
          'legacy_or_unreviewed':sum(r['generation']!='new-vector' for r in records),
-         'broken':0,'flagged':sum(bool(r['risk_flags']) for r in records)}
+         'broken':0,'flagged':sum(bool(r['risk_flags']) for r in records),
+         'aspect_inconsistent':sum('stage-aspect-inconsistency' in r['risk_flags'] for r in records)}
 (ROOT/'media_audit.generated.json').write_text(json.dumps({'summary':summary,'assets':records},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print('MEDIA AUDIT:',summary)
