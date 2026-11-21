@@ -109,7 +109,7 @@ assert 'Smudge' in index and 'Smudge' in studio
 assert 'smudge-projects' in studio and 'dbRead' in studio
 assert "courseImg(current,step+1).replace(/^assets\\//,'')" in index
 assert 'webp|svg|png' in studio
-assert 'review-pending' in studio and 'review-pending' in (ROOT/'acervo-revisado.html').read_text('utf-8')
+assert 'review-pending' in studio and "path.replace(/^assets\\//,'')" in (ROOT/'acervo-revisado.html').read_text('utf-8')
 assert 'stabilizer' in studio and 'smoothPoint' in studio
 assert 'Referência: ' in studio
 assert 'Projeto incompatível' in studio
