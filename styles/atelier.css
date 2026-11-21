@@ -91,3 +91,6 @@ body{background:var(--md-paper);color:var(--md-ink);font-family:ui-sans-serif,sy
  .toolbar{min-width:0}
 }
 @media(max-width:390px){.catalog .course img{height:134px!important}}
+
+.nav .nav-audit-link{display:block;padding:13px 14px;border-radius:12px;color:#d7c9df;text-decoration:none;font-weight:650;min-height:46px}
+.nav .nav-audit-link:hover,.nav .nav-audit-link:focus-visible{background:#353945;color:#fff}
