@@ -28,7 +28,8 @@ with tempfile.TemporaryDirectory() as temp:
     subprocess.run([sys.executable, str(ROOT/'tools/package_pages.py'), str(public)], check=True)
     assert not (public/'drafts').exists()
     assert not (public/'assets/shojo-1.webp').exists()
-    assert len(list((public/'assets').rglob('*.webp')))==54
+    assert len(list((public/'assets').glob('*.webp')))==42
+    assert len(list((public/'assets/review-pending').glob('*.webp')))==12
     assert (public/'oficina.html').exists()
     assert (public/'revisao-candidatos.html').exists()
     boards = json.loads((public/'pranchas.json').read_text('utf-8'))
