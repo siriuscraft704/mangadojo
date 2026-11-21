@@ -1,0 +1,75 @@
+{
+  "id": "rosto-masc-perfil",
+  "name": "Rosto Masculino de Perfil",
+  "category": "Rostos e personagens",
+  "style": "Shonen",
+  "level": "Intermediário",
+  "min": 26,
+  "emoji": "🧑",
+  "steps": [
+    [
+      "Crânio e direção",
+      "Estabeleça a esfera do crânio e a direção do rosto lateral.",
+      [
+        "Crie o círculo",
+        "Desenhe eixo lateral",
+        "Marque linha dos olhos"
+      ]
+    ],
+    [
+      "Queixo e mandíbula",
+      "Construa uma mandíbula angular e conecte-a ao pescoço.",
+      [
+        "Projete a testa",
+        "Marque nariz e queixo",
+        "Encaixe pescoço"
+      ]
+    ],
+    [
+      "Traços faciais",
+      "Defina olho, sobrancelha, nariz e boca vistos de lado.",
+      [
+        "Desenhe olho em perfil",
+        "Alinhe o nariz",
+        "Simplifique boca"
+      ]
+    ],
+    [
+      "Cabelo em massas",
+      "Comece pelo volume superior e desenhe grupos de mechas.",
+      [
+        "Defina implantação",
+        "Marque volume",
+        "Distribua mechas"
+      ]
+    ],
+    [
+      "Limpeza e line art",
+      "Use contornos nítidos para separar rosto e cabelo.",
+      [
+        "Ajuste mandíbula",
+        "Acerte a silhueta",
+        "Varie o peso das linhas"
+      ]
+    ],
+    [
+      "Sombras finais",
+      "Dê volume ao cabelo, à mandíbula e ao pescoço com sombras.",
+      [
+        "Sombreie o cabelo",
+        "Modele o pescoço",
+        "Realce traços importantes"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/rosto-masc-perfil-1.webp",
+    "assets/rosto-masc-perfil-2.webp",
+    "assets/rosto-masc-perfil-3.webp",
+    "assets/rosto-masc-perfil-4.webp",
+    "assets/rosto-masc-perfil-5.webp",
+    "assets/rosto-masc-perfil-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

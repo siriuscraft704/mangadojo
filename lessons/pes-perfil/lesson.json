@@ -1,0 +1,75 @@
+{
+  "id": "pes-perfil",
+  "name": "Pés de Mangá em Perfil",
+  "category": "Pés e anatomia",
+  "style": "Anatomia mangá",
+  "level": "Intermediário",
+  "min": 25,
+  "emoji": "🦶",
+  "steps": [
+    [
+      "Caixas de construção",
+      "Defina tornozelo, calcanhar e antepé com blocos geométricos.",
+      [
+        "Trace eixo do pé",
+        "Desenhe calcanhar",
+        "Marque antepé"
+      ]
+    ],
+    [
+      "Arco e tornozelo",
+      "Conecte os volumes pelo arco e pela curva do tornozelo.",
+      [
+        "Marque arco",
+        "Ajuste calcanhar",
+        "Defina articulação"
+      ]
+    ],
+    [
+      "Dedos e proporções",
+      "Divida o antepé em dedos e ajuste comprimento.",
+      [
+        "Desenhe dedo grande",
+        "Distribua restantes",
+        "Revise perspectiva"
+      ]
+    ],
+    [
+      "Refinamento da forma",
+      "Substitua blocos por curvas e superfícies naturais.",
+      [
+        "Suavize contorno",
+        "Indique dorso",
+        "Corrija arco"
+      ]
+    ],
+    [
+      "Line art",
+      "Aplique traços limpos valorizando a silhueta do pé.",
+      [
+        "Reforce contorno",
+        "Adicione unhas",
+        "Limpe guias"
+      ]
+    ],
+    [
+      "Acabamento",
+      "Use sombras leves para mostrar o volume e a orientação do pé.",
+      [
+        "Sombreie dorso",
+        "Reforce contato com o chão",
+        "Finalize detalhes"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/pes-perfil-1.webp",
+    "assets/pes-perfil-2.webp",
+    "assets/pes-perfil-3.webp",
+    "assets/pes-perfil-4.webp",
+    "assets/pes-perfil-5.webp",
+    "assets/pes-perfil-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

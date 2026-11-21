@@ -1,0 +1,75 @@
+{
+  "id": "cabelo-fem-liso",
+  "name": "Cabelos Femininos Lisos",
+  "category": "Cabelos e penteados",
+  "style": "Shojo",
+  "level": "Iniciante",
+  "min": 22,
+  "emoji": "💇‍♀️",
+  "steps": [
+    [
+      "Crânio e implantação",
+      "Desenhe a forma da cabeça e escolha o ponto onde o cabelo nasce.",
+      [
+        "Desenhe o crânio",
+        "Marque raiz",
+        "Planeje divisão"
+      ]
+    ],
+    [
+      "Volume principal",
+      "Esboce uma massa contínua de cabelo ao redor do rosto.",
+      [
+        "Não cole no crânio",
+        "Desenhe laterais",
+        "Ajuste caimento"
+      ]
+    ],
+    [
+      "Franja e mechas",
+      "Separe a franja e as mechas principais usando curvas longas.",
+      [
+        "Divida franja",
+        "Crie mechas grandes",
+        "Indique direção dos fios"
+      ]
+    ],
+    [
+      "Comprimento e fluxo",
+      "Prolongue as mechas, respeitando peso e direção natural.",
+      [
+        "Trace linhas fluidas",
+        "Evite paralelismo excessivo",
+        "Varie pontas"
+      ]
+    ],
+    [
+      "Line art do cabelo",
+      "Refine contornos e mechas sem exagerar nos fios pequenos.",
+      [
+        "Reforce bordas",
+        "Use linhas finas internas",
+        "Limpe guias"
+      ]
+    ],
+    [
+      "Brilhos e sombras",
+      "Acrescente brilho e sombreamento para dar textura sedosa.",
+      [
+        "Sombreie raízes",
+        "Reserve reflexos",
+        "Reforce profundidade"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/cabelo-fem-liso-1.webp",
+    "assets/cabelo-fem-liso-2.webp",
+    "assets/cabelo-fem-liso-3.webp",
+    "assets/cabelo-fem-liso-4.webp",
+    "assets/cabelo-fem-liso-5.webp",
+    "assets/cabelo-fem-liso-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

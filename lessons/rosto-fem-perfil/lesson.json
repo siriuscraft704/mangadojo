@@ -1,0 +1,75 @@
+{
+  "id": "rosto-fem-perfil",
+  "name": "Rosto Feminino de Perfil",
+  "category": "Rostos e personagens",
+  "style": "Mangá",
+  "level": "Intermediário",
+  "min": 26,
+  "emoji": "🌷",
+  "steps": [
+    [
+      "Círculo e eixo lateral",
+      "Desenhe o crânio como esfera e trace a direção do rosto em vista lateral.",
+      [
+        "Círculo básico",
+        "Eixo frontal",
+        "Linha dos olhos"
+      ]
+    ],
+    [
+      "Mandíbula e pescoço",
+      "Acrescente a linha da testa, a mandíbula delicada e a conexão do pescoço.",
+      [
+        "Incline a testa",
+        "Modele queixo",
+        "Marque o pescoço"
+      ]
+    ],
+    [
+      "Olho, nariz e boca",
+      "Posicione o único olho visível e construa a silhueta do nariz e dos lábios.",
+      [
+        "Alinhe o olho",
+        "Trace perfil do nariz",
+        "Marque boca e queixo"
+      ]
+    ],
+    [
+      "Silhueta do cabelo",
+      "Esboce grandes massas de cabelo sem desenhar os fios individuais.",
+      [
+        "Respeite o crânio",
+        "Divida franja",
+        "Trace mechas de trás"
+      ]
+    ],
+    [
+      "Arte-final de perfil",
+      "Limpe o rosto e reforce o traço nas sobreposições de cabelo e pele.",
+      [
+        "Refine olho e cílios",
+        "Limpe mandíbula",
+        "Varie espessura de linhas"
+      ]
+    ],
+    [
+      "Luz e acabamento",
+      "Use sombras suaves nas mechas, no pescoço e no contorno facial.",
+      [
+        "Sombreie mechas internas",
+        "Preserve pontos de luz",
+        "Revise a silhueta"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/rosto-fem-perfil-1.webp",
+    "assets/rosto-fem-perfil-2.webp",
+    "assets/rosto-fem-perfil-3.webp",
+    "assets/rosto-fem-perfil-4.webp",
+    "assets/rosto-fem-perfil-5.webp",
+    "assets/rosto-fem-perfil-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

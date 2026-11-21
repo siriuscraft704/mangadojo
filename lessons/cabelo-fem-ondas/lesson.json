@@ -1,0 +1,75 @@
+{
+  "id": "cabelo-fem-ondas",
+  "name": "Cabelos Femininos Ondulados",
+  "category": "Cabelos e penteados",
+  "style": "Shojo",
+  "level": "Intermediário",
+  "min": 24,
+  "emoji": "🌊",
+  "steps": [
+    [
+      "Base e repartição",
+      "Desenhe o crânio e a linha de implantação do cabelo ondulado.",
+      [
+        "Defina crânio",
+        "Marque repartição",
+        "Planeje volume"
+      ]
+    ],
+    [
+      "Massas onduladas",
+      "Organize o cabelo em blocos amplos com movimento lateral.",
+      [
+        "Marque massas",
+        "Defina volume",
+        "Acompanhe gravidade"
+      ]
+    ],
+    [
+      "Ritmo em S",
+      "Substitua linhas retas por ondas fluidas em S.",
+      [
+        "Comece perto das raízes",
+        "Varie largura da onda",
+        "Evite repetição mecânica"
+      ]
+    ],
+    [
+      "Franja e moldura",
+      "Desenhe mechas que emolduram o rosto e misture comprimentos.",
+      [
+        "Enquadre rosto",
+        "Combine mechas",
+        "Ajuste pontas"
+      ]
+    ],
+    [
+      "Line art",
+      "Limpe os contornos, dando ênfase às curvas principais.",
+      [
+        "Varie pressão",
+        "Reforce sobreposições",
+        "Apague guias"
+      ]
+    ],
+    [
+      "Volume sombreado",
+      "Crie profundidade onde as ondas se sobrepõem.",
+      [
+        "Sombreie dobras",
+        "Reserve brilhos",
+        "Revise silhueta"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/cabelo-fem-ondas-1.webp",
+    "assets/cabelo-fem-ondas-2.webp",
+    "assets/cabelo-fem-ondas-3.webp",
+    "assets/cabelo-fem-ondas-4.webp",
+    "assets/cabelo-fem-ondas-5.webp",
+    "assets/cabelo-fem-ondas-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

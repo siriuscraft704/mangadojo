@@ -1,0 +1,75 @@
+{
+  "id": "maos-gestos",
+  "name": "Mãos em Gestos",
+  "category": "Mãos e anatomia",
+  "style": "Anatomia mangá",
+  "level": "Intermediário",
+  "min": 28,
+  "emoji": "✌️",
+  "steps": [
+    [
+      "Blocos da palma",
+      "Desenhe a palma como bloco inclinado e defina a direção do gesto.",
+      [
+        "Trace palma",
+        "Marque pulso",
+        "Escolha direção"
+      ]
+    ],
+    [
+      "Eixos dos dedos",
+      "Posicione linhas-guia para dedos esticados e dobrados.",
+      [
+        "Ajuste comprimentos",
+        "Marque articulações",
+        "Observe perspectiva"
+      ]
+    ],
+    [
+      "Polegar e volume",
+      "Adicione o polegar e volumes simples ao redor dos eixos.",
+      [
+        "Encaixe polegar",
+        "Modele dedos",
+        "Revise proporções"
+      ]
+    ],
+    [
+      "Contorno expressivo",
+      "Transforme cilindros e blocos em curvas naturais.",
+      [
+        "Suavize juntas",
+        "Defina unhas",
+        "Reforce gesto"
+      ]
+    ],
+    [
+      "Traço final",
+      "Limpe a construção e destaque o desenho da mão.",
+      [
+        "Refine contorno",
+        "Use poucas dobras",
+        "Varie espessura"
+      ]
+    ],
+    [
+      "Luz e detalhes",
+      "Sombreie pontos de contato e adicione detalhes discretos.",
+      [
+        "Sombreie dedos",
+        "Ajuste unhas",
+        "Realce planos"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/maos-gestos-1.webp",
+    "assets/maos-gestos-2.webp",
+    "assets/maos-gestos-3.webp",
+    "assets/maos-gestos-4.webp",
+    "assets/maos-gestos-5.webp",
+    "assets/maos-gestos-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}
