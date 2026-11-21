@@ -79,7 +79,7 @@ async function render(){
    img.loading='lazy';
    const body=document.createElement('div'),label=document.createElement('strong'),practice=document.createElement('a');
    label.textContent='Etapa '+(index+1);
-   practice.href='studio.html?'+(blob?'localArt=':'ref=')+encodeURIComponent(name);
+   practice.href='studio.html?'+(blob?'localArt=':'ref=')+encodeURIComponent(blob?name:path.replace(/^assets\//,''));
    practice.textContent='Praticar no Smudge';
    body.append(label,practice);
    art.append(img,body);
