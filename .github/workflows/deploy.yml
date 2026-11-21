@@ -23,6 +23,8 @@ jobs:
           python-version: '3.12'
       - name: Validar e compilar catálogo
         run: python tools/build_catalog.py
+      - name: Testes de regressão estática
+        run: python tools/smoke_test.py
       - uses: actions/configure-pages@v5
         with:
           enablement: true
