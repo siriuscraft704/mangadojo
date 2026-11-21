@@ -1,0 +1,21 @@
+/* Smudge Studio — original UI layer */
+:root{--sm-bg:#15171d;--sm-panel:#22252c;--sm-border:#343843;--sm-muted:#b6b9c2;--sm-accent:#e98472}
+body{background:var(--sm-bg);color:#f4efe9;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.head{background:#1c1e25;border-bottom:1px solid #343741;min-height:67px}
+.brand{display:inline-flex;align-items:center;gap:9px;font:700 24px Georgia,serif;color:#f8efe6}
+.brand img{width:34px;height:34px;border-radius:8px}
+.brand span{color:#ee9988}
+.head>strong{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#ffc2a3}
+.status{color:#c7c2c1}
+.layout{gap:14px}
+.side,.workspace{background:var(--sm-panel);border-color:var(--sm-border);border-radius:16px}
+.side h2{font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:#d3c4b9}
+.tool,.mini{background:#30343d;color:#f5f1ed;border-color:#494c55;border-radius:10px}
+.tool.active,.mini.active{background:#ab584f;border-color:#f39887}
+.tool:hover,.mini:hover{background:#444752}
+.tool.active:hover{background:#ab584f}
+.workarea{background-color:#191d24;background-image:linear-gradient(45deg,#fff2 25%,transparent 25%),linear-gradient(-45deg,#fff2 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#fff2 75%),linear-gradient(-45deg,transparent 75%,#fff2 75%);background-size:22px 22px;background-position:0 0,0 11px,11px -11px,-11px 0}
+.sheet{box-shadow:0 24px 60px #0008}
+.back{color:#eee0d4}
+.smudge-credit{font-size:11px;color:#b7a7a4}
+@media(max-width:760px){.head{gap:8px}.brand{font-size:20px}.head>strong{display:none}.layout{padding:7px}.workarea{padding:10px}.tool{min-height:45px}}
