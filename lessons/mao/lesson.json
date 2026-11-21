@@ -2,74 +2,61 @@
   "id": "mao",
   "name": "Mão Aberta — Anatomia Mangá",
   "category": "Mãos e anatomia",
-  "style": "Fundamentos",
+  "style": "Mangá",
   "level": "Iniciante",
-  "min": 22,
+  "min": 25,
   "emoji": "✋",
+  "artworkRevision": "r2",
   "steps": [
     [
       "Palma e eixo",
-      "Comece com a palma como uma forma simples e marque o eixo de cada dedo.",
+      "Construa o volume da palma e o arco de implantação dos dedos.",
       [
-        "Desenhe a palma com contorno arredondado",
-        "Marque o pulso e o polegar",
-        "Separe as cinco direções dos dedos"
+        "Marque a direção do punho e do polegar."
       ]
     ],
     [
       "Dedos e articulações",
-      "Divida os dedos em segmentos e ajuste suas diferentes alturas.",
+      "Divida os dedos em segmentos e observe as diferentes alturas.",
       [
-        "Desenhe os cinco dedos sem deixá-los iguais",
-        "Indique juntas e dobras",
-        "Observe a abertura da mão"
+        "Conte cinco dedos."
       ]
     ],
     [
-      "Contorno anatômico",
-      "Substitua blocos por curvas naturais e ligue dedos à palma.",
+      "Silhueta",
+      "Conecte dedos, palma e punho em um contorno contínuo.",
       [
-        "Ajuste a espessura de cada dedo",
-        "Desenhe a base do polegar",
-        "Marque linhas suaves da palma"
+        "Preserve o espaço entre os dedos."
       ]
     ],
     [
-      "Pregas e detalhes",
-      "Refine as dobras e confira o formato das pontas dos dedos.",
+      "Linhas da palma",
+      "Indique dobras e articulações conforme a mão se abre.",
       [
-        "Desenhe pregas com poucas linhas",
-        "Observe a curvatura do polegar",
-        "Evite contornos excessivamente rígidos"
+        "Use linhas suaves nos vincos."
       ]
     ],
     [
-      "Nanquim e limpeza",
-      "Reforce a silhueta e apague mentalmente as guias de construção.",
+      "Refinamento",
+      "Limpe as guias e organize a espessura dos dedos.",
       [
-        "Varie a pressão do traço",
-        "Não escureça todas as linhas internas",
-        "Conserve espaços entre os dedos"
+        "Confira a ligação do polegar com a palma."
       ]
     ],
     [
-      "Sombras leves",
-      "Use sombra discreta para explicar o volume da palma e das articulações.",
+      "Sombras",
+      "Modele as áreas de contato e o volume da palma com grafite.",
       [
-        "Sombreie a base do polegar",
-        "Marque dobras com traços suaves",
-        "Compare com a própria mão"
+        "Separe luz, meios-tons e sombra."
       ]
     ]
   ],
   "images": [
-    "assets/mao-1.webp",
-    "assets/mao-2.webp",
-    "assets/mao-3.webp",
-    "assets/mao-4.webp",
-    "assets/mao-5.webp",
-    "assets/mao-6.webp"
-  ],
-  "author": "MangaDojo · Ilustração original assistida por IA",
-  "contentLicense": "MangaDojo — uso educacional no projeto"
+    "assets/mao-aberta-r2-1.webp",
+    "assets/mao-aberta-r2-2.webp",
+    "assets/mao-aberta-r2-3.webp",
+    "assets/mao-aberta-r2-4.webp",
+    "assets/mao-aberta-r2-5.webp",
+    "assets/mao-aberta-r2-6.webp"
+  ]
 }

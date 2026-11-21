@@ -31,11 +31,13 @@ jobs:
         run: node tools/test_visual_geometry.cjs
       - name: Inventariar imagens e riscos de recorte
         run: python tools/media_audit.py
+      - name: Preparar apenas arquivos públicos
+        run: python tools/package_pages.py "${{ runner.temp }}/mangadojo-pages"
       - uses: actions/configure-pages@v5
         with:
           enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ${{ runner.temp }}/mangadojo-pages
       - id: deployment
         uses: actions/deploy-pages@v4

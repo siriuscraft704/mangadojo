@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oficina criativa · MangaDojo</title>
+<link rel="icon" href="assets/mangadojo-mark.svg" type="image/svg+xml">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f4f1;color:#282633;font:16px/1.5 system-ui,sans-serif}
+header{background:#211c2b;color:#fff}nav,main{max-width:1040px;margin:auto;padding:clamp(16px,4vw,32px)}
+nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}nav a{color:#fff}h1,h2{font-family:Georgia,serif;line-height:1.12}
+h1{font-size:clamp(36px,7vw,64px);margin:10px 0}h2{font-size:30px;margin:0 0 18px}p{max-width:68ch}
+section{padding:clamp(16px,4vw,30px);background:#fff;margin:22px 0;border-radius:16px;border:1px solid #e9dfdf}
+.grid,.panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}fieldset{min-width:0;border:1px solid #e9dfdf;border-radius:8px}
+label{display:grid;gap:5px;font-weight:650}input,textarea,select,button{font:inherit}
+input:not([type=checkbox]),textarea,select{width:100%;min-width:0;border:1px solid #b7a9b3;padding:9px;border-radius:8px;color:#282633;background:#fff}
+textarea{min-height:90px;resize:vertical}.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:16px 0 0}
+button{border:0;border-radius:9px;background:#753652;color:white;padding:9px 14px;font-weight:650;cursor:pointer}
+a{color:#753652}.exercise{padding:14px 16px;background:#faf2f5;border-radius:10px;margin-top:14px}.exercise strong{display:block}
+:focus-visible{outline:3px solid #c14d79;outline-offset:3px}[role=status]{color:#514556;margin-top:12px}
+@media(max-width:610px){.grid,.panels{grid-template-columns:1fr}}
+@media print{header,.exercise-section,.actions{display:none}body{background:#fff}section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><nav aria-label="Navegação"><a href="./">MangaDojo</a><a href="trilhas.html">Trilhas</a><a href="studio.html">Smudge</a></nav></header>
+<main>
+<h1>Oficina criativa</h1>
+<p>Treine um fundamento, construa uma ficha de personagem ou planeje uma página de mangá. Seus rascunhos ficam neste navegador.</p>
+<section class="exercise-section" aria-labelledby="practice-title">
+<h2 id="practice-title">Exercícios de desenho</h2>
+<div class="grid">
+<label>Faixa de estudo
+<select id="audience"><option value="guided">Crianças · prática guiada</option><option value="regular">Jovens e adultos · prática regular</option><option value="advanced">Jovens e adultos · desafio</option></select></label>
+<label>Tema
+<select id="theme"><option value="gesture">Corpo inteiro e ação</option><option value="design">Cabelo, roupa e expressão</option><option value="perspective">Cenários em perspectiva</option><option value="story">Narrativa em quadrinhos</option></select></label>
+</div>
+<div class="exercise">
+<strong id="exercise-name"></strong><p id="exercise-prompt"></p>
+<label><span><input type="checkbox" id="review-one"> <span id="review-one-text"></span></span></label>
+<label><span><input type="checkbox" id="review-two"> <span id="review-two-text"></span></span></label>
+</div>
+<div class="actions"><a href="studio.html">Praticar no Smudge →</a></div>
+</section>
+
+<form id="draft">
+<section aria-labelledby="character-title">
+<h2 id="character-title">Ficha de personagem</h2>
+<div class="grid">
+<label>Nome <input name="name" maxlength="80"></label>
+<label>Papel na história <input name="role" maxlength="120"></label>
+<label>Silhueta e postura <textarea name="silhouette" maxlength="500"></textarea></label>
+<label>Cabelo, roupa e expressão <textarea name="appearance" maxlength="500"></textarea></label>
+<label>Objetivo <textarea name="goal" maxlength="500"></textarea></label>
+<label>Conflito <textarea name="conflict" maxlength="500"></textarea></label>
+</div>
+</section>
+<section aria-labelledby="comic-title">
+<h2 id="comic-title">Roteiro de página</h2>
+<div class="grid">
+<label>Título da página <input name="title" maxlength="100"></label>
+<label>Sentido de leitura
+<select name="direction"><option>Da esquerda para a direita</option><option>Da direita para a esquerda</option></select></label>
+</div>
+<div class="panels" id="panels"></div>
+<div class="actions"><button id="add" type="button">Adicionar quadro</button><button id="remove" type="button">Remover último quadro</button></div>
+</section>
+<div class="actions"><button type="button" id="download">Baixar projeto JSON</button><button type="button" id="print">Imprimir ficha e roteiro</button></div>
+<p id="save" role="status"></p>
+</form>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const key='mangadojo-workshop-v1';
+const exercises={
+ gesture:[
+  ['Pose em três linhas','Desenhe uma cabeça, uma linha curva para o corpo e dois apoios. Dê à pose um gesto de corrida.','Consigo dizer para onde a figura vai.','Pelo menos um pé tem uma posição clara.'],
+  ['Corpo em movimento','Faça três miniaturas de uma pessoa correndo. Escolha uma e adicione tórax, quadril e articulações.','O peso do corpo acompanha os apoios.','Braços e pernas formam uma silhueta legível.'],
+  ['Ação em três momentos','Desenhe preparação, ação e recuperação de um salto. Mantenha os volumes do mesmo personagem.','As três poses conservam as proporções.','O desenho transmite peso e mudança de direção.']
+ ],
+ design:[
+  ['Mesmo rosto, outro humor','Desenhe o mesmo rosto feliz e surpreso. Mude sobrancelha e boca e conserve o cabelo.','O cabelo identifica o personagem.','Os humores podem ser reconhecidos sem legenda.'],
+  ['Silhueta e expressão','Crie duas roupas para o mesmo personagem e trace três expressões. Preserve as formas que identificam o rosto.','As duas roupas geram silhuetas diferentes.','O personagem continua reconhecível.'],
+  ['Folha de modelo','Projete uma frente, um perfil e uma vista de costas. Repita a roupa e adicione quatro expressões.','Os detalhes se alinham entre as vistas.','A expressão muda sem deformar a identidade.']
+ ],
+ perspective:[
+  ['Caminho ao horizonte','Desenhe uma linha de horizonte e um ponto no centro. Faça as bordas de um caminho se encontrarem no ponto.','As duas bordas encontram o mesmo ponto.','Objetos mais distantes parecem menores.'],
+  ['Um ponto de fuga','Construa um corredor com portas de ambos os lados. Use o horizonte para alinhar as linhas de profundidade.','As linhas de profundidade convergem.','As portas mantêm proporções coerentes.'],
+  ['Dois pontos de fuga','Desenhe a esquina de uma rua com dois pontos de fuga sobre o horizonte e alturas variadas.','Cada família de linhas converge ao seu ponto.','As verticais permanecem coerentes.']
+ ],
+ story:[
+  ['Três momentos','Planeje três quadros com começo, surpresa e reação. Use uma ação em cada quadro.','A ordem dos quadros é fácil de seguir.','A reação esclarece o que aconteceu.'],
+  ['Página de quatro quadros','Mostre um lugar, uma aproximação, um gesto e sua consequência usando planos diferentes.','Cada quadro faz a história avançar.','Posso ler a página sem voltar para entender.'],
+  ['Ritmo e revelação','Planeje uma página com variação de enquadramento e tamanho. Use um quadro amplo para destacar a revelação.','O enquadramento conduz o olhar na ordem desejada.','A revelação tem espaço e contraste.']
+ ]
+};
+const audiences=['guided','regular','advanced'];
+let data={fields:{},panels:[{}, {}, {}],checks:{},audience:'guided',theme:'gesture'};
+try{const stored=JSON.parse(localStorage.getItem(key)||'null');if(stored?.fields&&Array.isArray(stored.panels))data={...data,...stored}}catch{}
+function save(){
+ try{localStorage.setItem(key,JSON.stringify(data));$('save').textContent='Rascunho salvo neste navegador.'}
+ catch{$('save').textContent='Armazenamento indisponível. Baixe o projeto JSON para guardar o rascunho.'}
+}
+function renderExercise(){
+ const exercise=exercises[data.theme][audiences.indexOf(data.audience)];
+ ['exercise-name','exercise-prompt','review-one-text','review-two-text'].forEach((id,i)=>$(id).textContent=exercise[i]);
+ ['review-one','review-two'].forEach(id=>$(id).checked=!!data.checks[data.theme+':'+data.audience+':'+id]);
+}
+for(const id of ['audience','theme']){
+ $(id).value=data[id];
+ $(id).onchange=()=>{data[id]=$(id).value;renderExercise();save()};
+}
+for(const id of ['review-one','review-two']){
+ $(id).onchange=()=>{data.checks[data.theme+':'+data.audience+':'+id]=$(id).checked;save()};
+}
+const form=$('draft');
+for(const field of form.querySelectorAll('[name]')){
+ if(Object.hasOwn(data.fields,field.name))field.value=data.fields[field.name];
+ field.addEventListener('input',()=>{data.fields[field.name]=field.value;save()});
+}
+function renderPanels(){
+ $('panels').replaceChildren();
+ data.panels.forEach((panel,index)=>{
+  const group=document.createElement('fieldset');
+  const legend=document.createElement('legend');
+  legend.textContent='Quadro '+(index+1);
+  group.append(legend);
+  for(const [name,title] of [['shot','Enquadramento e ação'],['dialogue','Diálogo ou narração']]){
+   const label=document.createElement('label');
+   label.textContent=title;
+   const input=document.createElement('textarea');
+   input.maxLength=500;
+   input.value=panel[name]||'';
+   input.oninput=()=>{panel[name]=input.value;save()};
+   label.append(input);
+   group.append(label);
+  }
+  $('panels').append(group);
+ });
+ $('add').disabled=data.panels.length>=8;
+ $('remove').disabled=data.panels.length<=1;
+}
+$('add').onclick=()=>{data.panels.push({});renderPanels();save();$('panels').lastElementChild.querySelector('textarea').focus()};
+$('remove').onclick=()=>{
+ const last=data.panels.at(-1);
+ if(Object.values(last).some(Boolean)&&!confirm('Remover o último quadro e o texto dele?'))return;
+ data.panels.pop();renderPanels();save();
+};
+$('download').onclick=()=>{
+ const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
+ const link=document.createElement('a');
+ link.href=url;
+ link.download='MangaDojo-oficina.json';
+ link.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+$('print').onclick=()=>window.print();
+form.onsubmit=event=>event.preventDefault();
+renderExercise();
+renderPanels();
+</script>
+</body>
+</html>

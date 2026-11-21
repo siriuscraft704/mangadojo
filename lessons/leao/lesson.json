@@ -1,0 +1,94 @@
+{
+  "id": "leao",
+  "name": "Leão",
+  "category": "Animais e criaturas",
+  "style": "Grafite",
+  "level": "Intermediário",
+  "min": 35,
+  "emoji": "🦁",
+  "artworkRevision": "artes-limpas-1",
+  "steps": [
+    [
+      "Gesto e apoio",
+      "Trace a linha do dorso e localize os quatro apoios.",
+      [
+        "Marque o chão e a altura da cabeça."
+      ]
+    ],
+    [
+      "Massas do corpo",
+      "Adicione caixas e ovais para tórax, quadril e focinho.",
+      [
+        "Compare o peso do peito e do quadril."
+      ]
+    ],
+    [
+      "Articulações",
+      "Conecte os membros e defina as posições das patas.",
+      [
+        "Mantenha visíveis os apoios."
+      ]
+    ],
+    [
+      "Silhueta",
+      "Use os volumes para contornar a cabeça, o tronco e a cauda.",
+      [
+        "Confira as curvas do dorso."
+      ]
+    ],
+    [
+      "Juba",
+      "Separe a cabeça do tronco com o volume principal da juba.",
+      [
+        "Desenhe grupos grandes antes dos fios."
+      ]
+    ],
+    [
+      "Expressão e peito",
+      "Refine olho, focinho e juba sobre o peito.",
+      [
+        "Compare a direção do olhar com a pose."
+      ]
+    ],
+    [
+      "Contorno e sobreposição",
+      "Reforce os membros próximos e os encontros da juba.",
+      [
+        "Mantenha legíveis as patas distantes."
+      ]
+    ],
+    [
+      "Detalhes de pata e cauda",
+      "Defina dedos, ponta da cauda e transições do contorno.",
+      [
+        "Evite linhas igualmente fortes em toda parte."
+      ]
+    ],
+    [
+      "Primeiras sombras",
+      "Aplique escuros sob a barriga e nas regiões de sobreposição.",
+      [
+        "Escolha um lado de luz."
+      ]
+    ],
+    [
+      "Grafite final",
+      "Modele a musculatura e a juba com tons claros, médios e escuros.",
+      [
+        "Confira se a silhueta continua legível."
+      ]
+    ]
+  ],
+  "images": [
+    "assets/leao-01.webp",
+    "assets/leao-02.webp",
+    "assets/leao-03.webp",
+    "assets/leao-04.webp",
+    "assets/leao-05.webp",
+    "assets/leao-06.webp",
+    "assets/leao-07.webp",
+    "assets/leao-08.webp",
+    "assets/leao-09.webp",
+    "assets/leao-10.webp"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "gato-sentado",
+  "name": "Gato sentado",
+  "category": "Animais e criaturas",
+  "style": "Grafite",
+  "level": "Iniciante",
+  "min": 25,
+  "emoji": "🐈",
+  "artworkRevision": "artes-limpas-1",
+  "steps": [
+    [
+      "Três volumes",
+      "Empilhe cabeça, peito e quadril sobre um eixo vertical.",
+      [
+        "Marque três volumes leves."
+      ]
+    ],
+    [
+      "Assento e base",
+      "Estabeleça a base do quadril e a posição das patas dianteiras.",
+      [
+        "Confira o apoio no chão."
+      ]
+    ],
+    [
+      "Orelhas triangulares",
+      "Coloque as orelhas acima da cabeça e refine a largura do rosto.",
+      [
+        "Compare a altura das orelhas."
+      ]
+    ],
+    [
+      "Patas e cauda",
+      "Desenhe as patas próximas e curve a cauda ao redor da base.",
+      [
+        "Separe cauda e patas."
+      ]
+    ],
+    [
+      "Olhos e focinho",
+      "Posicione os olhos, o nariz e o pequeno focinho.",
+      [
+        "Alinhe os olhos."
+      ]
+    ],
+    [
+      "Contorno do corpo",
+      "Una os volumes sem perder o equilíbrio da pose.",
+      [
+        "Aperfeiçoe a silhueta."
+      ]
+    ],
+    [
+      "Marcas do pelo",
+      "Sugira marcas no focinho, no peito e nas pernas.",
+      [
+        "Siga os volumes com as marcas."
+      ]
+    ],
+    [
+      "Detalhes da face",
+      "Acerte as orelhas, a região dos olhos e os bigodes.",
+      [
+        "Varie o peso do traço."
+      ]
+    ],
+    [
+      "Sombras de contato",
+      "Escureça o peito e os encontros das patas com o chão.",
+      [
+        "Preserve áreas claras."
+      ]
+    ],
+    [
+      "Acabamento",
+      "Distribua o grafite para separar cabeça, tronco e cauda.",
+      [
+        "Compare a arte com o primeiro esboço."
+      ]
+    ]
+  ],
+  "images": [
+    "assets/gato-sentado-01.webp",
+    "assets/gato-sentado-02.webp",
+    "assets/gato-sentado-03.webp",
+    "assets/gato-sentado-04.webp",
+    "assets/gato-sentado-05.webp",
+    "assets/gato-sentado-06.webp",
+    "assets/gato-sentado-07.webp",
+    "assets/gato-sentado-08.webp",
+    "assets/gato-sentado-09.webp",
+    "assets/gato-sentado-10.webp"
+  ]
+}

@@ -1,16 +1,16 @@
 # MangaDojo — Evolução contínua
 
-## Concluído nesta versão
-- Nove aulas autorais ilustradas, seis etapas por aula (54 imagens reais).
-- Leitor de tutorial com avançar/voltar, busca, filtros, favoritos, progresso e prancheta com toque.
-- Site adaptado para celular, publicação gratuita via GitHub Pages, cache PWA sob demanda.
+## Disponível na 13.0
 
-## Próxima criação artística (não concluída)
-1. Etapas de corpo inteiro e ação com construção anatômica consistente.
-2. Biblioteca de cabelos, mãos em diferentes ângulos, roupas e expressões.
-3. Cenários em 1/2 pontos de fuga e páginas de quadrinhos.
-4. Editor vetorial com camadas e pincel sensível à pressão.
-5. Exercícios por idade, sequência de dificuldade e avaliação formativa.
+- Catálogo revisado, Acervo publicado, quatro trilhas e avaliações por imagem.
+- Oficina de exercícios por faixa de estudo, ficha de personagem e roteiro de quadrinhos.
+- Smudge com pressão de caneta, laço, transformação de áreas e máscaras reversíveis.
 
-## Qualidade
-Não anunciar variações matemáticas como aulas ilustradas distintas. Validar anatomia, identidade do personagem, progressão de traços, compatibilidade no celular e direitos sobre cada arte antes de publicar.
+## Próximas etapas
+
+1. Redesenhar as aulas retiradas, priorizando mãos em outros gestos, rostos e penteados.
+2. Criar sequências ilustradas de corpo humano em ação, vestuário, expressões, cenários em perspectiva e composição de quadrinhos.
+3. Evoluir o roteiro para montagem gráfica de páginas e explorar edição vetorial.
+4. Revisar a progressão com um professor de desenho, fazer testes em aparelhos reais e avaliar recuperação de projetos locais.
+
+Cada nova sequência precisa preservar o enquadramento do desenho, a identidade e a pose entre quadros, e manter as instruções fora da arte. Documentar a fonte e os direitos de ilustrações externas.

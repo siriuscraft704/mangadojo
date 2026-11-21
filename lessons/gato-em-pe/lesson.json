@@ -1,0 +1,62 @@
+{
+  "id": "gato-em-pe",
+  "name": "Gato de pé",
+  "category": "Animais e criaturas",
+  "style": "Grafite",
+  "level": "Iniciante",
+  "min": 20,
+  "emoji": "🐱",
+  "artworkRevision": "artes-limpas-1",
+  "steps": [
+    [
+      "Estrutura lateral",
+      "Marque a cabeça, o peito e o quadril e conecte os volumes.",
+      [
+        "Posicione as pernas sob o tronco."
+      ]
+    ],
+    [
+      "Cabeça e silhueta",
+      "Acrescente as orelhas e defina as curvas do dorso e da cauda.",
+      [
+        "Mantenha a linha do chão."
+      ]
+    ],
+    [
+      "Patas e focinho",
+      "Refine as patas e teste o encaixe do focinho.",
+      [
+        "Diferencie as patas próximas e distantes."
+      ]
+    ],
+    [
+      "Expressão",
+      "Desenhe os olhos, o nariz e as áreas de pelo do rosto.",
+      [
+        "Marque a direção do olhar."
+      ]
+    ],
+    [
+      "Listras e textura",
+      "Acompanhe a curva do corpo ao distribuir as listras.",
+      [
+        "Dê continuidade às marcas na cauda."
+      ]
+    ],
+    [
+      "Sombras",
+      "Reforce a pata distante e as sombras sob o tronco.",
+      [
+        "Preserve o brilho dos olhos."
+      ]
+    ]
+  ],
+  "images": [
+    "assets/gato-em-pe-01.webp",
+    "assets/gato-em-pe-02.webp",
+    "assets/gato-em-pe-03.webp",
+    "assets/gato-em-pe-04.webp",
+    "assets/gato-em-pe-05.webp",
+    "assets/gato-em-pe-06.webp"
+  ]
+}

@@ -23,7 +23,7 @@ h1{font:700 clamp(30px,5vw,53px) Georgia,serif;letter-spacing:-1.4px;max-width:7
 <main><div class="eyebrow">Mapa de aprendizado</div><h1>Um caminho para quem quer desenhar melhor.</h1>
 <p class="lead">Estude fundamentos, construa personagens, experimente formas e avance no seu ritmo. Cada card abre a aula correspondente. Seu progresso é recuperado no mesmo navegador.</p>
 <div class="summary" id="summary" role="status"></div><div id="paths"></div>
-<p class="footnote">Algumas aulas de mãos, rostos e cabelos utilizam imagens legadas ainda em revisão editorial. A marcação amarela indica que a referência pode conter recortes ou problemas anatômicos. As oficinas MIT são estudos de observação independentes, não quadros consecutivos do mesmo desenho.</p></main>
+<p class="footnote">As oficinas MIT reúnem estudos independentes. Nas aulas progressivas, cada etapa desenvolve o mesmo desenho.</p></main>
 <script src="catalog.generated.js"></script><script>
 (()=>{
 'use strict';
@@ -31,12 +31,12 @@ const lessons=window.MANGADOJO_LESSONS||[],byId=Object.fromEntries(lessons.map(l
 let progress={};try{progress=JSON.parse(localStorage.getItem('mangadojo-v3-state')||'{}')||{}}catch(e){}
 const done=Array.isArray(progress.done)?progress.done:[];
 const paths=[
-{title:'01 · Fundamentos e observação',description:'Treine proporção, leitura de silhuetas, contraste e construção antes de detalhar.',ids:['observacao-vetorial','silhuetas-criaturas','olho','chibi']},
-{title:'02 · Personagens e expressão',description:'Combine olhos, formas do rosto e personalidade em ilustrações completas.',ids:['olhos-femininos','rosto-fem-frontal','shojo','shonen']},
-{title:'03 · Natureza e fantasia',description:'Experimente formas orgânicas, criaturas e composições de personagens.',ids:['sakura','kitsune','dragao','bruxa']},
-{title:'04 · Anatomia e poses',description:'Observe mãos, pés e perspectiva com atenção. Referências antigas ainda precisam de revisão.',ids:['mao','mao-fechada','maos-gestos','pes-perfil']}
+{title:'01 · Fundamentos e observação',description:'Treine proporção, leitura de silhuetas, contraste e construção antes de detalhar.',ids:['observacao-vetorial','silhuetas-criaturas']},
+{title:'02 · Gatos e silhuetas',description:'Construa o mesmo animal em duas poses e compare como o peso muda.',ids:['gato-sentado','gato-em-pe']},
+{title:'03 · Animais e movimento',description:'Estude musculatura, pelo e gestos com um leão e um lobo.',ids:['leao','lobo-correndo']},
+{title:'04 · Anatomia e poses',description:'Observe o encaixe dos dedos, as articulações e os volumes da palma.',ids:['mao']}
 ];
-const flagged=new Set(['mao','mao-fechada','mao-lapis','maos-gestos','rosto-fem-frontal','rosto-fem-perfil','rosto-masc-34','rosto-masc-frontal','rosto-masc-perfil']);
+
 const root=document.getElementById('paths');
 for(const p of paths){const available=p.ids.map(id=>byId[id]).filter(Boolean);if(!available.length)continue;const finished=available.filter(l=>done.includes(l.id)).length;
 const section=document.createElement('section');section.className='path';const heading=document.createElement('div');heading.className='path-header';
@@ -46,8 +46,8 @@ const cards=document.createElement('div');cards.className='cards';
 for(const lesson of available){const card=document.createElement('a');card.className='card';card.href='index.html?lesson='+encodeURIComponent(lesson.id)+'#workspace';
 const img=document.createElement('img');img.src=lesson.images[lesson.images.length-1];img.loading='lazy';img.alt='Prévia da aula '+lesson.name;
 const title=document.createElement('strong');title.textContent=lesson.name;const meta=document.createElement('span');meta.className='meta';meta.textContent=lesson.level+' · '+lesson.steps.length+' '+(lesson.lessonType==='reference-studies'?'exercícios':'etapas');
-card.append(img,title,meta);if(done.includes(lesson.id)||flagged.has(lesson.id)){const badge=document.createElement('span');badge.className='flag'+(done.includes(lesson.id)?' done':'');badge.textContent=done.includes(lesson.id)?'✓ Concluída':'⚠ Referências em revisão';card.append(badge)}cards.append(card)}
+card.append(img,title,meta);if(done.includes(lesson.id)){const badge=document.createElement('span');badge.className='flag done';badge.textContent='✓ Concluída';card.append(badge)}cards.append(card)}
 section.append(heading,cards);root.append(section)}
-const all=document.createElement('div');all.innerHTML='<b>'+lessons.length+'</b><small>Aulas no catálogo</small>';const count=document.createElement('div');count.innerHTML='<b>'+done.length+'</b><small>Marcadas como concluídas</small>';const study=document.createElement('div');study.innerHTML='<b>4</b><small>Trilhas recomendadas</small>';document.getElementById('summary').append(all,count,study);
+const all=document.createElement('div');all.innerHTML='<b>'+lessons.length+'</b><small>Aulas no catálogo</small>';const count=document.createElement('div');count.innerHTML='<b>'+lessons.filter(lesson=>done.includes(lesson.id)).length+'</b><small>Marcadas como concluídas</small>';const study=document.createElement('div');study.innerHTML='<b>4</b><small>Trilhas recomendadas</small>';document.getElementById('summary').append(all,count,study);
 })();
 </script></body></html>

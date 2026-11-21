@@ -7,11 +7,26 @@ import shutil
 import subprocess
 import tempfile
 import re
+import sys
 ROOT=Path(__file__).resolve().parents[1]
 index=(ROOT/'index.html').read_text('utf-8')
 studio=(ROOT/'studio.html').read_text('utf-8')
 catalog=json.loads((ROOT/'catalog.generated.json').read_text('utf-8'))
-assert catalog['lessons']==27 and catalog['stages']==158, catalog
+assert catalog['lessons']==7 and catalog['stages']==50, catalog
+published = {p.parent.name: json.loads(p.read_text('utf-8')) for p in ROOT.glob('lessons/*/lesson.json')}
+expected = {'gato-sentado':10, 'gato-em-pe':6, 'leao':10, 'lobo-correndo':10, 'mao':6,
+            'observacao-vetorial':4, 'silhuetas-criaturas':4}
+assert {key:len(value['images']) for key,value in published.items()} == expected
+archive=ROOT/'drafts/retired-lessons'
+assert len(list(archive.glob('*.json')))==25
+assert all(path.startswith('assets/mao-aberta-r2-') for path in published['mao']['images'])
+with tempfile.TemporaryDirectory() as temp:
+    public=Path(temp)/'public'
+    subprocess.run([sys.executable, str(ROOT/'tools/package_pages.py'), str(public)], check=True)
+    assert not (public/'drafts').exists()
+    assert not (public/'assets/shojo-1.webp').exists()
+    assert len(list((public/'assets').glob('*.webp')))==42
+    assert (public/'oficina.html').exists()
 for path in ['styles/atelier.css','styles/smudge.css','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
     assert (ROOT/path).is_file(),path
 assert 'styles/atelier.css' in index
@@ -24,8 +39,6 @@ assert 'mangadojo-review-v1' in review
 assert 'mangadojo-auditoria-imagens.json' in review
 assert 'Anatomia incorreta' in review and 'Imagem cortada' in review
 assert 'closeLightbox' in review
-gesture=json.loads((ROOT/'lessons/maos-gestos/lesson.json').read_text('utf-8'))
-assert len(gesture['images'])==6 and all(p==f'assets/maos-gestos-{i}.webp' for i,p in enumerate(gesture['images'],start=1))
 assert 'aspect-ratio:9/10!important' in (ROOT/'styles/atelier.css').read_text('utf-8')
 assert not (ROOT/'lessons/olhos-expressivos/lesson.json').exists()
 assert not (ROOT/'lessons/rosto-tres-quartos/lesson.json').exists()
@@ -45,7 +58,7 @@ assert 'homologacao-artes.html' in index
 assert 'acervo-revisado.html' in index
 local_art=(ROOT/'acervo-revisado.html').read_text('utf-8')
 assert 'mangadojo-artwork' in local_art and 'indexedDB' in local_art
-assert 'localArt=' in local_art and '36 imagens' in local_art
+assert 'localArt=' in local_art and ' imagens publicadas' in local_art
 assert "new DecompressionStream('deflate-raw')" in local_art
 assert "extractZip(zip)" in local_art and "importZip" in local_art
 assert 'function importLocalArt' in studio and "params.has('localArt')" in studio
@@ -64,7 +77,7 @@ credits=(ROOT/'creditos.html').read_text('utf-8')
 assert 'mit-asset-manifest.json' in credits and 'Vijay Verma' in credits
 assert (ROOT/'assets/mit-asset-manifest.json').exists()
 trails=(ROOT/'trilhas.html').read_text('utf-8')
-assert 'catalog.generated.js' in trails and 'Referências em revisão' in trails
+assert 'catalog.generated.js' in trails and 'lobo-correndo' in trails
 assert 'observacao-vetorial' in trails and 'silhuetas-criaturas' in trails
 assert 'state.checks[checkIds[i]]' in index
 assert '.check-row.done' in (ROOT/'styles/atelier.css').read_text('utf-8')
@@ -95,7 +108,7 @@ if shutil.which('node'):
         finally: path.unlink(missing_ok=True)
 # Validate inline browser JavaScript with Node when present on the runner.
 if shutil.which('node'):
-    for name, html in [('index', index), ('studio', studio)]:
+    for name, html in [('index', index), ('studio', studio), ('trilhas', trails), ('acervo', local_art), ('oficina', (ROOT/'oficina.html').read_text('utf-8'))]:
         for number, code in enumerate(re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>', html)):
             if not code.strip():
                 continue

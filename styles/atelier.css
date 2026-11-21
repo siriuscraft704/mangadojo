@@ -130,3 +130,6 @@ body{background:var(--md-paper);color:var(--md-ink);font-family:ui-sans-serif,sy
 .preview,.preview.reading{border:0!important;box-shadow:none!important;background:#fff!important}
 .preview>img#stageImage{object-fit:contain!important;object-position:center center!important;max-width:100%!important;max-height:100%!important}
 .catalog .course img{border:0!important;object-fit:contain!important;object-position:center!important}
+
+/* Preserve the published artwork on all surfaces. */
+.stage-image,.course img,.thumb img,.compare-grid img{border:0!important;border-radius:0!important;object-fit:contain!important}

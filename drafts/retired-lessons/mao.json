@@ -1,0 +1,75 @@
+{
+  "id": "mao",
+  "name": "Mão Aberta — Anatomia Mangá",
+  "category": "Mãos e anatomia",
+  "style": "Fundamentos",
+  "level": "Iniciante",
+  "min": 22,
+  "emoji": "✋",
+  "steps": [
+    [
+      "Palma e eixo",
+      "Comece com a palma como uma forma simples e marque o eixo de cada dedo.",
+      [
+        "Desenhe a palma com contorno arredondado",
+        "Marque o pulso e o polegar",
+        "Separe as cinco direções dos dedos"
+      ]
+    ],
+    [
+      "Dedos e articulações",
+      "Divida os dedos em segmentos e ajuste suas diferentes alturas.",
+      [
+        "Desenhe os cinco dedos sem deixá-los iguais",
+        "Indique juntas e dobras",
+        "Observe a abertura da mão"
+      ]
+    ],
+    [
+      "Contorno anatômico",
+      "Substitua blocos por curvas naturais e ligue dedos à palma.",
+      [
+        "Ajuste a espessura de cada dedo",
+        "Desenhe a base do polegar",
+        "Marque linhas suaves da palma"
+      ]
+    ],
+    [
+      "Pregas e detalhes",
+      "Refine as dobras e confira o formato das pontas dos dedos.",
+      [
+        "Desenhe pregas com poucas linhas",
+        "Observe a curvatura do polegar",
+        "Evite contornos excessivamente rígidos"
+      ]
+    ],
+    [
+      "Nanquim e limpeza",
+      "Reforce a silhueta e apague mentalmente as guias de construção.",
+      [
+        "Varie a pressão do traço",
+        "Não escureça todas as linhas internas",
+        "Conserve espaços entre os dedos"
+      ]
+    ],
+    [
+      "Sombras leves",
+      "Use sombra discreta para explicar o volume da palma e das articulações.",
+      [
+        "Sombreie a base do polegar",
+        "Marque dobras com traços suaves",
+        "Compare com a própria mão"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/mao-1.webp",
+    "assets/mao-2.webp",
+    "assets/mao-3.webp",
+    "assets/mao-4.webp",
+    "assets/mao-5.webp",
+    "assets/mao-6.webp"
+  ],
+  "author": "MangaDojo · Ilustração original assistida por IA",
+  "contentLicense": "MangaDojo — uso educacional no projeto"
+}

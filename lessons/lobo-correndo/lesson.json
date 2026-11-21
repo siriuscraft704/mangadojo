@@ -1,0 +1,94 @@
+{
+  "id": "lobo-correndo",
+  "name": "Lobo correndo",
+  "category": "Animais e criaturas",
+  "style": "Grafite",
+  "level": "Intermediário",
+  "min": 35,
+  "emoji": "🐺",
+  "artworkRevision": "artes-limpas-1",
+  "steps": [
+    [
+      "Linha de ação",
+      "Marque o avanço da cabeça e o arco do dorso.",
+      [
+        "Defina a direção da corrida."
+      ]
+    ],
+    [
+      "Volumes e membros",
+      "Encaixe cabeça, tórax, quadril e eixos das pernas.",
+      [
+        "Separe as pernas próximas e distantes."
+      ]
+    ],
+    [
+      "Silhueta em movimento",
+      "Una os volumes e estenda a cauda na direção do gesto.",
+      [
+        "Conserve a inclinação do tronco."
+      ]
+    ],
+    [
+      "Cabeça e articulações",
+      "Refine o focinho, as orelhas e as dobras dos membros.",
+      [
+        "Observe a direção de cada pata."
+      ]
+    ],
+    [
+      "Contorno do pelo",
+      "Desenhe grupos de pelo nas mudanças de direção do contorno.",
+      [
+        "Preserve a silhueta da corrida."
+      ]
+    ],
+    [
+      "Patas e cauda",
+      "Defina a ponta das patas e a forma final da cauda.",
+      [
+        "Diferencie articulações e tufos."
+      ]
+    ],
+    [
+      "Detalhes do rosto",
+      "Acerte a expressão e o encontro entre cabeça e pescoço.",
+      [
+        "Indique o foco do olhar."
+      ]
+    ],
+    [
+      "Contraste inicial",
+      "Escureça o dorso e as sobreposições.",
+      [
+        "Deixe áreas claras entre os escuros."
+      ]
+    ],
+    [
+      "Textura direcional",
+      "Use grupos de traços que acompanhem o pelo e o movimento.",
+      [
+        "Varie direção e intensidade do grafite."
+      ]
+    ],
+    [
+      "Finalização",
+      "Equilibre os valores do dorso, do peito e dos membros.",
+      [
+        "Confira se o gesto permanece claro."
+      ]
+    ]
+  ],
+  "images": [
+    "assets/lobo-correndo-01.webp",
+    "assets/lobo-correndo-02.webp",
+    "assets/lobo-correndo-03.webp",
+    "assets/lobo-correndo-04.webp",
+    "assets/lobo-correndo-05.webp",
+    "assets/lobo-correndo-06.webp",
+    "assets/lobo-correndo-07.webp",
+    "assets/lobo-correndo-08.webp",
+    "assets/lobo-correndo-09.webp",
+    "assets/lobo-correndo-10.webp"
+  ]
+}
