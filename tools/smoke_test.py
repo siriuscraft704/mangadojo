@@ -26,7 +26,7 @@ assert 'Projeto incompatível' in studio
 # Validate inline browser JavaScript with Node when present on the runner.
 if shutil.which('node'):
     for name, html in [('index', index), ('studio', studio)]:
-        for number, code in enumerate(re.findall(r'<script(?:\\s[^>]*)?>([\\s\\S]*?)</script>', html)):
+        for number, code in enumerate(re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>', html)):
             if not code.strip():
                 continue
             with tempfile.NamedTemporaryFile('w', suffix='.js', encoding='utf-8', delete=False) as script:
