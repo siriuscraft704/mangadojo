@@ -38,6 +38,9 @@ for img in animals['images']: ET.parse(ROOT/img)
 assert all((ROOT/img).exists() for img in workshop['images'])
 assert 'THIRD_PARTY_NOTICES.md' in [p.name for p in ROOT.iterdir()]
 assert 'licenseNote' in index and 'exercícios de observação' in index
+assert 'checksCount' in index and 'checkIds' in index
+assert 'state.checks[checkIds[i]]' in index
+assert '.check-row.done' in (ROOT/'styles/atelier.css').read_text('utf-8')
 for img in workshop['images']: ET.parse(ROOT/img)
 assert 'Smudge' in index and 'Smudge' in studio
 assert 'smudge-projects' in studio and 'dbRead' in studio
