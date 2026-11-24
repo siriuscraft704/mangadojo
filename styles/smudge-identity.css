@@ -22,3 +22,8 @@ body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;b
 .selection-controls:not([hidden]){background:#463245!important}
 :where(button,input,select):focus-visible{outline:3px solid #C8798C!important;outline-offset:2px}
 @media(max-width:700px){.head .brand{font-size:22px}.side,.workspace{border-radius:10px!important}}
+
+/* Accessibility polish: long layer labels wrap instead of clipping. */
+.layer{min-width:0!important}
+.layer span{min-width:0!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important;line-height:1.35!important}
+@media(max-width:700px){.layer span{font-size:12px!important}.layer button{flex-shrink:0}}
