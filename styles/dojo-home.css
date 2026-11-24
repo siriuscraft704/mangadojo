@@ -82,6 +82,7 @@
 
 .dojo-home .hero-visual {
   display: block;
+  z-index: 1;
   position: absolute;
   width: min(55%, 860px);
   height: 100%;
@@ -99,7 +100,7 @@
 .dojo-home .hero-visual::before { display: none; }
 
 .dojo-home .hero h1 { font-size: clamp(35px, 4.5vw, 70px) !important; }
-.dojo-home .hero p { font-size: clamp(16px, 1.8vw, 23px) !important; line-height: 1.45 !important; }
+.dojo-home .hero p { max-width: 32ch; font-size: clamp(16px, 1.8vw, 23px) !important; line-height: 1.45 !important; }
 .dojo-home .hero .eyebrow { font-size: 12px !important; letter-spacing: .28em !important; }
 .dojo-home .hero-actions a { border-radius: 99px; padding-inline: 24px; font-size: 15px; }
 
