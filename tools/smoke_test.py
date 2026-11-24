@@ -50,6 +50,8 @@ with tempfile.TemporaryDirectory() as temp:
     assert all((public/path).is_file() for path in paths)
     assert (public/'pranchas.html').exists()
     assert (public/'aulas-pranchas.html').exists()
+    assert (public/'assets/academia/referencia.webp').is_file()
+    assert (public/'styles/dojo-home.css').is_file()
     assert 'pranchas.html' in index
     assert 'aulas-pranchas.html' in index
     assert 'pranchas.html' in (public/'acervo-revisado.html').read_text('utf-8')
@@ -59,8 +61,8 @@ assert 'styles/atelier.css' in index
 assert 'styles/dojo-identity.css' in index
 assert 'styles/smudge-identity.css' in studio
 assert 'hero-visual' in index and 'hero-actions' in index
-assert 'prancha-29.webp' in index
-assert 'MangaDojo Atelier 13.5.0' in index
+assert 'assets/academia/referencia.webp' in index and 'styles/dojo-home.css' in index
+assert 'MangaDojo Atelier 13.6.0' in index
 for path in ['assets/dojo-paper.svg','assets/dojo-ornament.svg','styles/dojo-identity.css','styles/smudge-identity.css','styles/dojo-subpages.css']:
     assert (ROOT/path).is_file(), path
 for path in ['assets/dojo-paper.svg','assets/dojo-ornament.svg','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:

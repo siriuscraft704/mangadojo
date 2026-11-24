@@ -1,4 +1,4 @@
-# MangaDojo Atelier 13.5.0 · Smudge Studio
+# MangaDojo Atelier 13.6.0 · Smudge Studio
 
 Academia gratuita de desenho mangá com biblioteca de aulas, prática e um editor de desenho independente.
 
@@ -72,3 +72,8 @@ A continuidade de ângulos dos cabelos ondulados e a anatomia final dos rostos d
 - Texturas e ornamentos SVG locais; cabeçalho hero apresenta a prancha original 29 sem corte.
 - Arquivos de identidade isolados em `styles/dojo-identity.css`, `styles/smudge-identity.css` e `styles/dojo-subpages.css`; reversão simples sem reescrever a estrutura.
 - Layout e ordem das 88 aulas, 141 telas, identificadores e dados de progresso permanecem inalterados. O Smudge mantém todas as ferramentas e geometria.
+
+## 13.6 — entrada da Academia
+
+- A página inicial segue a referência aprovada, com navegação superior, panorama ilustrado, acesso às 79 pranchas completas, seis categorias, aulas em destaque e acesso ao Smudge.
+- Os destaques são atalhos para aulas do catálogo. A ordem das 88 aulas, suas fontes de imagem e os registros de progresso usam os mesmos dados e identificadores.
