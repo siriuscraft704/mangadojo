@@ -56,6 +56,15 @@ with tempfile.TemporaryDirectory() as temp:
 for path in ['styles/atelier.css','styles/smudge.css','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
     assert (ROOT/path).is_file(),path
 assert 'styles/atelier.css' in index
+assert 'styles/dojo-identity.css' in index
+assert 'styles/smudge-identity.css' in studio
+assert 'hero-visual' in index and 'hero-actions' in index
+assert 'prancha-29.webp' in index
+assert 'MangaDojo Atelier 13.5.0' in index
+for path in ['assets/dojo-paper.svg','assets/dojo-ornament.svg','styles/dojo-identity.css','styles/smudge-identity.css','styles/dojo-subpages.css']:
+    assert (ROOT/path).is_file(), path
+for path in ['assets/dojo-paper.svg','assets/dojo-ornament.svg','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
+    ET.parse(ROOT/path)
 assert 'board-layout' in index and 'boardOriginal' in index
 assert "const move=n<0?-1:n>0?1:0" in index and 'Próxima aula →' in index
 assert 'aspect-ratio:var(--sheet-aspect)' in (ROOT/'styles/atelier.css').read_text('utf-8')

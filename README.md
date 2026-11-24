@@ -1,4 +1,4 @@
-# MangaDojo Atelier 13.4.0 · Smudge Studio
+# MangaDojo Atelier 13.5.0 · Smudge Studio
 
 Academia gratuita de desenho mangá com biblioteca de aulas, prática e um editor de desenho independente.
 
@@ -64,3 +64,11 @@ A continuidade de ângulos dos cabelos ondulados e a anatomia final dos rostos d
 - As pranchas internas não foram divididas em passos falsos. Os exercícios de leitura, construção e acabamento fazem referência à **mesma imagem completa**.
 - O teste `tools/media_audit.py` verifica individualmente dimensões reais e resolução mínima das 79 fontes; `tools/smoke_test.py` confere IDs, correspondência com o atlas, integridade de paths e empacotamento.
 - **Limite de validação:** integridade e enquadramento na interface foram testados automaticamente, mas a anatomia e possíveis cortes que já existiam na ilustração original ainda exigem aprovação artística individual. Não declarar todas as 79 pranchas anatomicamente corretas.
+
+## 13.5 — identidade editorial MangaDojo + Smudge
+
+- Identidade original: ameixa escura `#4B1E3D`, tinta `#171418`, papel marfim `#F7EFDF`, rosa antigo `#C8798C` e dourado suave `#C9A86A`.
+- Logotipos vetoriais autorais para MangaDojo (portal e pincel) e Smudge (S em pincelada), fontes Playfair Display e Inter com fallbacks offline.
+- Texturas e ornamentos SVG locais; cabeçalho hero apresenta a prancha original 29 sem corte.
+- Arquivos de identidade isolados em `styles/dojo-identity.css`, `styles/smudge-identity.css` e `styles/dojo-subpages.css`; reversão simples sem reescrever a estrutura.
+- Layout e ordem das 88 aulas, 141 telas, identificadores e dados de progresso permanecem inalterados. O Smudge mantém todas as ferramentas e geometria.
