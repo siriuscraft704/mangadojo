@@ -1,0 +1,13 @@
+/* Editorial brand shell for secondary MangaDojo pages, no layout reordering */
+:root{--dojo-plum:#4B1E3D;--dojo-ink:#171418;--dojo-rose:#C8798C;--dojo-gold:#C9A86A;--dojo-paper:#F7EFDF}
+body.dojo-subpage{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;color:#29202A!important;background:#F7EFDF url("../assets/dojo-paper.svg") repeat!important}
+body.dojo-subpage>header{background:linear-gradient(110deg,#301526,#4B1E3D 80%)!important;color:#FFF7F0!important;border-bottom:1px solid #C9A86A65!important;box-shadow:0 8px 24px #30152620}
+body.dojo-subpage>header strong{font-family:"Playfair Display",Georgia,serif!important;font-weight:700;color:#F7EFDF!important}
+body.dojo-subpage>header img{filter:drop-shadow(0 5px 10px #0003)}
+body.dojo-subpage>header a,body.dojo-subpage>header nav a{color:#F3D8CE!important}
+body.dojo-subpage h1,body.dojo-subpage h2{font-family:"Playfair Display",Georgia,serif!important;color:#352331}
+body.dojo-subpage .card,body.dojo-subpage .asset,body.dojo-subpage .art,body.dojo-subpage .path{background:#FFFBF5!important;border-color:#DEC9BD!important;box-shadow:0 6px 20px #4B1E3D0c}
+body.dojo-subpage .card img,body.dojo-subpage .art img,body.dojo-subpage .asset img{object-fit:contain!important;background:#FFFEFB!important}
+body.dojo-subpage .notice,body.dojo-subpage .note{background:#FDF0E8!important;border-color:#C8798C!important}
+body.dojo-subpage a{accent-color:#C8798C}
+body.dojo-subpage :where(a,button,input,select):focus-visible{outline:3px solid #C8798C!important;outline-offset:2px}

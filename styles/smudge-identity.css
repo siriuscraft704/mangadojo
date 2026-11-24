@@ -1,0 +1,24 @@
+/* Smudge 13.5 — matching MangaDojo brand, no changes to drawing geometry */
+:root{--sm-bg:#171419;--sm-panel:#28202A;--sm-border:#604558;--sm-muted:#E3D1C8;--sm-accent:#C8798C;--sm-paper:#F7EFDF;--sm-gold:#C9A86A}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;background:radial-gradient(circle at 88% -20%,#63364B 0%,transparent 35%),#171419!important;color:#F7EFDF!important}
+.head{background:linear-gradient(105deg,#361828,#211721)!important;border-bottom:1px solid #C9A86A55!important;box-shadow:0 6px 22px #11080D3d}
+.head .brand{font-family:"Playfair Display",Georgia,serif!important;font-weight:700;font-size:28px;color:#FFF8EE!important;letter-spacing:-.5px}
+.head .brand span{color:#E0A0AC!important}
+.head .brand img{box-shadow:0 6px 14px #07030632;border-radius:9px}
+.head>strong{color:#C9A86A!important}
+.back{background:#FFFFFF0A!important;border-color:#C9A86A66!important;color:#F7EFDF!important}
+.side,.workspace{background:linear-gradient(155deg,#2D2330,#221D26)!important;border:1px solid #6F4C5A!important;border-radius:13px!important;box-shadow:0 9px 24px #0002}
+.side h2{font-family:"Playfair Display",Georgia,serif;font-size:18px;letter-spacing:.2px;text-transform:none;color:#F7E5D8}
+.tool,.mini{font-family:Inter,system-ui,sans-serif;background:#3F3140!important;border:1px solid #6D5362!important;color:#FAEFE5!important;border-radius:8px!important}
+.tool.active,.mini.active{background:#96506A!important;border-color:#D69BA6!important}
+.tool:hover:not(.active),.mini:hover:not(.active){background:#594254!important}
+.panel-action{background:#483448!important;border:1px solid #81616D!important;border-radius:8px!important}
+.layer{background:#382C3A!important;border-color:#6D5060!important;border-radius:8px!important}
+.layer.active{background:#5D3C52!important;border-color:#C8798C!important}
+.workarea{background-color:#211B22!important;background-image:linear-gradient(45deg,#F7EFDF08 25%,transparent 25%),linear-gradient(-45deg,#F7EFDF08 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#F7EFDF08 75%),linear-gradient(-45deg,transparent 75%,#F7EFDF08 75%)!important}
+.sheet{background:#FFFDF7!important;box-shadow:0 21px 62px #05020585!important;border:1px solid #C9A86A5a}
+.foot{color:#E1C7BC!important;border-color:#C9A86A30!important}
+.field input[type=range]{accent-color:#C8798C!important}.smudge-credit{color:#E2C6BB!important}
+.selection-controls:not([hidden]){background:#463245!important}
+:where(button,input,select):focus-visible{outline:3px solid #C8798C!important;outline-offset:2px}
+@media(max-width:700px){.head .brand{font-size:22px}.side,.workspace{border-radius:10px!important}}
