@@ -17,6 +17,8 @@ h1{font:700 clamp(36px,7vw,66px)/1.05 Georgia,serif;margin:12px 0 10px}
 .filters{display:flex;gap:12px;flex-wrap:wrap}
 .filters label{display:grid;gap:5px;font-weight:650;min-width:0}
 .filters label:first-child{flex:1 1 230px}
+.filters .practice-filter{display:flex;flex:0 1 auto;align-items:center;gap:8px;min-height:44px;align-self:end}
+.practice-filter input{width:18px;min-height:initial;height:18px;margin:0;flex:none;accent-color:#753652}
 input,select,button,.tool{font:inherit;min-height:44px;border-radius:9px;padding:9px 12px}
 input,select{width:100%;background:#fff;color:#292633;border:1px solid #b9aeb4}
 :focus-visible{outline:3px solid #a64f72;outline-offset:3px}
@@ -35,6 +37,13 @@ dialog::backdrop{background:#211c2bdd}
 dialog figure{margin:0;overflow:auto;max-height:74dvh;text-align:center;background:#fff}
 dialog img{display:block;margin:auto;max-width:100%;max-height:72dvh;object-fit:contain}
 dialog img.zoom{max-width:none;max-height:none}
+.board-guide{text-align:start;padding:16px clamp(14px,4vw,28px);border-top:1px solid #e8dce1;background:#fcf8f8}
+.board-guide dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:12px 22px;margin:8px 0 0}
+.board-guide dt{font-weight:700;margin-bottom:3px}
+.board-guide dd{margin:0;color:#514854;line-height:1.5}
+.board-guide small{color:#753652;font-weight:700}
+.board-guide a{color:#753652}
+.tool[hidden]{display:none}
 @media(max-width:560px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card img{height:145px}.card span{font-size:14px;padding:8px}.filters label{width:100%}.dialog-bar h2{font-size:19px}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles/dojo-subpages.css?v=135"></head>
@@ -46,6 +55,7 @@ dialog img.zoom{max-width:none;max-height:none}
 <div class="filters">
 <label for="search">Buscar prancha <input id="search" type="search" placeholder="Ex.: lobo, gesto, cabelo"></label>
 <label for="category">Categoria <select id="category"><option value="">Todas as categorias</option></select></label>
+<label class="practice-filter"><input id="practice" type="checkbox"> Só pranchas com exercícios</label>
 </div>
 <p id="status" role="status">Carregando pranchas…</p>
 <div class="gallery" id="gallery"></div>
@@ -55,22 +65,40 @@ dialog img.zoom{max-width:none;max-height:none}
 <button class="tool" id="previous" type="button" aria-label="Prancha anterior">←</button>
 <button class="tool" id="next" type="button" aria-label="Próxima prancha">→</button>
 <button class="tool" id="zoom" type="button" aria-pressed="false">Ampliar</button>
+<button class="tool" id="openGuide" type="button" hidden>Exercício</button>
 <a class="tool" id="download" download>Baixar</a>
 <button class="tool" id="close" type="button" autofocus>Fechar</button>
 </div></div>
-<figure id="viewArea"><img id="boardImage" alt=""></figure>
+<figure id="viewArea">
+  <img id="boardImage" alt="">
+  <figcaption class="board-guide" id="boardGuide" tabindex="-1" hidden>
+    <small id="boardLevel"></small>
+    <dl>
+      <div><dt>Ferramenta</dt><dd id="boardTool"></dd></div>
+      <div><dt>Exercício</dt><dd id="boardExercise"></dd></div>
+      <div><dt>O que revisar</dt><dd id="boardReview"></dd></div>
+    </dl>
+    <a href="studio.html">Praticar no Smudge</a>
+  </figcaption>
+</figure>
 </dialog>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
 const category=$('category'), search=$('search'), viewer=$('viewer'), image=$('boardImage');
+const practice=$('practice');
+practice.checked=new URLSearchParams(location.search).get('colecao')==='pratica';
 let boards=[], visible=[], current=0, opener=null;
 function normalize(value){
  return value.toLocaleLowerCase('pt-BR').normalize('NFD').replace(/\p{Diacritic}/gu,'');
 }
 function render(){
  const query=normalize(search.value.trim());
- visible=boards.filter(board=>(!category.value||board.category===category.value)&&normalize(board.title+' '+board.category).includes(query));
+ visible=boards.filter(board=>
+  (!category.value||board.category===category.value)&&
+  (!practice.checked||board.practice)&&
+  normalize([board.title,board.category,board.practice?.tool].filter(Boolean).join(' ')).includes(query)
+ );
  $('status').textContent=visible.length===1?'1 prancha disponível':visible.length+' pranchas disponíveis';
  const cards=visible.map((board,index)=>{
   const button=document.createElement('button');
@@ -85,7 +113,7 @@ function render(){
   picture.decoding='async';
   const meta=document.createElement('span'),title=document.createElement('strong'),group=document.createElement('small');
   title.textContent=board.title;
-  group.textContent=board.category;
+  group.textContent=board.practice?board.category+' · '+board.practice.level:board.category;
   meta.append(title,group);
   button.append(picture,meta);
   button.onclick=()=>{opener=button;show(index);viewer.showModal()};
@@ -106,12 +134,25 @@ function show(index){
  image.src=board.image;
  image.alt=board.title;
  $('download').href=board.image;
+ $('boardGuide').hidden=!board.practice;
+ $('openGuide').hidden=!board.practice;
+ if(board.practice){
+  $('boardLevel').textContent=board.practice.level;
+  $('boardTool').textContent=board.practice.tool;
+  $('boardExercise').textContent=board.practice.exercise;
+  $('boardReview').textContent=board.practice.review;
+ }
  $('previous').disabled=index===0;
  $('next').disabled=index===visible.length-1;
  setZoom(false);
  $('viewArea').scrollTo(0,0);
 }
 $('zoom').onclick=()=>setZoom(!image.classList.contains('zoom'));
+$('openGuide').onclick=()=>{
+ const guide=$('boardGuide');
+ guide.focus({preventScroll:true});
+ guide.scrollIntoView({block:'nearest'});
+};
 $('previous').onclick=()=>show(current-1);
 $('next').onclick=()=>show(current+1);
 $('close').onclick=()=>viewer.close();
@@ -122,6 +163,7 @@ viewer.addEventListener('keydown',event=>{
 });
 search.addEventListener('input',render);
 category.addEventListener('change',render);
+practice.addEventListener('change',render);
 (async()=>{
  try{
   const response=await fetch('pranchas.json');

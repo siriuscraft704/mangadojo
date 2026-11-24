@@ -18,7 +18,7 @@ expected = {'gato-sentado':10, 'gato-em-pe':6, 'leao':10, 'lobo-correndo':10, 'm
             'observacao-vetorial':4, 'silhuetas-criaturas':4, 'rosto-feminino':6, 'cabelos-ondulados':6}
 boards=json.loads((ROOT/'pranchas.json').read_text('utf-8'))
 for board in boards:
-    if board['category']=='História visual do projeto':continue
+    if board['category']=='História visual do projeto' or 'practice' in board:continue
     number=board['image'].split('prancha-')[1].split('.')[0]
     key='estudo-prancha-'+number
     expected[key]=1
@@ -44,7 +44,13 @@ with tempfile.TemporaryDirectory() as temp:
     assert (public/'revisao-candidatos.html').exists()
     boards = json.loads((public/'pranchas.json').read_text('utf-8'))
     paths = {board['image'] for board in boards}
-    assert len(boards) == len(paths) == 86
+    assert len(boards) == len(paths) == 96
+    practice = [board for board in boards if 'practice' in board]
+    assert len(practice) == 10
+    for board in practice:
+        assert set(board['practice']) == {'level', 'tool', 'exercise', 'review'}
+        assert all(isinstance(text, str) and text.strip() for text in board['practice'].values())
+        assert (public/board['image']).read_bytes()[8:12] == b'WEBP'
     assert len({board['category'] for board in boards}) == 7
     assert all(board['width'] > 0 and board['height'] > 0 for board in boards)
     assert all((public/path).is_file() for path in paths)
