@@ -11,7 +11,8 @@
       "tool": "Ative Perspectiva no Smudge e coloque o ponto de fuga na linha do horizonte. Use Linha com o alinhamento ativado para as arestas de profundidade. Desative o alinhamento ao traçar verticais e horizontais.",
       "exercise": "Marque a linha do horizonte e o ponto de fuga. Construa o corredor com linhas que convergem para esse ponto. Acrescente três portas em profundidades diferentes e refaça a cena com a câmera mais baixa.",
       "review": "Confira se as arestas que avançam pelo corredor convergem para o mesmo ponto. As portas devem parecer menores à medida que se afastam."
-    }
+    },
+    "practiceId": "perspectiva-corredor"
   },
   {
     "title": "Mão em escorço · gesto em primeiro plano",
@@ -24,7 +25,9 @@
       "tool": "Separe o gesto, o volume e o contorno em três camadas no Smudge. Use pouca estabilização no rascunho para preservar a direção do traço.",
       "exercise": "Desenhe a mão aberta em primeiro plano, com o ombro atrás. Comece pelo bloco da palma, marque as bases dos dedos e desenhe as sobreposições antes de detalhar as articulações.",
       "review": "Localize o polegar e os quatro dedos. As partes mais próximas ganham tamanho aparente, e as sobreposições precisam explicar quais volumes ficaram atrás."
-    }
+    },
+    "practiceId": "escorco-mao",
+    "smudgeTool": "pencil"
   },
   {
     "title": "Dobras de tecido · queda, tensão e compressão",
@@ -37,7 +40,9 @@
       "tool": "Rascunhe com um pincel fino. Na arte-final, use um traço mais pesado onde uma dobra passa por cima da outra.",
       "exercise": "Desenhe um pano solto, um pano preso por dois pontos e uma manga dobrada no cotovelo. Marque os pontos de apoio antes de desenhar as dobras.",
       "review": "As dobras de queda acompanham a gravidade, as de tensão partem dos apoios e as de compressão se acumulam no lado interno da articulação."
-    }
+    },
+    "practiceId": "tecido-dobras",
+    "smudgeTool": "brush"
   },
   {
     "title": "Cabelo ao vento · massas e direção",
@@ -50,7 +55,9 @@
       "tool": "Use uma camada de guias com opacidade reduzida para desenhar o fluxo. Faça a arte-final em outra camada.",
       "exercise": "Mantenha o mesmo rosto nas três versões. Desenhe o cabelo em repouso, com brisa e com vento forte. Construa primeiro três massas grandes e só depois desenhe as pontas soltas.",
       "review": "A linha de implantação do cabelo permanece no lugar. As mechas maiores indicam a direção predominante do vento."
-    }
+    },
+    "practiceId": "cabelo-vento",
+    "smudgeTool": "pencil"
   },
   {
     "title": "Capivara · forma, pelagem e focinho",
@@ -63,7 +70,9 @@
       "tool": "Use um pincel fino para construir o tronco e o focinho. Aumente a ampliação apenas para finalizar olhos, orelhas e pelagem.",
       "exercise": "Comece pelo volume do tronco e pelo bloco do focinho. Acrescente patas e orelhas. Faça o perfil e depois tente a cabeça girada em três quartos.",
       "review": "Compare com uma foto de capivara. Observe o focinho largo, as orelhas pequenas e o corpo robusto antes de adicionar textura."
-    }
+    },
+    "practiceId": "capivara",
+    "smudgeTool": "brush"
   },
   {
     "title": "Luz de lanterna · três valores",
@@ -76,7 +85,9 @@
       "tool": "Bloqueie só três valores em uma camada de sombra no Smudge. Use um pincel opaco e reduza a ampliação para conferir a leitura.",
       "exercise": "Desenhe um rosto iluminado por uma lanterna abaixo e de um lado. Marque os planos voltados à luz e separe claro, meio-tom e escuro. Depois mude a lanterna de lado.",
       "review": "Os pontos claros devem acompanhar a posição da lanterna. Confira onde o nariz e o queixo projetam sombra quando a luz muda de lado."
-    }
+    },
+    "practiceId": "luz-lanterna",
+    "smudgeTool": "brush"
   },
   {
     "title": "Do plano geral ao detalhe · uma carta na estação",
@@ -89,7 +100,9 @@
       "tool": "Monte três miniaturas com a grade ativa. Reserve uma camada para o enquadramento e outra para o esboço.",
       "exercise": "Conte a descoberta de uma carta em três quadros. Mostre a estação no primeiro, a ação do personagem no segundo e a carta na mão no terceiro. Depois reconte com outro objeto.",
       "review": "O leitor precisa identificar o lugar, a ação e a descoberta apenas pelas imagens. Mantenha coerentes a posição do banco e o sentido do movimento."
-    }
+    },
+    "practiceId": "planos-manga",
+    "smudgeTool": "pencil"
   },
   {
     "title": "Balões e fluxo · leitura da direita para a esquerda",
@@ -102,7 +115,9 @@
       "tool": "Desenhe os balões em camada própria. Posicione o texto e só então ajuste o tamanho das formas e a direção das caudas.",
       "exercise": "Comece pelo quadro superior direito. Escreva uma conversa curta, marque a ordem das falas e use a altura dos balões para conduzir o olhar. Repita sem cobrir as expressões.",
       "review": "Peça a alguém para ler sem sua ajuda. Cada cauda deve identificar quem fala, e a ordem dos balões precisa ficar clara de imediato."
-    }
+    },
+    "practiceId": "baloes-fluxo",
+    "smudgeTool": "pencil"
   },
   {
     "title": "Retículas · meio-tom e pretos sólidos",
@@ -116,7 +131,8 @@
       "tool": "Use Retícula em uma camada própria. Contorne a área e solte para aplicar os pontos. Compare duas densidades no mesmo retrato e verifique a versão exportada em PNG no tamanho final.",
       "exercise": "Pegue um retrato em line art. Aplique pontos nas áreas de meio-tom e pretos sólidos nas sombras mais profundas. Deixe papel aparente nos planos iluminados.",
       "review": "Confira a imagem em tamanho pequeno. Se as áreas de pontos e preto se fundirem, reduza a densidade da retícula ou amplie as áreas claras."
-    }
+    },
+    "practiceId": "reticulas"
   },
   {
     "title": "Silhuetas · três personagens do mesmo universo",
@@ -129,7 +145,9 @@
       "tool": "Preencha as silhuetas com pincel opaco em uma camada de rascunho. Reduza a ampliação para comparar as formas sem se distrair com acessórios pequenos.",
       "exercise": "Crie um botânico, uma cartógrafa e um guarda. Distribua formas redondas, alongadas e triangulares. Depois desenvolva o figurino mantendo o contorno inicial legível.",
       "review": "Cubra os detalhes internos. A postura, o contorno e os objetos maiores precisam continuar distinguindo as três figuras."
-    }
+    },
+    "practiceId": "silhuetas-personagem",
+    "smudgeTool": "brush"
   },
   {
     "title": "Lobo correndo",

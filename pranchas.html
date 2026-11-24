@@ -142,7 +142,7 @@ function show(index){
   $('boardExercise').textContent=board.practice.exercise;
   $('boardReview').textContent=board.practice.review;
   const link=$('practiceLink');
-  link.href=board.smudgeTool?'studio.html?pratica='+encodeURIComponent(board.smudgeTool):'studio.html';
+  link.href=board.practiceId?'studio.html?pratica='+encodeURIComponent(board.practiceId):'studio.html';
   link.textContent=board.smudgeTool==='line'?'Praticar com a régua no Smudge':
    board.smudgeTool==='reticle'?'Praticar com retículas no Smudge':'Praticar no Smudge';
  }
@@ -177,11 +177,12 @@ practice.addEventListener('change',render);
    category.add(new Option(value,value));
   }
   render();
-  const requestedTool=params.get('ferramenta');
-  if(requestedTool){
-   const index=visible.findIndex(board=>board.smudgeTool===requestedTool);
-   if(index>=0)$('gallery').children[index].click();
-  }
+  const requestedPractice=params.get('prancha');
+  const legacyTool=params.get('ferramenta');
+  const index=visible.findIndex(board=>requestedPractice
+   ?board.practiceId===requestedPractice
+   :(['line','reticle'].includes(legacyTool)&&board.smudgeTool===legacyTool));
+  if(index>=0)$('gallery').children[index].click();
  }catch{$('status').textContent='Não foi possível carregar as pranchas. Atualize a página.'}
 })();
 </script>

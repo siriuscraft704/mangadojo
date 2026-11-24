@@ -23,6 +23,7 @@
 .practice-reference p{margin:9px 0;max-width:68ch}
 .practice-reference img{display:block;width:min(100%,380px);height:auto;margin:8px 0;border-radius:6px}
 .practice-reference a{color:#ffb8d7}
+.practice-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
 </style><link rel="icon" href="assets/smudge-mark.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles/smudge.css?v=12"><link rel="stylesheet" href="styles/smudge-identity.css?v=136"><meta name="description" content="Smudge: estúdio de desenho do MangaDojo com camadas, pincéis, referências e projetos locais."></head><body><header class="head"><a class="back" href="./">← Aulas</a><div class="brand"><img src="assets/smudge-mark.svg" alt="">Smudge<span> Studio</span></div><strong>by MangaDojo</strong><span class="smudge-credit" title="Imagens de referência preservam proporções. Projetos locais: exporte cópias JSON.">Referências sem distorção · Backup JSON</span><span id="status" class="status" role="status">Pronto para criar · salvamento automático</span></header><main class="layout"><aside class="side left"><h2>Ferramentas</h2><div class="tools" id="tools"><button class="tool active" data-tool="pencil">✏️ Lápis</button><button class="tool" data-tool="brush">🖌️ Pincel</button><button class="tool" data-tool="marker">🖍️ Marcador</button><button class="tool" data-tool="eraser">◻️ Borracha</button><button class="tool" data-tool="line">╱ Linha</button><button class="tool" data-tool="rect">▢ Retângulo</button><button class="tool" data-tool="ellipse">◯ Elipse</button><button class="tool" data-tool="text">T Texto</button><button class="tool" data-tool="bucket">🪣 Preencher</button><button class="tool" data-tool="picker">🎯 Conta-gotas</button><button class="tool" data-tool="pan">✋ Mover tela</button><button class="tool" data-tool="lasso">⛶ Laço livre</button><button class="tool" data-tool="reticle" aria-pressed="false">Retícula</button><button class="tool" data-tool="mask">Ocultar com máscara</button><button class="tool" data-tool="reveal">Revelar máscara</button></div><div class="field"><label for="color">Cor do traço</label><input id="color" type="color" value="#332238"></div><div class="field"><label for="size">Espessura <span id="size-val">5</span> px</label><input id="size" type="range" min="1" max="65" value="5"></div><div class="field"><label for="stabilizer">Estabilização do traço <span id="stabilizer-val">35</span>%</label><input id="stabilizer" type="range" min="0" max="85" step="5" value="35"><small class="smudge-credit">Suaviza movimentos bruscos sem alterar o tamanho do pincel.</small></div><div class="field"><label for="opacity">Opacidade <span id="opacity-val">100</span>%</label><input id="opacity" type="range" min="5" max="100" value="100"></div><div class="field" id="reticleOptions" hidden><label for="reticleDensity">Densidade da retícula <span id="reticleDensityValue">25%</span></label><input id="reticleDensity" type="range" min="5" max="70" step="5" value="25" aria-valuetext="25%" aria-describedby="reticleHelp"><small id="reticleHelp">Contorne a área e solte para aplicar na camada ativa.</small></div><label class="pen-option"><input type="checkbox" id="penPressure" checked> Pressão da caneta</label><div class="swatches" id="swatches"></div><p class="tips">Use o dedo ou caneta para pintar. Balde preenche áreas fechadas; conta-gotas lê a cor. Em zoom, use Mover tela. Atalhos: <strong>B</strong> pincel, <strong>E</strong> borracha, <strong>Ctrl+Z</strong> desfazer, <strong>Ctrl+Y</strong> refazer.</p></aside><section class="workspace"><div class="topbar"><button class="mini" id="studioRead" aria-pressed="true">↕ Rolar</button><button class="mini" id="studioDraw" aria-pressed="false">✎ Desenhar</button><button class="mini" id="undo">↶ Desfazer</button><button class="mini" id="redo">↷ Refazer</button><button class="mini" id="zoomout">− Zoom</button><button class="mini" id="zoomreset">100%</button><button class="mini" id="zoomin">＋ Zoom</button><button class="mini" id="grid">▦ Grade</button><button class="mini" id="perspective" type="button" aria-pressed="false" aria-controls="perspectiveControls">Perspectiva</button><button class="mini" id="mirror">⇋ Simetria: off</button><button class="mini" id="download">⇩ PNG</button><button class="mini" id="saveproject">💾 Projeto</button><button class="mini" id="loadproject">📂 Abrir</button><button class="mini" id="import">🖼️ Imagem</button><button class="mini" id="newproject">Nova tela</button><button class="mini" id="clear">Limpar camada</button><input id="file" type="file" accept="image/png,image/jpeg,image/webp,.json,application/json"></div><form id="transformSelection" class="selection-controls" hidden>
 <label>Horizontal <input name="x" type="number" min="-900" max="900" value="0"></label>
 <label>Vertical <input name="y" type="number" min="-900" max="900" value="0"></label>
@@ -37,8 +38,12 @@
 <details class="practice-reference" id="practiceReference" hidden>
  <summary id="practiceTitle">Prancha do exercício</summary>
  <p id="practiceTask"></p>
+ <p id="practiceReview"></p>
+ <div class="practice-actions">
+  <button class="mini" id="practiceLayer" type="button">Usar camada de prática</button>
+  <a id="practiceBoardLink" href="pranchas.html?colecao=pratica">Abrir prancha completa</a>
+ </div>
  <img id="practiceImage" loading="lazy" decoding="async" alt="Referência visual do exercício">
- <a id="practiceBoardLink" href="pranchas.html?colecao=pratica">Ver instruções completas</a>
 </details>
 <div class="workarea"><div class="sheet reading" id="sheet"><canvas id="canvas" width="900" height="900" aria-label="Área de desenho"></canvas><div class="grid-overlay"></div><canvas class="perspective-overlay" id="perspectiveOverlay" width="900" height="900" aria-hidden="true"></canvas></div></div><div class="foot">Smudge · área de 900 × 900 px · até 16 camadas · exporte uma cópia do projeto para backup · gratuito e sem anúncios</div></section><aside class="side right"><h2>Camadas</h2><div id="layers" class="layer-list"></div><button class="panel-action" id="addLayer">＋ Nova camada</button><button class="panel-action" id="removeLayer">− Apagar camada</button><button class="panel-action" id="moveUp">↑ Camada acima</button><button class="panel-action" id="moveDown">↓ Camada abaixo</button><button class="panel-action" id="resetMask">Remover máscara da camada</button><p class="tips">Desenhe em camadas separadas: esboço e arte-final. Importe uma imagem de referência em uma camada e pinte por cima.</p></aside></main><script src="scripts/smudge-editing.js?v=2"></script><script>
 (()=>{'use strict';const $=id=>document.getElementById(id),size=900,view=$('canvas'),vctx=view.getContext('2d'),sheet=$('sheet');let layers=[],current=1,tool='pencil',drawing=false,start=null,points=[],undoStack=[],redoStack=[],mirror=false,reference=null,autosaveTimer=null,zoom=1,panStart=null,paintBusy=false;const KEY='mangadojo-paint-v1';let touchDrawing=false;
@@ -358,7 +363,17 @@ $('zoomin').onclick=()=>setZoom(Math.round((zoom+.25)*100)/100);$('zoomout').onc
  }finally{paintBusy=false}
 }
 $('undo').onclick=()=>restoreHistory(undoStack,redoStack);
-$('redo').onclick=()=>restoreHistory(redoStack,undoStack);$('addLayer').onclick=()=>{if(layers.length>=16){alert('Limite de 16 camadas');return}checkpoint();layers.push(createLayer('Camada '+(layers.length+1)));current=layers.length-1;renderLayers();composite();scheduleSave()};$('removeLayer').onclick=()=>{if(layers.length<=1)return;checkpoint();layers.splice(current,1);current=Math.min(current,layers.length-1);renderLayers();composite();scheduleSave()};$('moveUp').onclick=()=>{if(current>=layers.length-1)return;checkpoint();[layers[current],layers[current+1]]=[layers[current+1],layers[current]];current++;renderLayers();composite();scheduleSave()};$('moveDown').onclick=()=>{if(current<=0)return;checkpoint();[layers[current],layers[current-1]]=[layers[current-1],layers[current]];current--;renderLayers();composite();scheduleSave()};$('newproject').onclick=()=>{if(!confirm('Criar uma tela em branco? Exporte seu projeto atual antes de continuar.'))return;checkpoint();layers=[createLayer('Esboço'),createLayer('Arte-final')];current=1;restorePerspective();renderLayers();composite();scheduleSave();$('status').textContent='Novo projeto criado'};$('clear').onclick=()=>{if(!confirm('Apagar somente esta camada?'))return;checkpoint();layers[current].canvas.getContext('2d').clearRect(0,0,size,size);composite();scheduleSave()};$('download').onclick=()=>{let c=document.createElement('canvas');c.width=c.height=size;let x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,size,size);layers.forEach(l=>{if(l.visible)editing.drawLayer(x,l,layerBuffer)});let a=document.createElement('a');a.download='Smudge-arte.png';a.href=c.toDataURL('image/png');a.click()};function downloadJSON(){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({format:'mangadojo-paint',version:2,...projectData()})],{type:'application/json'}));a.download='Smudge-projeto.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}$('saveproject').onclick=downloadJSON;$('loadproject').onclick=()=>{$('file').dataset.mode='project';$('file').click()};$('import').onclick=()=>{$('file').dataset.mode='image';$('file').click()};$('file').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if($('file').dataset.mode==='project'){const v=JSON.parse(await file.text());if(!Array.isArray(v.layers)||v.layers.length<1||v.layers.length>16||v.layers.some(l=>typeof l.name!=='string'||l.name.length>120||typeof l.png!=='string'||!l.png.startsWith('data:image/png;base64,')||l.png.length>18000000||(l.mask!==undefined&&(typeof l.mask!=='string'||!l.mask.startsWith('data:image/png;base64,')||l.mask.length>18000000))))throw Error('Projeto incompatível ou acima dos limites seguros');checkpoint();await restore(v.layers);current=Math.max(0,Math.min(Number(v.current)||0,layers.length-1));mirror=!!v.mirror;restorePerspective(v.perspective);renderLayers();composite();scheduleSave()}else{checkpoint();const url=URL.createObjectURL(file);await imageInto(layers[current].canvas,url);URL.revokeObjectURL(url);composite();scheduleSave()}}catch(e){alert('Não foi possível abrir: '+e.message)}e.target.value=''};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&placingVanishingPoint){$('placeVanishingPoint').click();return}if(e.target.matches('input,textarea'))return;if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();$(e.shiftKey?'redo':'undo').click()}else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){e.preventDefault();$('redo').click()}else if(e.key.toLowerCase()==='e')document.querySelector('[data-tool="eraser"]').click();else if(e.key.toLowerCase()==='b')document.querySelector('[data-tool="brush"]').click()});
+$('redo').onclick=()=>restoreHistory(redoStack,undoStack);function addDrawingLayer(name){
+ if(layers.length>=16){alert('Limite de 16 camadas');return false}
+ checkpoint();
+ layers.push(createLayer(name));
+ current=layers.length-1;
+ renderLayers();
+ composite();
+ scheduleSave();
+ return true;
+}
+$('addLayer').onclick=()=>addDrawingLayer('Camada '+(layers.length+1));$('removeLayer').onclick=()=>{if(layers.length<=1)return;checkpoint();layers.splice(current,1);current=Math.min(current,layers.length-1);renderLayers();composite();scheduleSave()};$('moveUp').onclick=()=>{if(current>=layers.length-1)return;checkpoint();[layers[current],layers[current+1]]=[layers[current+1],layers[current]];current++;renderLayers();composite();scheduleSave()};$('moveDown').onclick=()=>{if(current<=0)return;checkpoint();[layers[current],layers[current-1]]=[layers[current-1],layers[current]];current--;renderLayers();composite();scheduleSave()};$('newproject').onclick=()=>{if(!confirm('Criar uma tela em branco? Exporte seu projeto atual antes de continuar.'))return;checkpoint();layers=[createLayer('Esboço'),createLayer('Arte-final')];current=1;restorePerspective();renderLayers();composite();scheduleSave();$('status').textContent='Novo projeto criado'};$('clear').onclick=()=>{if(!confirm('Apagar somente esta camada?'))return;checkpoint();layers[current].canvas.getContext('2d').clearRect(0,0,size,size);composite();scheduleSave()};$('download').onclick=()=>{let c=document.createElement('canvas');c.width=c.height=size;let x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,size,size);layers.forEach(l=>{if(l.visible)editing.drawLayer(x,l,layerBuffer)});let a=document.createElement('a');a.download='Smudge-arte.png';a.href=c.toDataURL('image/png');a.click()};function downloadJSON(){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({format:'mangadojo-paint',version:2,...projectData()})],{type:'application/json'}));a.download='Smudge-projeto.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}$('saveproject').onclick=downloadJSON;$('loadproject').onclick=()=>{$('file').dataset.mode='project';$('file').click()};$('import').onclick=()=>{$('file').dataset.mode='image';$('file').click()};$('file').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if($('file').dataset.mode==='project'){const v=JSON.parse(await file.text());if(!Array.isArray(v.layers)||v.layers.length<1||v.layers.length>16||v.layers.some(l=>typeof l.name!=='string'||l.name.length>120||typeof l.png!=='string'||!l.png.startsWith('data:image/png;base64,')||l.png.length>18000000||(l.mask!==undefined&&(typeof l.mask!=='string'||!l.mask.startsWith('data:image/png;base64,')||l.mask.length>18000000))))throw Error('Projeto incompatível ou acima dos limites seguros');checkpoint();await restore(v.layers);current=Math.max(0,Math.min(Number(v.current)||0,layers.length-1));mirror=!!v.mirror;restorePerspective(v.perspective);renderLayers();composite();scheduleSave()}else{checkpoint();const url=URL.createObjectURL(file);await imageInto(layers[current].canvas,url);URL.revokeObjectURL(url);composite();scheduleSave()}}catch(e){alert('Não foi possível abrir: '+e.message)}e.target.value=''};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&placingVanishingPoint){$('placeVanishingPoint').click();return}if(e.target.matches('input,textarea'))return;if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();$(e.shiftKey?'redo':'undo').click()}else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){e.preventDefault();$('redo').click()}else if(e.key.toLowerCase()==='e')document.querySelector('[data-tool="eraser"]').click();else if(e.key.toLowerCase()==='b')document.querySelector('[data-tool="brush"]').click()});
 async function importLocalArt(name){
  if(!/^(gato-sentado|gato-em-pe|leao|lobo-correndo|rosto-feminino|cabelos-ondulados)-(?:0[1-9]|[1-9][0-9])\.webp$/.test(name)){$('status').textContent='Nome de referência local incompatível';return}
  if(layers.some(l=>l.name==='Referência local: '+name)){$('status').textContent='Essa referência já está carregada';return}
@@ -376,30 +391,48 @@ async function importLocalArt(name){
 }
 async function importLessonReference(){const params=new URLSearchParams(location.search);if(params.has('localArt'))return importLocalArt(params.get('localArt'));const ref=params.get('ref');if(!ref||!/^(?:review-pending\/)?[a-z0-9-]+-(?:0[1-9]|[1-9][0-9]*)\.(webp|svg|png)$/.test(ref))return;if(layers.some(l=>l.name==='Referência: '+ref)){$('status').textContent='Referência já carregada';return}const url='./assets/'+ref;try{let im=new Image();im.src=url;await im.decode();checkpoint();if(layers.length>=16){$('status').textContent='Exclua uma camada para carregar a referência';return}let layer=createLayer('Referência: '+ref);let c=layer.canvas.getContext('2d');drawContained(c,im,size,size);layers.unshift(layer);current=layers.length-1;renderLayers();composite();scheduleSave();$('status').textContent='Referência da aula carregada em camada separada'}catch(e){$('status').textContent='Não foi possível carregar a referência'}}
 async function openGuidedPractice(){
- const mode=new URLSearchParams(location.search).get('pratica');
- if(mode!=='line'&&mode!=='reticle')return;
- if(mode==='line'){
-  perspective.visible=true;
-  perspective.snap=true;
-  updatePerspective();
-  updateTouchMode(true);
- }
- selectTool(document.querySelector('[data-tool="'+mode+'"]'));
+ const requested=new URLSearchParams(location.search).get('pratica');
+ if(!requested)return;
  try{
   const response=await fetch('pranchas.json');
-  if(!response.ok)return;
+  if(!response.ok)throw Error('Pranchas indisponíveis');
   const boards=await response.json();
-  const board=boards.find(item=>item.smudgeTool===mode&&item.practice);
-  if(!board)return;
+  const legacy=['line','reticle'].includes(requested);
+  const board=boards.find(item=>item.practiceId===requested||(legacy&&item.smudgeTool===requested));
+  if(!board?.practice)return;
+  const mode=board.smudgeTool;
+  if(['line','reticle','pencil','brush'].includes(mode)&&pointerId===null&&!paintBusy){
+   if(mode==='line'){
+    perspective.visible=true;
+    perspective.snap=true;
+    updatePerspective();
+   }
+   selectTool(document.querySelector('[data-tool="'+mode+'"]'));
+   if(!touchDrawing)updateTouchMode(true);
+  }
   $('practiceTitle').textContent=board.title;
   $('practiceTask').textContent=board.practice.exercise;
+  $('practiceReview').textContent='Ao revisar: '+board.practice.review;
   $('practiceImage').width=board.width;
   $('practiceImage').height=board.height;
   $('practiceImage').src=board.image;
-  $('practiceBoardLink').href='pranchas.html?colecao=pratica&ferramenta='+encodeURIComponent(mode);
+  $('practiceBoardLink').href='pranchas.html?colecao=pratica&prancha='+encodeURIComponent(board.practiceId);
+  const layerName='Prática · '+board.title;
+  $('practiceLayer').onclick=()=>{
+   if(pointerId!==null||paintBusy)return;
+   const existing=layers.findIndex(layer=>layer.name===layerName);
+   if(existing>=0){
+    current=existing;
+    renderLayers();
+    composite();
+    scheduleSave();
+   }else if(!addDrawingLayer(layerName))return;
+   if(!touchDrawing)updateTouchMode(true);
+   $('status').textContent='Camada de prática selecionada';
+  };
   $('practiceReference').hidden=false;
  }catch{
-  $('status').textContent='Ferramenta pronta. A prancha do exercício está indisponível.';
+  $('status').textContent='A prancha do exercício está indisponível.';
  }
 }
 (async()=>{let saved=null;try{saved=await dbRead()}catch(e){}if(!saved){try{saved=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}}if(saved&&Array.isArray(saved.layers)&&saved.layers.length){try{await restore(saved.layers);current=Math.max(0,Math.min(Number(saved.current)||0,layers.length-1));mirror=!!saved.mirror;restorePerspective(saved.perspective);renderLayers();composite();scheduleSave()}catch(e){$('status').textContent='Não foi possível recuperar um projeto anterior'}}renderLayers();composite();setZoom(1);await importLessonReference();await openGuidedPractice()})()
