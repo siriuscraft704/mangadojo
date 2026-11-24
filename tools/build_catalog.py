@@ -13,8 +13,9 @@ for path in sorted(LESSONS.glob('*/lesson.json')):
         missing=[x for x in required if x not in data]
         if missing: raise ValueError('Campos ausentes: '+', '.join(missing))
         if data['id']!=path.parent.name: raise ValueError('id difere da pasta')
-        if not isinstance(data['steps'],list) or not (3<=len(data['steps'])<=60):raise ValueError('Aula deve ter entre 3 e 60 etapas')
+        if not isinstance(data['steps'],list) or not ((1<=len(data['steps'])<=60) if data.get('lessonType')=='board-study' else (3<=len(data['steps'])<=60)):raise ValueError('Etapas inválidas para o tipo de aula')
         if len(data['steps'])!=len(data['images']):raise ValueError('Quantidade de imagens diferente das etapas')
+        if data.get('lessonType')=='board-study' and (len(data['images'])!=1 or not data.get('sourceDimensions')):raise ValueError('Prancha deve conter imagem e dimensões da origem')
         if any(not isinstance(s,list) or len(s)!=3 or not isinstance(s[2],list) for s in data['steps']):raise ValueError('Etapa deve ser [título, instrução, [checklist]]')
         for img in data['images']:
             src=(ROOT/img).resolve()

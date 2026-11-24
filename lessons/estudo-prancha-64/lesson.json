@@ -1,0 +1,32 @@
+{
+  "id": "estudo-prancha-64",
+  "name": "Rosto masculino frontal — grafite 2",
+  "category": "Rostos e olhos",
+  "style": "Prancha integral · estudo orientado",
+  "level": "Iniciante",
+  "min": 30,
+  "emoji": "👁️",
+  "lessonType": "board-study",
+  "reviewStatus": "sheet-study",
+  "referenceSource": "assets/pranchas/prancha-64.webp",
+  "sourceDimensions": [
+    1122,
+    1402
+  ],
+  "disclaimer": "Folha histórica apresentada inteira, sem recorte. É um estudo orientado de uma imagem única, não uma sequência fictícia. Possíveis falhas de anatomia ou cortes já presentes no desenho original ainda dependem de revisão artística.",
+  "steps": [
+    [
+      "Eixo facial, expressão e observação",
+      "Leia a folha completa. Compare o eixo da cabeça, o posicionamento dos olhos, mandíbula e expressão. Refaça uma vista com traços leves e acabamento progressivo.",
+      [
+        "Marcar eixo do crânio e direção dos olhos",
+        "Comparar olhos, nariz, boca e mandíbula",
+        "Recriar a expressão sem cortar rosto ou cabelos",
+        "Finalizar contornos, reflexos e sombras"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/pranchas/prancha-64.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "estudo-prancha-20",
+  "name": "Grade de estudos de mão, bruxa, dragão e sakura",
+  "category": "Guias e quadrinhos",
+  "style": "Prancha integral · estudo orientado",
+  "level": "Intermediário",
+  "min": 30,
+  "emoji": "📖",
+  "lessonType": "board-study",
+  "reviewStatus": "sheet-study",
+  "referenceSource": "assets/pranchas/prancha-20.webp",
+  "sourceDimensions": [
+    1536,
+    1024
+  ],
+  "disclaimer": "Folha histórica apresentada inteira, sem recorte. É um estudo orientado de uma imagem única, não uma sequência fictícia. Possíveis falhas de anatomia ou cortes já presentes no desenho original ainda dependem de revisão artística.",
+  "steps": [
+    [
+      "Composição, ritmo e sequência",
+      "Leia a folha completa, identificando o fluxo da narrativa e a hierarquia das imagens. Planeje a própria página com quadros legíveis e margens.",
+      [
+        "Identificar leitura, foco e ritmo entre quadros",
+        "Marcar uma grade com espaçamento equilibrado",
+        "Recriar uma sequência de estudo em página própria",
+        "Revisar clareza visual e acabamento"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/pranchas/prancha-20.webp"
+  ]
+}

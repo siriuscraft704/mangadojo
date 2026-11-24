@@ -1,0 +1,32 @@
+{
+  "id": "estudo-prancha-80",
+  "name": "Mão segurando lápis — guia rosa",
+  "category": "Mãos e pés",
+  "style": "Prancha integral · estudo orientado",
+  "level": "Iniciante",
+  "min": 30,
+  "emoji": "✋",
+  "lessonType": "board-study",
+  "reviewStatus": "sheet-study",
+  "referenceSource": "assets/pranchas/prancha-80.webp",
+  "sourceDimensions": [
+    1122,
+    1402
+  ],
+  "disclaimer": "Folha histórica apresentada inteira, sem recorte. É um estudo orientado de uma imagem única, não uma sequência fictícia. Possíveis falhas de anatomia ou cortes já presentes no desenho original ainda dependem de revisão artística.",
+  "steps": [
+    [
+      "Anatomia, gestos e proporções",
+      "Observe a prancha integral de anatomia. Refaça palma ou planta, eixos e articulações. Não reproduza falanges ou dedos estranhos que possam existir na arte histórica.",
+      [
+        "Conferir dedos, articulações e proporção das falanges",
+        "Marcar eixo e volume da mão ou do pé",
+        "Recriar o gesto em esboço com margens adequadas",
+        "Revisar anatomia e sombras antes do acabamento"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/pranchas/prancha-80.webp"
+  ]
+}

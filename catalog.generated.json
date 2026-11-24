@@ -1,11 +1,17 @@
 {
-  "lessons": 9,
-  "stages": 62,
+  "lessons": 88,
+  "stages": 141,
   "categories": [
+    "Animais",
     "Animais e criaturas",
+    "Cabelos",
     "Cabelos e penteados",
+    "Corpo e personagens",
     "Fundamentos visuais",
+    "Guias e quadrinhos",
     "Mãos e anatomia",
-    "Rostos e expressões"
+    "Mãos e pés",
+    "Rostos e expressões",
+    "Rostos e olhos"
   ]
 }

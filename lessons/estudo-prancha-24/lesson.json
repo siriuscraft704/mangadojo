@@ -1,0 +1,32 @@
+{
+  "id": "estudo-prancha-24",
+  "name": "Personagem de corpo inteiro e construção",
+  "category": "Corpo e personagens",
+  "style": "Prancha integral · estudo orientado",
+  "level": "Intermediário",
+  "min": 30,
+  "emoji": "🧍",
+  "lessonType": "board-study",
+  "reviewStatus": "sheet-study",
+  "referenceSource": "assets/pranchas/prancha-24.webp",
+  "sourceDimensions": [
+    1024,
+    1536
+  ],
+  "disclaimer": "Folha histórica apresentada inteira, sem recorte. É um estudo orientado de uma imagem única, não uma sequência fictícia. Possíveis falhas de anatomia ou cortes já presentes no desenho original ainda dependem de revisão artística.",
+  "steps": [
+    [
+      "Proporções e construção do personagem",
+      "Analise a linha de ação, centro de gravidade e postura do personagem na prancha inteira. Reconstrua as massas do corpo antes de roupas e detalhes.",
+      [
+        "Marcar linha de ação e centros de gravidade",
+        "Conferir cabeça, torso, quadril, braços e pernas",
+        "Refazer a figura completa com apoios plausíveis",
+        "Detalhar rosto, traje e sombreamento"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/pranchas/prancha-24.webp"
+  ]
+}

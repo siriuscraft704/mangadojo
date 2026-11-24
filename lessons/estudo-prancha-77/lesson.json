@@ -1,0 +1,32 @@
+{
+  "id": "estudo-prancha-77",
+  "name": "Cabelos femininos cacheados — grafite",
+  "category": "Cabelos",
+  "style": "Prancha integral · estudo orientado",
+  "level": "Iniciante",
+  "min": 30,
+  "emoji": "💇",
+  "lessonType": "board-study",
+  "reviewStatus": "sheet-study",
+  "referenceSource": "assets/pranchas/prancha-77.webp",
+  "sourceDimensions": [
+    1055,
+    1491
+  ],
+  "disclaimer": "Folha histórica apresentada inteira, sem recorte. É um estudo orientado de uma imagem única, não uma sequência fictícia. Possíveis falhas de anatomia ou cortes já presentes no desenho original ainda dependem de revisão artística.",
+  "steps": [
+    [
+      "Volume, direção e movimento",
+      "Observe o crânio por baixo do cabelo. Separe grandes massas, mechas e pontos de luz, sem reduzir a altura da cabeça ou cortar as pontas.",
+      [
+        "Marcar a forma do crânio e o volume do cabelo",
+        "Dividir franja, laterais e cabelo posterior",
+        "Desenhar direções coerentes das mechas",
+        "Aplicar luz e sombra mantendo toda a silhueta"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/pranchas/prancha-77.webp"
+  ]
+}

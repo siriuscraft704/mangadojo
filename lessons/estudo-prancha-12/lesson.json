@@ -1,0 +1,32 @@
+{
+  "id": "estudo-prancha-12",
+  "name": "Gato sentado em 10 passos",
+  "category": "Animais",
+  "style": "Prancha integral · estudo orientado",
+  "level": "Iniciante",
+  "min": 30,
+  "emoji": "🐾",
+  "lessonType": "board-study",
+  "reviewStatus": "sheet-study",
+  "referenceSource": "assets/pranchas/prancha-12.webp",
+  "sourceDimensions": [
+    1536,
+    1024
+  ],
+  "disclaimer": "Folha histórica apresentada inteira, sem recorte. É um estudo orientado de uma imagem única, não uma sequência fictícia. Possíveis falhas de anatomia ou cortes já presentes no desenho original ainda dependem de revisão artística.",
+  "steps": [
+    [
+      "Silhueta, volumes e acabamento",
+      "Estude a prancha inteira. Identifique linha de ação, proporção da cabeça, tronco, patas e cauda. Refaça as formas básicas e finalize com contornos e sombras.",
+      [
+        "Marcar silhueta e linha de ação",
+        "Comparar proporções de cabeça, tórax, quadril e membros",
+        "Redesenhar o animal em esboço sem cortes",
+        "Refinar detalhes, patas, cauda e valores de luz"
+      ]
+    ]
+  ],
+  "images": [
+    "assets/pranchas/prancha-12.webp"
+  ]
+}

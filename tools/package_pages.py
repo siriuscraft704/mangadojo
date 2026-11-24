@@ -14,7 +14,7 @@ lessons = json.loads(catalog.split('window.MANGADOJO_LESSONS=', 1)[1].strip().re
 public_files = {
     '.nojekyll', 'index.html', 'studio.html', 'trilhas.html', 'oficina.html',
     'auditoria-imagens.html', 'homologacao-artes.html', 'acervo-revisado.html',
-    'creditos.html', 'pranchas.html', 'revisao-candidatos.html', 'pranchas.json', 'catalog.generated.js', 'catalog.generated.json',
+    'creditos.html', 'pranchas.html', 'aulas-pranchas.html', 'revisao-candidatos.html', 'pranchas.json', 'catalog.generated.js', 'catalog.generated.json',
     'manifest.webmanifest', 'sw.js', 'THIRD_PARTY_NOTICES.md',
     'assets/mangadojo-mark.svg', 'assets/smudge-mark.svg',
     'assets/mit-asset-manifest.json', 'styles/atelier.css', 'styles/smudge.css',

@@ -12,10 +12,20 @@ ROOT=Path(__file__).resolve().parents[1]
 index=(ROOT/'index.html').read_text('utf-8')
 studio=(ROOT/'studio.html').read_text('utf-8')
 catalog=json.loads((ROOT/'catalog.generated.json').read_text('utf-8'))
-assert catalog['lessons']==9 and catalog['stages']==62, catalog
+assert catalog['lessons']==88 and catalog['stages']==141, catalog
 published = {p.parent.name: json.loads(p.read_text('utf-8')) for p in ROOT.glob('lessons/*/lesson.json')}
 expected = {'gato-sentado':10, 'gato-em-pe':6, 'leao':10, 'lobo-correndo':10, 'mao':6,
             'observacao-vetorial':4, 'silhuetas-criaturas':4, 'rosto-feminino':6, 'cabelos-ondulados':6}
+boards=json.loads((ROOT/'pranchas.json').read_text('utf-8'))
+for board in boards:
+    if board['category']=='História visual do projeto':continue
+    number=board['image'].split('prancha-')[1].split('.')[0]
+    key='estudo-prancha-'+number
+    expected[key]=1
+    lesson=published[key]
+    assert lesson['lessonType']=='board-study' and lesson['images']==[board['image']]
+    assert lesson['sourceDimensions']==[board['width'],board['height']]
+assert len([lesson for lesson in published.values() if lesson.get('lessonType')=='board-study'])==79
 assert {key:len(value['images']) for key,value in published.items()} == expected
 archive=ROOT/'drafts/retired-lessons'
 assert len(list(archive.glob('*.json')))==25
@@ -39,11 +49,15 @@ with tempfile.TemporaryDirectory() as temp:
     assert all(board['width'] > 0 and board['height'] > 0 for board in boards)
     assert all((public/path).is_file() for path in paths)
     assert (public/'pranchas.html').exists()
+    assert (public/'aulas-pranchas.html').exists()
     assert 'pranchas.html' in index
+    assert 'aulas-pranchas.html' in index
     assert 'pranchas.html' in (public/'acervo-revisado.html').read_text('utf-8')
 for path in ['styles/atelier.css','styles/smudge.css','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
     assert (ROOT/path).is_file(),path
 assert 'styles/atelier.css' in index
+assert 'board-layout' in index and 'boardOriginal' in index
+assert 'aspect-ratio:var(--sheet-aspect)' in (ROOT/'styles/atelier.css').read_text('utf-8')
 assert 'styles/smudge.css' in studio
 assert 'auditoria-imagens.html' in index
 assert (ROOT/'auditoria-imagens.html').exists()
@@ -133,7 +147,7 @@ if shutil.which('node'):
         finally: path.unlink(missing_ok=True)
 # Validate inline browser JavaScript with Node when present on the runner.
 if shutil.which('node'):
-    for name, html in [('index', index), ('studio', studio), ('trilhas', trails), ('acervo', local_art), ('oficina', (ROOT/'oficina.html').read_text('utf-8')), ('pranchas', (ROOT/'pranchas.html').read_text('utf-8')), ('revisao', candidate_page)]:
+    for name, html in [('index', index), ('studio', studio), ('trilhas', trails), ('acervo', local_art), ('oficina', (ROOT/'oficina.html').read_text('utf-8')), ('pranchas', (ROOT/'pranchas.html').read_text('utf-8')), ('aulas-pranchas',(ROOT/'aulas-pranchas.html').read_text('utf-8')), ('revisao', candidate_page)]:
         for number, code in enumerate(re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>', html)):
             if not code.strip():
                 continue

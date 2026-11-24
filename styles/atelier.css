@@ -133,3 +133,13 @@ body{background:var(--md-paper);color:var(--md-ink);font-family:ui-sans-serif,sy
 
 /* Preserve the published artwork on all surfaces. */
 .stage-image,.course img,.thumb img,.compare-grid img{border:0!important;border-radius:0!important;object-fit:contain!important}
+
+/* 13.4 — each board study uses the entire native image, never a crop. */
+.lesson-body.board-layout{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+.lesson-body.board-layout .gallery-stage{width:100%;min-width:0}
+.preview.board-study{box-sizing:border-box!important;aspect-ratio:var(--sheet-aspect)!important;width:min(100%,var(--sheet-max-width,1120px))!important;height:auto!important;min-height:0!important;max-height:none!important;margin:14px auto!important;overflow:hidden!important;border:0!important;box-shadow:none!important;background:#fff!important}
+.preview.board-study #stageImage{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;max-width:none!important;max-height:none!important;filter:none!important;transform:none!important}
+.preview.board-study .draw-canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+.board-original-link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;min-height:44px}
+.board-original-link[hidden]{display:none!important}
+@media(max-width:760px){.preview.board-study{width:100%!important;margin:10px auto!important}}
