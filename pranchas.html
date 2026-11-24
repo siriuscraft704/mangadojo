@@ -177,11 +177,10 @@ practice.addEventListener('change',render);
    category.add(new Option(value,value));
   }
   render();
-  const requestedPractice=params.get('prancha');
   const legacyTool=params.get('ferramenta');
-  const index=visible.findIndex(board=>requestedPractice
-   ?board.practiceId===requestedPractice
-   :(['line','reticle'].includes(legacyTool)&&board.smudgeTool===legacyTool));
+  const requestedPractice=params.get('prancha')??
+   (legacyTool==='line'?'perspectiva-corredor':legacyTool==='reticle'?'reticulas':null);
+  const index=visible.findIndex(board=>board.practiceId===requestedPractice);
   if(index>=0)$('gallery').children[index].click();
  }catch{$('status').textContent='Não foi possível carregar as pranchas. Atualize a página.'}
 })();

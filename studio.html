@@ -397,8 +397,8 @@ async function openGuidedPractice(){
   const response=await fetch('pranchas.json');
   if(!response.ok)throw Error('Pranchas indisponíveis');
   const boards=await response.json();
-  const legacy=['line','reticle'].includes(requested);
-  const board=boards.find(item=>item.practiceId===requested||(legacy&&item.smudgeTool===requested));
+  const practiceId=requested==='line'?'perspectiva-corredor':requested==='reticle'?'reticulas':requested;
+  const board=boards.find(item=>item.practiceId===practiceId);
   if(!board?.practice)return;
   const mode=board.smudgeTool;
   if(['line','reticle','pencil','brush'].includes(mode)&&pointerId===null&&!paintBusy){

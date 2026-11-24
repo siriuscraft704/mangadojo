@@ -44,9 +44,11 @@ with tempfile.TemporaryDirectory() as temp:
     assert (public/'revisao-candidatos.html').exists()
     boards = json.loads((public/'pranchas.json').read_text('utf-8'))
     paths = {board['image'] for board in boards}
-    assert len(boards) == len(paths) == 96
+    assert len(boards) == len(paths) == 106
     practice = [board for board in boards if 'practice' in board]
-    assert len(practice) == 10
+    assert len(practice) == 20
+    assert len({board['practiceId'] for board in practice}) == len(practice)
+    assert all(board['smudgeTool'] in {'line', 'reticle', 'pencil', 'brush'} for board in practice)
     for board in practice:
         assert set(board['practice']) == {'level', 'tool', 'exercise', 'review'}
         assert all(isinstance(text, str) and text.strip() for text in board['practice'].values())

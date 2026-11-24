@@ -1,5 +1,155 @@
 [
   {
+    "title": "Esquina em perspectiva de dois pontos",
+    "category": "Guias e quadrinhos",
+    "image": "assets/pranchas/pratica/escada-dois-pontos.webp",
+    "width": 1536,
+    "height": 1024,
+    "practice": {
+      "level": "Intermediário",
+      "tool": "Use Linha para a estrutura. Se ativar a guia de perspectiva, mova o ponto de fuga e trace uma família de arestas por vez. Para verticais, desligue o alinhamento.",
+      "exercise": "Trace o horizonte e escolha dois pontos de fuga. Construa primeiro a quina de uma loja e depois alinhe letreiros, portas e janelas aos respectivos pontos.",
+      "review": "As linhas de cada face convergem para seu próprio ponto. Os dois pontos compartilham a mesma linha do horizonte."
+    },
+    "practiceId": "escada-dois-pontos",
+    "smudgeTool": "line"
+  },
+  {
+    "title": "Subindo escadas · peso e apoio",
+    "category": "Corpo e personagens",
+    "image": "assets/pranchas/pratica/escada-poses.webp",
+    "width": 1536,
+    "height": 1024,
+    "practice": {
+      "level": "Intermediário",
+      "tool": "Esboce a escada e o gesto em camadas separadas. Use o Lápis para marcar o pé de apoio antes do contorno.",
+      "exercise": "Desenhe três momentos da subida: transferência de peso, impulso e pouso do outro pé. Experimente uma escada mais alta depois.",
+      "review": "O pé de apoio coincide com o degrau, o joelho livre acompanha o avanço e a inclinação do tronco muda com o esforço."
+    },
+    "practiceId": "escada-poses",
+    "smudgeTool": "pencil"
+  },
+  {
+    "title": "Mão segurando uma caneca",
+    "category": "Mãos e pés",
+    "image": "assets/pranchas/pratica/mao-caneca.webp",
+    "width": 1536,
+    "height": 1024,
+    "practice": {
+      "level": "Intermediário",
+      "tool": "Use o Lápis para desenhar a elipse da boca da caneca e o bloco da palma. Faça a alça em guia separada para testar a posição dos dedos.",
+      "exercise": "Construa o cilindro e sua alça. Posicione o polegar e distribua os dedos conforme a abertura. Redesenhe o mesmo gesto com uma caneca maior.",
+      "review": "Confira onde cada dedo toca ou desaparece atrás da alça. A pegada deve parecer firme mesmo com parte da mão fora de vista."
+    },
+    "practiceId": "mao-caneca",
+    "smudgeTool": "pencil"
+  },
+  {
+    "title": "Expressão pelos olhos · três reações",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/pratica/olhos-atuacao.webp",
+    "width": 1536,
+    "height": 1024,
+    "practice": {
+      "level": "Iniciante",
+      "tool": "Duplique o esboço em três áreas da tela. Faça mudanças pequenas nas sobrancelhas, pálpebras e pupilas antes de reforçar o traço.",
+      "exercise": "Use o mesmo personagem para preocupação, surpresa e determinação. Cubra a boca e peça a alguém para descrever cada reação.",
+      "review": "Compare altura das sobrancelhas, abertura das pálpebras e direção do olhar. Preserve o tamanho e a identidade dos olhos."
+    },
+    "practiceId": "olhos-atuacao",
+    "smudgeTool": "pencil"
+  },
+  {
+    "title": "Rosto visto de baixo · mandíbula e eixo",
+    "category": "Rostos e olhos",
+    "image": "assets/pranchas/pratica/rosto-de-baixo.webp",
+    "width": 1536,
+    "height": 1024,
+    "practice": {
+      "level": "Intermediário",
+      "tool": "Use uma camada-guia para o eixo do rosto e as linhas dos olhos e do nariz. Trace o contorno em outra camada.",
+      "exercise": "Desenhe a esfera da cabeça e marque o plano inferior da mandíbula. Em seguida, posicione nariz, olhos e orelhas com base na inclinação.",
+      "review": "O queixo ganha destaque e parte do plano inferior do nariz aparece. Verifique se o eixo curvo atravessa as feições sem deformar o rosto."
+    },
+    "practiceId": "rosto-de-baixo",
+    "smudgeTool": "pencil"
+  },
+  {
+    "title": "Cabelo crespo curto · volume e textura",
+    "category": "Cabelos",
+    "image": "assets/pranchas/pratica/cabelo-volumes.webp",
+    "width": 1536,
+    "height": 1024,
+    "practice": {
+      "level": "Iniciante",
+      "tool": "Use Pincel para marcar a silhueta e distribua as áreas de sombra antes de reduzir a espessura para os cachos.",
+      "exercise": "Desenhe o contorno do crânio e depois a massa do cabelo. Separe grupos de cachos, escolha uma direção de luz e detalhe alguns grupos.",
+      "review": "Mantenha espaço entre o crânio e o cabelo. Alterne áreas detalhadas e áreas simples para a textura continuar legível em tamanho pequeno."
+    },
+    "practiceId": "cabelo-volumes",
+    "smudgeTool": "brush"
+  },
+  {
+    "title": "Arara-canindé · asas abertas",
+    "category": "Animais",
+    "image": "assets/pranchas/pratica/arara-voo.webp",
+    "width": 1536,
+    "height": 1024,
+    "practice": {
+      "level": "Intermediário",
+      "tool": "Faça a estrutura em uma camada e deixe a cor em outra. Use o Pincel para testar a silhueta antes de detalhar as penas.",
+      "exercise": "Marque as articulações da asa e construa os grupos de penas, do corpo às pontas. Repita o desenho mudando a inclinação de uma asa.",
+      "review": "A asa deve parecer articulada, as penas externas seguem a abertura e a cauda participa da silhueta de voo."
+    },
+    "practiceId": "arara-voo",
+    "smudgeTool": "brush"
+  },
+  {
+    "title": "Hachuras para cerâmica, metal e pedra",
+    "category": "Guias e quadrinhos",
+    "image": "assets/pranchas/pratica/materiais-hachura.webp",
+    "width": 1536,
+    "height": 1024,
+    "practice": {
+      "level": "Iniciante",
+      "tool": "Mantenha mesma luz e mesma escala. Varie espessura, intervalo e direção dos traços com o Lápis.",
+      "exercise": "Desenhe três esferas e renderize uma em cerâmica, uma em metal e outra em pedra. Depois aplique uma das texturas a um objeto do cotidiano.",
+      "review": "A luz tem a mesma direção nos três desenhos. Diferencie o reflexo do metal, a uniformidade da cerâmica e o grão da pedra."
+    },
+    "practiceId": "materiais-hachura",
+    "smudgeTool": "pencil"
+  },
+  {
+    "title": "Trilha na floresta · três planos de profundidade",
+    "category": "Guias e quadrinhos",
+    "image": "assets/pranchas/pratica/profundidade-floresta.webp",
+    "width": 1536,
+    "height": 1024,
+    "practice": {
+      "level": "Iniciante",
+      "tool": "Distribua os três planos em camadas. Use Pincel mais espesso no primeiro plano e suavize os valores na distância.",
+      "exercise": "Bloqueie as árvores da frente, a trilha e o fundo antes de adicionar folhas. Desenhe outra versão em que a trilha desaparece atrás de um tronco.",
+      "review": "Aproxime os maiores contrastes do primeiro plano e mantenha o fundo mais suave. Preserve uma passagem visual contínua pela trilha."
+    },
+    "practiceId": "profundidade-floresta",
+    "smudgeTool": "brush"
+  },
+  {
+    "title": "Quadrinho sem diálogo · ritmo na chuva",
+    "category": "Guias e quadrinhos",
+    "image": "assets/pranchas/pratica/quadrinho-silencio.webp",
+    "width": 1536,
+    "height": 1024,
+    "practice": {
+      "level": "Intermediário",
+      "tool": "Use a grade para desenhar os três quadros. Reserve uma área maior para a imagem em que o gesto precisa ser mais legível.",
+      "exercise": "Conte uma pequena ação sem palavras: a personagem observa a chuva, percebe uma gota no saco de papel e o protege. Experimente mudar a duração aparente de um quadro.",
+      "review": "O leitor deve entender o que motivou o gesto só pela sequência. Confira se personagem, objeto e direção do olhar se mantêm reconhecíveis."
+    },
+    "practiceId": "quadrinho-silencio",
+    "smudgeTool": "pencil"
+  },
+  {
     "title": "Corredor em perspectiva de um ponto",
     "category": "Guias e quadrinhos",
     "image": "assets/pranchas/pratica/perspectiva-corredor.webp",

@@ -12,7 +12,7 @@ Academia gratuita de desenho mangá com biblioteca de aulas, prática e um edito
 
 Nove aulas e 62 telas de estudo: quatro sequências de animais (36), Mão Aberta (6), duas oficinas de observação com oito imagens de Vijay Verma sob MIT e duas novas aulas experimentais (12 imagens originais de rosto feminino e cabelos ondulados). O Acervo mostra 54 WebP diretamente e permite importação local opcional.
 
-A galeria reúne 79 pranchas ligadas às aulas, 10 pranchas de prática guiada e 7 painéis históricos em tamanho integral. A [coleção de prática](https://siriuscraft704.github.io/mangadojo/pranchas.html?colecao=pratica) inclui dicas de ferramentas, exercícios e critérios de revisão. As atividades complementares ficam na galeria.
+A galeria reúne 79 pranchas ligadas às aulas, 20 pranchas de prática guiada e 7 painéis históricos em tamanho integral. A [coleção de prática](https://siriuscraft704.github.io/mangadojo/pranchas.html?colecao=pratica) inclui dicas de ferramentas, exercícios e critérios de revisão. As atividades complementares ficam na galeria.
 
 A revisão visual retirada da publicação está em `drafts/retired-lessons/`. Os WebP legados permanecem no Git para recuperação e comparação. O artefato do Pages leva apenas os arquivos estáticos do site e as imagens apontadas pelas aulas vigentes.
 
