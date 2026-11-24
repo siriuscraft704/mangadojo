@@ -78,7 +78,7 @@ dialog img.zoom{max-width:none;max-height:none}
       <div><dt>Exercício</dt><dd id="boardExercise"></dd></div>
       <div><dt>O que revisar</dt><dd id="boardReview"></dd></div>
     </dl>
-    <a href="studio.html">Praticar no Smudge</a>
+    <a id="practiceLink" href="studio.html">Praticar no Smudge</a>
   </figcaption>
 </figure>
 </dialog>
@@ -86,8 +86,8 @@ dialog img.zoom{max-width:none;max-height:none}
 'use strict';
 const $=id=>document.getElementById(id);
 const category=$('category'), search=$('search'), viewer=$('viewer'), image=$('boardImage');
-const practice=$('practice');
-practice.checked=new URLSearchParams(location.search).get('colecao')==='pratica';
+const practice=$('practice'), params=new URLSearchParams(location.search);
+practice.checked=params.get('colecao')==='pratica';
 let boards=[], visible=[], current=0, opener=null;
 function normalize(value){
  return value.toLocaleLowerCase('pt-BR').normalize('NFD').replace(/\p{Diacritic}/gu,'');
@@ -141,6 +141,10 @@ function show(index){
   $('boardTool').textContent=board.practice.tool;
   $('boardExercise').textContent=board.practice.exercise;
   $('boardReview').textContent=board.practice.review;
+  const link=$('practiceLink');
+  link.href=board.smudgeTool?'studio.html?pratica='+encodeURIComponent(board.smudgeTool):'studio.html';
+  link.textContent=board.smudgeTool==='line'?'Praticar com a régua no Smudge':
+   board.smudgeTool==='reticle'?'Praticar com retículas no Smudge':'Praticar no Smudge';
  }
  $('previous').disabled=index===0;
  $('next').disabled=index===visible.length-1;
@@ -173,6 +177,11 @@ practice.addEventListener('change',render);
    category.add(new Option(value,value));
   }
   render();
+  const requestedTool=params.get('ferramenta');
+  if(requestedTool){
+   const index=visible.findIndex(board=>board.smudgeTool===requestedTool);
+   if(index>=0)$('gallery').children[index].click();
+  }
  }catch{$('status').textContent='Não foi possível carregar as pranchas. Atualize a página.'}
 })();
 </script>

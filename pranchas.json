@@ -3,11 +3,12 @@
     "title": "Corredor em perspectiva de um ponto",
     "category": "Guias e quadrinhos",
     "image": "assets/pranchas/pratica/perspectiva-corredor.webp",
+    "smudgeTool": "line",
     "width": 1536,
     "height": 1024,
     "practice": {
       "level": "Iniciante",
-      "tool": "Use a grade do Smudge para alinhar verticais e horizontais, e trace as linhas de profundidade numa camada-guia com opacidade baixa.",
+      "tool": "Ative Perspectiva no Smudge e coloque o ponto de fuga na linha do horizonte. Use Linha com o alinhamento ativado para as arestas de profundidade. Desative o alinhamento ao traçar verticais e horizontais.",
       "exercise": "Marque a linha do horizonte e o ponto de fuga. Construa o corredor com linhas que convergem para esse ponto. Acrescente três portas em profundidades diferentes e refaça a cena com a câmera mais baixa.",
       "review": "Confira se as arestas que avançam pelo corredor convergem para o mesmo ponto. As portas devem parecer menores à medida que se afastam."
     }
@@ -107,11 +108,12 @@
     "title": "Retículas · meio-tom e pretos sólidos",
     "category": "Guias e quadrinhos",
     "image": "assets/pranchas/pratica/reticulas.webp",
+    "smudgeTool": "reticle",
     "width": 1536,
     "height": 1024,
     "practice": {
       "level": "Intermediário",
-      "tool": "Aplique a retícula em camada própria. Teste a versão exportada em PNG no tamanho final, inclusive no celular, para identificar padrões que vibram ou somem.",
+      "tool": "Use Retícula em uma camada própria. Contorne a área e solte para aplicar os pontos. Compare duas densidades no mesmo retrato e verifique a versão exportada em PNG no tamanho final.",
       "exercise": "Pegue um retrato em line art. Aplique pontos nas áreas de meio-tom e pretos sólidos nas sombras mais profundas. Deixe papel aparente nos planos iluminados.",
       "review": "Confira a imagem em tamanho pequeno. Se as áreas de pontos e preto se fundirem, reduza a densidade da retícula ou amplie as áreas claras."
     }
