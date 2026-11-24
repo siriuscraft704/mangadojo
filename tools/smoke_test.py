@@ -57,6 +57,7 @@ for path in ['styles/atelier.css','styles/smudge.css','assets/mangadojo-mark.svg
     assert (ROOT/path).is_file(),path
 assert 'styles/atelier.css' in index
 assert 'board-layout' in index and 'boardOriginal' in index
+assert "const move=n<0?-1:n>0?1:0" in index and 'Próxima aula →' in index
 assert 'aspect-ratio:var(--sheet-aspect)' in (ROOT/'styles/atelier.css').read_text('utf-8')
 assert 'styles/smudge.css' in studio
 assert 'auditoria-imagens.html' in index
