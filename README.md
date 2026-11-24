@@ -1,4 +1,4 @@
-# MangaDojo Atelier 13.3.0 · Smudge Studio
+# MangaDojo Atelier 13.4.0 · Smudge Studio
 
 Academia gratuita de desenho mangá com biblioteca de aulas, prática e um editor de desenho independente.
 
@@ -53,3 +53,14 @@ Recriar as referências retiradas, ampliar as oficinas de criação, revisar o c
 ### Revisão ainda necessária
 
 A continuidade de ângulos dos cabelos ondulados e a anatomia final dos rostos devem ser avaliadas por um desenhista. As novas aulas estão acessíveis como estudos, não como referência anatômica certificada. A versão atual não afirma eliminar todos os problemas do acervo histórico.
+
+## Novidade 13.4 — 79 aulas de pranchas inteiras
+
+- A [biblioteca de 79 aulas](https://siriuscraft704.github.io/mangadojo/aulas-pranchas.html) transforma cada prancha ilustrada de estudo já hospedada no projeto em uma **aula individual**, com ID `estudo-prancha-NN`, sua própria definição em `lessons/`, atividades de construção e checklist.
+- As 7 imagens de história visual não foram convertidas em aulas de desenho.
+- O catálogo contém agora **88 aulas e 141 telas**: 9 aulas anteriores (62 telas) mais 79 aulas de prancha integral (uma tela cada).
+- Nenhum arquivo foi recortado ou esticado para construir as novas aulas; as imagens WebP de `assets/pranchas/` são reaproveitadas diretamente na resolução integral do repositório (de 1024×1536 a 1774×887, conforme o arquivo).
+- O visualizador da aula utiliza layout de largura inteira, proporção específica de cada prancha, zoom e download do **arquivo WebP original**, evitando redução forçada para 900×1000 na exportação destas aulas.
+- As pranchas internas não foram divididas em passos falsos. Os exercícios de leitura, construção e acabamento fazem referência à **mesma imagem completa**.
+- O teste `tools/media_audit.py` verifica individualmente dimensões reais e resolução mínima das 79 fontes; `tools/smoke_test.py` confere IDs, correspondência com o atlas, integridade de paths e empacotamento.
+- **Limite de validação:** integridade e enquadramento na interface foram testados automaticamente, mas a anatomia e possíveis cortes que já existiam na ilustração original ainda exigem aprovação artística individual. Não declarar todas as 79 pranchas anatomicamente corretas.

@@ -32,11 +32,17 @@ for lesson in courses:
         path=ROOT/relative
         if not path.is_file():raise SystemExit('Asset ausente: '+relative)
         w,h=dimensions(path)
+        if lesson.get('lessonType')=='board-study':
+            expected=tuple(lesson['sourceDimensions'])
+            if (w,h)!=expected:
+                raise SystemExit(f"Prancha {relative}: dimensões reais {(w,h)} diferentes do catálogo {expected}")
+            if min(w,h)<800:
+                raise SystemExit(f"Prancha {relative}: resolução inferior a 800 px")
         sha=hashlib.sha256(path.read_bytes()).hexdigest()
         r={'lesson':lesson['id'],'step':i,'path':relative,'width':w,'height':h,
            'bytes':path.stat().st_size,'format':path.suffix.lower()[1:],
            'generation':'new-vector' if '-original-' in relative and relative.endswith('.svg') else 'existing',
-           'manual_art_review':True,'risk_flags':[]}
+           'manual_art_review':True,'source_sheet_preserved':lesson.get('lessonType')=='board-study','risk_flags':[]}
         if w is None:r['risk_flags'].append('unknown-dimensions')
         if w and h and min(w,h)<480:r['risk_flags'].append('low-source-resolution')
         if w and h and (max(w,h)/min(w,h)>2.0):r['risk_flags'].append('extreme-aspect-ratio')
@@ -69,7 +75,7 @@ for row in records:
 summary={'lessons':len(courses),'images':len(records),
          'new_vector':sum(r['generation']=='new-vector' for r in records),
          'legacy_or_unreviewed':sum(r['generation']!='new-vector' for r in records),
-         'broken':0,'flagged':sum(bool(r['risk_flags']) for r in records),
+         'broken':0,'board_lessons_verified':sum(r['source_sheet_preserved'] for r in records),'flagged':sum(bool(r['risk_flags']) for r in records),
          'aspect_inconsistent':sum('stage-aspect-inconsistency' in r['risk_flags'] for r in records)}
 (ROOT/'media_audit.generated.json').write_text(json.dumps({'summary':summary,'assets':records},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print('MEDIA AUDIT:',summary)
