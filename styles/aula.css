@@ -1,0 +1,149 @@
+/* Aplicativo de aulas (aula.html) · sistema "Tinta e papel".
+   Substitui por completo o CSS histórico (atelier, dojo-identity, dojo-home e o bloco inline).
+   Regras estruturais da prancheta foram preservadas porque o script depende delas
+   (--sheet-aspect, --sheet-max-width, .preview.reading, .board-study, .board-layout). */
+
+:root{--lesson-stage-width:640px}
+body.aula{background:var(--papel)}
+.aula-main{max-width:var(--largura);margin:0 auto;padding:0 var(--respiro)}
+.aula-main [hidden]{display:none!important}
+
+/* Botões do aplicativo: contorno de tinta, retangulares */
+.aula-main button,.aula-main .mode-choice{font:600 14px/1.2 var(--sans);cursor:pointer}
+.ghost,.mode-choice,.toolbar button,.toolbar label,.filter,.dojo-library-actions button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:9px 14px;background:transparent;color:var(--tinta);border:1.5px solid var(--tinta);border-radius:var(--raio);text-decoration:none;transition:background .15s,color .15s}
+.ghost:hover,.mode-choice:hover,.toolbar button:hover,.dojo-library-actions button:hover{background:var(--tinta);color:var(--giz)}
+.mode-choice.active{background:var(--tinta);color:var(--giz)}
+.primary{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 20px;background:var(--tinta);color:var(--giz);border:2px solid var(--tinta);border-radius:var(--raio);font-weight:600}
+.primary:hover:not(:disabled){background:var(--carimbo);border-color:var(--carimbo)}
+button:disabled{opacity:.4;cursor:not-allowed}
+.aula-main :focus-visible{outline:2px solid var(--carimbo);outline-offset:3px}
+
+/* Cabeçalho de seção */
+.gallery-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 28px;flex-wrap:wrap;border-top:2px solid var(--tinta);padding-top:16px;margin-bottom:clamp(18px,3vw,28px)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 12px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--grafite)}
+.eyebrow::before{content:"";width:9px;height:9px;background:var(--carimbo)}
+.heading{font:700 clamp(30px,4.6vw,56px)/1.06 var(--serif);letter-spacing:-.015em;margin:8px 0 6px}
+.lead{color:var(--grafite);max-width:62ch;margin:0}
+.statusbar{font:700 13px var(--sans);color:var(--carimbo)}
+#workspace{padding-top:clamp(26px,4vw,48px)}
+#library{padding-top:clamp(44px,7vw,92px)}
+#library .heading{font-size:clamp(26px,3.4vw,40px)}
+.versao{margin:34px 0 0;font-size:13px;color:var(--cinza)}
+
+/* Estudo: prancheta à esquerda, passo à direita */
+.lesson-body{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.lesson-body.board-layout{grid-template-columns:minmax(0,1fr)}
+.panel{min-width:0;background:var(--giz);border:1px solid var(--linha-forte);padding:clamp(16px,2.4vw,28px)}
+.lesson-body:not(.board-layout)>.panel:last-child{position:sticky;top:84px}
+.section-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.section-header h2{font-size:20px}
+.counter,.lesson-kicker{font:700 12px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--carimbo)}
+.pill{display:inline-block;border:1px solid var(--linha-forte);border-radius:var(--raio);padding:2px 9px;font:600 12.5px var(--sans);color:var(--tinta)}
+.lesson-title{font:700 clamp(24px,3vw,34px)/1.15 var(--serif);margin:6px 0 10px}
+.lesson-desc{color:var(--grafite);margin:0 0 18px}
+.license-note{font-size:13px;line-height:1.55;padding:12px 14px;margin:12px 0 16px;background:var(--papel-2);border-left:4px solid var(--carimbo)}
+.tip{display:grid;gap:4px;padding:14px 16px;margin:14px 0 20px;background:var(--papel-2);border-left:4px solid var(--carimbo)}
+.tip strong{font:700 12px var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.artist-tip,.art-review-hint{font-size:13.5px;line-height:1.55;color:var(--grafite);padding:12px 14px;margin:14px 0;background:var(--papel-2);border-left:4px solid var(--carimbo)}
+.art-review-hint{display:flex;gap:6px 14px;justify-content:space-between;flex-wrap:wrap;background:transparent;border:0;border-top:1px solid var(--linha);padding:12px 0 0}
+.art-review-hint a{color:var(--tinta);text-decoration-color:var(--carimbo);text-underline-offset:3px}
+.below h3{font:700 18px var(--serif);margin:22px 0 6px}
+.below p{font-size:14px;color:var(--grafite);margin:0 0 12px}
+
+/* Modos da prancheta */
+.study-switch{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.mode-status{font-size:13.5px;color:var(--grafite);margin:0 0 12px}
+.board-original-link{min-height:42px}
+
+/* Prancheta: a imagem e o canvas ficam sobrepostos (o script depende disto) */
+.preview{position:relative;display:grid;place-items:center;width:min(100%,var(--lesson-stage-width));max-width:100%;aspect-ratio:9/10;margin:12px auto 16px;overflow:hidden;background:#fff;border:1px solid var(--linha-forte);touch-action:none}
+.preview>img#stageImage{display:block;width:100%;height:100%;object-fit:contain;object-position:50% 50%;user-select:none;pointer-events:none}
+.preview>.draw-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
+.preview.reading,.preview.reading>.draw-canvas{touch-action:pan-y}
+.preview.reading>.draw-canvas{pointer-events:none}
+.preview.guides-off img{filter:contrast(1.08)}
+.preview.practice img{opacity:.32}
+.preview.no-ref img{opacity:0}
+.preview.board-study{aspect-ratio:var(--sheet-aspect);width:min(100%,var(--sheet-max-width,1120px));height:auto;margin:14px auto;border:1px solid var(--linha-forte)}
+.preview.board-study #stageImage{max-width:none;max-height:none;filter:none;transform:none}
+
+/* Ferramentas, navegação e miniaturas */
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.toolbar button,.toolbar label{min-height:38px;padding:7px 11px;font-size:13px}
+.toolbar input[type="color"]{width:28px;height:24px;padding:0;border:1px solid var(--tinta);background:none}
+.toolbar input[type="range"]{width:80px;accent-color:var(--carimbo)}
+.stepnav{display:flex;gap:10px;margin-top:18px}
+.stepnav button{flex:1}
+.progress{height:6px;background:#16130f1c;margin:18px 0 14px}
+.progress>div,#bar{height:100%;background:var(--carimbo)}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:8px}
+.thumb{min-width:0;padding:3px;background:var(--giz);border:1px solid var(--linha-forte);border-radius:var(--raio);cursor:pointer;overflow:hidden}
+.thumb img{display:block;width:100%;aspect-ratio:1;object-fit:contain;background:#fff}
+.thumb span{display:block;margin:4px 0 2px;font:600 10.5px var(--sans);color:var(--grafite);text-align:center}
+.thumb.selected{border:2px solid var(--carimbo);padding:2px}
+.thumb.selected span{color:var(--carimbo);font-weight:700}
+.little{font-size:13px;color:var(--cinza);margin:14px 0 0}
+
+/* Exercícios */
+.checks{list-style:none;margin:12px 0 18px;padding:0;display:grid;gap:8px}
+.checks-count{margin-left:8px;font:600 12px var(--sans);letter-spacing:0;color:var(--grafite)}
+.check-row label{display:flex;align-items:flex-start;gap:11px;cursor:pointer;padding:11px 12px;font-size:14px;line-height:1.45;background:var(--giz);border:1px solid var(--linha-forte)}
+.check-row input{flex:none;width:18px;height:18px;margin:1px 0 0;accent-color:var(--carimbo)}
+.check-row.done label{border-color:var(--ok)}
+.check-row.done span{text-decoration:line-through;text-decoration-color:var(--ok)}
+
+/* Biblioteca */
+.dojo-library-actions{display:flex;justify-content:space-between;align-items:center;gap:12px 20px;flex-wrap:wrap;margin-bottom:14px}
+.dojo-library-actions>div{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.course-count{font-size:14px;color:var(--grafite)}
+.top-filters{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:10px;margin-bottom:22px}
+.search,.filter{min-width:0;width:100%;min-height:46px;padding:10px 12px;background:var(--giz);color:var(--tinta);border:1.5px solid var(--tinta);border-radius:var(--raio);font:500 15px var(--sans)}
+.filter{font-weight:600}
+.catalog{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:22px 18px}
+.course{display:flex;flex-direction:column;text-align:left;padding:0;background:var(--giz);color:var(--tinta);border:1px solid var(--linha-forte);border-radius:var(--raio);overflow:hidden;transition:transform .15s,border-color .15s}
+.course:hover{transform:translateY(-3px);border-color:var(--carimbo)}
+.course.active{border:2px solid var(--carimbo)}
+.course img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;border-bottom:1px solid var(--linha)}
+.course .meta{display:flex;flex-direction:column;gap:4px;padding:14px;flex:1}
+.course .meta strong{font:700 17px/1.3 var(--serif)}
+.course .meta small{font-size:12.5px;line-height:1.45;color:var(--grafite)}
+.mini-progress{height:5px;background:#16130f1c;margin-top:auto}
+.mini-progress>div{height:100%;background:var(--carimbo)}
+.empty{padding:36px;text-align:center;color:var(--grafite)}
+
+/* Diálogos */
+dialog{background:var(--giz);color:var(--tinta);border:2px solid var(--tinta);border-radius:var(--raio);box-shadow:8px 8px 0 var(--tinta);padding:16px}
+dialog::backdrop{background:#16130fb8}
+.art-dialog{max-width:min(95vw,960px);max-height:92vh}
+.art-dialog img{display:block;max-width:100%;max-height:calc(92vh - 70px);width:auto;height:auto;margin:auto;object-fit:contain}
+.art-dialog button,.compare-head button{padding:9px 14px;margin:0 0 8px;background:transparent;color:var(--tinta);border:1.5px solid var(--tinta);border-radius:var(--raio);font-weight:600;cursor:pointer}
+.art-dialog button:hover,.compare-head button:hover{background:var(--tinta);color:var(--giz)}
+.compare-dialog{width:min(96vw,920px);max-height:min(94dvh,900px);padding:18px}
+.compare-head{display:flex;justify-content:space-between;align-items:center;gap:15px;font:700 20px var(--serif)}
+.compare-dialog p{font-size:14px;color:var(--grafite)}
+.compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.compare-grid figure{margin:0;min-width:0;padding:9px;background:#fff;border:1px solid var(--linha-forte)}
+.compare-grid img{display:block;width:100%;height:min(57vh,500px);object-fit:contain}
+.compare-grid figcaption{font:600 12.5px var(--sans);padding-top:9px}
+
+/* Telas menores */
+@media (max-width:900px){
+  .lesson-body{grid-template-columns:minmax(0,1fr)}
+  .lesson-body:not(.board-layout)>.panel:last-child{position:static}
+  .top-filters{grid-template-columns:1fr 1fr}
+  .search{grid-column:1/-1}
+}
+@media (max-width:560px){
+  .catalog{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}
+  .compare-grid{grid-template-columns:1fr}
+  .gallery-head .ghost{flex:1}
+}
+
+/* Impressão: só a referência */
+@media print{
+  .cab,.rodape,#library,.toolbar,.study-switch,.mode-status,.stepnav,.thumbs,.progress,.little,.art-review-hint,.below,.gallery-head .ghost,.versao,.pular{display:none!important}
+  body.aula,.panel{background:#fff!important;border:0!important}
+  .lesson-body{grid-template-columns:1fr}
+}
+.acoes{display:flex;gap:8px;flex-wrap:wrap}
+dialog button{font:600 14px/1.2 var(--sans)}

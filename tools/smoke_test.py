@@ -74,28 +74,25 @@ with tempfile.TemporaryDirectory() as temp:
         for ref in _re.findall(r'@import url\("([^"]+)"\)',css.read_text('utf-8')):
             assert (css.parent/ref).exists(), f'{css.name}: @import quebrado: {ref}'
 
-    for f in ('aula.html','curso.generated.js','scripts/curso.js','scripts/home.js','styles/site.css','styles/curso.css','styles/home.css','styles/aula-tinta.css','assets/academia/hero-curso.webp','assets/fonts/shippori-mincho-latin-700-normal.woff2','assets/fonts/hanken-grotesk-latin-400-normal.woff2'):assert (public/f).exists(),f
+    for f in ('aula.html','curso.generated.js','scripts/curso.js','scripts/home.js','styles/site.css','styles/curso.css','styles/home.css','styles/aula.css','assets/academia/hero-curso.webp','assets/academia/hero-anime.webp','assets/academia/smudge-produto.webp','assets/fonts/shippori-mincho-latin-700-normal.woff2','assets/fonts/hanken-grotesk-latin-400-normal.woff2'):assert (public/f).exists(),f
     assert (public/'aulas-pranchas.html').exists()
-    assert (public/'assets/academia/referencia.webp').is_file()
-    assert (public/'styles/dojo-home.css').is_file()
+    assert not (public/'styles/atelier.css').exists() and not (public/'styles/dojo-identity.css').exists(), 'CSS legado não deve ir ao Pages'
     assert 'pranchas.html' in aula
     assert 'aulas-pranchas.html' in aula
     assert 'pranchas.html' in (public/'acervo-revisado.html').read_text('utf-8')
-for path in ['styles/atelier.css','styles/smudge.css','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
+for path in ['styles/aula.css','styles/smudge.css','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
     assert (ROOT/path).is_file(),path
-assert 'styles/atelier.css' in aula
-assert 'styles/dojo-identity.css' in aula
+assert 'styles/aula.css' in aula
+assert 'atelier.css' not in aula and 'dojo-identity.css' not in aula and 'dojo-home.css' not in aula, 'aula.html não deve mais carregar o CSS legado'
 assert 'styles/smudge-identity.css' in studio
-assert 'hero-visual' in aula and 'hero-actions' in aula
-assert 'assets/academia/referencia.webp' in aula and 'styles/dojo-home.css' in aula
 assert 'MangaDojo Atelier 13.6.0' in aula
-for path in ['assets/dojo-paper.svg','assets/dojo-ornament.svg','styles/dojo-identity.css','styles/smudge-identity.css']:
+for path in ['styles/smudge-identity.css']:
     assert (ROOT/path).is_file(), path
-for path in ['assets/dojo-paper.svg','assets/dojo-ornament.svg','assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
+for path in ['assets/mangadojo-mark.svg','assets/smudge-mark.svg']:
     ET.parse(ROOT/path)
 assert 'board-layout' in aula and 'boardOriginal' in aula
 assert "const move=n<0?-1:n>0?1:0" in aula and 'Próxima aula →' in aula
-assert 'aspect-ratio:var(--sheet-aspect)' in (ROOT/'styles/atelier.css').read_text('utf-8')
+assert 'aspect-ratio:var(--sheet-aspect)' in (ROOT/'styles/aula.css').read_text('utf-8')
 assert 'styles/smudge.css' in studio
 assert 'auditoria-imagens.html' in aula
 assert (ROOT/'auditoria-imagens.html').exists()
@@ -105,7 +102,7 @@ assert 'mangadojo-review-v1' in review
 assert 'mangadojo-auditoria-imagens.json' in review
 assert 'Anatomia incorreta' in review and 'Imagem cortada' in review
 assert 'closeLightbox' in review
-assert 'aspect-ratio:9/10!important' in (ROOT/'styles/atelier.css').read_text('utf-8')
+assert 'aspect-ratio:9/10' in (ROOT/'styles/aula.css').read_text('utf-8')
 assert not (ROOT/'lessons/olhos-expressivos/lesson.json').exists()
 assert not (ROOT/'lessons/rosto-tres-quartos/lesson.json').exists()
 workshop=json.loads((ROOT/'lessons/observacao-vetorial/lesson.json').read_text('utf-8'))
@@ -138,7 +135,7 @@ assert len(manifest['candidates'])==12
 assert all(len(a['sha256'])==64 and a['dimensions']==[840,960] for a in manifest['candidates'])
 assert 'import_art_pack.py' in [p.name for p in (ROOT/'tools').iterdir()]
 assert 'issue_comment' in (ROOT/'.github/workflows/importar-artes.yml').read_text('utf-8')
-assert "object-fit:contain!important" in (ROOT/'styles/atelier.css').read_text('utf-8')
+assert "object-fit:contain" in (ROOT/'styles/aula.css').read_text('utf-8')
 
 homolog=(ROOT/'homologacao-artes.html').read_text('utf-8')
 assert 'catalog.generated.js' in homolog
@@ -168,7 +165,8 @@ assert (ROOT/'assets/academia/hero-curso.webp').exists()
 home_counts=json.loads((ROOT/'catalog.generated.json').read_text('utf-8'))
 assert 'styles/home.css' in index and 'scripts/home.js' in index and 'styles/site.css' in index
 assert f'data-n="aulas">{home_counts["lessons"]}<' in index, 'número de aulas da home desatualizado'
-assert f'data-n="etapas">{home_counts["stages"]}<' in index, 'número de etapas da home desatualizado'
+assert f'data-n="modulos">{len(course["modules"])}<' in index, 'número de módulos da home desatualizado'
+assert 'assets/academia/hero-anime.webp' in index, 'a ilustração de anime deve estar na capa'
 for link in ('trilhas.html','aulas-pranchas.html','studio.html','oficina.html','creditos.html','aula.html?lesson='):
     assert link in index, link
 assert 'googleapis' not in index and 'googleapis' not in aula and 'googleapis' not in trails, 'fontes devem ser hospedadas no site'
@@ -182,7 +180,7 @@ assert r.returncode==0, r.stderr
 assert 'id="navhome"' in aula and "c.emoji" not in aula
 assert "Number(state.step[c.id]||0)/c.steps.length" in aula, 'barra de progresso de cartas deve contar só etapas concluídas'
 assert 'state.checks[checkIds[i]]' in aula
-assert '.check-row.done' in (ROOT/'styles/atelier.css').read_text('utf-8')
+assert '.check-row.done' in (ROOT/'styles/aula.css').read_text('utf-8')
 for img in workshop['images']: ET.parse(ROOT/img)
 assert 'Smudge' in aula and 'Smudge' in studio
 assert 'smudge-projects' in studio and 'dbRead' in studio

@@ -32,29 +32,29 @@
 
 <main id="conteudo">
 
-  <section class="capa">
-    <div class="largura capa__grade">
-      <div class="capa__texto">
-        <span class="rotulo">Academia de desenho · gratuita</span>
-        <h1>Desenhar mangá se aprende em etapas.</h1>
-        <p class="capa__lide"><span data-n="aulas">88</span> aulas em sete módulos. Cada uma divide um desenho em passos curtos, com checklist do que observar, e você pratica num editor que roda no navegador. Sem cadastro e sem custo.</p>
-        <div class="capa__acoes">
-          <a class="btn" href="trilhas.html">Começar o curso<span class="seta" aria-hidden="true"></span></a>
-          <a class="btn btn--linha" href="studio.html">Abrir o Smudge</a>
+  <section class="pagina" aria-labelledby="titulo-home">
+    <div class="largura">
+      <div class="pagina__grade">
+        <div class="quadro quadro--titulo">
+          <span class="rotulo">Academia de desenho · gratuita</span>
+          <h1 id="titulo-home">Desenhar mangá se aprende em etapas.</h1>
+          <p><span data-n="aulas">88</span> aulas em sete módulos. Cada uma divide um desenho em passos curtos, com checklist do que observar, e você pratica num editor que roda no navegador. Sem cadastro e sem custo.</p>
+          <div class="pagina__acoes">
+            <a class="btn btn--claro" href="trilhas.html">Começar o curso<span class="seta" aria-hidden="true"></span></a>
+            <a class="btn btn--vazado" href="studio.html">Abrir o Smudge</a>
+          </div>
         </div>
-        <dl class="capa__dados">
-          <div><dt>Módulos</dt><dd data-n="modulos">7</dd></div>
-          <div><dt>Aulas</dt><dd data-n="aulas">88</dd></div>
-          <div><dt>Etapas</dt><dd data-n="etapas">141</dd></div>
-        </dl>
+        <figure class="quadro quadro--arte">
+          <img src="assets/academia/hero-anime.webp" alt="Ilustração de uma personagem de mangá de perfil, com cabelo preso por uma fita rosa, em frente a um castelo japonês e galhos de cerejeira" width="1090" height="704" fetchpriority="high">
+          <figcaption>Estilo de arte das aulas do MangaDojo</figcaption>
+        </figure>
+        <dl class="quadro quadro--dado"><dt>Aulas</dt><dd class="num" data-n="aulas">88</dd></dl>
+        <dl class="quadro quadro--dado"><dt>Módulos</dt><dd class="num" data-n="modulos">7</dd></dl>
+        <div class="quadro quadro--passos" aria-label="Exemplo de sequência de uma aula">
+          <img src="assets/gato-sentado-01.webp" alt="" loading="eager"><img src="assets/gato-sentado-05.webp" alt="" loading="eager"><img src="assets/gato-sentado-10.webp" alt="" loading="eager">
+          <span>Do volume ao acabamento</span>
+        </div>
       </div>
-      <figure class="capa__fig">
-        <div class="capa__quadro">
-          <img src="assets/gato-sentado-10.webp" alt="Desenho final de um gato sentado, em grafite, usado como exemplo de resultado de uma aula" width="840" height="960" fetchpriority="high">
-        </div>
-        <figcaption><span class="num">Fig. 1</span> Gato sentado, etapa 10 de 10.<br>Resultado de uma das aulas do módulo Animais.</figcaption>
-        <span class="capa__vertical" aria-hidden="true">Academia de desenho de mangá</span>
-      </figure>
     </div>
   </section>
 
@@ -85,13 +85,11 @@
   <section class="bloco" id="pranchas">
     <div class="largura">
       <div class="regua"><span class="regua__n num">03</span><h2>Pranchas de estudo</h2><p>Folhas completas na proporção original, para ampliar, estudar e baixar.</p></div>
-      <div class="vitrine">
-        <figure class="vitrine__a"><a href="aula.html?lesson=estudo-prancha-16#workspace"><img src="assets/pranchas/prancha-16.webp" alt="Prancha de estudo: leão em dez etapas" loading="lazy"></a><figcaption><span class="num">Prancha 16</span> Leão em 10 etapas</figcaption></figure>
-        <figure><a href="aula.html?lesson=estudo-prancha-12#workspace"><img src="assets/pranchas/prancha-12.webp" alt="Prancha de estudo: gato sentado em dez passos" loading="lazy"></a><figcaption><span class="num">Prancha 12</span> Gato sentado em 10 passos</figcaption></figure>
-        <figure><a href="aula.html?lesson=estudo-prancha-10#workspace"><img src="assets/pranchas/prancha-10.webp" alt="Prancha de estudo: lobo em oito etapas" loading="lazy"></a><figcaption><span class="num">Prancha 10</span> Lobo em 8 etapas</figcaption></figure>
-      </div>
-      <p class="indice__rodape"><a class="lnk" href="aulas-pranchas.html">Ver as <span data-n="pranchas">79</span> pranchas<span class="seta" aria-hidden="true"></span></a></p>
     </div>
+    <div class="faixa" tabindex="0" role="region" aria-label="Pranchas de estudo, role para o lado">
+      <div class="faixa__trilho"><figure><a href="aula.html?lesson=estudo-prancha-16#workspace"><img src="assets/pranchas/prancha-16.webp" alt="Prancha de estudo: leão em 10 etapas" loading="lazy"></a><figcaption><span class="num">Prancha 16</span> Leão em 10 etapas</figcaption></figure><figure><a href="aula.html?lesson=estudo-prancha-12#workspace"><img src="assets/pranchas/prancha-12.webp" alt="Prancha de estudo: gato sentado em 10 passos" loading="lazy"></a><figcaption><span class="num">Prancha 12</span> Gato sentado em 10 passos</figcaption></figure><figure><a href="aula.html?lesson=estudo-prancha-10#workspace"><img src="assets/pranchas/prancha-10.webp" alt="Prancha de estudo: lobo em 8 etapas" loading="lazy"></a><figcaption><span class="num">Prancha 10</span> Lobo em 8 etapas</figcaption></figure><figure><a href="aula.html?lesson=estudo-prancha-13#workspace"><img src="assets/pranchas/prancha-13.webp" alt="Prancha de estudo: gato de pé em 6 etapas" loading="lazy"></a><figcaption><span class="num">Prancha 13</span> Gato de pé em 6 etapas</figcaption></figure><figure><a href="aula.html?lesson=estudo-prancha-17#workspace"><img src="assets/pranchas/prancha-17.webp" alt="Prancha de estudo: lobo mangá realista" loading="lazy"></a><figcaption><span class="num">Prancha 17</span> Lobo mangá realista</figcaption></figure></div>
+    </div>
+    <div class="largura"><p class="indice__rodape"><a class="lnk" href="aulas-pranchas.html">Ver as <span data-n="pranchas">79</span> pranchas<span class="seta" aria-hidden="true"></span></a></p></div>
   </section>
 
   <section class="tinta" id="smudge">
@@ -99,15 +97,15 @@
       <div>
         <span class="rotulo">Smudge Studio</span>
         <h2>Desenhe no navegador, sem instalar nada.</h2>
-        <p>O Smudge é o editor de desenho do MangaDojo. Você abre a referência de uma aula, desenha por cima ou ao lado, e exporta em PNG. Seus projetos ficam salvos neste navegador.</p>
+        <p>Abra a referência de uma aula, desenhe por cima ou ao lado e exporte em PNG. Seus projetos ficam salvos neste navegador.</p>
+        <ul class="recursos">
+          <li><b>Camadas e máscaras</b><span>Esboço e arte-final separados.</span></li>
+          <li><b>Estabilização do traço</b><span>Suaviza movimentos bruscos.</span></li>
+          <li><b>Régua de perspectiva e retículas</b><span>Para fundos e a textura clássica do mangá.</span></li>
+        </ul>
         <p><a class="btn btn--claro" href="studio.html">Abrir o Smudge<span class="seta" aria-hidden="true"></span></a></p>
       </div>
-      <ul class="recursos">
-        <li><b>Camadas e máscaras</b><span>Esboço e arte-final separados, com máscaras reversíveis.</span></li>
-        <li><b>Estabilização do traço</b><span>Suaviza movimentos bruscos sem mudar a espessura.</span></li>
-        <li><b>Pressão de caneta</b><span>Responde a canetas com sensibilidade, quando o aparelho oferece.</span></li>
-        <li><b>Régua de perspectiva e retículas</b><span>Para fundos, cenários e a textura clássica do mangá.</span></li>
-      </ul>
+      <figure class="tinta__tela"><img src="assets/academia/smudge-produto.webp" alt="Tela do Smudge Studio com a referência de um gato carregada em uma camada e um traço desenhado por cima" width="1360" height="860" loading="lazy"><figcaption>O Smudge com a referência da aula Gato sentado.</figcaption></figure>
     </div>
   </section>
 

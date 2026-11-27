@@ -5,7 +5,9 @@
 Substitui o tema vinho e rosa com degradês. Princípios: **papel quente, tinta quase preta e um único vermelho de carimbo**; réguas finas em vez de sombras; cantos quase retos; sem pílulas, sem degradês decorativos e sem emojis como ícones; títulos em mincho e texto em grotesca.
 - Cores: papel `#F3EEE3`, giz `#FBF8F1`, tinta `#16130F`, grafite `#4A443B`, carimbo `#B83A26`. Contrastes verificados (WCAG AA): tinta/papel 16:1, vermelho/papel 4,9:1.
 - Fontes hospedadas no site (OFL-1.1): **Shippori Mincho** (títulos) e **Hanken Grotesk** (texto). Definidas em `styles/tokens.css`. Nenhuma fonte externa é carregada.
-- Sistema: `styles/tokens.css` (variáveis e fontes), `styles/site.css` (cabeçalho, rodapé, botões, réguas, etiquetas), `styles/home.css`, `styles/curso.css`, `styles/subpagina.css`, `styles/aula-tinta.css` e `styles/studio-tinta.css` (editor, tema escuro).
+- Sistema: `styles/tokens.css` (variáveis e fontes), `styles/site.css` (cabeçalho, rodapé, botões, réguas, etiquetas), `styles/home.css`, `styles/curso.css`, `styles/subpagina.css`, `styles/aula.css` (aplicativo de aulas, reescrito do zero) e `styles/studio-tinta.css` (editor, tema escuro). O CSS histórico (`atelier`, `dojo-identity`, `dojo-home`) foi removido.
+- **Auditoria do que é renderizado:** `node tools/audit_visual.cjs` (precisa do Playwright) falha se uma página usar fonte fora do sistema, texto com matiz fora da paleta ou rolagem horizontal. As 12 páginas passam.
+- **Capa da home:** composição de página de mangá (grade preta com calhas inclinadas), com a ilustração de anime em `assets/academia/hero-anime.webp` (recorte e ampliação de `referencia.webp`, de resolução modesta; trocar por arte original em alta resolução).
 - Cabeçalho e rodapé têm **fonte única** em `tools/stamp_shell.py`; o teste de fumaça falha se uma página sair de sincronia.
 
 ---

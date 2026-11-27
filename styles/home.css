@@ -1,26 +1,37 @@
 /* Home · composição editorial. Depende de site.css. */
 
-/* Capa */
-.capa{padding:clamp(34px,6vw,76px) 0 clamp(40px,6vw,80px)}
-.capa__grade{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5.5vw,84px);align-items:center}
-.capa h1{font-size:clamp(40px,5.4vw,74px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 0}
-.capa__lide{font-size:clamp(17px,1.55vw,20px);color:var(--grafite);max-width:52ch;margin:24px 0 30px}
-.capa__acoes{display:flex;flex-wrap:wrap;gap:12px}
-.capa__dados{display:flex;gap:clamp(22px,4vw,56px);margin:42px 0 0;padding:18px 0 0;border-top:1px solid var(--linha)}
-.capa__dados dt{font:700 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--cinza)}
-.capa__dados dd{margin:2px 0 0;font:700 clamp(30px,3.6vw,44px)/1.1 var(--serif);font-variant-numeric:lining-nums}
-.capa__fig{margin:0;position:relative}
-.capa__quadro{position:relative;aspect-ratio:4/5;overflow:hidden;border:2px solid var(--tinta);background:var(--papel-2);box-shadow:10px 10px 0 var(--tinta)}
-.capa__quadro::before{content:"";position:absolute;inset:0;background:var(--reticula)}
-.capa__quadro img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 58%;transform:scale(1.85);transform-origin:50% 58%;mix-blend-mode:multiply}
-.capa__fig figcaption{margin-top:26px;font-size:13.5px;line-height:1.5;color:var(--grafite)}
-.capa__fig .num{font-weight:700;color:var(--carimbo);margin-right:6px}
-.capa__vertical{position:absolute;right:-30px;top:0;writing-mode:vertical-rl;font:600 11px var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--cinza)}
-@media (max-width:1180px){.capa__vertical{display:none}}
-@media (max-width:860px){
-  .capa__grade{grid-template-columns:1fr}
-  .capa__fig{max-width:430px}
-  .capa__quadro{box-shadow:7px 7px 0 var(--tinta)}
+/* Capa: página de mangá. A grade é preta e os quadros deixam a "calha" aparecer entre eles. */
+.pagina{padding:clamp(20px,3.4vw,44px) 0 clamp(10px,2vw,24px)}
+.pagina__grade{display:grid;gap:6px;padding:6px;background:var(--tinta);
+  grid-template-columns:1fr 1fr 1.2fr 2.3fr;grid-template-rows:auto auto 168px;
+  grid-template-areas:"titulo titulo titulo arte" "titulo titulo titulo arte" "dado1 dado2 passos arte"}
+.quadro{position:relative;margin:0;min-width:0}
+.quadro--titulo{grid-area:titulo;background:var(--tinta);color:var(--papel);padding:clamp(22px,3.4vw,52px);display:flex;flex-direction:column;justify-content:center;
+  clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.quadro--titulo .rotulo{color:#cfc7b6}
+.quadro--titulo h1{font-size:clamp(38px,5vw,72px);line-height:1.03;letter-spacing:-.02em;margin:18px 0 0;color:var(--giz)}
+.quadro--titulo p{max-width:48ch;margin:22px 0 28px;color:#d9d2c3;font-size:clamp(16px,1.4vw,19px)}
+.pagina__acoes{display:flex;flex-wrap:wrap;gap:12px}
+.btn--vazado{background:transparent;color:var(--giz);border-color:#ffffff80}
+.btn--vazado:hover{background:var(--giz);color:var(--tinta);border-color:var(--giz)}
+.quadro--arte{grid-area:arte;background:var(--papel-2);overflow:hidden;min-height:430px;clip-path:polygon(7% 0,100% 0,100% 100%,0 100%)}
+.quadro--arte img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:80% 26%}
+.quadro--arte::after{content:"";position:absolute;inset:0;background:var(--reticula);opacity:.35;mix-blend-mode:multiply;pointer-events:none}
+.quadro--arte figcaption{position:absolute;left:10%;bottom:14px;z-index:2;background:var(--tinta);color:var(--papel);padding:5px 10px;font:600 12px var(--sans);letter-spacing:.04em}
+.quadro--dado{background:var(--papel);display:flex;flex-direction:column;justify-content:center;padding:14px 16px;margin:0}
+.quadro--dado:nth-of-type(1){grid-area:dado1}.quadro--dado:nth-of-type(2){grid-area:dado2}
+.quadro--dado dt{font:700 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--cinza)}
+.quadro--dado dd{margin:2px 0 0;font:700 clamp(38px,4.4vw,60px)/1 var(--serif)}
+.quadro--passos{grid-area:passos;background:var(--giz);display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr auto;gap:0;overflow:hidden}
+.quadro--passos img{width:100%;height:100%;min-height:0;object-fit:cover;object-position:50% 58%;transform:scale(1.9);mix-blend-mode:multiply;border-right:1px solid var(--linha)}
+.quadro--passos span{grid-column:1/-1;font:600 11.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:7px 4px;border-top:1px solid var(--linha);background:var(--papel)}
+.quadro--passos{position:relative}
+.quadro--passos img{position:relative;z-index:0}
+@media (max-width:980px){
+  .pagina__grade{grid-template-columns:1fr 1fr;grid-template-rows:auto;grid-template-areas:"titulo titulo" "arte arte" "dado1 dado2" "passos passos"}
+  .quadro--arte{min-height:0;aspect-ratio:5/3;clip-path:none}
+  .quadro--passos{height:150px}
+  .quadro--dado{min-height:96px}
 }
 
 .bloco{padding-top:clamp(44px,7vw,92px)}
@@ -65,9 +76,18 @@
 .vitrine .num{font-weight:700;color:var(--carimbo);margin-right:8px}
 @media (max-width:620px){.vitrine{grid-template-columns:1fr}}
 
+/* Faixa de pranchas (rolagem lateral) */
+.faixa{--pad:max(var(--respiro),calc((100vw - var(--largura))/2 + var(--respiro)));overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:4px var(--pad) 18px;scrollbar-color:var(--tinta) transparent;outline-offset:-3px}
+.faixa__trilho{display:flex;gap:clamp(14px,2vw,26px);width:max-content}
+.faixa figure{margin:0;flex:none;width:min(84vw,640px);scroll-snap-align:start}
+.faixa img{width:100%;height:auto;border:1.5px solid var(--tinta);background:var(--giz)}
+.faixa a{display:block;transition:transform .2s}.faixa a:hover{transform:translateY(-3px)}
+.faixa figcaption{margin-top:10px;font-size:14px;color:var(--grafite)}
+.faixa .num{font-weight:700;color:var(--carimbo);margin-right:8px}
+
 /* Smudge */
 .tinta{background:var(--tinta);color:var(--papel);margin-top:clamp(56px,9vw,110px);padding:clamp(48px,8vw,100px) 0}
-.tinta__grade{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(30px,6vw,96px);align-items:start}
+.tinta__grade{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(30px,6vw,96px);align-items:start}
 .tinta .rotulo{color:#cfc7b6}
 .tinta h2{color:var(--giz);font-size:clamp(32px,4.6vw,58px);margin:16px 0 20px}
 .tinta p{color:#cfc7b6;max-width:50ch}
@@ -87,3 +107,8 @@
 .duvidas details[open] summary::after{background:linear-gradient(currentColor,currentColor) center/100% 2px no-repeat}
 .duvidas details p{padding:0 40px 22px 0;color:var(--grafite);max-width:62ch}
 .duvidas a{color:var(--tinta);text-decoration-color:var(--carimbo);text-underline-offset:3px}
+
+.tinta__tela{margin:0}
+.tinta__tela img{width:100%;height:auto;border:2px solid var(--papel);box-shadow:10px 10px 0 var(--carimbo)}
+.tinta__tela figcaption{margin-top:20px;font-size:13.5px;color:#b9b09f}
+.tinta .recursos{margin:26px 0 30px}

@@ -12,6 +12,7 @@ Gerado em 27/11/2026. Leia este arquivo e `docs/REPAGINACAO.md` primeiro.
 ## Comandos
 - `python3 tools/build_catalog.py` (valida aulas e currículo, gera `catalog.generated.*` e `curso.generated.js`)
 - `python3 tools/stamp_shell.py [--check]` (cabeçalho e rodapé únicos)
+- `node tools/audit_visual.cjs` (auditoria do site renderizado; sirva a pasta em http://127.0.0.1:8811 e use o Playwright)
 - `python3 tools/package_pages.py PASTA` e servir a pasta para conferir o que o Pages publica
 
 ## Decisões já tomadas
@@ -21,8 +22,10 @@ Gerado em 27/11/2026. Leia este arquivo e `docs/REPAGINACAO.md` primeiro.
 - Cabeçalho e rodapé têm fonte única: edite `tools/stamp_shell.py` e rode `python3 tools/stamp_shell.py`.
 
 ## Pendências, em ordem
-1. Fase 3 (página própria da aula; consolidar o CSS histórico por baixo de `aula-tinta.css`).
-2. Escolher a licença do código (não há `LICENSE`).
+1. **Aprovar `docs/PLANO-CRIACAO-DE-PERSONAGEM.md`** (módulo 8 do Curso, ficha v2 e gabaritos SVG).
+2. Publicar a rodada 3 (a branch está pronta; falta o PR e o merge na `main`).
+3. Fase 3 restante: página da aula com "próxima aula do módulo".
+4. Escolher a licença do código (não há `LICENSE`).
 3. Fase 4 (nível Avançado, SEO, acessibilidade, teste em iOS e Android).
 4. Fase 5 (revisão pedagógica e conteúdo).
 

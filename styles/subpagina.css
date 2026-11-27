@@ -28,3 +28,6 @@ body.dojo-subpage dialog{border:2px solid var(--tinta)!important;border-radius:v
 body.dojo-subpage select,body.dojo-subpage input,body.dojo-subpage textarea{max-width:100%}
 body.dojo-subpage label{min-width:0;grid-template-columns:minmax(0,1fr)}
 body.dojo-subpage select{min-width:0;width:100%;text-overflow:ellipsis}
+/* Resquícios do tema antigo nas páginas de pranchas */
+body.dojo-subpage .body span,body.dojo-subpage .board-guide small,body.dojo-subpage .board-guide a{color:var(--carimbo)!important}
+body.dojo-subpage input[type="checkbox"],body.dojo-subpage input[type="radio"]{accent-color:var(--carimbo)!important}

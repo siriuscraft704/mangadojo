@@ -25,6 +25,15 @@ Objetivo: um site de curso profissional, mas fácil de entender. Princípio: **u
 - **Feito:** os botões "− Zoom" e "＋ Zoom" do Smudge ficaram "Reduzir zoom" e "Ampliar zoom"; a visibilidade de camada ganhou `aria-pressed`.
 - **Pendente:** página da aula separada do aplicativo da biblioteca (hoje `aula.html` ainda reúne biblioteca e estudo), com "próxima aula do módulo" e "marcar como concluída".
 
+## Rodada 3 · feedback do dono (27/11/2026)
+Queixas: páginas inconsistentes, fontes e cores demais, "cara de WordPress", ilustração de anime do topo sumida e falta de um plano para criação de personagem.
+- **Medição antes de mexer.** Só `aula.html` tinha o problema: **5 famílias de fonte** (duas delas nem carregavam mais), **33 cores de texto, 17 coloridas** e 3 fundos coloridos. As demais páginas já usavam 2 fontes.
+- **`aula.html` reescrito.** Saíram os 48 KB de CSS legado e o bloco inline; entrou `styles/aula.css` (uma paleta, duas fontes). A aula vem primeiro e a biblioteca depois; o rodapé saiu de dentro do `<main>`. A lógica do aplicativo não mudou.
+- **Home como página de mangá.** A ilustração de anime voltou ao topo, agora numa grade de quadros com calhas inclinadas; faixa de pranchas com rolagem lateral; tela real do Smudge em uso na seção do editor.
+- **Cores residuais** (rosa nos controles do Smudge, ameixa nas páginas de pranchas, fonte Arial nos diálogos) corrigidas.
+- **Trava:** `tools/audit_visual.cjs`. **Limpeza:** CSS e ornamentos SVG do visual antigo removidos do repositório, do pacote e do Service Worker (v37).
+- **Plano de criação de personagem:** `docs/PLANO-CRIACAO-DE-PERSONAGEM.md`, aguardando aprovação.
+- **Dívida conhecida:** as páginas secundárias ainda carregam declarações antigas de fonte e cor no próprio HTML, neutralizadas em tempo de execução por `subpagina.css`. O resultado renderizado é consistente; limpar o código-fonte é trabalho futuro.
 ## Fase 4 · profissionalização
 - Nível **Avançado** (hoje só há Iniciante e Intermediário) e uma sequência de revisão.
 - SEO e compartilhamento: títulos e descrições por página, imagem de pré-visualização, `sitemap.xml`, `robots.txt`.
