@@ -1,0 +1,30 @@
+/* Páginas secundárias (pranchas, oficina, acervo, créditos) no sistema "Tinta e papel".
+   Substitui dojo-subpages.css. Só harmoniza aparência; não muda a estrutura nem a lógica das páginas. */
+body.dojo-subpage{background:var(--papel)!important;color:var(--tinta)!important;font:400 16px/1.6 var(--sans)!important}
+body.dojo-subpage>header.cab{background:var(--papel)!important;color:var(--tinta)!important;padding:0!important;display:block!important;box-shadow:none!important;border-bottom:1px solid var(--linha-forte)!important}
+body.dojo-subpage>header.cab img{height:38px;width:38px;filter:none}
+body.dojo-subpage>header.cab .menu a{color:var(--tinta)!important;padding:6px 0!important}
+body.dojo-subpage>header.cab .btn{color:var(--giz)!important}
+body.dojo-subpage>header.cab .btn:hover{color:var(--giz)!important}
+body.dojo-subpage>header.cab .marca b{font:700 24px/1 var(--serif)!important;color:var(--tinta)!important}
+body.dojo-subpage main{max-width:var(--largura)!important;margin:0 auto!important;padding:clamp(24px,4vw,48px) var(--respiro)!important}
+body.dojo-subpage h1,body.dojo-subpage h2,body.dojo-subpage h3{font-family:var(--serif)!important;color:var(--tinta)!important;font-style:normal!important;letter-spacing:-.012em}
+body.dojo-subpage h1{font-size:clamp(34px,5vw,60px)!important;line-height:1.06!important;max-width:22ch}
+body.dojo-subpage .eyebrow{color:var(--carimbo)!important;letter-spacing:.16em!important;font-weight:700!important}
+body.dojo-subpage .lead,body.dojo-subpage .footnote,body.dojo-subpage p{color:var(--grafite)}
+body.dojo-subpage .card,body.dojo-subpage .asset,body.dojo-subpage .art,body.dojo-subpage .path,body.dojo-subpage .panel,body.dojo-subpage section>div[class*="card"]{background:var(--giz)!important;border:1px solid var(--linha-forte)!important;border-radius:var(--raio)!important;box-shadow:none!important}
+body.dojo-subpage .card img,body.dojo-subpage .art img,body.dojo-subpage .asset img{object-fit:contain!important;background:var(--giz)!important;border-radius:0!important}
+body.dojo-subpage .notice,body.dojo-subpage .note{background:var(--papel-2)!important;border:0!important;border-left:4px solid var(--carimbo)!important;border-radius:0!important;color:var(--tinta)!important}
+body.dojo-subpage button,body.dojo-subpage input,body.dojo-subpage select,body.dojo-subpage textarea{border-radius:var(--raio)!important;font-family:var(--sans)!important}
+body.dojo-subpage input,body.dojo-subpage select,body.dojo-subpage textarea{background:var(--giz)!important;border:1.5px solid var(--tinta)!important;color:var(--tinta)!important}
+body.dojo-subpage button,body.dojo-subpage .btn-like{border:1.5px solid var(--tinta)!important;background:transparent;color:var(--tinta);font-weight:600;cursor:pointer}
+body.dojo-subpage button:hover{background:var(--tinta)!important;color:var(--giz)!important}
+body.dojo-subpage main a{color:var(--tinta);text-decoration-color:var(--carimbo);text-underline-offset:3px}
+body.dojo-subpage .flag,body.dojo-subpage .pill,body.dojo-subpage .meta{border-radius:var(--raio)!important}
+body.dojo-subpage .progress{background:#16130f1c!important;border-radius:0!important}
+body.dojo-subpage .progress>div{background:var(--carimbo)!important;border-radius:0!important}
+body.dojo-subpage :focus-visible{outline:2px solid var(--carimbo)!important;outline-offset:3px}
+body.dojo-subpage dialog{border:2px solid var(--tinta)!important;border-radius:var(--raio)!important;box-shadow:8px 8px 0 var(--tinta)!important}
+body.dojo-subpage select,body.dojo-subpage input,body.dojo-subpage textarea{max-width:100%}
+body.dojo-subpage label{min-width:0;grid-template-columns:minmax(0,1fr)}
+body.dojo-subpage select{min-width:0;width:100%;text-overflow:ellipsis}

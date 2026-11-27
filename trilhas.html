@@ -3,62 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#4b1e3d">
+<meta name="theme-color" content="#f3eee3">
 <title>Curso de desenho de mangá · MangaDojo</title>
-<meta name="description" content="Curso gratuito de desenho de mangá em sete módulos: fundamentos, rostos, cabelos, mãos, corpo, animais e quadrinhos. Aulas em etapas curtas, com prática no Smudge.">
+<meta name="description" content="Curso gratuito de desenho de mangá em sete módulos: fundamentos, rostos, cabelos, mãos e pés, corpo, animais e quadrinhos. Aulas em etapas curtas, com prática no Smudge.">
 <link rel="icon" type="image/svg+xml" href="assets/mangadojo-mark.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/shippori-mincho-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/hanken-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles/site.css">
 <link rel="stylesheet" href="styles/curso.css">
 </head>
 <body>
-<a class="md-skip" href="#conteudo">Ir para o conteúdo</a>
-<header class="site-header"><div class="site-header__inner">
-  <a class="site-brand" href="index.html"><img src="assets/mangadojo-mark.svg" alt=""><span><strong>MangaDojo</strong><small>Academia de desenho de mangá</small></span></a>
-  <nav class="site-nav" aria-label="Menu principal">
-    <a href="index.html">Início</a>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+<!--cab--><header class="cab"><div class="cab__in">
+  <a class="marca" href="./" aria-label="MangaDojo, página inicial"><img src="assets/mangadojo-mark.svg" alt=""><span><b>MangaDojo</b><small>Academia de desenho de mangá</small></span></a>
+  <nav class="menu" aria-label="Menu principal">
     <a href="trilhas.html" aria-current="page">Curso</a>
     <a href="aulas-pranchas.html">Pranchas</a>
+    <a href="oficina.html">Oficina</a>
     <a href="studio.html">Smudge</a>
   </nav>
-</div></header>
+  <a class="btn" href="trilhas.html">Começar<span class="seta" aria-hidden="true"></span></a>
+</div></header><!--/cab-->
 
 <main id="conteudo">
-  <section class="curso-hero">
-    <img class="curso-hero__art" src="assets/academia/hero-curso.webp" alt="" width="555" height="352" fetchpriority="high">
-    <div class="md-wrap">
-      <div class="eyebrow">Curso gratuito</div>
-      <h1>Aprenda a desenhar mangá, <em>um passo de cada vez.</em></h1>
-      <p>Siga os módulos em ordem ou vá direto ao que você quer treinar. Cada aula tem etapas curtas, um checklist e prática no Smudge. Seu progresso fica salvo neste navegador.</p>
-      <ul class="curso-stats" id="stats" aria-label="Resumo do curso"></ul>
+  <section class="curso-topo">
+    <div class="largura curso-topo__grade">
+      <div>
+        <span class="rotulo">Curso gratuito</span>
+        <h1>Curso de desenho de mangá</h1>
+        <p class="curso-topo__lide">Siga os módulos em ordem ou vá direto ao que quer treinar. Cada aula tem etapas curtas, um checklist e prática no Smudge. Seu progresso fica salvo neste navegador.</p>
+      </div>
+      <dl class="curso-dados" id="dados" aria-label="Resumo do curso"></dl>
     </div>
   </section>
 
-  <div class="md-wrap curso-main">
-    <section id="continuar" class="md-card continue" hidden aria-live="polite"></section>
+  <div class="largura">
+    <section id="continuar" class="continue" hidden aria-live="polite"></section>
 
-    <h2 class="section-title">Como funciona</h2>
+    <div class="regua" style="margin-top:clamp(40px,6vw,72px)"><span class="regua__n num">01</span><h2>Como funciona</h2></div>
     <ol class="como">
-      <li class="md-card"><h3>Escolha um módulo</h3><p>Comece pelo Módulo 1 se estiver começando. Quer treinar algo específico? Abra o módulo e escolha a aula.</p></li>
-      <li class="md-card"><h3>Siga as etapas</h3><p>Cada aula divide o desenho em passos curtos, com um checklist do que observar em cada etapa.</p></li>
-      <li class="md-card"><h3>Pratique no Smudge</h3><p>Abra o editor, desenhe por cima da referência e marque a aula como concluída quando terminar.</p></li>
+      <li><b class="num">1</b><h3>Escolha um módulo</h3><p>Comece pelo módulo 1 se estiver começando. Quer treinar algo específico? Abra o módulo e escolha a aula.</p></li>
+      <li><b class="num">2</b><h3>Siga as etapas</h3><p>Cada aula divide o desenho em passos curtos, com um checklist do que observar em cada etapa.</p></li>
+      <li><b class="num">3</b><h3>Pratique no Smudge</h3><p>Abra o editor, desenhe por cima da referência e marque a aula como concluída quando terminar.</p></li>
     </ol>
 
-    <h2 class="section-title">Os sete módulos</h2>
-    <p class="section-lead" id="intro"></p>
-    <div id="modulos"></div>
+    <div class="regua" style="margin-top:clamp(48px,7vw,88px)"><span class="regua__n num">02</span><h2>Os módulos</h2><p id="intro"></p></div>
+    <div class="mods" id="modulos"></div>
 
-    <p style="margin:34px 0 0;text-align:center"><a class="md-btn md-btn--primary" href="studio.html">Abrir o Smudge e praticar</a></p>
+    <p style="margin:clamp(36px,5vw,56px) 0 0"><a class="btn" href="studio.html">Abrir o Smudge e praticar<span class="seta" aria-hidden="true"></span></a></p>
   </div>
 </main>
 
-<footer class="site-footer"><div class="md-wrap">
-  <div><strong>MangaDojo</strong><p>Academia gratuita de desenho de mangá, com aulas, pranchas e um editor de desenho no navegador.</p></div>
-  <div><h2>Estudar</h2><ul><li><a href="trilhas.html">Curso</a></li><li><a href="aulas-pranchas.html">Pranchas</a></li><li><a href="oficina.html">Oficina criativa</a></li><li><a href="studio.html">Smudge</a></li></ul></div>
-  <div><h2>Sobre o projeto</h2><ul><li><a href="acervo-revisado.html">Acervo</a></li><li><a href="creditos.html">Créditos e licenças</a></li></ul></div>
-  <div><h2>Equipe e revisão</h2><ul><li><a href="auditoria-imagens.html">Auditoria de imagens</a></li><li><a href="homologacao-artes.html?lesson=mao">Homologação das artes</a></li><li><a href="revisao-candidatos.html">Candidatos em revisão</a></li></ul></div>
-</div></footer>
+<!--rodape--><footer class="rodape"><div class="largura">
+  <div class="rodape__grade">
+    <div><a class="marca" href="./"><img src="assets/mangadojo-mark.svg" alt=""><span><b>MangaDojo</b></span></a><p>Academia gratuita de desenho de mangá, com aulas em etapas, pranchas completas e um editor no navegador.</p></div>
+    <div><h2>Estudar</h2><ul><li><a href="trilhas.html">Curso</a></li><li><a href="aulas-pranchas.html">Pranchas</a></li><li><a href="oficina.html">Oficina criativa</a></li><li><a href="studio.html">Smudge</a></li></ul></div>
+    <div><h2>Sobre</h2><ul><li><a href="acervo-revisado.html">Acervo</a></li><li><a href="creditos.html">Créditos e licenças</a></li></ul></div>
+    <div><h2>Equipe e revisão</h2><ul><li><a href="auditoria-imagens.html">Auditoria de imagens</a></li><li><a href="homologacao-artes.html?lesson=mao">Homologação das artes</a></li><li><a href="revisao-candidatos.html">Candidatos em revisão</a></li></ul></div>
+  </div>
+  <div class="rodape__fim"><span>MangaDojo · projeto público</span><span>Origem e licença de cada imagem estão nos <a href="creditos.html">créditos</a>.</span></div>
+</div></footer><!--/rodape-->
 
 <script src="catalog.generated.js"></script>
 <script src="curso.generated.js"></script>

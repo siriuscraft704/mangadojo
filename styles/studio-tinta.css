@@ -1,0 +1,45 @@
+/* Smudge Studio no sistema "Tinta e papel". Camada de aparência por cima do CSS do editor; não altera a lógica de desenho.
+   Mantém tema escuro (melhor para desenhar), com neutros quentes de tinta e o vermelho de carimbo como único destaque. */
+:root{--s-bg:#14110d;--s-pan:#1d1913;--s-pan2:#26211a;--s-linha:#3f382d;--s-txt:#ece5d6;--s-mute:#a89f8d}
+html body{background:var(--s-bg)!important;color:var(--s-txt)!important;font-family:var(--sans)!important}
+body *{scrollbar-color:#4a4236 var(--s-bg)}
+
+/* Barra superior */
+.topbar{background:var(--s-bg)!important;border-bottom:1px solid var(--s-linha)!important;box-shadow:none!important;background-image:none!important}
+.topbar .brand,.topbar h1,.topbar strong{font-family:var(--serif)!important;color:var(--papel)!important;font-style:normal!important}
+.topbar .brand *{background:none!important;-webkit-text-fill-color:currentColor!important}
+.topbar .back{background:transparent!important;border:1px solid var(--s-linha)!important;border-radius:var(--raio)!important;color:var(--s-txt)!important}
+.topbar .back:hover{border-color:var(--papel)!important}
+.topbar small,.topbar .status,.status{color:var(--s-mute)!important}
+
+/* Painéis laterais e área de trabalho */
+.side,.left,.right,.panel,.layer-list,.workarea,.tips,.practice-reference,.selection-controls,.perspective-controls{background:var(--s-pan)!important;border:1px solid var(--s-linha)!important;border-radius:var(--raio)!important;box-shadow:none!important;background-image:none!important}
+.side h2,.side h3,.side strong,.panel h2,.panel h3{font-family:var(--serif)!important;color:var(--papel)!important;font-style:normal!important}
+.tips,.side p,.side small,.field span,.field label{color:var(--s-mute)!important}
+.sheet{box-shadow:none!important;border-radius:0!important}
+
+/* Botões */
+.tool,.mini,.panel-action,.layer-list button,button.layer{background:var(--s-pan2)!important;border:1px solid var(--s-linha)!important;border-radius:var(--raio)!important;color:var(--s-txt)!important;box-shadow:none!important;background-image:none!important;font-family:var(--sans)!important;font-weight:600}
+.tool:hover,.mini:hover,.panel-action:hover{border-color:var(--papel)!important}
+.tool.active,.mini[aria-pressed="true"],.mini.active,.layer.active,.layer-list .active{background:var(--carimbo)!important;border-color:var(--carimbo)!important;color:#fff!important}
+.tool:focus-visible,.mini:focus-visible,.panel-action:focus-visible,.back:focus-visible{outline:2px solid var(--papel)!important;outline-offset:2px}
+input[type="range"]{accent-color:var(--carimbo)}
+select,input[type="text"],input[type="number"]{background:var(--s-pan2)!important;border:1px solid var(--s-linha)!important;border-radius:var(--raio)!important;color:var(--s-txt)!important}
+.practice-reference a{color:var(--papel)!important;text-decoration-color:var(--carimbo)!important}
+.smudge-credit{color:var(--s-mute)!important}
+
+/* Cabeçalho real do editor e itens de camada */
+header.head{background:var(--s-bg)!important;background-image:none!important;border-bottom:1px solid var(--s-linha)!important;box-shadow:none!important}
+header.head .brand{font-family:var(--serif)!important;color:var(--papel)!important;font-weight:700}
+header.head .brand span{color:var(--s-mute)!important;-webkit-text-fill-color:currentColor!important;background:none!important}
+header.head strong{color:var(--s-mute)!important;font-family:var(--sans)!important;letter-spacing:.14em;font-size:11px!important;text-transform:uppercase}
+header.head img{filter:none!important}
+.layer{background:var(--s-pan2)!important;border:1px solid var(--s-linha)!important;border-radius:var(--raio)!important;color:var(--s-txt)!important}
+.layer.active{background:var(--carimbo)!important;border-color:var(--carimbo)!important;color:#fff!important}
+.layer button{background:transparent!important;border:0!important;color:inherit!important;font-size:15px}
+.swatch{border-radius:0!important}
+
+input[type="range"]::-webkit-slider-thumb{background:var(--carimbo)!important;border-color:var(--carimbo)!important}
+input[type="range"]::-moz-range-thumb{background:var(--carimbo)!important;border-color:var(--carimbo)!important}
+input[type="range"]::-webkit-slider-runnable-track{background:#4a4236!important}
+input[type="range"]::-moz-range-track{background:#4a4236!important}

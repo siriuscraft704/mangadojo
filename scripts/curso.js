@@ -13,7 +13,7 @@
   const LEVEL_ORDER = {'Iniciante': 0, 'Intermediário': 1, 'Avançado': 2};
   const TYPE_LABEL = {'board-study': 'Prancha de estudo', 'reference-studies': 'Estudo de referências'};
   const typeOf = l => TYPE_LABEL[l.lessonType] || 'Passo a passo';
-  const href = id => 'index.html?lesson=' + encodeURIComponent(id) + '#workspace';
+  const href = id => 'aula.html?lesson=' + encodeURIComponent(id) + '#workspace';
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
   const hours = min => { const h = min / 60; return h >= 10 ? Math.round(h) + ' h' : (Math.round(h * 10) / 10).toString().replace('.', ',') + ' h'; };
   const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
@@ -36,9 +36,9 @@
   const totalLessons = modules.reduce((s, m) => s + m.list.length, 0);
   const totalMin = modules.reduce((s, m) => s + m.minutes, 0);
   const totalDone = modules.reduce((s, m) => s + m.finished, 0);
-  const stats = document.getElementById('stats');
-  for (const [value, label] of [[modules.length, 'módulos'], [totalLessons, 'aulas e pranchas'], [hours(totalMin), 'de prática'], [totalDone + ' de ' + totalLessons, 'concluídas']]) {
-    const li = el('li'); li.append(el('b', '', String(value)), el('span', '', label)); stats.append(li);
+  const dados = document.getElementById('dados');
+  for (const [label, value] of [['Módulos', modules.length], ['Aulas', totalLessons], ['Prática', hours(totalMin)]]) {
+    const d = el('div'); d.append(el('dt', '', label), el('dd', 'num', String(value))); dados.append(d);
   }
   document.getElementById('intro').textContent = course.intro || '';
 
@@ -59,10 +59,11 @@
     target = firstModule.list[0]; kicker = 'Curso concluído. Que tal revisar?'; note = 'Módulo 1 · ' + firstModule.title;
   }
   if (target) {
-    const img = el('img', 'continue__thumb'); img.src = target.images[target.images.length - 1]; img.alt = ''; img.loading = 'lazy';
+    const img = el('img', 'continue__thumb'); img.src = target.images[target.lessonType === 'board-study' ? 0 : target.images.length - 1]; img.alt = ''; img.loading = 'lazy';
     const text = el('div', 'continue__text');
     text.append(el('small', '', kicker), el('strong', '', target.name), el('span', '', note + ' · ' + target.level + ' · ' + target.min + ' min'));
-    const go = el('a', 'md-btn md-btn--primary', started && !done.has(current.id) ? 'Continuar aula' : 'Começar agora'); go.href = href(target.id);
+    const go = el('a', 'btn', started && !done.has(current.id) ? 'Continuar aula' : 'Começar agora'); go.href = href(target.id);
+    go.append(el('span', 'seta')); go.lastChild.setAttribute('aria-hidden', 'true');
     box.append(img, text, go); box.hidden = false;
   }
 
@@ -70,38 +71,39 @@
   const root = document.getElementById('modulos');
   modules.forEach(m => {
     const complete = m.finished === m.list.length;
-    const sec = el('section', 'md-card mod'); sec.id = 'modulo-' + m.id; sec.setAttribute('aria-labelledby', 'titulo-' + m.id);
-    const head = el('div', 'mod__head');
-    head.append(el('div', 'mod__num', String(m.index)));
+    const sec = el('section', 'mod'); sec.id = 'modulo-' + m.id; sec.setAttribute('aria-labelledby', 'titulo-' + m.id);
+    const cab = el('div', 'mod__cab');
+    cab.append(el('div', 'mod__n num', String(m.index).padStart(2, '0')));
     const info = el('div');
-    const h = el('h3', 'mod__title', m.title); h.id = 'titulo-' + m.id;
-    const out = el('p', 'mod__outcome'); out.append(el('b', '', 'Ao final: '), document.createTextNode(m.outcome.replace(/^Você\s+/, 'você ')));
-    const meta = el('div', 'mod__meta');
-    const bar = el('div', 'md-progress'); bar.setAttribute('role', 'progressbar'); bar.setAttribute('aria-label', 'Progresso do módulo ' + m.title);
+    const h = el('h3', 'mod__t', m.title); h.id = 'titulo-' + m.id;
+    const fim = el('p', 'mod__fim'); fim.append(el('b', '', 'Ao final: '), document.createTextNode(m.outcome.replace(/^Você\s+/, 'você ')));
+    const prog = el('div', 'mod__prog');
+    const bar = el('div', 'barra'); bar.setAttribute('role', 'progressbar'); bar.setAttribute('aria-label', 'Progresso do módulo ' + m.title);
     bar.setAttribute('aria-valuemin', '0'); bar.setAttribute('aria-valuemax', String(m.list.length)); bar.setAttribute('aria-valuenow', String(m.finished));
-    const fill = el('span'); fill.style.width = Math.round(100 * m.finished / m.list.length) + '%'; bar.append(fill);
-    meta.append(el('span', '', plural(m.list.length, 'aula', 'aulas') + ' · ' + hours(m.minutes)), bar, el('span', '', m.finished + ' concluídas'));
-    info.append(h, el('p', 'mod__summary', m.summary), out, meta);
-    head.append(info);
+    const fill = el('i'); fill.style.width = Math.round(100 * m.finished / m.list.length) + '%'; bar.append(fill);
+    prog.append(el('span', 'num', plural(m.list.length, 'aula', 'aulas') + ' · ' + hours(m.minutes)), bar, el('span', 'num', m.finished + ' concluídas'));
+    info.append(h, el('p', 'mod__r', m.summary), fim, prog);
+    cab.append(info);
     const next = nextOf(m);
-    const actionWrap = el('div', 'mod__action');
-    const action = el('a', complete ? 'md-btn md-btn--ghost' : 'md-btn md-btn--primary', complete ? 'Revisar módulo' : (m.finished || Number(steps[(next || {}).id] || 0) ? 'Continuar módulo' : 'Começar módulo'));
-    action.href = href((next || m.list[0]).id); actionWrap.append(action); head.append(actionWrap);
-    sec.append(head);
+    const wrap = el('div', 'mod__acao');
+    const label = complete ? 'Revisar módulo' : (m.finished || Number(steps[(next || {}).id] || 0) ? 'Continuar módulo' : 'Começar módulo');
+    const action = el('a', complete ? 'btn btn--linha' : 'btn', label); action.href = href((next || m.list[0]).id);
+    const arrow = el('span', 'seta'); arrow.setAttribute('aria-hidden', 'true'); action.append(arrow);
+    wrap.append(action); cab.append(wrap); sec.append(cab);
 
     const details = el('details');
     if (nextModule && nextModule.id === m.id) details.open = true;
     details.append(el('summary', '', 'Ver as ' + m.list.length + ' ' + (m.list.length === 1 ? 'aula' : 'aulas') + ' deste módulo'));
-    const ul = el('ul', 'lessons');
+    const ul = el('ul', 'aulas');
     for (const l of m.list) {
-      const li = el('li'); const a = el('a', 'lesson'); a.href = href(l.id);
-      const img = el('img', 'lesson__img'); img.src = l.images[l.lessonType === 'board-study' ? 0 : l.images.length - 1]; img.alt = 'Prévia: ' + l.name; img.loading = 'lazy'; img.decoding = 'async';
-      const body = el('div', 'lesson__body'); body.append(el('span', 'lesson__name', l.name));
-      const tags = el('div', 'lesson__tags');
-      tags.append(el('span', 'md-pill md-pill--level', l.level), el('span', 'md-pill', l.min + ' min'), el('span', 'md-pill', typeOf(l)));
-      if (done.has(l.id)) tags.append(el('span', 'md-pill md-pill--ok', '✓ Concluída'));
-      else if (Number(steps[l.id] || 0) > 0) tags.append(el('span', 'md-pill md-pill--wip', 'Em andamento'));
-      body.append(tags); a.append(img, body); li.append(a); ul.append(li);
+      const li = el('li'); const a = el('a', 'aula'); a.href = href(l.id);
+      const img = el('img', 'aula__img'); img.src = l.images[l.lessonType === 'board-study' ? 0 : l.images.length - 1]; img.alt = 'Prévia: ' + l.name; img.loading = 'lazy'; img.decoding = 'async';
+      a.append(img, el('span', 'aula__nome', l.name));
+      const tags = el('div', 'aula__tags');
+      tags.append(el('span', 'etiqueta', l.level), el('span', 'etiqueta num', l.min + ' min'), el('span', 'etiqueta', typeOf(l)));
+      if (done.has(l.id)) tags.append(el('span', 'etiqueta etiqueta--ok', 'Concluída'));
+      else if (Number(steps[l.id] || 0) > 0) tags.append(el('span', 'etiqueta etiqueta--andamento', 'Em andamento'));
+      a.append(tags); li.append(a); ul.append(li);
     }
     details.append(ul); sec.append(details); root.append(sec);
   });

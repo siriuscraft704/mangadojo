@@ -1,8 +1,17 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Revisão artística — MangaDojo</title><link rel="icon" href="assets/mangadojo-mark.svg" type="image/svg+xml">
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f8f6f2;color:#292633;font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}header{background:#201c2a;color:#fff;padding:16px clamp(16px,4vw,40px);display:flex;align-items:center;gap:12px;flex-wrap:wrap}header img{width:37px;height:37px}header strong{font:700 22px Georgia,serif}header a{margin-left:auto;color:#f4d5d5;text-decoration:none}main{max-width:1040px;margin:auto;padding:clamp(18px,3vw,32px)}h1{font:700 clamp(30px,5vw,47px)/1.12 Georgia,serif;letter-spacing:-1px;margin:5px 0 14px}p{color:#636471;max-width:75ch}.note{border-left:4px solid #bd655c;background:#fff3e7;padding:12px 16px;border-radius:9px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0;align-items:center}.filters select,.filters button{font:inherit;padding:11px 15px;border-radius:9px;border:1px solid #ded8d1;background:white;color:#292633}.filters button{background:#b75d54;color:white;font-weight:650;cursor:pointer}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:15px 0}.panel{border:1px solid #e3dcd3;background:#fff;border-radius:14px;padding:12px;min-width:0}.panel img{width:100%;height:420px;object-fit:contain;display:block;background:#fff}.panel b{display:block;font-size:13px;margin-bottom:8px}.checks{display:grid;gap:10px;margin:12px 0}.checks label{display:flex;align-items:flex-start;gap:10px;padding:11px;border:1px solid #e7e1db;border-radius:9px;background:white;cursor:pointer}.checks input{width:18px;height:18px;accent-color:#ad5c51;flex:none}.toolbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:15px 0}.toolbar button{border:1px solid #cfc5be;border-radius:9px;background:white;color:#36313a;font:inherit;padding:10px 14px;cursor:pointer;font-weight:650}.toolbar button.primary{color:white;background:#b75d54;border-color:#b75d54}textarea{width:100%;min-height:75px;border:1px solid #d9d3cc;border-radius:9px;padding:11px;resize:vertical;font:inherit}.status{font-weight:700;color:#855048;margin:8px 0}.muted{color:#777b83}.missing{display:grid;place-items:center;min-height:320px;background:#fbf7f4;color:#777;padding:15px;text-align:center}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #e9a288;outline-offset:3px}@media(max-width:650px){.comparison{gap:8px}.panel{padding:6px}.panel img{height:270px}.panel b{font-size:11px}}@media(max-width:380px){.panel img{height:220px}}
-</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles/dojo-subpages.css?v=135"></head><body class="dojo-subpage">
-<header><img src="assets/mangadojo-mark.svg" alt=""><strong>Revisão artística</strong><a href="acervo-revisado.html">Acervo de Artes</a></header>
+</style><link rel="stylesheet" href="styles/site.css"><link rel="stylesheet" href="styles/subpagina.css"></head><body class="dojo-subpage">
+<!--cab--><header class="cab"><div class="cab__in">
+  <a class="marca" href="./" aria-label="MangaDojo, página inicial"><img src="assets/mangadojo-mark.svg" alt=""><span><b>MangaDojo</b><small>Academia de desenho de mangá</small></span></a>
+  <nav class="menu" aria-label="Menu principal">
+    <a href="trilhas.html">Curso</a>
+    <a href="aulas-pranchas.html">Pranchas</a>
+    <a href="oficina.html">Oficina</a>
+    <a href="studio.html">Smudge</a>
+  </nav>
+  <a class="btn" href="trilhas.html">Começar<span class="seta" aria-hidden="true"></span></a>
+</div></header><!--/cab-->
 <main><h1>Conferir antes de publicar.</h1><p>Doze estudos publicados de rosto feminino e cabelos ondulados. Compare os desenhos, confira anatomia e enquadramento e sinalize falhas. As artes agora carregam diretamente do MangaDojo.</p>
 <p class="note">As artes estão disponíveis para prática como estudos experimentais. A revisão humana continua necessária para validar anatomia e continuidade. Suas marcações ficam neste navegador e podem ser exportadas em JSON.</p>
 <div class="filters"><label for="topic"><strong>Conjunto</strong></label><select id="topic"><option value="rosto-feminino">Rosto feminino — 6 etapas</option><option value="cabelos-ondulados">Cabelos ondulados — 6 etapas</option></select><button id="export" type="button">Exportar avaliação</button></div>
@@ -10,7 +19,16 @@
 <div class="comparison"><div class="panel"><b id="leftTitle">Etapa anterior</b><div id="previous"></div></div><div class="panel"><b id="rightTitle">Etapa atual</b><div id="current"></div></div></div>
 <div id="status" class="status" role="status"></div><div class="checks" id="checks"></div><label for="note"><strong>Observações sobre esta etapa</strong></label><textarea id="note" placeholder="Registre cortes, anatomia, continuidade entre as etapas ou qualquer detalhe a corrigir."></textarea>
 <div class="toolbar"><a href="acervo-revisado.html">Importar o pacote de imagens</a><a href="studio.html">Abrir Smudge</a></div>
-</main><script>
+</main>
+<!--rodape--><footer class="rodape"><div class="largura">
+  <div class="rodape__grade">
+    <div><a class="marca" href="./"><img src="assets/mangadojo-mark.svg" alt=""><span><b>MangaDojo</b></span></a><p>Academia gratuita de desenho de mangá, com aulas em etapas, pranchas completas e um editor no navegador.</p></div>
+    <div><h2>Estudar</h2><ul><li><a href="trilhas.html">Curso</a></li><li><a href="aulas-pranchas.html">Pranchas</a></li><li><a href="oficina.html">Oficina criativa</a></li><li><a href="studio.html">Smudge</a></li></ul></div>
+    <div><h2>Sobre</h2><ul><li><a href="acervo-revisado.html">Acervo</a></li><li><a href="creditos.html">Créditos e licenças</a></li></ul></div>
+    <div><h2>Equipe e revisão</h2><ul><li><a href="auditoria-imagens.html">Auditoria de imagens</a></li><li><a href="homologacao-artes.html?lesson=mao">Homologação das artes</a></li><li><a href="revisao-candidatos.html">Candidatos em revisão</a></li></ul></div>
+  </div>
+  <div class="rodape__fim"><span>MangaDojo · projeto público</span><span>Origem e licença de cada imagem estão nos <a href="creditos.html">créditos</a>.</span></div>
+</div></footer><!--/rodape--><script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id),DB='mangadojo-artwork',KEY='mangadojo-art-review-v2';
 const topics=['rosto-feminino','cabelos-ondulados'];let stage=0,files=new Map(),cacheUrls=[],reviews={};

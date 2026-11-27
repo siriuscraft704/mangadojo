@@ -46,9 +46,18 @@ dialog img.zoom{max-width:none;max-height:none}
 .tool[hidden]{display:none}
 @media(max-width:560px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card img{height:145px}.card span{font-size:14px;padding:8px}.filters label{width:100%}.dialog-bar h2{font-size:19px}}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles/dojo-subpages.css?v=135"></head>
+<link rel="stylesheet" href="styles/site.css"><link rel="stylesheet" href="styles/subpagina.css"></head>
 <body class="dojo-subpage">
-<header><nav aria-label="Navegação"><a href="./"><img src="assets/mangadojo-mark.svg" alt="">MangaDojo</a><a href="acervo-revisado.html">Acervo de etapas</a><a href="aulas-pranchas.html">Aulas das pranchas</a><a href="trilhas.html">Curso</a></nav></header>
+<!--cab--><header class="cab"><div class="cab__in">
+  <a class="marca" href="./" aria-label="MangaDojo, página inicial"><img src="assets/mangadojo-mark.svg" alt=""><span><b>MangaDojo</b><small>Academia de desenho de mangá</small></span></a>
+  <nav class="menu" aria-label="Menu principal">
+    <a href="trilhas.html">Curso</a>
+    <a href="aulas-pranchas.html" aria-current="page">Pranchas</a>
+    <a href="oficina.html">Oficina</a>
+    <a href="studio.html">Smudge</a>
+  </nav>
+  <a class="btn" href="trilhas.html">Começar<span class="seta" aria-hidden="true"></span></a>
+</div></header><!--/cab-->
 <main>
 <h1>Pranchas ilustradas</h1>
 <p class="intro">Explore as folhas completas de estudo do MangaDojo. Toque em uma prancha para ampliar os detalhes, ler suas instruções ou baixar a imagem.</p>
@@ -60,6 +69,15 @@ dialog img.zoom{max-width:none;max-height:none}
 <p id="status" role="status">Carregando pranchas…</p>
 <div class="gallery" id="gallery"></div>
 </main>
+<!--rodape--><footer class="rodape"><div class="largura">
+  <div class="rodape__grade">
+    <div><a class="marca" href="./"><img src="assets/mangadojo-mark.svg" alt=""><span><b>MangaDojo</b></span></a><p>Academia gratuita de desenho de mangá, com aulas em etapas, pranchas completas e um editor no navegador.</p></div>
+    <div><h2>Estudar</h2><ul><li><a href="trilhas.html">Curso</a></li><li><a href="aulas-pranchas.html">Pranchas</a></li><li><a href="oficina.html">Oficina criativa</a></li><li><a href="studio.html">Smudge</a></li></ul></div>
+    <div><h2>Sobre</h2><ul><li><a href="acervo-revisado.html">Acervo</a></li><li><a href="creditos.html">Créditos e licenças</a></li></ul></div>
+    <div><h2>Equipe e revisão</h2><ul><li><a href="auditoria-imagens.html">Auditoria de imagens</a></li><li><a href="homologacao-artes.html?lesson=mao">Homologação das artes</a></li><li><a href="revisao-candidatos.html">Candidatos em revisão</a></li></ul></div>
+  </div>
+  <div class="rodape__fim"><span>MangaDojo · projeto público</span><span>Origem e licença de cada imagem estão nos <a href="creditos.html">créditos</a>.</span></div>
+</div></footer><!--/rodape-->
 <dialog id="viewer" aria-labelledby="boardTitle">
 <div class="dialog-bar"><h2 id="boardTitle"></h2><div class="tools">
 <button class="tool" id="previous" type="button" aria-label="Prancha anterior">←</button>
