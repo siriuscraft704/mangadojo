@@ -17,9 +17,9 @@ public_files = {
     'creditos.html', 'pranchas.html', 'aulas-pranchas.html', 'revisao-candidatos.html', 'pranchas.json', 'catalog.generated.js', 'catalog.generated.json',
     'manifest.webmanifest', 'sw.js', 'THIRD_PARTY_NOTICES.md',
     'assets/mangadojo-mark.svg', 'assets/smudge-mark.svg',
-    'assets/mit-asset-manifest.json', 'assets/dojo-paper.svg', 'assets/dojo-ornament.svg', 'assets/academia/referencia.webp',
-    'styles/atelier.css', 'styles/smudge.css', 'styles/dojo-identity.css', 'styles/smudge-identity.css', 'styles/dojo-subpages.css', 'styles/dojo-home.css',
-    'scripts/smudge-editing.js', 'scripts/oficina-art.js',
+    'assets/mit-asset-manifest.json', 'assets/dojo-paper.svg', 'assets/dojo-ornament.svg', 'assets/academia/referencia.webp', 'assets/academia/hero-curso.webp', 'curso.generated.js',
+    'styles/atelier.css', 'styles/smudge.css', 'styles/dojo-identity.css', 'styles/smudge-identity.css', 'styles/dojo-subpages.css', 'styles/dojo-home.css', 'styles/site.css', 'styles/curso.css',
+    'scripts/smudge-editing.js', 'scripts/oficina-art.js', 'scripts/curso.js',
 }
 public_files.update(image for lesson in lessons for image in lesson['images'])
 

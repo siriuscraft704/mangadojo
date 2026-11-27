@@ -1,54 +1,67 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#191c25"><title>Trilhas de aprendizado · MangaDojo</title>
-<meta name="description" content="Um caminho de estudos de desenho com oficinas, aulas e acompanhamento de progresso.">
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#4b1e3d">
+<title>Curso de desenho de mangá · MangaDojo</title>
+<meta name="description" content="Curso gratuito de desenho de mangá em sete módulos: fundamentos, rostos, cabelos, mãos, corpo, animais e quadrinhos. Aulas em etapas curtas, com prática no Smudge.">
 <link rel="icon" type="image/svg+xml" href="assets/mangadojo-mark.svg">
-<style>
-:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#242832;background:#f9f7f3}*{box-sizing:border-box}body{margin:0}button,a{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid #e68d79;outline-offset:3px}
-header{background:#181a24;color:#f5eee7;padding:15px clamp(15px,4vw,45px);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-header img{height:40px;width:40px}header strong{font:700 25px Georgia,serif;letter-spacing:-.8px}header nav{margin-left:auto;display:flex;gap:12px;flex-wrap:wrap}header nav a{color:#f5ded5;text-decoration:none;font-size:13px;padding:8px}
-main{max-width:1120px;padding:clamp(16px,4vw,36px);margin:auto}.eyebrow{color:#ba5c53;text-transform:uppercase;letter-spacing:1.8px;font-size:11px;font-weight:750}
-h1{font:700 clamp(30px,5vw,53px) Georgia,serif;letter-spacing:-1.4px;max-width:740px;line-height:1.08;margin:15px 0}
-.lead{line-height:1.7;color:#606575;max-width:770px;font-size:15px}.summary{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 36px}.summary>div{border:1px solid #e2dbd3;background:white;padding:14px 20px;border-radius:14px}.summary b{display:block;font-size:23px}.summary small{font-size:12px;color:#74747a}
-.path{margin:33px 0;background:white;border:1px solid #e5ded6;border-radius:22px;padding:clamp(16px,3vw,26px);box-shadow:0 12px 30px #2b2b3010}
-.path-header{display:flex;gap:15px;align-items:start;justify-content:space-between;flex-wrap:wrap}.path h2{font:700 clamp(22px,3vw,30px) Georgia,serif;margin:4px 0 8px}.path p{font-size:13px;line-height:1.65;color:#636a75;max-width:650px;margin:0 0 15px}
-.progress{width:150px;height:8px;background:#efe6e4;border-radius:10px;overflow:hidden;margin-top:8px}.progress div{height:100%;background:#b95e55;border-radius:10px}.path small{font-size:12px;color:#7f7a75}
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.card{min-width:0;display:flex;flex-direction:column;border:1px solid #e8e2db;border-radius:14px;text-decoration:none;color:#242832;background:#fff;overflow:hidden;transition:border-color .15s,transform .15s}.card:hover{border-color:#ba695d;transform:translateY(-2px)}
-.card img{width:100%;height:170px;object-fit:contain;background:#faf8f5;padding:8px}.card strong{font-size:13px;line-height:1.4;min-height:54px;padding:11px 10px 0}.card .meta{display:block;color:#767680;font-size:11px;line-height:1.5;padding:5px 10px 12px}
-.flag{display:block;background:#fff3df;color:#8a5739;font-size:10px;font-weight:750;padding:8px 10px}.done{background:#ecf6ef;color:#267047}.footnote{color:#6d737d;font-size:12px;line-height:1.7;margin-top:35px}
-@media(max-width:780px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card img{height:158px}header nav{width:100%;margin:0}.path{padding:15px}}
-@media(max-width:380px){.card img{height:132px}.card strong{min-height:62px}}
-</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles/dojo-subpages.css?v=135"></head><body class="dojo-subpage">
-<header><img src="assets/mangadojo-mark.svg" alt=""><strong>MangaDojo</strong><nav><a href="./">Biblioteca</a><a href="studio.html">Smudge Studio</a><a href="aulas-pranchas.html">79 pranchas completas</a><a href="auditoria-imagens.html">Auditar imagens</a></nav></header>
-<main><div class="eyebrow">Mapa de aprendizado</div><h1>Um caminho para quem quer desenhar melhor.</h1>
-<p class="lead">Estude fundamentos, construa personagens, experimente formas e avance no seu ritmo. Cada card abre a aula correspondente. Seu progresso é recuperado no mesmo navegador.</p>
-<p class="lead"><a href="aulas-pranchas.html">Acesse também as 79 aulas de pranchas inteiras</a>, com imagens originais em proporção preservada e prática orientada de desenho.</p><div class="summary" id="summary" role="status"></div><div id="paths"></div>
-<p class="footnote">As oficinas MIT reúnem estudos independentes. Nas aulas progressivas, cada etapa desenvolve o mesmo desenho.</p></main>
-<script src="catalog.generated.js"></script><script>
-(()=>{
-'use strict';
-const lessons=window.MANGADOJO_LESSONS||[],byId=Object.fromEntries(lessons.map(l=>[l.id,l]));
-let progress={};try{progress=JSON.parse(localStorage.getItem('mangadojo-v3-state')||'{}')||{}}catch(e){}
-const done=Array.isArray(progress.done)?progress.done:[];
-const paths=[
-{title:'01 · Fundamentos e observação',description:'Treine proporção, leitura de silhuetas, contraste e construção antes de detalhar.',ids:['observacao-vetorial','silhuetas-criaturas']},
-{title:'02 · Gatos e silhuetas',description:'Construa o mesmo animal em duas poses e compare como o peso muda.',ids:['gato-sentado','gato-em-pe']},
-{title:'03 · Animais e movimento',description:'Estude musculatura, pelo e gestos com um leão e um lobo.',ids:['leao','lobo-correndo']},
-{title:'04 · Anatomia e poses',description:'Observe o encaixe dos dedos, as articulações e os volumes da palma.',ids:['mao']},
-{title:'05 · Mangá: rostos e cabelos',description:'Acompanhe seis etapas de rosto feminino e seis referências de cabelos ondulados, com revisão artística aberta.',ids:['rosto-feminino','cabelos-ondulados']}
-];
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/site.css">
+<link rel="stylesheet" href="styles/curso.css">
+</head>
+<body>
+<a class="md-skip" href="#conteudo">Ir para o conteúdo</a>
+<header class="site-header"><div class="site-header__inner">
+  <a class="site-brand" href="index.html"><img src="assets/mangadojo-mark.svg" alt=""><span><strong>MangaDojo</strong><small>Academia de desenho de mangá</small></span></a>
+  <nav class="site-nav" aria-label="Menu principal">
+    <a href="index.html">Início</a>
+    <a href="trilhas.html" aria-current="page">Curso</a>
+    <a href="aulas-pranchas.html">Pranchas</a>
+    <a href="studio.html">Smudge</a>
+  </nav>
+</div></header>
 
-const root=document.getElementById('paths');
-for(const p of paths){const available=p.ids.map(id=>byId[id]).filter(Boolean);if(!available.length)continue;const finished=available.filter(l=>done.includes(l.id)).length;
-const section=document.createElement('section');section.className='path';const heading=document.createElement('div');heading.className='path-header';
-const intro=document.createElement('div');const h=document.createElement('h2');h.textContent=p.title;const d=document.createElement('p');d.textContent=p.description;intro.append(h,d);
-const meter=document.createElement('div');const label=document.createElement('small');label.textContent=finished+' de '+available.length+' concluídas';const prog=document.createElement('div');prog.className='progress';const bar=document.createElement('div');bar.style.width=(finished/available.length*100)+'%';prog.append(bar);meter.append(label,prog);heading.append(intro,meter);
-const cards=document.createElement('div');cards.className='cards';
-for(const lesson of available){const card=document.createElement('a');card.className='card';card.href='index.html?lesson='+encodeURIComponent(lesson.id)+'#workspace';
-const img=document.createElement('img');img.src=lesson.images[lesson.images.length-1];img.loading='lazy';img.alt='Prévia da aula '+lesson.name;
-const title=document.createElement('strong');title.textContent=lesson.name;const meta=document.createElement('span');meta.className='meta';meta.textContent=lesson.level+' · '+lesson.steps.length+' '+(lesson.lessonType==='reference-studies'?'exercícios':'etapas');
-card.append(img,title,meta);if(done.includes(lesson.id)){const badge=document.createElement('span');badge.className='flag done';badge.textContent='✓ Concluída';card.append(badge)}cards.append(card)}
-section.append(heading,cards);root.append(section)}
-const all=document.createElement('div');all.innerHTML='<b>'+lessons.length+'</b><small>Aulas no catálogo</small>';const count=document.createElement('div');count.innerHTML='<b>'+lessons.filter(lesson=>done.includes(lesson.id)).length+'</b><small>Marcadas como concluídas</small>';const study=document.createElement('div');study.innerHTML='<b>5</b><small>Trilhas recomendadas</small>';document.getElementById('summary').append(all,count,study);
-})();
-</script></body></html>
+<main id="conteudo">
+  <section class="curso-hero">
+    <img class="curso-hero__art" src="assets/academia/hero-curso.webp" alt="" width="555" height="352" fetchpriority="high">
+    <div class="md-wrap">
+      <div class="eyebrow">Curso gratuito</div>
+      <h1>Aprenda a desenhar mangá, <em>um passo de cada vez.</em></h1>
+      <p>Siga os módulos em ordem ou vá direto ao que você quer treinar. Cada aula tem etapas curtas, um checklist e prática no Smudge. Seu progresso fica salvo neste navegador.</p>
+      <ul class="curso-stats" id="stats" aria-label="Resumo do curso"></ul>
+    </div>
+  </section>
+
+  <div class="md-wrap curso-main">
+    <section id="continuar" class="md-card continue" hidden aria-live="polite"></section>
+
+    <h2 class="section-title">Como funciona</h2>
+    <ol class="como">
+      <li class="md-card"><h3>Escolha um módulo</h3><p>Comece pelo Módulo 1 se estiver começando. Quer treinar algo específico? Abra o módulo e escolha a aula.</p></li>
+      <li class="md-card"><h3>Siga as etapas</h3><p>Cada aula divide o desenho em passos curtos, com um checklist do que observar em cada etapa.</p></li>
+      <li class="md-card"><h3>Pratique no Smudge</h3><p>Abra o editor, desenhe por cima da referência e marque a aula como concluída quando terminar.</p></li>
+    </ol>
+
+    <h2 class="section-title">Os sete módulos</h2>
+    <p class="section-lead" id="intro"></p>
+    <div id="modulos"></div>
+
+    <p style="margin:34px 0 0;text-align:center"><a class="md-btn md-btn--primary" href="studio.html">Abrir o Smudge e praticar</a></p>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="md-wrap">
+  <div><strong>MangaDojo</strong><p>Academia gratuita de desenho de mangá, com aulas, pranchas e um editor de desenho no navegador.</p></div>
+  <div><h2>Estudar</h2><ul><li><a href="trilhas.html">Curso</a></li><li><a href="aulas-pranchas.html">Pranchas</a></li><li><a href="oficina.html">Oficina criativa</a></li><li><a href="studio.html">Smudge</a></li></ul></div>
+  <div><h2>Sobre o projeto</h2><ul><li><a href="acervo-revisado.html">Acervo</a></li><li><a href="creditos.html">Créditos e licenças</a></li></ul></div>
+  <div><h2>Equipe e revisão</h2><ul><li><a href="auditoria-imagens.html">Auditoria de imagens</a></li><li><a href="homologacao-artes.html?lesson=mao">Homologação das artes</a></li><li><a href="revisao-candidatos.html">Candidatos em revisão</a></li></ul></div>
+</div></footer>
+
+<script src="catalog.generated.js"></script>
+<script src="curso.generated.js"></script>
+<script src="scripts/curso.js"></script>
+</body>
+</html>

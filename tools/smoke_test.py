@@ -57,6 +57,7 @@ with tempfile.TemporaryDirectory() as temp:
     assert all(board['width'] > 0 and board['height'] > 0 for board in boards)
     assert all((public/path).is_file() for path in paths)
     assert (public/'pranchas.html').exists()
+    for f in ('curso.generated.js','scripts/curso.js','styles/site.css','styles/curso.css','assets/academia/hero-curso.webp'):assert (public/f).exists(),f
     assert (public/'aulas-pranchas.html').exists()
     assert (public/'assets/academia/referencia.webp').is_file()
     assert (public/'styles/dojo-home.css').is_file()
@@ -135,8 +136,17 @@ credits=(ROOT/'creditos.html').read_text('utf-8')
 assert 'mit-asset-manifest.json' in credits and 'Vijay Verma' in credits
 assert (ROOT/'assets/mit-asset-manifest.json').exists()
 trails=(ROOT/'trilhas.html').read_text('utf-8')
-assert 'catalog.generated.js' in trails and 'lobo-correndo' in trails
-assert 'observacao-vetorial' in trails and 'silhuetas-criaturas' in trails
+# Curso (trilhas.html): módulos vêm de curso.json; todas as aulas pertencem a exatamente um módulo
+assert 'catalog.generated.js' in trails and 'curso.generated.js' in trails and 'scripts/curso.js' in trails
+assert 'styles/site.css' in trails and 'styles/curso.css' in trails
+course=json.loads((ROOT/'curso.json').read_text('utf-8'))
+lesson_data=json.loads((ROOT/'catalog.generated.json').read_text('utf-8'))
+assert len(course['modules'])==7 and len({m['category'] for m in course['modules']})==7
+assert sorted(m['category'] for m in course['modules'])==lesson_data['categories']
+assert len(lesson_data['categories'])==7, 'categorias duplicadas voltaram'
+assert 'Curso' in index and 'trilhas.html' in index
+assert 'Auditoria de imagens' in index
+assert (ROOT/'assets/academia/hero-curso.webp').exists()
 assert 'state.checks[checkIds[i]]' in index
 assert '.check-row.done' in (ROOT/'styles/atelier.css').read_text('utf-8')
 for img in workshop['images']: ET.parse(ROOT/img)
