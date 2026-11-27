@@ -11,13 +11,31 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.compare figure{margin:0;min-width:0}.compare img{width:100%;height:340px;object-fit:contain;border:0;background:#fff;display:block}.compare figcaption{font-size:12px;color:#656c74;padding:7px 0;font-weight:650}
 .review{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:12px}.review textarea{min-height:63px;resize:vertical}.technical{font-size:12px;color:#626a70;margin-top:10px}
 @media(max-width:600px){.compare img{height:210px}.review{grid-template-columns:1fr}.stage{padding:10px}}
-dialog{border:0;border-radius:14px;padding:12px;max-width:98vw;max-height:96dvh;box-shadow:0 18px 80px #0008}dialog::backdrop{background:#10131bdd}dialog img{display:block;max-width:95vw;max-height:82dvh;object-fit:contain;background:#fff}dialog button{margin-bottom:10px}.compare img{cursor:zoom-in}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles/dojo-subpages.css?v=135"></head><body class="dojo-subpage"><header><img src="assets/mangadojo-mark.svg" alt=""><strong>Homologação artística</strong><a href="./">Biblioteca</a></header>
+dialog{border:0;border-radius:14px;padding:12px;max-width:98vw;max-height:96dvh;box-shadow:0 18px 80px #0008}dialog::backdrop{background:#10131bdd}dialog img{display:block;max-width:95vw;max-height:82dvh;object-fit:contain;background:#fff}dialog button{margin-bottom:10px}.compare img{cursor:zoom-in}</style><link rel="stylesheet" href="styles/site.css"><link rel="stylesheet" href="styles/subpagina.css"></head><body class="dojo-subpage"><!--cab--><header class="cab"><div class="cab__in">
+  <a class="marca" href="./" aria-label="MangaDojo, página inicial"><img src="assets/mangadojo-mark.svg" alt=""><span><b>MangaDojo</b><small>Academia de desenho de mangá</small></span></a>
+  <nav class="menu" aria-label="Menu principal">
+    <a href="trilhas.html">Curso</a>
+    <a href="aulas-pranchas.html">Pranchas</a>
+    <a href="oficina.html">Oficina</a>
+    <a href="studio.html">Smudge</a>
+  </nav>
+  <a class="btn" href="trilhas.html">Começar<span class="seta" aria-hidden="true"></span></a>
+</div></header><!--/cab-->
 <main><h1>Compare antes de publicar.</h1><p class="lead">Visualize até seis novas imagens ao lado das referências atuais, avalie anatomia e enquadramento e exporte as decisões. Tudo acontece neste dispositivo. Nenhum arquivo é enviado ao servidor.</p>
 <p class="warning">Verificar dimensões não garante anatomia correta. Inspecione cinco dedos, articulações, margens, pose e continuidade entre as etapas. Só aprove quando a nova arte for pelo menos tão boa quanto a anterior.</p>
 <div class="controls"><label>Aula<select id="lesson"></select></label><label>Selecionar imagens novas<input id="files" type="file" accept="image/png,image/webp" multiple></label></div>
 <div id="summary" role="status"></div><div id="stages"></div>
 <div class="actions"><button id="export" type="button">Exportar relatório JSON</button><button id="clear" type="button">Limpar comparação</button><a href="auditoria-imagens.html">Auditoria do catálogo</a></div>
-</main><dialog id="zoom"><button id="closeZoom" type="button">Fechar imagem ✕</button><img id="zoomImage" alt="Referência ampliada"></dialog><script src="catalog.generated.js"></script><script>
+</main>
+<!--rodape--><footer class="rodape"><div class="largura">
+  <div class="rodape__grade">
+    <div><a class="marca" href="./"><img src="assets/mangadojo-mark.svg" alt=""><span><b>MangaDojo</b></span></a><p>Academia gratuita de desenho de mangá, com aulas em etapas, pranchas completas e um editor no navegador.</p></div>
+    <div><h2>Estudar</h2><ul><li><a href="trilhas.html">Curso</a></li><li><a href="aulas-pranchas.html">Pranchas</a></li><li><a href="oficina.html">Oficina criativa</a></li><li><a href="studio.html">Smudge</a></li></ul></div>
+    <div><h2>Sobre</h2><ul><li><a href="acervo-revisado.html">Acervo</a></li><li><a href="creditos.html">Créditos e licenças</a></li></ul></div>
+    <div><h2>Equipe e revisão</h2><ul><li><a href="auditoria-imagens.html">Auditoria de imagens</a></li><li><a href="homologacao-artes.html?lesson=mao">Homologação das artes</a></li><li><a href="revisao-candidatos.html">Candidatos em revisão</a></li></ul></div>
+  </div>
+  <div class="rodape__fim"><span>MangaDojo · projeto público</span><span>Origem e licença de cada imagem estão nos <a href="creditos.html">créditos</a>.</span></div>
+</div></footer><!--/rodape--><dialog id="zoom"><button id="closeZoom" type="button">Fechar imagem ✕</button><img id="zoomImage" alt="Referência ampliada"></dialog><script src="catalog.generated.js"></script><script>
 (()=>{
 'use strict';
 const lessons=window.MANGADOJO_LESSONS||[], $=id=>document.getElementById(id);

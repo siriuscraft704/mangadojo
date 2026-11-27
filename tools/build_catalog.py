@@ -25,10 +25,23 @@ for path in sorted(LESSONS.glob('*/lesson.json')):
     except Exception as exc: errors.append(str(path.relative_to(ROOT))+': '+str(exc))
 ids=[x['id'] for x in items]
 if len(ids)!=len(set(ids)):errors.append('IDs de aulas duplicados')
+# Currículo: cada categoria de aula pertence a exatamente um módulo de curso.json, e cada módulo aponta para uma categoria existente.
+course=json.loads((ROOT/'curso.json').read_text('utf-8'))
+cats=sorted(set(x['category'] for x in items))
+mod_cats=[m['category'] for m in course['modules']]
+if len(mod_cats)!=len(set(mod_cats)):errors.append('curso.json: categoria repetida em mais de um módulo')
+for c in cats:
+    if c not in mod_cats:errors.append('curso.json: sem módulo para a categoria '+c)
+for c in mod_cats:
+    if c not in cats:errors.append('curso.json: módulo aponta para categoria inexistente '+c)
+for m in course['modules']:
+    miss=[k for k in ('id','category','title','summary','outcome') if not m.get(k)]
+    if miss:errors.append('curso.json: módulo '+str(m.get('id'))+' sem '+', '.join(miss))
 if errors:
     print('\n'.join('ERRO: '+x for x in errors),file=sys.stderr)
     sys.exit(1)
 text=json.dumps(items,ensure_ascii=False,separators=(',',':'))
 (ROOT/'catalog.generated.js').write_text('/* Arquivo compilado: edite lessons/ e não este arquivo. */\nwindow.MANGADOJO_LESSONS='+text+';\n',encoding='utf-8')
 (ROOT/'catalog.generated.json').write_text(json.dumps({'lessons':len(items),'stages':sum(len(x['steps']) for x in items),'categories':sorted(set(x['category'] for x in items))},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+(ROOT/'curso.generated.js').write_text('/* Arquivo compilado: edite curso.json e não este arquivo. */\nwindow.MANGADOJO_COURSE='+json.dumps(course,ensure_ascii=False,separators=(',',':'))+';\n',encoding='utf-8')
 print(f'MangaDojo: {len(items)} aulas e {sum(len(x["steps"]) for x in items)} etapas validadas.')

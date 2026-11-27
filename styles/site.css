@@ -1,0 +1,83 @@
+/* MangaDojo · sistema visual "Tinta e papel"
+   Base compartilhada: fontes, tokens, tipografia, cabeçalho, rodapé, botões, réguas e etiquetas.
+   Princípios: papel quente, tinta quase preta, um único vermelho de carimbo; réguas finas no lugar de sombras;
+   cantos quase retos; títulos em mincho. Sem degradês decorativos, sem pílulas, sem emojis como ícones. */
+
+@import url("tokens.css");
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 17px/1.62 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.12;letter-spacing:-.012em;margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--carimbo);outline-offset:3px}
+::selection{background:var(--carimbo);color:var(--giz)}
+.pular{position:absolute;left:-999px;top:8px;background:var(--tinta);color:var(--giz);padding:10px 16px;z-index:50}
+.pular:focus{left:8px}
+.largura{max-width:var(--largura);margin:0 auto;padding:0 var(--respiro)}
+.num{font-variant-numeric:tabular-nums lining-nums}
+
+/* Cabeçalho */
+.cab{background:var(--papel);border-bottom:1px solid var(--linha-forte);position:sticky;top:0;z-index:30}
+.cab__in{max-width:var(--largura);margin:0 auto;padding:0 var(--respiro);height:68px;display:flex;align-items:center;gap:clamp(16px,3vw,40px)}
+.marca{display:flex;align-items:center;gap:11px;text-decoration:none}
+.marca img{width:38px;height:38px}
+.marca b{font:700 24px/1 var(--serif);letter-spacing:-.02em}
+.marca small{display:block;font:600 10px/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--cinza);margin-top:3px}
+.cab .menu{display:flex;flex-wrap:nowrap;gap:clamp(14px,2.4vw,32px);margin:0 0 0 auto;padding:0;border:0;background:transparent;align-items:center}
+.cab .menu a{font:600 15px var(--sans);text-decoration:none;padding:6px 0;border:0;border-bottom:2px solid transparent;color:var(--tinta);background:none}
+.cab .menu a:hover{border-bottom-color:var(--carimbo)}
+.cab .menu a[aria-current="page"]{border-bottom-color:var(--tinta)}
+.cab .btn{margin-left:4px;min-height:40px;padding:8px 16px;font-size:14px}
+
+/* Botões e links */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px;border:2px solid var(--tinta);border-radius:var(--raio);background:var(--tinta);color:var(--giz);font:600 15.5px var(--sans);text-decoration:none;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn:hover{background:var(--carimbo);border-color:var(--carimbo)}
+.btn--linha{background:transparent;color:var(--tinta)}
+.btn--linha:hover{background:var(--tinta);border-color:var(--tinta);color:var(--giz)}
+.btn--claro{background:var(--giz);border-color:var(--giz);color:var(--tinta)}
+.btn--claro:hover{background:var(--carimbo);border-color:var(--carimbo);color:var(--giz)}
+.seta{display:inline-block;width:1.1em;height:.7em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3E%3Cpath d='M0 7h19M13 1l6 6-6 6' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3E%3Cpath d='M0 7h19M13 1l6 6-6 6' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .15s}
+a:hover>.seta,.btn:hover .seta{transform:translateX(4px)}
+.lnk{font:600 15.5px var(--sans);text-decoration:none;border-bottom:2px solid var(--carimbo);padding-bottom:2px;display:inline-block}
+.lnk .seta{margin-left:9px;vertical-align:-1px}
+.lnk:hover{color:var(--carimbo)}
+
+/* Rótulos, etiquetas e réguas de seção */
+.rotulo{font:700 12px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--grafite);display:inline-flex;align-items:center;gap:10px}
+.rotulo::before{content:"";width:9px;height:9px;background:var(--carimbo);display:inline-block}
+.etiqueta{display:inline-block;border:1px solid var(--linha-forte);padding:1px 8px;font:600 12px/1.6 var(--sans);letter-spacing:.02em;border-radius:var(--raio);background:transparent;white-space:nowrap}
+.etiqueta--ok{border-color:var(--ok);color:var(--ok)}
+.etiqueta--andamento{background:var(--carimbo);border-color:var(--carimbo);color:var(--giz)}
+.regua{display:flex;align-items:baseline;gap:18px;border-top:2px solid var(--tinta);padding-top:14px;margin:0 0 clamp(26px,4vw,44px)}
+.regua__n{font:700 15px var(--sans);letter-spacing:.06em;color:var(--carimbo)}
+.regua h2{font-size:clamp(28px,4vw,46px)}
+.regua p{margin-left:auto;max-width:34ch;color:var(--grafite);font-size:15.5px}
+@media (max-width:760px){.regua{flex-wrap:wrap}.regua p{margin-left:0;max-width:none;flex-basis:100%}}
+
+/* Progresso */
+.barra{height:6px;background:#16130f1c;position:relative}
+.barra>i{position:absolute;inset:0 auto 0 0;background:var(--carimbo)}
+
+/* Rodapé */
+.rodape{background:var(--tinta);color:#d9d2c3;margin-top:clamp(56px,9vw,110px);padding:clamp(40px,6vw,64px) 0 28px}
+.rodape__grade{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:32px clamp(24px,4vw,56px)}
+.rodape .marca b{color:var(--giz)}
+.rodape p{color:#b9b09f;font-size:15px;max-width:36ch;margin-top:14px}
+.rodape h2{font:700 12px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#a39a89;margin:0 0 12px}
+.rodape ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.rodape a{color:#e8e1d2;text-decoration:none;font-size:15.5px}
+.rodape a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--carimbo)}
+.rodape__fim a{font-size:inherit;color:#d9d2c3}
+.rodape__fim{border-top:1px solid #ffffff26;margin-top:40px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13.5px;color:#9a917f}
+@media (max-width:860px){.rodape__grade{grid-template-columns:1fr 1fr}.rodape__grade>:first-child{grid-column:1/-1}}
+
+@media (max-width:720px){
+  .cab__in{height:auto;padding-top:10px;padding-bottom:10px;flex-wrap:wrap;row-gap:8px}
+  .marca small{display:none}
+  .cab .menu{order:3;width:100%;margin-left:0;justify-content:space-between;border-top:1px solid var(--linha);padding-top:6px}
+  .cab .btn{margin-left:auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

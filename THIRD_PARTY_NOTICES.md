@@ -51,3 +51,10 @@ SOFTWARE.
 ## Política de novos materiais
 
 Cada inclusão deve documentar autor, URL, arquivo original, licença expressa, eventuais alterações e finalidade. **A licença MIT de código não cobre automaticamente as imagens de um repositório.** Fontes de origem com direitos indefinidos não devem ser incluídas no catálogo.
+
+## Fontes hospedadas no site
+
+- **Shippori Mincho** (pesos 500 e 700, subconjunto latino). Copyright 2021 The Shippori Mincho Project Authors, https://github.com/fontdasu/ShipporiMincho. SIL Open Font License 1.1: `assets/fonts/OFL-Shippori-Mincho.txt`.
+- **Hanken Grotesk** (pesos 400 a 700, subconjunto latino). Copyright The Hanken Grotesk Project Authors. SIL Open Font License 1.1: `assets/fonts/OFL-Hanken-Grotesk.txt`.
+
+Os arquivos `.woff2` vêm dos pacotes npm `@fontsource/shippori-mincho` e `@fontsource/hanken-grotesk` (versão 5.3.0), que redistribuem as fontes originais sob a mesma licença. As licenças acompanham os arquivos e o artefato do GitHub Pages.

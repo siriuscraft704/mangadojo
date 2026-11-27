@@ -1,0 +1,57 @@
+/* Página do Curso (trilhas.html). Depende de site.css. */
+.curso-topo{padding:clamp(34px,6vw,72px) 0 clamp(30px,4vw,48px)}
+.curso-topo__grade{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(24px,5vw,72px);align-items:end}
+.curso-topo h1{font-size:clamp(38px,5.4vw,72px);line-height:1.04;margin:16px 0 0}
+.curso-topo__lide{margin-top:22px;max-width:56ch;font-size:clamp(17px,1.5vw,19.5px);color:var(--grafite)}
+.curso-dados{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0;border-top:2px solid var(--tinta)}
+.curso-dados div{padding:14px 12px 0 0}
+.curso-dados dt{font:700 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--cinza)}
+.curso-dados dd{margin:2px 0 0;font:700 clamp(28px,3.4vw,40px)/1.1 var(--serif);font-variant-numeric:lining-nums}
+@media (max-width:820px){.curso-topo__grade{grid-template-columns:1fr}}
+
+/* Continue de onde parou */
+.continue{display:flex;gap:clamp(16px,3vw,28px);align-items:center;flex-wrap:wrap;border:2px solid var(--tinta);background:var(--giz);box-shadow:8px 8px 0 var(--tinta);padding:clamp(16px,2.4vw,24px)}
+.continue__thumb{width:92px;height:92px;object-fit:cover;background:var(--giz);border:1px solid var(--linha-forte)}
+.continue__text{flex:1 1 260px;min-width:0}
+.continue__text small{display:block;font:700 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--carimbo)}
+.continue__text strong{display:block;font:700 clamp(22px,2.4vw,28px)/1.2 var(--serif);margin:4px 0}
+.continue__text span{font-size:14.5px;color:var(--grafite)}
+.continue[hidden]{display:none}
+
+/* Como funciona */
+.como{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--linha)}
+.como li{padding:22px clamp(14px,2.4vw,32px) 0 0;border-right:1px solid var(--linha);margin-right:clamp(14px,2.4vw,32px)}
+.como li:last-child{border-right:0;margin-right:0}
+.como b{display:block;font:700 38px/1 var(--serif);color:var(--carimbo);margin-bottom:10px}
+.como h3{font-size:21px;margin-bottom:6px}
+.como p{font-size:15.5px;color:var(--grafite)}
+@media (max-width:760px){.como{grid-template-columns:1fr}.como li{border-right:0;margin-right:0;border-bottom:1px solid var(--linha);padding-bottom:18px}.como li:last-child{border-bottom:0}}
+
+/* Módulos */
+.mods{display:grid;gap:clamp(28px,4vw,48px)}
+.mod{border-top:2px solid var(--tinta);scroll-margin-top:88px}
+.mod__cab{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:8px clamp(16px,3vw,36px);align-items:start;padding:20px 0 22px}
+.mod__n{font:700 clamp(38px,4.6vw,56px)/1 var(--serif);color:var(--carimbo);font-variant-numeric:lining-nums}
+.mod__t{font-size:clamp(24px,3vw,36px)}
+.mod__r{margin:8px 0 12px;color:var(--grafite);max-width:62ch}
+.mod__fim{font-size:15px;max-width:62ch}.mod__fim b{font-weight:700}
+.mod__prog{display:flex;align-items:center;gap:14px;margin-top:16px;font-size:14px;color:var(--cinza);flex-wrap:wrap}
+.mod__prog .barra{width:min(260px,100%);flex:none}
+.mod__acao{align-self:center}
+.mod details{border-top:1px solid var(--linha)}
+.mod summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:16px 0;font:700 15.5px var(--sans)}
+.mod summary::-webkit-details-marker{display:none}
+.mod summary::after{content:"";flex:none;width:14px;height:14px;color:var(--carimbo);background:linear-gradient(currentColor,currentColor) center/100% 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 100% no-repeat}
+.mod details[open] summary::after{background:linear-gradient(currentColor,currentColor) center/100% 2px no-repeat}
+.aulas{list-style:none;margin:0;padding:6px 0 10px;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:22px 18px}
+.aula{display:flex;flex-direction:column;gap:10px;height:100%;text-decoration:none}
+.aula__img{aspect-ratio:4/3;width:100%;object-fit:cover;background:var(--giz);border:1.5px solid var(--tinta);transition:transform .18s}
+.aula:hover .aula__img{transform:translateY(-3px)}
+.aula__nome{font:700 17px/1.3 var(--serif)}
+.aula:hover .aula__nome{color:var(--carimbo)}
+.aula__tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+@media (max-width:700px){
+  .mod__cab{grid-template-columns:48px minmax(0,1fr)}
+  .mod__acao{grid-column:1/-1}.mod__acao .btn{width:100%;justify-content:center}
+  .aulas{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:18px 12px}
+}

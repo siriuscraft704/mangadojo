@@ -1,6 +1,6 @@
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const studio=fs.readFileSync('studio.html','utf8');
-const index=fs.readFileSync('index.html','utf8');
+const index=fs.readFileSync('aula.html','utf8');
 const start=studio.indexOf('function drawContained(');
 const end=studio.indexOf('function imageInto(',start);
 assert.ok(start>0&&end>start,'No Smudge contain helper');

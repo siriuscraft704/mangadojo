@@ -3,6 +3,7 @@
 Academia gratuita de desenho mangá com biblioteca de aulas, prática e um editor de desenho independente.
 
 - Academia: https://siriuscraft704.github.io/mangadojo/
+- Curso (7 módulos, 88 aulas): https://siriuscraft704.github.io/mangadojo/trilhas.html
 - Smudge: https://siriuscraft704.github.io/mangadojo/studio.html
 - Galeria de pranchas: https://siriuscraft704.github.io/mangadojo/pranchas.html
 - Acervo: https://siriuscraft704.github.io/mangadojo/acervo-revisado.html

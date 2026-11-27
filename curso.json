@@ -1,0 +1,13 @@
+{
+  "title": "Curso de desenho de mangá do MangaDojo",
+  "intro": "Sete módulos em ordem. Comece pelo primeiro e avance no seu ritmo: cada aula tem etapas curtas e um exercício para praticar.",
+  "modules": [
+    {"id":"fundamentos","category":"Fundamentos visuais","title":"Fundamentos: aprenda a observar","summary":"Antes de desenhar bonito, aprenda a ver: formas simples, silhuetas e proporção.","outcome":"Você reduz qualquer objeto a formas básicas e compara proporções com confiança."},
+    {"id":"rostos","category":"Rostos e olhos","title":"Rostos e olhos","summary":"Construa o rosto com linhas-guia e só depois desenhe olhos, nariz, boca e expressão.","outcome":"Você desenha um rosto de mangá bem proporcionado em vários ângulos."},
+    {"id":"cabelos","category":"Cabelos","title":"Cabelos","summary":"Cabelo é volume e direção, não fio por fio. Aprenda a desenhar mechas com forma e movimento.","outcome":"Você desenha penteados variados com volume, brilho e acabamento limpo."},
+    {"id":"maos","category":"Mãos e pés","title":"Mãos e pés","summary":"As partes que mais assustam iniciantes, resolvidas em blocos simples e passos curtos.","outcome":"Você desenha mãos e pés em várias poses sem travar."},
+    {"id":"corpo","category":"Corpo e personagens","title":"Corpo e personagens","summary":"Poses, proporções e personagens completos, do boneco de formas ao desenho final.","outcome":"Você monta um personagem inteiro, em pose, com proporções corretas."},
+    {"id":"animais","category":"Animais","title":"Animais e criaturas","summary":"Peso, movimento e pelagem para desenhar animais e criaturas com vida.","outcome":"Você desenha animais em poses diferentes e compara como o peso muda."},
+    {"id":"quadrinhos","category":"Guias e quadrinhos","title":"Páginas de quadrinhos","summary":"Organize quadros, ritmo de leitura e composição para montar a sua própria página.","outcome":"Você planeja uma página de mangá clara de ler, do rascunho ao quadro final."}
+  ]
+}

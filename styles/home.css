@@ -1,0 +1,89 @@
+/* Home · composição editorial. Depende de site.css. */
+
+/* Capa */
+.capa{padding:clamp(34px,6vw,76px) 0 clamp(40px,6vw,80px)}
+.capa__grade{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5.5vw,84px);align-items:center}
+.capa h1{font-size:clamp(40px,5.4vw,74px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 0}
+.capa__lide{font-size:clamp(17px,1.55vw,20px);color:var(--grafite);max-width:52ch;margin:24px 0 30px}
+.capa__acoes{display:flex;flex-wrap:wrap;gap:12px}
+.capa__dados{display:flex;gap:clamp(22px,4vw,56px);margin:42px 0 0;padding:18px 0 0;border-top:1px solid var(--linha)}
+.capa__dados dt{font:700 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--cinza)}
+.capa__dados dd{margin:2px 0 0;font:700 clamp(30px,3.6vw,44px)/1.1 var(--serif);font-variant-numeric:lining-nums}
+.capa__fig{margin:0;position:relative}
+.capa__quadro{position:relative;aspect-ratio:4/5;overflow:hidden;border:2px solid var(--tinta);background:var(--papel-2);box-shadow:10px 10px 0 var(--tinta)}
+.capa__quadro::before{content:"";position:absolute;inset:0;background:var(--reticula)}
+.capa__quadro img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 58%;transform:scale(1.85);transform-origin:50% 58%;mix-blend-mode:multiply}
+.capa__fig figcaption{margin-top:26px;font-size:13.5px;line-height:1.5;color:var(--grafite)}
+.capa__fig .num{font-weight:700;color:var(--carimbo);margin-right:6px}
+.capa__vertical{position:absolute;right:-30px;top:0;writing-mode:vertical-rl;font:600 11px var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--cinza)}
+@media (max-width:1180px){.capa__vertical{display:none}}
+@media (max-width:860px){
+  .capa__grade{grid-template-columns:1fr}
+  .capa__fig{max-width:430px}
+  .capa__quadro{box-shadow:7px 7px 0 var(--tinta)}
+}
+
+.bloco{padding-top:clamp(44px,7vw,92px)}
+
+/* Passos do método */
+.passos{list-style:none;margin:0 -14px;padding:0;clip-path:inset(0 14px);display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.passos li{padding:18px 14px 0;border-left:1px solid var(--linha);border-top:1px solid var(--linha)}
+.passos li:first-child{border-left:0}
+.passos__img{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--giz);border:1px solid var(--linha)}
+.passos__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 58%;transform:scale(2);transform-origin:50% 58%;mix-blend-mode:multiply}
+.passos b{display:block;margin-top:12px;font:700 28px/1 var(--serif);color:var(--carimbo)}
+.passos span{display:block;margin-top:4px;font-size:15px;font-weight:500;line-height:1.35}
+.nota{margin-top:20px;font-size:14px;color:var(--cinza)}
+.nota a{color:var(--tinta)}
+@media (max-width:980px){.passos{grid-template-columns:repeat(3,minmax(0,1fr))}.passos li{padding-bottom:18px}.passos li:nth-child(4){border-left:0}}
+@media (max-width:560px){.passos{grid-template-columns:repeat(2,minmax(0,1fr))}.passos li:nth-child(odd){border-left:0}.passos li:nth-child(even){border-left:1px solid var(--linha)}}
+
+/* Índice do curso */
+.indice{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--linha)}
+.indice a{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1.35fr) 286px;gap:8px 28px;align-items:baseline;padding:24px 8px 24px 0;border-top:1px solid var(--linha);text-decoration:none;transition:background .15s,padding .15s}
+.indice a:hover{background:var(--giz);padding-left:12px}
+.indice__n{font:700 clamp(26px,3vw,34px)/1 var(--serif);color:var(--carimbo);font-variant-numeric:lining-nums}
+.indice__t{font:700 clamp(22px,2.5vw,30px)/1.15 var(--serif)}
+.indice__s{font-size:15.5px;color:var(--grafite)}
+.indice__m{font-size:14px;color:var(--cinza);white-space:nowrap;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.indice a:hover .indice__t{color:var(--carimbo)}
+.indice__rodape{margin-top:28px}
+@media (max-width:820px){
+  .indice a{grid-template-columns:44px minmax(0,1fr);gap:4px 16px}
+  .indice__s,.indice__m{grid-column:2}
+  .indice__m{margin-top:2px}
+}
+
+/* Pranchas */
+.vitrine{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,36px)}
+.vitrine figure{margin:0}
+.vitrine__a{grid-column:1/-1}
+.vitrine img{width:100%;height:auto;border:1.5px solid var(--tinta);background:var(--giz)}
+.vitrine a{display:block;transition:transform .2s}
+.vitrine a:hover{transform:translateY(-3px)}
+.vitrine figcaption{margin-top:10px;font-size:14px;color:var(--grafite)}
+.vitrine .num{font-weight:700;color:var(--carimbo);margin-right:8px}
+@media (max-width:620px){.vitrine{grid-template-columns:1fr}}
+
+/* Smudge */
+.tinta{background:var(--tinta);color:var(--papel);margin-top:clamp(56px,9vw,110px);padding:clamp(48px,8vw,100px) 0}
+.tinta__grade{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(30px,6vw,96px);align-items:start}
+.tinta .rotulo{color:#cfc7b6}
+.tinta h2{color:var(--giz);font-size:clamp(32px,4.6vw,58px);margin:16px 0 20px}
+.tinta p{color:#cfc7b6;max-width:50ch}
+.tinta p+p{margin-top:26px}
+.recursos{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid #ffffff38}
+.recursos li{padding:18px 0;border-bottom:1px solid #ffffff38}
+.recursos b{display:block;font:700 20px/1.25 var(--serif);color:var(--giz)}
+.recursos span{display:block;margin-top:4px;color:#b9b09f;font-size:15.5px}
+@media (max-width:860px){.tinta__grade{grid-template-columns:1fr}}
+
+/* Perguntas */
+.duvidas__lista{max-width:860px;border-bottom:1px solid var(--linha)}
+.duvidas details{border-top:1px solid var(--linha)}
+.duvidas summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font:700 clamp(18px,2vw,22px)/1.3 var(--serif)}
+.duvidas summary::-webkit-details-marker{display:none}
+.duvidas summary::after{content:"";flex:none;width:14px;height:14px;background:linear-gradient(currentColor,currentColor) center/100% 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 100% no-repeat;color:var(--carimbo)}
+.duvidas details[open] summary::after{background:linear-gradient(currentColor,currentColor) center/100% 2px no-repeat}
+.duvidas details p{padding:0 40px 22px 0;color:var(--grafite);max-width:62ch}
+.duvidas a{color:var(--tinta);text-decoration-color:var(--carimbo);text-underline-offset:3px}

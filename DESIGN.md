@@ -1,4 +1,15 @@
 # DESIGN.md — MangaDojo Atelier / Smudge
+Última revisão: 2026-11-27 (identidade "Tinta e papel").
+
+## Identidade atual (27/11/2026)
+Substitui o tema vinho e rosa com degradês. Princípios: **papel quente, tinta quase preta e um único vermelho de carimbo**; réguas finas em vez de sombras; cantos quase retos; sem pílulas, sem degradês decorativos e sem emojis como ícones; títulos em mincho e texto em grotesca.
+- Cores: papel `#F3EEE3`, giz `#FBF8F1`, tinta `#16130F`, grafite `#4A443B`, carimbo `#B83A26`. Contrastes verificados (WCAG AA): tinta/papel 16:1, vermelho/papel 4,9:1.
+- Fontes hospedadas no site (OFL-1.1): **Shippori Mincho** (títulos) e **Hanken Grotesk** (texto). Definidas em `styles/tokens.css`. Nenhuma fonte externa é carregada.
+- Sistema: `styles/tokens.css` (variáveis e fontes), `styles/site.css` (cabeçalho, rodapé, botões, réguas, etiquetas), `styles/home.css`, `styles/curso.css`, `styles/subpagina.css`, `styles/aula-tinta.css` e `styles/studio-tinta.css` (editor, tema escuro).
+- Cabeçalho e rodapé têm **fonte única** em `tools/stamp_shell.py`; o teste de fumaça falha se uma página sair de sincronia.
+
+---
+## Registro anterior (21/11/2026), mantido para referência
 Última revisão: 2026-11-21. Fonte observada: https://siriuscraft704.github.io/mangadojo/ (captura móvel 390×844 pelo Firecrawl), código `index.html`, `studio.html`, `styles/atelier.css` e `styles/smudge.css`.
 
 ## Identidade existente (observada, não proposta)
